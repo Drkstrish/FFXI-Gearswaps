@@ -69,94 +69,42 @@ end
 -- To stick poison (Dokumori) or Attack down (Aisha) lower resist with Katon: Ni
 -- To stick paralyze (Jubaku) lower resistence with Huton: Ni
 function init_gear_sets()
-
 --------------------------------------
 -- Augments
 --------------------------------------
-    
-Andartia = {}
-
---Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-
---Andartia.AGI = { name="Andartia's Mantle", augments={'AGI+20','Accuracy+9 Attack+9','Weapon skill damage +10%',}}
-    
+	Andartia = {}
+		--Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+		--Andartia.AGI = { name="Andartia's Mantle", augments={'AGI+20','Accuracy+9 Attack+9','Weapon skill damage +10%',}}
 -------------------------------------
 -- Job Abilties
 --------------------------------------
-    
-sets.precast.JA['Mijin Gakure'] = {
-}
-
-sets.precast.JA['Futae'] = {
-}
-
-sets.precast.JA['Provoke'] = {
-}
-
-sets.precast.JA.Sange = {
-}
-    
+	sets.precast.JA['Mijin Gakure'] = {}
+	sets.precast.JA['Futae'] = {}
+	sets.precast.JA['Provoke'] = {}
+	sets.precast.JA.Sange = {}
 -- Waltz (chr and vit)
-
-sets.precast.Waltz = {
-}
-
+	sets.precast.Waltz = {}
 -- Don't need any special gear for Healing Waltz.
-
-sets.precast.Waltz['Healing Waltz'] = {
-}
-
+	sets.precast.Waltz['Healing Waltz'] = {}
 -- Set for acc on steps, since Yonin drops acc a fair bit
-
-sets.precast.Step = {
-}
-
-sets.midcast.Trust = {
-}
-
-sets.midcast["Apururu (UC)"] = {
-}
-
+	sets.precast.Step = {}
+	sets.midcast.Trust = {}
+	sets.midcast["Apururu (UC)"] = {}
 --------------------------------------
 -- Utility Sets for rules below
 --------------------------------------
-    
-sets.TreasureHunter = { waist="Chaac Belt" 
-}
-
-sets.CapacityMantle = { back="Mecistopins Mantle" 
-}
-
-sets.WSDayBonus     = { head="Gavialis Helm" 
-}
-
---sets.WSBack         = { back="Trepidity Mantle" 
-}
-
---sets.BrutalLugra    = { ear1="Cessance Earring", ear2="Lugra Earring +1" 
-}
-
---sets.BrutalTrux     = { ear1="Cessance Earring", ear2="Trux Earring" 
-}
-
-sets.BrutalMoon     = { ear1="Brutal Earring", ear2="Moonshade Earring" 
-}
-
---sets.Rajas          = { ring1="Haverton Ring" 
-}
-
-sets.RegularAmmo    = { ammo=gear.RegularAmmo 
-}
-
-sets.SangeAmmo      = { ammo=gear.SangeAmmo 
-}
-
-sets.NightAccAmmo   = { ammo="Ginsen" 
-}
-
-sets.DayAccAmmo     = { ammo="Ginsen" 
-}
-
+   	sets.TreasureHunter = {waist="Chaac Belt"}
+	sets.CapacityMantle =  {back="Mecistopins Mantle"}
+	sets.WSDayBonus = {head="Gavialis Helm"}
+	--sets.WSBack = {back="Trepidity Mantle"}
+	--sets.BrutalLugra = {ear1="Cessance Earring",ear2="Lugra Earring +1"}
+	--sets.BrutalTrux = {ear1="Cessance Earring",ear2="Trux Earring"}
+	sets.BrutalMoon = { ear1="Brutal Earring",ear2="Moonshade Earring"}
+	--sets.Rajas = {ring1="Haverton Ring"}
+	sets.RegularAmmo = {ammo=gear.RegularAmmo}
+	sets.SangeAmmo = {ammo=gear.SangeAmmo}
+	sets.NightAccAmmo = {ammo="Ginsen"}
+	sets.DayAccAmmo = {ammo="Ginsen"}
 --------------------------------------
 -- Ranged
 --------------------------------------
