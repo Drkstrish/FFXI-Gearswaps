@@ -238,133 +238,56 @@ function init_gear_sets()
 	sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
 	sets.buff.Migawari = {}
 -- Weaponskills 
-
-sets.precast.WS = {
-}
-
-sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-})
-    
-sets.precast.WS.Low = sets.precast.WS.Mid
-    
-sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-})
-
+	sets.precast.WS = {}
+	sets.precast.WS.Mid = set_combine(sets.precast.WS, {})
+	sets.precast.WS.Low = sets.precast.WS.Mid
+	sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {})
 -- BLADE:Kamu
-
-sets.Kamu = {
-}
-
-sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
-    	
-sets.precast.WS['Blade: Kamu'].Low = set_combine(sets.precast.WS.Low, sets.Kamu)
-    
-sets.precast.WS['Blade: Kamu'].Mid = set_combine(sets.precast.WS.Mid, sets.Kamu)
-    
-sets.precast.WS['Blade: Kamu'].Acc = set_combine(sets.precast.WS.Acc, sets.Kamu, {
-})
-
+	sets.Kamu = {}
+	sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
+	sets.precast.WS['Blade: Kamu'].Low = set_combine(sets.precast.WS.Low, sets.Kamu)
+	sets.precast.WS['Blade: Kamu'].Mid = set_combine(sets.precast.WS.Mid, sets.Kamu)
+	sets.precast.WS['Blade: Kamu'].Acc = set_combine(sets.precast.WS.Acc, sets.Kamu, {})
 -- BLADE: JIN
-
-sets.Jin = {
-}
-    
-sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
-    
-sets.precast.WS['Blade: Jin'].Low = set_combine(sets.precast.WS['Blade: Jin'], {
-})
-
-sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'].Low, {
-})
-
-sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
-})
-    
+sets.Jin = {}
+	sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
+	sets.precast.WS['Blade: Jin'].Low = set_combine(sets.precast.WS['Blade: Jin'], {})
+	sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'].Low, {})
+	sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {})
 -- BLADE: HI
-
-sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-})
-
-sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
-})
-
-sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-})
-
-sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
-})
-    
+	sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {})
+	sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {})
+	sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {})
 -- BLADE: SHUN
-
-sets.Shun = {
-}
-
-sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
-
-sets.precast.WS['Blade: Shun'].Low = set_combine(sets.precast.WS.Low, sets.Shun)
-	
-sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
-    
-sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
-    
-
+	sets.Shun = {}
+	sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
+	sets.precast.WS['Blade: Shun'].Low = set_combine(sets.precast.WS.Low, sets.Shun)
+	sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
+	sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
 -- BLADE: Rin
-    
-sets.Rin = {
-}
-
-sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
-	
-sets.precast.WS['Blade: Rin'].Low = set_combine(sets.precast.WS.Low, sets.Rin)
-    
-sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
-
-sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin, {
-})
-    
+	sets.Rin = {}
+	sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
+	sets.precast.WS['Blade: Rin'].Low = set_combine(sets.precast.WS.Low, sets.Rin)
+	sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
+	sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin, {})
 -- BLADE: KU 
-
-sets.Ku = {
-}
-    
-sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
-    
-sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS['Blade: Ku'], {
-})
-
-sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
-    
-sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'].Mid, {
-})
-    
+	sets.Ku = {}
+	sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
+	sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS['Blade: Ku'], {})
+	sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
+	sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'].Mid, {})
 -- BLADE: TEN
-   
-sets.Ten = {
-}
-
-sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
-    
-sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS['Blade: Ten'], {
-})
-
-sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'].Low, {
-})
-
-sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
-})
-    
-sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-})
-
-sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
-})
-
+	sets.Ten = {}
+	sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
+	sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS['Blade: Ten'], {})
+	sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'].Low, {})
+	sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {})
+	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {})
 -- BLADE: TO
-
-sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
-
+	sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 end
-
 ------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks that are called to process player actions at specific points in time.
 -------------------------------------------------------------------------------------------------------------------
