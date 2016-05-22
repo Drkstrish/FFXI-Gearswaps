@@ -7,9 +7,7 @@ function get_sets()
 		include('Mote-Include.lua')
 		include('organizer-lib')
 end
-
 -- Setup vars that are user-independent.
-
 function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
 	state.Buff.Sange = buffactive.sange or false
@@ -37,74 +35,39 @@ function job_setup()
 end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    
 -- Options: Override default values
-    
-state.OffenseMode:options('Normal', 'Low', 'Mid', 'Acc')
-
-state.HybridMode:options('Normal', 'PDT')
-
-state.RangedMode:options('Normal', 'Acc')
-
-state.WeaponskillMode:options('Normal', 'Low', 'Mid', 'Acc')
-
-state.PhysicalDefenseMode:options('PDT')
-
-state.MagicalDefenseMode:options('MDT')
-
+	state.OffenseMode:options('Normal', 'Low', 'Mid', 'Acc')
+	state.HybridMode:options('Normal', 'PDT')
+	state.RangedMode:options('Normal', 'Acc')
+	state.WeaponskillMode:options('Normal', 'Low', 'Mid', 'Acc')
+	state.PhysicalDefenseMode:options('PDT')
+	state.MagicalDefenseMode:options('MDT')
 --select_default_macro_book()
-
-send_command('bind ^= gs c cycle treasuremode')
-
-send_command('bind ^[ input /lockstyle on')
-
-send_command('bind ![ input /lockstyle off')
-
-send_command('bind != gs c toggle CapacityMode')
-
-send_command('bind @f9 gs c cycle HasteMode')
-
-send_command('bind @[ gs c cycle Runes')
-
-send_command('bind ^] gs c toggle UseRune')
-    
+	send_command('bind ^= gs c cycle treasuremode')
+	send_command('bind ^[ input /lockstyle on')
+	send_command('bind ![ input /lockstyle off')
+	send_command('bind != gs c toggle CapacityMode')
+	send_command('bind @f9 gs c cycle HasteMode')
+	send_command('bind @[ gs c cycle Runes')
+	send_command('bind ^] gs c toggle UseRune')
 end
-
-
 function file_unload()
-
-send_command('unbind ^[') 
-
-send_command('unbind ![')
-
-send_command('unbind ^=')
-
-send_command('unbind !=')
-
-send_command('unbind @f9')
-
-send_command('unbind @[')
-
+	send_command('unbind ^[') 
+	send_command('unbind ![')
+	send_command('unbind ^=')
+	send_command('unbind !=')
+	send_command('unbind @f9')
+	send_command('unbind @[')
 end
-
 -- Define sets and vars used by this job file.
-
 -- visualized at http://www.ffxiah.com/node/194 (not currently up to date 10/29/2015)
-
 -- Happo
-
 -- Hachiya
-
 --sets.engaged[state.CombatForm][state.CombatWeapon][state.OffenseMode][state.HybridMode][classes.CustomMeleeGroups (any number)
-
 -- Ninjutsu tips
-
 -- To stick Slow (Hojo) lower earth resist with Raiton: Ni
-
 -- To stick poison (Dokumori) or Attack down (Aisha) lower resist with Katon: Ni
-
 -- To stick paralyze (Jubaku) lower resistence with Huton: Ni
-
 function init_gear_sets()
 
 --------------------------------------
