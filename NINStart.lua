@@ -108,326 +108,135 @@ function init_gear_sets()
 --------------------------------------
 -- Ranged
 --------------------------------------
-    
-sets.precast.RA = {
-}
-
-sets.midcast.RA = {
-}
-
-sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-})
-
-sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter
-)
-    
+    	sets.precast.RA = {}
+	sets.midcast.RA = {}
+	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {})
+	sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
 -- Fast cast sets for spells
-
-sets.precast.FC = {
-}
-
-sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" 
-})
-    
+	sets.precast.FC = {}
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 -- Midcast Sets
-
-sets.midcast.FastRecast = {
-}
-
+	sets.midcast.FastRecast = {}
 -- skill ++ 
-
-sets.midcast.Ninjutsu = {
-}
-
+	sets.midcast.Ninjutsu = {}
 -- any ninjutsu cast on self
-
-sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
-	
-sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {
-})
-   
-sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {
-})
-
+	sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
+	sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {})
+   	sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {})
 -- Nuking Ninjutsu (skill & magic attack)
-
-sets.midcast.ElementalNinjutsu = {
-}
-
+	sets.midcast.ElementalNinjutsu = {}
 -- Effusions
-
-sets.precast.Effusion = {
-}
-	
-sets.precast.Effusion.Lunge = sets.midcast.ElementalNinjutsu
-	
-sets.precast.Effusion.Swipe = sets.midcast.ElementalNinjutsu
-
-sets.idle = {
-}
-
-sets.idle.Regen = set_combine(sets.idle, {
-})
-    
-sets.idle.Town = set_combine(sets.idle, {
-})
-
---sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
-})
-
-sets.idle.Weak = sets.idle
-
+	sets.precast.Effusion = {}
+	sets.precast.Effusion.Lunge = sets.midcast.ElementalNinjutsu
+	sets.precast.Effusion.Swipe = sets.midcast.ElementalNinjutsu
+	sets.idle = {}
+	sets.idle.Regen = set_combine(sets.idle, {})
+    	sets.idle.Town = set_combine(sets.idle, {})
+--sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {})
+	sets.idle.Weak = sets.idle
 -- Defense sets
-
-sets.defense.PDT = {
-}
-    
-sets.defense.MDT = set_combine(sets.defense.PDT, {
-})
-    
---sets.DayMovement = {feet="Danzo sune-ate"
-}
-	
---sets.NightMovement = {feet="Hachiya Kyahan +1"
-}
-
-sets.Organizer = {
-}
-
+	sets.defense.PDT = {}
+    	sets.defense.MDT = set_combine(sets.defense.PDT, {})
+    	--sets.DayMovement = {feet="Danzo sune-ate"}
+	--sets.NightMovement = {feet="Hachiya Kyahan +1"}
+	--sets.Organizer = {}
 -- Normal melee group without buffs
-
-sets.engaged = {
-}
-
+	sets.engaged = {}
 -- assumptions made about targe
-
-sets.engaged.Low = set_combine(sets.engaged, {
-})
-
-sets.engaged.Mid = set_combine(sets.engaged.Low, {
-})
-
-sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-})
-
+	sets.engaged.Low = set_combine(sets.engaged, {})
+	sets.engaged.Mid = set_combine(sets.engaged.Low, {})
+	sets.engaged.Acc = set_combine(sets.engaged.Mid, {})
 -- set for fooling around without dual wield
-	
-sets.NoDW = set_combine(sets.engaged, {
-})
-    	
-sets.engaged.Innin = set_combine(sets.engaged, {
-})
-	
-sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {
-})
-
-sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
-})
-
-sets.engaged.Innin.Acc = sets.engaged.Acc
-
+	sets.NoDW = set_combine(sets.engaged, {})
+    	sets.engaged.Innin = set_combine(sets.engaged, {})
+	sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {})
+	sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {})
+	sets.engaged.Innin.Acc = sets.engaged.Acc
 -- Defenseive sets
-
-sets.NormalPDT = {
-}
-
-sets.AccPDT = {
-}
-
-sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)
-
-sets.engaged.Low.PDT = set_combine(sets.engaged.Low, sets.NormalPDT)
-
-sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.NormalPDT)
-
-sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.AccPDT)
-
-sets.engaged.Innin.PDT = set_combine(sets.engaged.Innin, sets.NormalPDT, {
-})
-
-sets.engaged.Innin.Low.PDT = set_combine(sets.engaged.Innin.Low, sets.NormalPDT, {
-})
-
-sets.engaged.Innin.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {
-})
-
-sets.engaged.Innin.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
-
-sets.engaged.HastePDT = {
-}
-
+	sets.NormalPDT = {}
+	sets.AccPDT = {}
+	sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)
+	sets.engaged.Low.PDT = set_combine(sets.engaged.Low, sets.NormalPDT)
+	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.NormalPDT)
+	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.AccPDT)
+	sets.engaged.Innin.PDT = set_combine(sets.engaged.Innin, sets.NormalPDT, {})
+	sets.engaged.Innin.Low.PDT = set_combine(sets.engaged.Innin.Low, sets.NormalPDT, {})
+	sets.engaged.Innin.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {})
+	sets.engaged.Innin.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
+	sets.engaged.HastePDT = {}
 -- Delay Cap from spell + songs alone
-
-sets.engaged.MaxHaste = set_combine(sets.engaged, {
-})
-
+	sets.engaged.MaxHaste = set_combine(sets.engaged, {})
 -- Base set for hard content
-
-sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-})
-
-sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-})
-
-sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-})
-
+	sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {})
+	sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {})
+	sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {})
 -- do nothing here
-	
-sets.engaged.Innin.MaxHaste     = sets.engaged.MaxHaste
-
-sets.engaged.Innin.Low.MaxHaste = sets.engaged.Low.MaxHaste
-
-sets.engaged.Innin.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
-
-sets.engaged.Innin.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
-
+	sets.engaged.Innin.MaxHaste = sets.engaged.MaxHaste
+	sets.engaged.Innin.Low.MaxHaste = sets.engaged.Low.MaxHaste
+	sets.engaged.Innin.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
+	sets.engaged.Innin.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
 -- Defensive sets
-
-sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HastePDT)
-    
-sets.engaged.Low.PDT.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, sets.engaged.HastePDT)
-   
-sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HastePDT)
-    
-sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.AccPDT)
-    
-sets.engaged.Innin.PDT.MaxHaste = set_combine(sets.engaged.Innin.MaxHaste, sets.NormalPDT)
-
-sets.engaged.Innin.Low.PDT.MaxHaste = set_combine(sets.engaged.Innin.Low.MaxHaste, sets.NormalPDT)
-
-
-sets.engaged.Innin.Mid.PDT.MaxHaste = set_combine(sets.engaged.Innin.Mid.MaxHaste, sets.NormalPDT)
-
-sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
-
+	sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HastePDT)
+	sets.engaged.Low.PDT.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, sets.engaged.HastePDT)
+	sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HastePDT)
+	sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.AccPDT)
+	sets.engaged.Innin.PDT.MaxHaste = set_combine(sets.engaged.Innin.MaxHaste, sets.NormalPDT)
+	sets.engaged.Innin.Low.PDT.MaxHaste = set_combine(sets.engaged.Innin.Low.MaxHaste, sets.NormalPDT)
+	sets.engaged.Innin.Mid.PDT.MaxHaste = set_combine(sets.engaged.Innin.Mid.MaxHaste, sets.NormalPDT)
+	sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
 -- 35% Haste 
-    
-sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
-})
-    
-sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
-})
-    
-sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
-})
-
-sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
-})
-
-sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, {
-})
-
-sets.engaged.Innin.Low.Haste_35 = set_combine(sets.engaged.Low.Haste_35, {
-})
-
-sets.engaged.Innin.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
-})
-
-sets.engaged.Innin.Acc.Haste_35 = sets.engaged.Acc.Haste_35
-    
-sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
-    
-sets.engaged.Low.PDT.Haste_35 = set_combine(sets.engaged.Low.Haste_35, sets.engaged.HastePDT)
-	
-sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
-
-sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.AccPDT)
-    
-sets.engaged.Innin.PDT.Haste_35 = set_combine(sets.engaged.Innin.Haste_35, sets.engaged.HastePDT)
-    
-sets.engaged.Innin.Low.PDT.Haste_35 = set_combine(sets.engaged.Innin.Low.Haste_35, sets.engaged.HastePDT)
-
-sets.engaged.Innin.Mid.PDT.Haste_35 = set_combine(sets.engaged.Innin.Mid.Haste_35, sets.engaged.HastePDT)
-	
-sets.engaged.Innin.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
-    
-
+	sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {})
+	sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {})
+	sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {})
+	sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {})
+	sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, {})
+	sets.engaged.Innin.Low.Haste_35 = set_combine(sets.engaged.Low.Haste_35, {})
+	sets.engaged.Innin.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {})
+	sets.engaged.Innin.Acc.Haste_35 = sets.engaged.Acc.Haste_35
+	sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
+	sets.engaged.Low.PDT.Haste_35 = set_combine(sets.engaged.Low.Haste_35, sets.engaged.HastePDT)
+	sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
+	sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.AccPDT)
+	sets.engaged.Innin.PDT.Haste_35 = set_combine(sets.engaged.Innin.Haste_35, sets.engaged.HastePDT)
+	sets.engaged.Innin.Low.PDT.Haste_35 = set_combine(sets.engaged.Innin.Low.Haste_35, sets.engaged.HastePDT)
+	sets.engaged.Innin.Mid.PDT.Haste_35 = set_combine(sets.engaged.Innin.Mid.Haste_35, sets.engaged.HastePDT)
+	sets.engaged.Innin.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
 -- 30% Haste
-
-sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
-})
-
-sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
-})
-
-sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-})
-
---sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
-})
-
-sets.engaged.Acc.Haste_30 = sets.engaged.Acc.MaxHaste 
-
-sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
-})
-
-sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-})
-
-sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-})
-
-sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
-    
-sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
-    
-sets.engaged.Low.PDT.Haste_30 = set_combine(sets.engaged.Low.Haste_30, sets.engaged.HastePDT)
-    
-sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HastePDT)
-    
-sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.AccPDT)
-    
-sets.engaged.Innin.PDT.Haste_30 = set_combine(sets.engaged.Innin.Haste_30, sets.engaged.HastePDT)
-    
-sets.engaged.Innin.Low.PDT.Haste_30 = set_combine(sets.engaged.Innin.Low.Haste_30, sets.engaged.HastePDT)
-    
-sets.engaged.Innin.Mid.PDT.Haste_30 = set_combine(sets.engaged.Innin.Mid.Haste_30, sets.engaged.HastePDT)
-    
-sets.engaged.Innin.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT.Haste_30
-    
+	sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {})
+	sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {})
+	sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {})
+	--sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {})
+	sets.engaged.Acc.Haste_30 = sets.engaged.Acc.MaxHaste 
+	sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {})
+	sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {})
+	sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {})
+	sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
+	sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
+	sets.engaged.Low.PDT.Haste_30 = set_combine(sets.engaged.Low.Haste_30, sets.engaged.HastePDT)
+	sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HastePDT)
+	sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.AccPDT)
+	sets.engaged.Innin.PDT.Haste_30 = set_combine(sets.engaged.Innin.Haste_30, sets.engaged.HastePDT)
+	sets.engaged.Innin.Low.PDT.Haste_30 = set_combine(sets.engaged.Innin.Low.Haste_30, sets.engaged.HastePDT)
+	sets.engaged.Innin.Mid.PDT.Haste_30 = set_combine(sets.engaged.Innin.Mid.Haste_30, sets.engaged.HastePDT)
+	sets.engaged.Innin.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT.Haste_30
 -- 5 - 20% Haste 
-
-sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
-})
-
-sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Haste_15, {
-})
-
-sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {
-})
-
-sets.engaged.Acc.Haste_15 = sets.engaged.Acc.MaxHaste
-    
-sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
-})
-    
-sets.engaged.Innin.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {
-})
-
-sets.engaged.Innin.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {
-})
-    
-sets.engaged.Innin.Acc.Haste_15 = sets.engaged.Acc.Haste_15
-    
-sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.engaged.HastePDT)
-    
-sets.engaged.Low.PDT.Haste_15 = set_combine(sets.engaged.Low.Haste_15, sets.engaged.HastePDT)
-    
-sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, sets.engaged.HastePDT)
-    
-sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
-        
-sets.engaged.Innin.PDT.Haste_15 = set_combine(sets.engaged.Innin.Haste_15, sets.engaged.HastePDT)
-    
-sets.engaged.Innin.Low.PDT.Haste_15 = set_combine(sets.engaged.Innin.Low.Haste_15, sets.engaged.HastePDT)
-    
-sets.engaged.Innin.Mid.PDT.Haste_15 = set_combine(sets.engaged.Innin.Mid.Haste_15, sets.engaged.HastePDT)
-    
-sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
-    
-sets.buff.Migawari = {
-}
+	sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {})
+	sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Haste_15, {})
+	sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {})
+	sets.engaged.Acc.Haste_15 = sets.engaged.Acc.MaxHaste
+	sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {})
+	sets.engaged.Innin.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {})
+	sets.engaged.Innin.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {})
+	sets.engaged.Innin.Acc.Haste_15 = sets.engaged.Acc.Haste_15
+	sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.engaged.HastePDT)
+	sets.engaged.Low.PDT.Haste_15 = set_combine(sets.engaged.Low.Haste_15, sets.engaged.HastePDT)
+	sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, sets.engaged.HastePDT)
+	sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
+	sets.engaged.Innin.PDT.Haste_15 = set_combine(sets.engaged.Innin.Haste_15, sets.engaged.HastePDT)
+	sets.engaged.Innin.Low.PDT.Haste_15 = set_combine(sets.engaged.Innin.Low.Haste_15, sets.engaged.HastePDT)
+	sets.engaged.Innin.Mid.PDT.Haste_15 = set_combine(sets.engaged.Innin.Mid.Haste_15, sets.engaged.HastePDT)
+	sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
+	sets.buff.Migawari = {}
 -- Weaponskills 
 
 sets.precast.WS = {
