@@ -1,69 +1,39 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
-
 -- gs c toggle hastemode -- Toggles whether or not you're getting Haste II
-
 function get_sets()
-	
-mote_include_version = 2
-		
-include('Mote-Include.lua')
-		
-include('organizer-lib')
-
+	mote_include_version = 2
+		include('Mote-Include.lua')
+		include('organizer-lib')
 end
 
 -- Setup vars that are user-independent.
 
 function job_setup()
-	
-state.Buff.Migawari = buffactive.migawari or false
-	
-state.Buff.Sange = buffactive.sange or false
-
-state.Buff.Innin = buffactive.innin or false
-	
-include('Mote-TreasureHunter')
-
-state.TreasureMode:set('Tag')
-	
-state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi' }
-	
-state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
-
-state.UseRune = M(false, 'Use Rune')
-
-run_sj = player.sub_job == 'RUN' or false
-
-select_ammo()
-	
-LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
-
-state.CapacityMode = M(false, 'Capacity Point Mantle')
-	
-gear.RegularAmmo = 'Happo Shuriken'
-
-gear.SangeAmmo = 'Happo Shuriken'
-	
-wsList = S{'Blade: Hi'}
-
-update_combat_form()
-	
-state.warned = M(false)
-
-options.ammo_warning_limit = 25
-
+	state.Buff.Migawari = buffactive.migawari or false
+	state.Buff.Sange = buffactive.sange or false
+	state.Buff.Innin = buffactive.innin or false
+		include('Mote-TreasureHunter')
+	state.TreasureMode:set('Tag')
+	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi' }
+	state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
+	state.UseRune = M(false, 'Use Rune')
+		run_sj = player.sub_job == 'RUN' or false
+		select_ammo()
+	LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
+	state.CapacityMode = M(false, 'Capacity Point Mantle')
+	gear.RegularAmmo = 'Happo Shuriken'
+	gear.SangeAmmo = 'Happo Shuriken'
+		wsList = S{'Blade: Hi'}
+		update_combat_form()
+	state.warned = M(false)
+		options.ammo_warning_limit = 25
 -- For th_action_check():
-
 -- JA IDs for actions that always have TH: Provoke, Animated Flourish
-
-info.default_ja_ids = S{35, 204}
-
+		info.default_ja_ids = S{35, 204}
 -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
-
-info.default_u_ja_ids = S{201, 202, 203, 205, 207}
-
+		info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
