@@ -146,19 +146,19 @@ back="Smertrios's Mantle"
 -- Default set for any weaponskill that isn't any more specifically defined
 
 	sets.precast.WS = {
-head="Rao Kabuto",
-neck="Fotia Gorget",
-ear1="Brutal Earring",
-ear2="Moonshade Earring",
-body=" Found. Breastplate",
-hands="Ryuo Tekko",
-ring1="Ifrit Ring",
-ring2="Ifrit Ring",
-back="Smertrios's Mantle",
-waist="Fotia Belt",
-legs= "Ryuo Hakama",
-feet= "Ryuo Sune-Ate"
-}
+		head={name="Rao Kabuto", augments={'STR+10','DEX+10','Attack+15',}},
+		neck="Fotia Gorget",
+		ear1="Brutal Earring",
+		ear2="Moonshade Earring",
+		body=" Found. Breastplate",
+		hands="Hizamaru Kote +1",
+		ring1="Ifrit Ring",
+		ring2="Ifrit Ring",
+		back="Smertrios's Mantle",
+		waist="Fotia Belt",
+		legs={name="Rao Haidate", augments={'STR+10','DEX+10','Attack+15',}},
+		feet={name="Ryuo Sune-Ate", augments={'STR+10','DEX+10','Accuracy+15'}}
+		}
 
 sets.precast.WS.Mid = set_combine(sets.precast.WS, {
 })
