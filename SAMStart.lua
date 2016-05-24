@@ -56,11 +56,11 @@ function user_setup()
 -- Options: Override default values
 
 	state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    	state.HybridMode:options('Normal', 'PDT', 'Killer')
+    	state.HybridMode:options('Normal', 'PDT', 'Reraise')
     	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     	state.IdleMode:options('Normal')
     	state.RestingMode:options('Normal')
-    	state.PhysicalDefenseMode:options('PDT', 'Killer')
+    	state.PhysicalDefenseMode:options('PDT', 'Reraise')
     	state.MagicalDefenseMode:options('MDT')
     
 -- Additional local binds
@@ -95,81 +95,57 @@ function init_gear_sets()
 --------------------------------------
 -- Start defining the sets
 --------------------------------------
-Acro = {}
 
-Acro.Hands = {}
+	Acro = {}
 
-Acro.Feet = {}
+	Acro.Hands = {}
+	Acro.Feet = {}
     
-Acro.Hands.Haste = {}
+		Acro.Hands.Haste = {}
+		Acro.Hands.STP = {}
 
-Acro.Hands.STP = {}
+		Acro.Feet.STP = {}
+		Acro.Feet.WSD = {} 
 
-Acro.Feet.STP = {}
-
-Acro.Feet.WSD = {} 
-
-    
 -- Precast Sets
-
 -- Precast sets to enhance jas
 
-sets.precast.JA.Meditate = {
+	sets.precast.JA.Meditate = {
 head="Wakido Kabuto +1",
 hands="Sakonji Kote",
 back="Smertrios's Mantle"
 }
     
-sets.precast.JA.Seigan = {head="Unkai Kabuto +1"
-}
+	sets.precast.JA.Seigan = {head="Unkai Kabuto +1"}
     
-sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"
-}
+	sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"}
     
-sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate +1"
-}
+	sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate +1"}
     
-sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote"
-}
+	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote"}
 
 -- Waltz set (chr and vit)
     
-sets.precast.Waltz = {
-}
+	sets.precast.Waltz = {}
 
---sets.Organizer = {}
-    	
+	--sets.Organizer = {}
+	
 -- Don't need any special gear for Healing Waltz.
 
-sets.precast.Waltz['Healing Waltz'] = {
-}
-    
-sets.CapacityMantle  = {back="Mecistopins Mantle" 
-}
+	sets.precast.Waltz['Healing Waltz'] = {}
+	sets.CapacityMantle  = {back="Mecistopins Mantle"}
+	--sets.Berserker       = {neck="Berserker's Torque"}
+	--sets.WSDayBonus      = {head="Gavialis Helm"}
 
---sets.Berserker       = {neck="Berserker's Torque" 
-}
-
---sets.WSDayBonus      = {head="Gavialis Helm" 
-}
-
-sets.LugraMoonshade  = {ear1="Brutal Earring", ear2="Moonshade Earring"
-}
-
-sets.BrutalMoonshade = {ear1="Brutal Earring", ear2="Moonshade Earring" 
-}
-
-sets.LugraFlame      = {ear1="Brutal Earring", ear2="Moonshade Earring"
-}
-
-sets.FlameFlame      = {ear1="Brutal Earring", ear2="Moonshade Earring"
-}
+	sets.LugraMoonshade  = {ear1="Brutal Earring", ear2="Moonshade Earring"}
+	sets.BrutalMoonshade = {ear1="Brutal Earring", ear2="Moonshade Earring"}
+	sets.LugraFlame      = {ear1="Brutal Earring", ear2="Moonshade Earring"}
+	sets.FlameFlame      = {ear1="Brutal Earring", ear2="Moonshade Earring"}
        
 -- Weaponskill sets
-    
 -- Default set for any weaponskill that isn't any more specifically defined
 
-sets.precast.WS = {
+	sets.precast.WS = {
 head="Rao Kabuto",
 neck="Fotia Gorget",
 ear1="Brutal Earring",
@@ -180,7 +156,7 @@ ring1="Ifrit Ring",
 ring2="Ifrit Ring",
 back="Smertrios's Mantle",
 waist="Fotia Belt",
-legs= "Ryuo Hakama",--Export the augments for Valor Hose, might be better overall.
+legs= "Ryuo Hakama",
 feet= "Ryuo Sune-Ate"
 }
 
