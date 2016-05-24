@@ -18,52 +18,35 @@ Enter file con------------------------------------------------------------------
 -- Koga AM3 = sets.engaged.Kogarasumaru.AM3
 -- Amano AM = sets.engaged.Amanomurakumo.AM
 -- Using Namas Arrow while using Amano will cancel STPAM set
-
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
-
 -- Initialization function for this job file.
 function get_sets()
-	
 -- Load and initialize the include file.
-
-mote_include_version = 2
-
-include('Mote-Include.lua')
-
-include('organizer-lib')
-
+	mote_include_version = 2
+	include('Mote-Include.lua')
+	include('organizer-lib')
 end
 
 -- Setup vars that are user-independent.
 
 function job_setup()
-
-get_combat_form()
-
---get_combat_weapon()
-
-update_melee_groups()
-    
-state.CapacityMode = M(false, 'Capacity Point Mantle')
-
-state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
+	get_combat_form()
+	--get_combat_weapon()
+	update_melee_groups()
+    		
+    		state.CapacityMode = M(false, 'Capacity Point Mantle')
+		state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
 
 -- list of weaponskills that make better use of otomi helm in low acc situations
 
-wsList = S{'Tachi: Fudo', 'Tachi: Shoha'}
+	wsList = S{'Tachi: Fudo', 'Tachi: Shoha'}
+    	gear.RAarrow = {name="Eminent Arrow"}
+    	LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow'}
     
-gear.RAarrow = {name="Eminent Arrow"}
-    
-LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow'}
-    
-state.Buff.Sekkanoki = buffactive.sekkanoki or false
-    
-state.Buff.Sengikori = buffactive.sengikori or false
-    
-state.Buff['Third Eye'] = buffactive['Third Eye'] or false
-    
-state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
-
+    		state.Buff.Sekkanoki = buffactive.sekkanoki or false
+    		state.Buff.Sengikori = buffactive.sengikori or false
+    		state.Buff['Third Eye'] = buffactive['Third Eye'] or false
+    		state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
 end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
@@ -71,27 +54,20 @@ end
 function user_setup()
 
 -- Options: Override default values
-state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    
-state.HybridMode:options('Normal', 'PDT', 'Killer')
-    
-state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-    
-state.IdleMode:options('Normal')
-    
-state.RestingMode:options('Normal')
-    
-state.PhysicalDefenseMode:options('PDT', 'Killer')
-    
-state.MagicalDefenseMode:options('MDT')
+
+	state.OffenseMode:options('Normal', 'Mid', 'Acc')
+    	state.HybridMode:options('Normal', 'PDT', 'Killer')
+    	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+    	state.IdleMode:options('Normal')
+    	state.RestingMode:options('Normal')
+    	state.PhysicalDefenseMode:options('PDT', 'Killer')
+    	state.MagicalDefenseMode:options('MDT')
     
 -- Additional local binds
-    
-send_command('bind ^[ input /lockstyle on')
-    
-send_command('bind ![ input /lockstyle off')
-    
-send_command('bind != gs c toggle CapacityMode')
+    	
+    	send_command('bind ^[ input /lockstyle on')
+    	send_command('bind ![ input /lockstyle off')
+    	send_command('bind != gs c toggle CapacityMode')
     
 end
 
@@ -99,28 +75,19 @@ end
 
 function file_unload()
     
-send_command('unbind ^[')
-    
-send_command('unbind !=')
-    
-send_command('unbind ![')
+	send_command('unbind ^[')
+    	send_command('unbind !=')
+    	send_command('unbind ![')
 
 end
 
 --[[
-
 -- SC's
-
 Rana > Shoha > Fudo > Kasha > Shoha > Fudo - light
-
 Rana > Shoha > Fudo > Kasha > Rana > Fudo - dark
-
 Kasha > Shoha > Fudo
-
 Fudo > Kasha > Shoha > fudo
-
 Shoha > Fudo > Kasha > Shoha > Fudo
-
 --]]
 
 function init_gear_sets()
