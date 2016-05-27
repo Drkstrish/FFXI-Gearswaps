@@ -241,220 +241,226 @@
        -- Start defining the sets
        --------------------------------------
     
-			sets.buff['Burst Affinity'] = {ammo="Pemphredo Tathlum",
-		   body="Amalric Doublet",
-		   hands="Amalric Gages",
-		   legs="Psycloth Lappas",
-		   feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc. +20 "Mag.Atk.Bns."+20'}},
-		   left_ring="Mujin Band",
-		   right_ring="Locus Ring",}
+		sets.buff['Burst Affinity'] = {ammo="Pemphredo Tathlum",
+	body="Amalric Doublet",
+	hands="Amalric Gages",
+	legs="Amalric Slops",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc. +20 "Mag.Atk.Bns."+20'}},
+	left_ring="Mujin Band",
+	right_ring="Locus Ring"}
 		   
-			sets.buff['Chain Affinity'] = {}
-			sets.buff.Convergence = {}
-			sets.buff.Diffusion = {}
-			sets.buff.Enchainment = {}
-			sets.buff.Efflux = {}
+		sets.buff['Chain Affinity'] = {}
+		sets.buff.Convergence = {}
+		sets.buff.Diffusion = {Feet="Luhlaza Charuqs +1"}
+		sets.buff.Enchainment = {}
+		sets.buff.Efflux = {}
     
-           -- Capacity Set
-			sets.CapacityMantle = {back="Mecistopins Mantle"}
+    -- Capacity Set
+		sets.CapacityMantle = {back="Mecistopins Mantle"}
     
-           -- Learning Set
-			sets.LearnMode = {hands="Rawhide Gloves",back="Cornflower Cape"}
+    -- Learning Set
+	
+		sets.LearnMode = {hands="Rawhide Gloves",back="Cornflower Cape"}
     
-           -- Precast Sets
+	-- Precast Sets
       
-           -- Precast sets to enhance JAs
-			sets.precast.JA['Azure Lore'] = {}
-			sets.precast.JA['Box Step']     = set_combine(sets.engaged.Acc, {})
-			sets.precast.JA['Stutter Step'] = set_combine(sets.engaged.Acc, {})
-			sets.precast.JA['Violent Flourish'] = set_combine(sets.engaged.Acc, {})
+    -- Precast sets to enhance JAs
+	
+		sets.precast.JA['Azure Lore'] = {}
+		sets.precast.JA['Box Step']     = set_combine(sets.engaged.Acc, {})
+		sets.precast.JA['Stutter Step'] = set_combine(sets.engaged.Acc, {})
+		sets.precast.JA['Violent Flourish'] = set_combine(sets.engaged.Acc, {})
     
     
-           -- Waltz set (chr and vit)
-			sets.precast.Waltz = {}
+    -- Waltz set (chr and vit)
+
+		sets.precast.Waltz = {}
           
-       -- Don't need any special gear for Healing Waltz.
-			sets.precast.Waltz['Healing Waltz'] = {}
+    -- Don't need any special gear for Healing Waltz.
+	
+		sets.precast.Waltz['Healing Waltz'] = {}
      
-       -- Fast cast sets for spells - 44% FC currently
+    -- Fast cast sets for spells 
       
-			sets.precast.FC = {head={ name="Herculean Helm", augments={'Accuracy+30','Crit.hit rate+2','AGI+8','Attack+14',}},
-		neck="Voltsurge Torque",
-		hands={ name="Leyline Gloves", augments={'Accuracy+14','Mag. Acc.+13','"Mag.Atk.Bns."+13','"Fast Cast"+2',}},
-		legs="Psycloth Lappas",
-		left_ear="Loquac. Earring",
-		left_ring="Rahab Ring",
-		feet="Carmine Greaves"}
+		sets.precast.FC = {head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	neck="Orunmila's Torque",
+	body="Luhlaza Jubbah +1",
+	hands={ name="Leyline Gloves", augments={'Accuracy+14','Mag. Acc.+13','"Mag.Atk.Bns."+13','"Fast Cast"+2',}},
+	legs="Psycloth Lappas",
+	left_ear="Loquac. Earring",
+	left_ring="Rahab Ring",
+	right_ring="Lebeche Ring",
+	back="Perimede Cape",
+	feet="Carmine Greaves"}
                   
-			sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {})
+		sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {})
     
           
     -- Weaponskill sets
-           -- Default set for any weaponskill that isn't any more specifically defined
+    -- Default set for any weaponskill that isn't any more specifically defined
     
-			sets.precast.WS = {ammo="Ginsen",
-			head="Dampening Tam",
-			neck="Fotia Gorget",
-			ear1="Moonshade Earring",
-			ear2="Digni. Earring",
-			body="Herculean Vest",
-			hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
-			ring1="Epona's Ring",
-			ring2="Petrov Ring",
-			back="Rosmerta's Cape",
-			waist="Fotia Belt",
-			legs="Samnuha Tights",
-			feet="Thereoid Greaves",}
+		sets.precast.WS = {ammo="Ginsen",
+	head="Adhemar Bonnet",
+	neck="Fotia Gorget",
+	ear1="Moonshade Earring",
+	ear2="Digni. Earring",
+	body="Herculean Vest",
+	hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
+	ring1="Epona's Ring",
+	ring2="Petrov Ring",
+	back="Rosmerta's Cape",
+	waist="Fotia Belt",
+	legs="Samnuha Tights",
+	feet="Thereoid Greaves",}
       
-      sets.precast.WS.acc = {}
+		sets.precast.WS.acc = {}
     
-           -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 
-          sets.precast.WS['Requiescat'] = {ammo="Ginsen",
-  head="Dampening Tam",neck="Fotia Gorget",ear1="Moonshade earring",ear2="Brutal Earring",
-  body="Herculean Vest",
-  hands= { name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Epona's ring",ring2="Petrov ring",back="Vespid Mantle",waist="Fotia Belt",
-  legs={ name="Herculean Trousers", augments={'Weapon skill damage +4%','AGI+6','Accuracy+10','Attack+8',}},
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+        sets.precast.WS['Requiescat'] = {ammo="Ginsen",
+	head="Dampening Tam",
+	neck="Fotia Gorget",
+	ear1="Moonshade earring",
+	ear2="Brutal Earring",
+	body="Herculean Vest",
+	hands= { name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+	ring1="Epona's ring",
+	ring2="Petrov ring",
+	back="Vespid Mantle",
+	waist="Fotia Belt",
+	legs="Carmine Cuisses +1",
+	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
 
-          sets.precast.WS['Realmrazer'] = {ammo="Ginsen",
-  head="Dampening Tam",neck="Fotia Gorget",ear1="Moonshade earring",ear2="Brutal Earring",
-  body="Herculean Vest",
-  hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Epona's ring",ring2="Petrov ring",back="Vespid Mantle",waist="Fotia Belt",
-  legs={ name="Herculean Trousers", augments={'Weapon skill damage +4%','AGI+6','Accuracy+10','Attack+8',}},
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+        sets.precast.WS['Realmrazer'] = sets.precast.WS['Requiescat']
 
-          sets.precast.WS['Circle Blade'] = {ammo="Ginsen",
-  head={ name="Herculean Helm", augments={'Accuracy+30','Crit.hit rate+2','AGI+8','Attack+14',}},
-  neck="Fotia Gorget",ear1="Moonshade earring",ear2="Brutal Earring",
-  body="Despair Mail",
-  hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Apate ring",ring2="Petrov ring",back="Vespid Mantle",waist="Fotia Belt",legs="Samnuha Tights",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+        sets.precast.WS['Circle Blade'] = {ammo="Ginsen",
+	head="Adhemar Bonnet",
+	neck="Fotia Gorget",
+	ear1="Moonshade earring",
+	ear2="Brutal Earring",
+	body="Despair Mail",
+	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+	ring1="Apate ring",
+	ring2="Petrov ring",
+	back="Vespid Mantle",
+	waist="Fotia Belt",
+	legs="Samnuha Tights",
+	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
          
-    sets.precast.WS['Vorpal Blade'] = {ammo="Ginsen",
-  head={ name="Herculean Helm", augments={'Accuracy+30','Crit.hit rate+2','AGI+8','Attack+14',}},
-  neck="Fotia Gorget",ear1="Moonshade earring",ear2="Brutal Earring",
-  body="Herculean Vest",
-  hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
-  ring1="Apate ring",ring2="Petrov ring",back="Rosmerta's Cape",waist="Fotia Belt",
-  legs="Samnuha Tights",feet="Thereoid Greaves"}
+		sets.precast.WS['Vorpal Blade'] = {ammo="Ginsen",
+	head="Adhemar Bonnet",
+	neck="Fotia Gorget",
+	ear1="Moonshade earring",
+	ear2="Brutal Earring",
+	body="Herculean Vest",
+	hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
+	ring1="Apate ring",
+	ring2="Petrov ring",
+	back="Rosmerta's Cape",
+	waist="Fotia Belt",
+	legs="Samnuha Tights",
+	feet="Thereoid Greaves"}
          
-    sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
-  head={ name="Herculean Helm", augments={'Accuracy+30','Crit.hit rate+2','AGI+8','Attack+14',}},
-  neck="Fotia Gorget",ear1="Moonshade earring",ear2="Brutal Earring",
-  body="Herculean Vest",
-  hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
-  ring1="Apate ring",
-  ring2="Petrov ring",
-  back="Rosmerta's Cape",
-  waist="Fotia Belt",
-  legs="Samnuha Tights",
-  feet="Thereoid Greaves"}
+		sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
+	head="Adhemar Bonnet",
+	neck="Fotia Gorget",
+	ear1="Moonshade earring",
+	ear2="Brutal Earring",
+	body="Herculean Vest",
+	hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
+	ring1="Apate ring",
+	ring2="Petrov ring",
+	back="Rosmerta's Cape",
+	waist="Fotia Belt",
+	legs="Samnuha Tights",
+	feet="Thereoid Greaves"}
          
-    sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Fotia Gorget",ear1="Moonshade earring",ear2="Friomisi Earring",body="Amalric Doublet",
-  hands="Amalric Gages",ring1="Vertigo Ring",ring2="Apate Ring",back="Argochampsa Mantle",
-  waist="Eschan Stone",legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+		sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo Tathlum",
+	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	neck="Fotia Gorget",
+	ear1="Moonshade earring",
+	ear2="Friomisi Earring",
+	body="Amalric Doublet",
+	hands="Amalric Gages",
+	ring1="Vertigo Ring",
+	ring2="Apate Ring",
+	back="Argochampsa Mantle",
+	waist="Eschan Stone",
+	legs="Amalric Slops",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
          
     sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Sanguine Blade'], {})
       
       
-           -- Midcast Sets
-           sets.midcast.FastRecast = {head={ name="Herculean Helm", augments={'Accuracy+30','Crit.hit rate+2','AGI+8','Attack+14',}},
-  neck="Voltsurge Torque",
-  body="Taeon Tabard", 
-  hands={ name="Leyline Gloves", augments={'Accuracy+14','Mag. Acc.+13','"Mag.Atk.Bns."+13','"Fast Cast"+2',}}, 
-  legs="Psycloth Lappas",  
-  left_ear="Loquac. Earring",
-  left_ring="Rahab Ring",
-  feet="Carmine Greaves"}
-          
-           sets.midcast['Blue Magic'] = {}
+    -- Midcast Sets
+		   
+        sets.midcast.FastRecast = sets.precast.FC
+	    sets.midcast['Blue Magic'] = {}
       
-           -- Physical Spells --
+    -- Physical Spells --
           
-           sets.midcast['Blue Magic'].Physical = { ammo="Ginsen",
-  head="Dampening Tam",
-  neck="Fotia Gorget",
-  ear1="Lempo earring",
-  ear2="Digni. Earring",
-  body="Herculean Vest",
-  hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Epona's Ring",
-  ring2="Petrov Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Samnuha Tights",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+        sets.midcast['Blue Magic'].Physical = { ammo="Ginsen",
+	head="Dampening Tam",
+	neck="Fotia Gorget",
+	ear1="Lempo earring",
+	ear2="Digni. Earring",
+	body="Herculean Vest",
+	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+	ring1="Epona's Ring",
+	ring2="Petrov Ring",
+	back="Cornflower Cape",
+	waist="Eschan Stone",
+	legs="Samnuha Tights",
+	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
 
 
-           sets.midcast['Blue Magic'].PhysicalAcc = { ammo="Ginsen",
+        sets.midcast['Blue Magic'].PhysicalAcc = { ammo="Ginsen",
     head="Dampening Tam",
-  neck="Sanctity necklace",
-  ear1="Lempo earring",
-  ear2="Digni. Earring",
-  body="Herculean Vest",
-  hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Epona's Ring",
-  ring2="Petrov Ring",
-  back="Cornflower Cape",
-  waist="Olseni Belt",
-  legs="Carmine Cuisses +1",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+	neck="Sanctity necklace",
+	ear1="Lempo earring",
+	ear2="Digni. Earring",
+	body="Herculean Vest",
+	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+	ring1="Epona's Ring",
+	ring2="Petrov Ring",
+	back="Cornflower Cape",
+	waist="Olseni Belt",
+	legs="Carmine Cuisses +1",
+	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
 
-   sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical, {})
-    
-           sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {})
-    
-           sets.midcast['Blue Magic'].PhysicalVit = set_combine(sets.midcast['Blue Magic'].Physical, {})
-    
-           sets.midcast['Blue Magic'].PhysicalAgi = set_combine(sets.midcast['Blue Magic'].Physical, {})
-    
-           sets.midcast['Blue Magic'].PhysicalInt = set_combine(sets.midcast['Blue Magic'].Physical, {})
-    
-           sets.midcast['Blue Magic'].PhysicalMnd = set_combine(sets.midcast['Blue Magic'].Physical, {})
-    
-           sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {})
-    
-           sets.midcast['Blue Magic'].PhysicalHP = set_combine(sets.midcast['Blue Magic'].Physical)
+		sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical, {})
+        sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {})
+        sets.midcast['Blue Magic'].PhysicalVit = set_combine(sets.midcast['Blue Magic'].Physical, {})
+        sets.midcast['Blue Magic'].PhysicalAgi = set_combine(sets.midcast['Blue Magic'].Physical, {})
+        sets.midcast['Blue Magic'].PhysicalInt = set_combine(sets.midcast['Blue Magic'].Physical, {})
+        sets.midcast['Blue Magic'].PhysicalMnd = set_combine(sets.midcast['Blue Magic'].Physical, {})
+        sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {})
+        sets.midcast['Blue Magic'].PhysicalHP = set_combine(sets.midcast['Blue Magic'].Physical)
     
     
-         -- Magical Spells --
+    -- Magical Spells --
       
-           sets.midcast['Blue Magic'].Magical = { Ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Sanctity Necklace",
-  ear1="Friomisi Earring",
-  ear2="Dignitary's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Rahab Ring",
-  ring2="Vertigo Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
-    
-           sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {})
-          
-           sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {})
-    
-           sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical)
-    
-           sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {})
-    
-           sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical)
-    
-           sets.midcast['Blue Magic'].MagicalStr = set_combine(sets.midcast['Blue Magic'].Magical)
-    
-           sets.midcast['Blue Magic'].MagicalAgi = set_combine(sets.midcast['Blue Magic'].Magical)
-    
-           sets.midcast['Blue Magic'].MagicAccuracy = { Ammo="Pemphredo Tathlum",
+        sets.midcast['Blue Magic'].Magical = { Ammo="Pemphredo Tathlum",
+	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	neck="Sanctity Necklace",
+	ear1="Friomisi Earring",
+	ear2="Dignitary's Earring",
+	body="Amalric Doublet",
+	hands="Amalric Gages",
+	ring1="Rahab Ring",
+	ring2="Vertigo Ring",
+	back="Cornflower Cape",
+	waist="Eschan Stone",
+	legs="Amalric Slops",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+        sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {})
+        sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {})
+        sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical)
+        sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {})
+        sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical)
+        sets.midcast['Blue Magic'].MagicalStr = set_combine(sets.midcast['Blue Magic'].Magical)
+        sets.midcast['Blue Magic'].MagicalAgi = set_combine(sets.midcast['Blue Magic'].Magical)
+        sets.midcast['Blue Magic'].MagicAccuracy = { Ammo="Pemphredo Tathlum",
   head="Dampening Tam",
   neck="Sanctity Necklace",
   ear1="Gwati Earring",
@@ -467,227 +473,214 @@
   waist="Luminary Sash",
   legs="Psycloth Lappas",
   feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
-                  
-           -- Breath Spells --
+                
+    -- Breath Spells --
     
-           sets.midcast['Blue Magic'].Breath = {}
+		sets.midcast['Blue Magic'].Breath = {}
     
-           -- Other Types --
+    -- Other Types --
           
-           sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {})
-                  
-           sets.midcast['Blue Magic']['White Wind'] = {}
-    
-           sets.midcast['Blue Magic']['Subduction'] = { Ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Sanctity Necklace",
-  ear1="Friomisi Earring",
-  ear2="Dignitary's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Rahab Ring",
-  ring2="Vertigo Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
-    
-           sets.midcast['Blue Magic']['Searing Tempest'] = { Ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Sanctity Necklace",
-  ear1="Friomisi Earring",
-  ear2="Dignitary's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Rahab Ring",
-  ring2="Vertigo Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
-    
-           sets.midcast['Blue Magic']['Spectral Floe'] = { Ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Sanctity Necklace",
-  ear1="Friomisi Earring",
-  ear2="Dignitary's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Rahab Ring",
-  ring2="Vertigo Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
-    
-           sets.midcast['Blue Magic']['Entomb'] = { Ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Sanctity Necklace",
-  ear1="Friomisi Earring",
-  ear2="Dignitary's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Rahab Ring",
-  ring2="Vertigo Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+		sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {})
+        sets.midcast['Blue Magic']['White Wind'] = {}
+		sets.midcast['Blue Magic']['Subduction'] = { Ammo="Pemphredo Tathlum",
+	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	neck="Sanctity Necklace",
+	ear1="Friomisi Earring",
+	ear2="Dignitary's Earring",
+	body="Amalric Doublet",
+	hands="Amalric Gages",
+	ring1="Rahab Ring",
+	ring2="Vertigo Ring",
+	back="Cornflower Cape",
+	waist="Eschan Stone",
+	legs="Amalric Slops",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+        sets.midcast['Blue Magic']['Searing Tempest'] = { Ammo="Pemphredo Tathlum",
+	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	neck="Sanctity Necklace",
+	ear1="Friomisi Earring",
+	ear2="Dignitary's Earring",
+	body="Amalric Doublet",
+	hands="Amalric Gages",
+	ring1="Rahab Ring",
+	ring2="Vertigo Ring",
+	back="Cornflower Cape",
+	waist="Eschan Stone",
+	legs="Amalric Slops",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+        sets.midcast['Blue Magic']['Spectral Floe'] = { Ammo="Pemphredo Tathlum",
+	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	neck="Sanctity Necklace",
+	ear1="Friomisi Earring",
+	ear2="Dignitary's Earring",
+	body="Amalric Doublet",
+	hands="Amalric Gages",
+	ring1="Rahab Ring",
+	ring2="Vertigo Ring",
+	back="Cornflower Cape",
+	waist="Eschan Stone",
+	legs="Amalric Slops",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+	   sets.midcast['Blue Magic']['Entomb'] = { Ammo="Pemphredo Tathlum",
+    head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+    neck="Sanctity Necklace",
+    ear1="Friomisi Earring",
+    ear2="Dignitary's Earring",
+    body="Amalric Doublet",
+    hands="Amalric Gages",
+    ring1="Rahab Ring",
+    ring2="Vertigo Ring",
+    back="Cornflower Cape",
+    waist="Eschan Stone",
+    legs="Amalric Slops",
+    feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+        sets.midcast['Blue Magic']['Tenebral Crush'] = { Ammo="Pemphredo Tathlum",
+    head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+    neck="Sanctity Necklace",
+    ear1="Friomisi Earring",
+    ear2="Dignitary's Earring",
+    body="Amalric Doublet",
+    hands="Amalric Gages",
+    ring1="Rahab Ring",
+    ring2="Vertigo Ring",
+    back="Cornflower Cape",
+    waist="Eschan Stone",
+    legs="Amalric Slops",
+    feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+        sets.midcast['Blue Magic']['Palling Salvo'] = { Ammo="Pemphredo Tathlum",
+    head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+    neck="Sanctity Necklace",
+    ear1="Friomisi Earring",
+    ear2="Dignitary's Earring",
+    body="Amalric Doublet",
+    hands="Amalric Gages",
+    ring1="Rahab Ring",
+    ring2="Vertigo Ring",
+    back="Cornflower Cape",
+    waist="Eschan Stone",
+    legs="Amalric Slops",
+    feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+        sets.midcast['Blue Magic']['Magic Hammer'] = { Ammo="Pemphredo Tathlum",
+    head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+    neck="Sanctity Necklace",
+    ear1="Friomisi Earring",
+    ear2="Dignitary's Earring",
+    body="Amalric Doublet",
+    hands="Amalric Gages",
+    ring1="Rahab Ring",
+    ring2="Vertigo Ring",
+    back="Cornflower Cape",
+    waist="Eschan Stone",
+    legs="Amalric Slops",
+    feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+        sets.midcast['Blue Magic'].Healing = { Ammo="Pemphredo Tathlum",
+    head="Dampening Tam",
+    neck="Sanctity Necklace",
+    ear1="Infused Earring",
+    ear2="Mendicant's Earring",
+    body="Amalric Doublet",
+    hands="Amalric Gages",
+    ring1="Etana Ring",
+    ring2="Vertigo Ring",
+    back="Solemnity Cape",
+    waist="Luminary Sash",
+    legs="Psycloth Lappas",
+    feet="Medium's Sabots"}
+        sets.midcast['Blue Magic'].SkillBasedBuff = {}
+        sets.midcast['Blue Magic'].Buff = {}
+      
+        sets.midcast.Protect = {}
+        sets.midcast.Protectra = {}
+        sets.midcast.Shell = {}
+        sets.midcast.Shellra = {}
+        sets.midcast.Stoneskin = {}
+        sets.midcast.Refresh = {}
+        sets.midcast['Blue Magic']['Battery Charge'] = {}
 
-         sets.midcast['Blue Magic']['Tenebral Crush'] = { Ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Sanctity Necklace",
-  ear1="Friomisi Earring",
-  ear2="Dignitary's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Rahab Ring",
-  ring2="Vertigo Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+    -- Sets to return to when not performing an action.
     
-           sets.midcast['Blue Magic']['Palling Salvo'] = { Ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Sanctity Necklace",
-  ear1="Friomisi Earring",
-  ear2="Dignitary's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Rahab Ring",
-  ring2="Vertigo Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
-
-         sets.midcast['Blue Magic']['Magic Hammer'] = { Ammo="Pemphredo Tathlum",
-  head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-  neck="Sanctity Necklace",
-  ear1="Friomisi Earring",
-  ear2="Dignitary's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Rahab Ring",
-  ring2="Vertigo Ring",
-  back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-  feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+    -- Gear for learning spells: +skill and AF hands.
+        sets.Learning = {hands="Rawhide Gloves",back="Cornflower Cape"}
+        sets.latent_refresh = {}
+    
+    -- Resting sets
+        sets.resting = {}
+      
+    -- Idle sets
+        sets.idle = { Ammo="Ginsen",
+    head="Rawhide Mask",
+    neck="Sanctity Necklace",
+    ear1="Infused Earring",
+    ear2="Dignitary's Earring",
+    body="Mekosuchinae Harness",
+    hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+    ring1="Warden's Ring",
+    ring2="Petrov Ring",
+    back="Grounded Mantle +1",
+    waist="Windbuffet Belt +1",
+    legs="Carmine Cuisses +1",
+    feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+    
+        sets.idle.PDT = { Ammo="Ginsen",
+    head="Rawhide Mask",
+    neck="Sanctity Necklace",
+    ear1="Infused Earring",
+    ear2="Dignitary's Earring",
+    body="Mekosuchinae Harness",
+    hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+    ring1="Warden's Ring",
+    ring2="Petrov Ring",
+    back="Grounded Mantle +1",
+    waist="Windbuffet Belt +1",
+    legs="Carmine Cuisses +1",
+    feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+    
+        sets.idle.MDT = { Ammo="Ginsen",
+    head="Rawhide Mask",
+    neck="Sanctity Necklace",
+    ear1="Infused Earring",
+    ear2="Dignitary's Earring",
+    body="Mekosuchinae Harness",
+    hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+    ring1="Warden's Ring",
+    ring2="Petrov Ring",
+    back="Grounded Mantle +1",
+    waist="Windbuffet Belt +1",
+    legs="Carmine Cuisses +1",
+    feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
                   
-           sets.midcast['Blue Magic'].Healing = { Ammo="Pemphredo Tathlum",
-  head="Dampening Tam",
-  neck="Sanctity Necklace",
-  ear1="Infused Earring",
-  ear2="Mendicant's Earring",
-  body="Amalric Doublet",
-  hands="Amalric Gages",
-  ring1="Etana Ring",
-  ring2="Vertigo Ring",
-  back="Solemnity Cape",
-  waist="Luminary Sash",
-  legs="Psycloth Lappas",
-  feet="Medium's Sabots"}
+        sets.idle.Town = { Ammo="Ginsen",
+    head="Dampening Tam",
+    neck="Clotharius Torque",
+    ear1="Bladeborn Earring",
+    ear2="Steelflash Earring",
+    body="Adhemar Jacket",
+    hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+    ring1="Epona's Ring",
+    ring2="Petrov Ring",
+    back="Grounded Mantle +1",
+    waist="Windbuffet Belt +1",
+    legs="Carmine Cuisses +1",
+    feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
     
-           sets.midcast['Blue Magic'].SkillBasedBuff = {}
+        sets.idle.Learning = set_combine(sets.idle, sets.Learning)
     
-           sets.midcast['Blue Magic'].Buff = {}
+    -- Defense sets
+  
+		sets.defense.PDT = {}
+    
+        sets.defense.MDT = {}
+    
+        sets.Kiting = {legs="Carmine Cuisses +1"}
+    
+    -- Engaged sets
+    
+    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+    -- sets if more refined versions aren't defined.
+    -- If you create a set with both offense and defense modes, the offense mode should be first.
+    -- EG: sets.engaged.Dagger.Accuracy.Evasion
       
-           sets.midcast.Protect = {}
-           sets.midcast.Protectra = {}
-           sets.midcast.Shell = {}
-           sets.midcast.Shellra = {}
-           sets.midcast.Stoneskin = {}
-           sets.midcast.Refresh = {}
-           sets.midcast['Blue Magic']['Battery Charge'] = {}
-
-      -- Sets to return to when not performing an action.
-    
-       -- Gear for learning spells: +skill and AF hands.
-           sets.Learning = {hands="Rawhide Gloves",back="Cornflower Cape"}
-    
-    
-           sets.latent_refresh = {}
-    
-       -- Resting sets
-           sets.resting = {}
-      
-       -- Idle sets
-           sets.idle = { Ammo="Ginsen",
-  head="Rawhide Mask",
-  neck="Sanctity Necklace",
-  ear1="Infused Earring",
-  ear2="Dignitary's Earring",
-  body="Mekosuchinae Harness",
-  hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Warden's Ring",
-  ring2="Pterov Ring",
-  back="Grounded Mantle +1",
-  waist="Windbuffet Belt +1",
-  legs="Carmine Cuisses +1",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
-    
-           sets.idle.PDT = { Ammo="Ginsen",
-  head="Rawhide Mask",
-  neck="Sanctity Necklace",
-  ear1="Infused Earring",
-  ear2="Dignitary's Earring",
-  body="Mekosuchinae Harness",
-  hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Warden's Ring",
-  ring2="Pterov Ring",
-  back="Grounded Mantle +1",
-  waist="Windbuffet Belt +1",
-  legs="Carmine Cuisses +1",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
-    
-           sets.idle.MDT = { Ammo="Ginsen",
-  head="Rawhide Mask",
-  neck="Sanctity Necklace",
-  ear1="Infused Earring",
-  ear2="Dignitary's Earring",
-  body="Mekosuchinae Harness",
-  hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Warden's Ring",
-  ring2="Pterov Ring",
-  back="Grounded Mantle +1",
-  waist="Windbuffet Belt +1",
-  legs="Carmine Cuisses +1",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
-                  
-           sets.idle.Town = { Ammo="Ginsen",
-  head="Dampening Tam",
-  neck="Clotharius Torque",
-  ear1="Bladeborn Earring",
-  ear2="Steelflash Earring",
-  body="Adhemar Jacket",
-  hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-  ring1="Epona's Ring",
-  ring2="Petrov Ring",
-  back="Grounded Mantle +1",
-  waist="Windbuffet Belt +1",
-  legs="Carmine Cuisses +1",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
-    
-           sets.idle.Learning = set_combine(sets.idle, sets.Learning)
-    
-      
-       -- Defense sets
-           sets.defense.PDT = {}
-    
-           sets.defense.MDT = {}
-    
-           sets.Kiting = {legs="Carmine Cuisses +1"}
-    
-       -- Engaged sets
-    
-       -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-       -- sets if more refined versions aren't defined.
-       -- If you create a set with both offense and defense modes, the offense mode should be first.
-       -- EG: sets.engaged.Dagger.Accuracy.Evasion
-      
-       -- Normal melee group
+    -- Normal melee group
            
     sets.engaged = {}
            
@@ -705,9 +698,9 @@
   legs="Carmine Cuisses +1",
   feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
           
-           sets.engaged.Refresh = set_combine(sets.engaged.Acc, {Head="Rawhide Mask",body="Mekosuchinae Harness",legs="Rawhide Trousers"})
+        sets.engaged.Refresh = set_combine(sets.engaged.Acc, {Head="Rawhide Mask",body="Mekosuchinae Harness",legs="Rawhide Trousers"})
                   
-           sets.engaged.DW = { Ammo="Ginsen",
+        sets.engaged.DW = { Ammo="Ginsen",
   head="Dampening Tam",
   neck="Clotharius Torque",
   ear1="Bladeborn Earring",
@@ -723,7 +716,7 @@
 
  
 
-         sets.engaged.DW.iLvl = { Ammo="Ginsen",
+        sets.engaged.DW.iLvl = { Ammo="Ginsen",
   head="Dampening Tam",
   neck="Clotharius Torque",
   ear1="Bladeborn Earring",
@@ -734,29 +727,29 @@
   ring2="Petrov Ring",
   back="Grounded Mantle +1",
   waist="Windbuffet Belt +1",
-  legs="Samnuha Tights",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+    legs="Samnuha Tights",
+    feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
    
-           sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {})
-           sets.engaged.DW.Acc2 = set_combine(sets.engaged.DW.Acc, {})
+        sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {})
+        sets.engaged.DW.Acc2 = set_combine(sets.engaged.DW.Acc, {})
     
-           sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
-           sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
+        sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
+        sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
     
-           -- Haste Group
-           sets.engaged.DW.Haste = set_combine(sets.engaged.DW, {})
-           sets.engaged.DW.Acc.Haste = set_combine(sets.engaged.DW.Haste, {})
-           sets.engaged.DW.Acc2.Haste = set_combine(sets.engaged.DW.Acc.Haste, {})
+    -- Haste Group
+        sets.engaged.DW.Haste = set_combine(sets.engaged.DW, {})
+        sets.engaged.DW.Acc.Haste = set_combine(sets.engaged.DW.Haste, {})
+		sets.engaged.DW.Acc2.Haste = set_combine(sets.engaged.DW.Acc.Haste, {})
           
-           -- MaxHaste Group
-           sets.engaged.DW.MaxHaste = set_combine(sets.engaged.DW, {ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-           sets.engaged.DW.Acc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {})
-           sets.engaged.DW.Acc2.MaxHaste = set_combine(sets.engaged.DW.Acc.MaxHaste, {})
-          
-           sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
-           sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
+    -- MaxHaste Group
+        sets.engaged.DW.MaxHaste = set_combine(sets.engaged.DW, {ear1="Bladeborn Earring",ear2="Steelflash Earring"})
+        sets.engaged.DW.Acc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {})
+        sets.engaged.DW.Acc2.MaxHaste = set_combine(sets.engaged.DW.Acc.MaxHaste, {})
+         
+        sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
+        sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
     
-           sets.self_healing = {}
+        sets.self_healing = {}
    end
     
    -------------------------------------------------------------------------------------------------------------------
