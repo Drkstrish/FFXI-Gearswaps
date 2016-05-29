@@ -156,15 +156,15 @@ function init_gear_sets()
 	Despair = {}
 -- Path A. HP +50. VIT +10%. Cure Recieved. +5%. Path B. STR +12. VIT +7. Haste +2%. Path C. 10 Acc. (Pet Stuff).
 		Despair.Head = "Despair Helm" 
--- Path D. 15 STR. Enmity +7. STP +3.
+-- 21 STR. 21 DEX. Acc. +20. Atk. +20. Haste +8%. - Path D. 15 STR. Enmity +7. STP +3.
 		Despair.Body = "Despair Mail" 
--- Path D. 25 Atk. M. Eva +20. DA +3%.
+-- 30 STR. 29 DEX. Acc. +23. Haste +4% - Path D. 25 Atk. M. Eva +20. DA +3%.
 		Despair.Hands = "Despair Finger Gauntlets" 
--- Path D. R. Acc +25. R. Atk +20. Recycle +10.
+-- 15 STR. 34 DEX. Acc. +18. Atk. +18. Haste +5%. - Path D. R. Acc +25. R. Atk +20. Recycle +10.
 		Despair.Legs = "Despair Cuisses" 
--- Path D. 10 AGI. Eva. +20. SB +7.
+-- 34 STR. Atk. +23. Haste +6%. - Path D. 10 AGI. Eva. +20. SB +7.
 		Despair.Feet = "Despair	Greaves" 
--- Path D. 10 DEX.  7 STR. PDT -3%.
+-- 19 STR. 16 DEX. Acc. +17. Haste +4%. DA +2%. - Path D. 10 DEX.  7 STR. PDT -3%.
 	Naga = {}
 -- Path A. 10 STR +15 Acc. SB +7. Path B. HP +50. 10 VIT. Eva. +20. Path C. (Pet Stuff).
 		Naga.Head = "Naga Somen" 
