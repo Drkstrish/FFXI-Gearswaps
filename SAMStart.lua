@@ -120,7 +120,17 @@ function init_gear_sets()
 -- Start defining the sets
 --------------------------------------
 
-
+	Acro = {}
+	Despair = {}
+	Founders = {}
+	Hizamaru = {}
+	Kasuga = {}
+	Naga = {}
+	Rao = {}
+	Ryuo = {}
+	Sakonji = {}
+	Valorous = {}
+	Wakido = {}
 
 -- Precast Sets
 -- Precast sets to enhance jas
