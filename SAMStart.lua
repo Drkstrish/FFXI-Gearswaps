@@ -230,11 +230,18 @@ function init_gear_sets()
 		Sakonji.Feet = "Sakonji Sune-Ate +1" 
 -- 21 STR. 17 DEX. Atk. +23. Haste +3%. STP +8. Enhances Meikyo Shisui.
 	Kasuga = {}
-		Kasuga.Head = {}
-		Kasuga.Body = {}
-		Kasuga.Hands = {}
-		Kasuga.Legs = {}
-		Kasuga.Feet = {}
+--Set: Augments Zanshin.
+		Kasuga.Head = "Unkai Kabuto +1" 
+-- 24 STR. 24 DEX. Haste +7%. STP +10. Seigan Counter Rate +14.
+		Kasuga.Body = "Kasuga Domaru +1" 
+-- 28 STR. 24 DEX. G. Katana Skill +11. Haste +3%. STP +12. Zanshin +12.
+		Kasuga.Hands = "Unkai Kote +1" 
+-- 14 STR. 32 DEX. Acc. +23. R. Acc. +21. R. Atk. +21 Haste +4%. Enhances Sekkanoki.
+		Kasuga.Legs = "Kasuga Haidate +1" 
+-- 41 STR. 9 DEX. Haste +5%. STP +9. Hasso Haste +3%. 
+		Kasuga.Feet = "Kasuga Sune-Ate +1" 
+-- 19 STR. 19 DEX. Acc. +21. Atk. +21. Haste +3%. Conserve TP +10. Sengikori +11.
+
 -- Precast Sets
 -- Precast sets to enhance jas
 
