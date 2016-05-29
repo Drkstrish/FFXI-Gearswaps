@@ -161,11 +161,16 @@ function init_gear_sets()
 		Rao.Feet = "Rao Sune-Ate" -- Path D. HP +50.Crit. +3. DA +2%.
 	Ryuo = {}
 -- Path A. 10 STR. 10 DEX Acc. +15. Path B. HP +50. Acc +15. Atk. +15. Path C. HP. +50. STP. +4. SB. +7.
-		Ryuo.Head = "Ryuo Somen" -- Path D. Ninjutsu Skill +15. M. Acc. +20. M. Atk. +20.
-		Ryuo.Body = "Ryuo Domaru" -- Path D. HP +50. STP. +5. DA +2%.
-		Ryuo.Hands = "Ryuo Tekko" -- Path D. 10 DEX. Acc. +20. DA. +3%.
-		Ryuo.Legs = "Ryuo Hakama" -- Path D. Acc. +20. STP. +4. PDT -3%.
-		Ryuo.Feet = "Ryuo Sune-Ate" -- Path D. 10 STR. Atk. +20. Crit +3%.
+		Ryuo.Head = "Ryuo Somen" 
+-- 21 STR. 17 DEX. Acc. +25. R. Acc +25. Haste +7%. Enmity -5. STP. +6. - Path D. Ninjutsu Skill +15. M. Acc. +20. M. Atk. +20.
+		Ryuo.Body = "Ryuo Domaru" 
+-- 28 STR. 24 DEX. Acc. +27. Atk. +27. Haste +3%. Crit +4%. PDT -4%. - Path D. HP +50. STP. +5. DA +2%.
+		Ryuo.Hands = "Ryuo Tekko" 
+-- 12 STR. 38 DEX. Acc. +23. R. Acc. +23. Haste +4%. Crit +4%. Crit. Dmg. +4%. - Path D. 10 DEX. Acc. +20. DA. +3%.
+		Ryuo.Legs = "Ryuo Hakama" 
+-- 29 STR. Atk. +23. R. Atk +23. Haste +5%. DA +3%. STP. +7. SC Dmg. +10%. - Path D. Acc. +20. STP. +4. PDT -3%.
+		Ryuo.Feet = "Ryuo Sune-Ate" 
+-- 26 STR. 19 Dex. Atk. +22. R. Atk. +22. Haste +3%. Zanshin +4. Zanshin: OAT +10%. - Path D. 10 STR. Atk. +20. Crit +3%.
 	Valorous = {}
 		Valorous.Head = {}
 		Valorous.Body = {}
