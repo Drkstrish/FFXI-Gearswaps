@@ -153,11 +153,12 @@ function init_gear_sets()
 		Naga.Legs = "Naga Hakama" -- Path D. Atk +20. R. Atk +25. Crit +4%.
 		Naga.Feet = "Naga Kyahan" -- Path D. (Pet Stuff)
 	Rao = {}
-		Rao.Head = {}
-		Rao.Body = {}
-		Rao.Hands = {}
-		Rao.Legs = {}
-		Rao.Feet = {}	
+-- Path A. Acc. +10 Atk. +10 Eva. +15. Path B. 10 STR. 10 DEX. Atk. +15. Path C. (Pet Stuff).
+		Rao.Head = "Rao Kabuto" -- Path D. 10 VIT. Atk. +20. Counter +3
+		Rao.Body = "Rao Togi" -- Path D. Atk +15. SB +7. PDT -3%.
+		Rao.Hands = "Rao Kote" -- Path D. 10 MND. M. Eva. +15. MDT - 3%.
+		Rao.Legs = "Rao Haidate" -- Path D. Acc. +20. DA +3. (Pet stat).
+		Rao.Feet = "Rao Sune-Ate" -- Path D. HP +50.Crit. +3. DA +2%.
 	Ryuo = {}
 		Ryuo.Head = {}
 		Ryuo.Body = {}
