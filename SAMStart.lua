@@ -124,13 +124,14 @@ function init_gear_sets()
 		Hizamaru.Body = "Hizamaru Haramaki +1" -- 37 STR. 33 DEX. 40 Acc. 28 Atk. Haste +4%. 
 		Hizamaru.Hands = "Hizamaru Kote +1" -- 17 STR. 40 DEX. 37 Acc. 25 Atk. Haste +4%.
 		Hizamaru.Legs = "Hizamaru Hizayoroi +1" -- 47 STR. 39 Acc. 27 Atk. Haste +9%. WS Dmg +5%.
-		Hizamaru.Feet = "Hizamaru Sune-Ate +1" --25 STR. 28 DEX. 36 Acc. 24 Atk. Haste +3%. 
-	Acro = {}
-		Acro.Head = {}
-		Acro.Body = {}
-		Acro.Hands = {}
-		Acro.Legs = {}
-		Acro.Feet = {}
+		Hizamaru.Feet = "Hizamaru Sune-Ate +1" -- 25 STR. 28 DEX. 36 Acc. 24 Atk. Haste +3%. 
+	Acro = {} 
+-- Potential Augments -- Dusk - STR +7~10. DEX +7 WS Dmg +3%. Leaf - STP +6. DA +3%. Haste +3%. WS Acc. +20. Snow - +20 Acc/Atk. +25 Acc. or Atk.
+		Acro.Head = "Acro Helm" -- 22 STR. 18 DEX. 15 Atk. Haste +3%. STP +3.  
+		Acro.Body = "Acro Surcoat" -- 25 STR. 20 DEX. 10 Acc. 10 Atk. Haste +3%. DA +2%
+		Acro.Hands = "Acro Gauntlets" -- 4 STR. 31 DEX.  7 Atk. Haste +4%. STP +4
+		Acro.Legs = "Acro Breeches" -- 33 STR. 10 Acc. Haste +5%. STP +4.
+		Acro.Feet = "Acro Leggings" -- 15 STR. 15 DEX. 7 Acc. Haste +3%. DA +2%
 	Founders = {}
 		Founders.Head = {}
 		Founders.Body = {}
