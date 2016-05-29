@@ -120,45 +120,75 @@ function init_gear_sets()
 -- Start defining the sets
 --------------------------------------
 	Hizamaru = {}
-		Hizamaru.Head = "Hizamaru Somen +1" -- 30 STR. 26 DEX. 38 Acc. 26 Atk. Haste +6%.
-		Hizamaru.Body = "Hizamaru Haramaki +1" -- 37 STR. 33 DEX. 40 Acc. 28 Atk. Haste +4%. 
-		Hizamaru.Hands = "Hizamaru Kote +1" -- 17 STR. 40 DEX. 37 Acc. 25 Atk. Haste +4%.
-		Hizamaru.Legs = "Hizamaru Hizayoroi +1" -- 47 STR. 39 Acc. 27 Atk. Haste +9%. WS Dmg +5%.
-		Hizamaru.Feet = "Hizamaru Sune-Ate +1" -- 25 STR. 28 DEX. 36 Acc. 24 Atk. Haste +3%. 
+		Hizamaru.Head = "Hizamaru Somen +1" 
+-- 30 STR. 26 DEX. 38 Acc. 26 Atk. Haste +6%.
+		Hizamaru.Body = "Hizamaru Haramaki +1"
+-- 37 STR. 33 DEX. 40 Acc. 28 Atk. Haste +4%. 
+		Hizamaru.Hands = "Hizamaru Kote +1" 
+-- 17 STR. 40 DEX. 37 Acc. 25 Atk. Haste +4%.
+		Hizamaru.Legs = "Hizamaru Hizayoroi +1" 
+-- 47 STR. 39 Acc. 27 Atk. Haste +9%. WS Dmg +5%.
+		Hizamaru.Feet = "Hizamaru Sune-Ate +1" 
+-- 25 STR. 28 DEX. 36 Acc. 24 Atk. Haste +3%. 
 	Acro = {} 
 -- Potential Augments -- Dusk - STR +7~10. DEX +7 WS Dmg +3%. Leaf - STP +6. DA +3%. Haste +3%. WS Acc. +20. Snow - +20 Acc/Atk. +25 Acc. or Atk.
-		Acro.Head = "Acro Helm" -- 22 STR. 18 DEX. 15 Atk. Haste +3%. STP +3.  
-		Acro.Body = "Acro Surcoat" -- 25 STR. 20 DEX. 10 Acc. 10 Atk. Haste +3%. DA +2%
-		Acro.Hands = "Acro Gauntlets" -- 4 STR. 31 DEX.  7 Atk. Haste +4%. STP +4
-		Acro.Legs = "Acro Breeches" -- 33 STR. 10 Acc. Haste +5%. STP +4.
-		Acro.Feet = "Acro Leggings" -- 15 STR. 15 DEX. 7 Acc. Haste +3%. DA +2%
+		Acro.Head = "Acro Helm" 
+-- 22 STR. 18 DEX. 15 Atk. Haste +3%. STP +3.  
+		Acro.Body = "Acro Surcoat" 
+-- 25 STR. 20 DEX. 10 Acc. 10 Atk. Haste +3%. DA +2%
+		Acro.Hands = "Acro Gauntlets" 
+-- 4 STR. 31 DEX.  7 Atk. Haste +4%. STP +4
+		Acro.Legs = "Acro Breeches" 
+-- 33 STR. 10 Acc. Haste +5%. STP +4.
+		Acro.Feet = "Acro Leggings" 
+-- 15 STR. 15 DEX. 7 Acc. Haste +3%. DA +2%
 	Founders = {}
-		Founders.Head = "Founder's Corona" -- 24 STR. 30 DEX. 35 Acc. Haste +7%. DA +2%. 
-		Founders.Body = "Founder's Breastplate" -- 30 STR. 26 DEX. 35 Acc. 35 Atk. Haste +3%. DA +3%.
-		Founders.Hands = "Founder's Gauntlets" -- 21 STR. 34 DEX. 35 Atk. Haste +4%. DA +2%.
-		Founders.Legs = "Founder's Hose" -- 40 STR. 35 Atk. Haste +5%. DA +2%.
-		Founders.Feet = "Founder's Greaves" -- 19 STR. 21 DEX. 35 Acc. Haste +3%. DA +2%.
+		Founders.Head = "Founder's Corona" 
+-- 24 STR. 30 DEX. 35 Acc. Haste +7%. DA +2%. 
+		Founders.Body = "Founder's Breastplate" 
+-- 30 STR. 26 DEX. 35 Acc. 35 Atk. Haste +3%. DA +3%.
+		Founders.Hands = "Founder's Gauntlets" 
+-- 21 STR. 34 DEX. 35 Atk. Haste +4%. DA +2%.
+		Founders.Legs = "Founder's Hose" 
+-- 40 STR. 35 Atk. Haste +5%. DA +2%.
+		Founders.Feet = "Founder's Greaves" 
+-- 19 STR. 21 DEX. 35 Acc. Haste +3%. DA +2%.
 	Despair = {}
 -- Path A. HP +50. VIT +10%. Cure Recieved. +5%. Path B. STR +12. VIT +7. Haste +2%. Path C. 10 Acc. (Pet Stuff).
-		Despair.Head = "Despair Helm" -- Path D. 15 STR. Enmity +7. STP +3.
-		Despair.Body = "Despair Mail" -- Path D. 25 Atk. M. Eva +20. DA +3%.
-		Despair.Hands = "Despair Finger Gauntlets" -- Path D. R. Acc +25. R. Atk +20. Recycle +10.
-		Despair.Legs = "Despair Cuisses" -- Path D. 10 AGI. Eva. +20. SB +7.
-		Despair.Feet = "Despair	Greaves" -- Path D. 10 DEX.  7 STR. PDT -3%.
+		Despair.Head = "Despair Helm" 
+-- Path D. 15 STR. Enmity +7. STP +3.
+		Despair.Body = "Despair Mail" 
+-- Path D. 25 Atk. M. Eva +20. DA +3%.
+		Despair.Hands = "Despair Finger Gauntlets" 
+-- Path D. R. Acc +25. R. Atk +20. Recycle +10.
+		Despair.Legs = "Despair Cuisses" 
+-- Path D. 10 AGI. Eva. +20. SB +7.
+		Despair.Feet = "Despair	Greaves" 
+-- Path D. 10 DEX.  7 STR. PDT -3%.
 	Naga = {}
 -- Path A. 10 STR +15 Acc. SB +7. Path B. HP +50. 10 VIT. Eva. +20. Path C. (Pet Stuff).
-		Naga.Head = "Naga Somen" -- Path D. Acc. +15. R. Acc +25. Enmity -6.
-		Naga.Body = "Naga Samue" -- Path D. HP +80 10 DEX Atk. +20.
-		Naga.Hands = "Naga Tekko" -- Path D. (Pet Stuff)
-		Naga.Legs = "Naga Hakama" -- Path D. Atk +20. R. Atk +25. Crit +4%.
-		Naga.Feet = "Naga Kyahan" -- Path D. (Pet Stuff)
+		Naga.Head = "Naga Somen" 
+-- Path D. Acc. +15. R. Acc +25. Enmity -6.
+		Naga.Body = "Naga Samue" 
+-- Path D. HP +80 10 DEX Atk. +20.
+		Naga.Hands = "Naga Tekko" 
+-- Path D. (Pet Stuff)
+		Naga.Legs = "Naga Hakama" 
+-- Path D. Atk +20. R. Atk +25. Crit +4%.
+		Naga.Feet = "Naga Kyahan" 
+-- Path D. (Pet Stuff)
 	Rao = {}
 -- Path A. Acc. +10 Atk. +10 Eva. +15. Path B. 10 STR. 10 DEX. Atk. +15. Path C. (Pet Stuff).
-		Rao.Head = "Rao Kabuto" -- Path D. 10 VIT. Atk. +20. Counter +3
-		Rao.Body = "Rao Togi" -- Path D. Atk +15. SB +7. PDT -3%.
-		Rao.Hands = "Rao Kote" -- Path D. 10 MND. M. Eva. +15. MDT - 3%.
-		Rao.Legs = "Rao Haidate" -- Path D. Acc. +20. DA +3. (Pet stat).
-		Rao.Feet = "Rao Sune-Ate" -- Path D. HP +50.Crit. +3. DA +2%.
+		Rao.Head = "Rao Kabuto" 
+-- 35 STR. 19 DEX. Acc. +32. Haste +8%. Crit +4%. - Path D. 10 VIT. Atk. +20. Counter +3
+		Rao.Body = "Rao Togi" 
+-- 28 STR. 25 DEX. Acc. +22. Atk. +22. Haste +4%. DA +4%. - Path D. Atk +15. SB +7. PDT -3%.
+		Rao.Hands = "Rao Kote" 
+-- 14 STR. 34 DEX. Atk. +32. Haste +5%. Counter +4. - Path D. 10 MND. M. Eva. +15. MDT - 3%.
+		Rao.Legs = "Rao Haidate" 
+-- 45 STR. Atk. +33. Haste +6%. STP +7. - Path D. Acc. +20. DA +3. (Pet stat).
+		Rao.Feet = "Rao Sune-Ate" 
+-- 17 STR. 25 DEX. Acc. +31. Haste +4%. SB +7. - Path D. HP +50.Crit. +3. DA +2%.
 	Ryuo = {}
 -- Path A. 10 STR. 10 DEX Acc. +15. Path B. HP +50. Acc +15. Atk. +15. Path C. HP. +50. STP. +4. SB. +7.
 		Ryuo.Head = "Ryuo Somen" 
