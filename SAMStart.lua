@@ -139,18 +139,19 @@ function init_gear_sets()
 		Founders.Legs = "Founder's Hose" -- 40 STR. 35 Atk. Haste +5%. DA +2%.
 		Founders.Feet = "Founder's Greaves" -- 19 STR. 21 DEX. 35 Acc. Haste +3%. DA +2%.
 	Despair = {}
--- Path A. HP +50. VIT +10%. Cure Recieved. +5%. Path B. STR +12. VIT +7. Haste +2%. Path C. 10 Acc. (Pet Stuff)
+-- Path A. HP +50. VIT +10%. Cure Recieved. +5%. Path B. STR +12. VIT +7. Haste +2%. Path C. 10 Acc. (Pet Stuff).
 		Despair.Head = "Despair Helm" -- Path D. 15 STR. Enmity +7. STP +3.
 		Despair.Body = "Despair Mail" -- Path D. 25 Atk. M. Eva +20. DA +3%.
 		Despair.Hands = "Despair Finger Gauntlets" -- Path D. R. Acc +25. R. Atk +20. Recycle +10.
 		Despair.Legs = "Despair Cuisses" -- Path D. 10 AGI. Eva. +20. SB +7.
 		Despair.Feet = "Despair	Greaves" -- Path D. 10 DEX.  7 STR. PDT -3%.
 	Naga = {}
-		Naga.Head = {}
-		Naga.Body = {}
-		Naga.Hands = {}
-		Naga.Legs = {}
-		Naga.Feet = {}	
+-- Path A. 10 STR +15 Acc. SB +7. Path B. HP +50. 10 VIT. Eva. +20. Path C. (Pet Stuff).
+		Naga.Head = "Naga Somen" -- Path D. 
+		Naga.Body = "Naga Samue" -- Path D. 
+		Naga.Hands = "Naga Tekko" -- Path D. 
+		Naga.Legs = "Naga Hakama" -- Path D. 
+		Naga.Feet = "Naga Kyahan" -- Path D. 
 	Rao = {}
 		Rao.Head = {}
 		Rao.Body = {}
