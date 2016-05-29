@@ -208,11 +208,16 @@ function init_gear_sets()
 		Valorous.Legs = {}
 		Valorous.Feet = {}	
 	Wakido = {}
-		Wakido.Head = {}
-		Wakido.Body = {}
-		Wakido.Hands = {}
-		Wakido.Legs = {}
-		Wakido.Feet = {}	
+		Wakido.Head = "Wakido Kabuto +1" 
+-- 27 STR. 23 DEX. Atk. +21. Haste +7%. Warding Circle +1. Meditate Duration +4
+		Wakido.Body = "Wakido Domaru" 
+-- 32 STR. 21 DEX. Acc. +15. STP +7. Haste +3%. Occ. Boosts TP when Damaged.
+		Wakido.Hands = "Wakido Kote +1" 
+-- 14 STR. 30 DEX. STP +5. Haste +4%. Hasso +2. Enhances effects of Rice Balls.
+		Wakido.Legs = "Wakido Haidate +1" 
+-- 33 STR. Atk. +20. R. Atk +20. Parry +15. STP +7. Haste +5%.
+		Wakido.Feet = "Wakido Sune-Ate +1" 
+-- 15 STR. 17 DEX. Acc. +20. Atk +18. R. Acc. +20. R. Atk +18. Haste +3%. Zanshin +3.
 	Sakonji = {}
 		Sakonji.Head = {}
 		Sakonji.Body = {}
