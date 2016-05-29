@@ -203,18 +203,18 @@ function init_gear_sets()
 -- 26 STR. 19 Dex. Atk. +22. R. Atk. +22. Haste +3%. Zanshin +4. Zanshin: OAT +10%. - Path D. 10 STR. Atk. +20. Crit +3%.
 	Valorous = {}
 		Valorous.Head = {} 
--- 
+-- 28 STR. 24 DEX. Acc. +13. Haste +7%. Regain +3. Crit +2.
 			Valorous.Head.TP = { name="Valorous Mask", augments={'Accuracy+24 Attack+24','Crit.hit rate+3','STR+1','Accuracy+9','Attack+6'}}
 			Valorous.Head.WS = { name="Valorous Mask", augments={'Accuracy+28','Weapon skill damage +3%','STR+15','Attack+12'}}
 		Valorous.Body = {} 
--- 
+-- 29 STR. 25 DEX. Acc. +20. Haste +3%. STP +3.DA +2%. PDT -2%.
 		Valorous.Hands = {} 
--- 
+-- 13 STR. 33 DEX. Acc. +10. Atk. +10. Haste +4%. Zanshin +10. SC Dmg. +5.
 		Valorous.Legs = {} 
--- 
+-- 39 STR. Haste +5%. DA. +3%. PDT -2%.
 			Valorous.Legs.WS = { name="Valor. Hose", augments={'Accuracy+23 Attack+23','Weapon skill damage +1%','Accuracy+5','Attack+5'}}
 		Valorous.Feet = {} 
--- 
+-- 17 STR. 20 DEX. Acc. +12. Atk. +12. Haste +3%. STP +5. Crit. Dmg. +4%. MDT -2%.
 	Wakido = {}
 		Wakido.Head = "Wakido Kabuto +1" 
 -- 27 STR. 23 DEX. Atk. +21. Haste +7%. Warding Circle +1. Meditate Duration +4
