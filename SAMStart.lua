@@ -202,11 +202,19 @@ function init_gear_sets()
 		Ryuo.Feet = "Ryuo Sune-Ate" 
 -- 26 STR. 19 Dex. Atk. +22. R. Atk. +22. Haste +3%. Zanshin +4. Zanshin: OAT +10%. - Path D. 10 STR. Atk. +20. Crit +3%.
 	Valorous = {}
-		Valorous.Head = {}
-		Valorous.Body = {}
-		Valorous.Hands = {}
-		Valorous.Legs = {}
-		Valorous.Feet = {}	
+		Valorous.Head = {} 
+		
+			Valorous.Head.TP = 
+			Valorous.Head.WS = 
+		Valorous.Body = {} 
+		
+		Valorous.Hands = {} 
+		
+		Valorous.Legs = {} 
+		
+			Valorous.Legs.WS = 
+		Valorous.Feet = {} 
+		
 	Wakido = {}
 		Wakido.Head = "Wakido Kabuto +1" 
 -- 27 STR. 23 DEX. Atk. +21. Haste +7%. Warding Circle +1. Meditate Duration +4
