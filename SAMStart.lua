@@ -168,15 +168,15 @@ function init_gear_sets()
 	Naga = {}
 -- Path A. 10 STR +15 Acc. SB +7. Path B. HP +50. 10 VIT. Eva. +20. Path C. (Pet Stuff).
 		Naga.Head = "Naga Somen" 
--- Path D. Acc. +15. R. Acc +25. Enmity -6.
+-- 17 STR. 24 DEX. Acc. +18. Haste +8%. MDT -3%. - Path D. Acc. +15. R. Acc +25. Enmity -6.
 		Naga.Body = "Naga Samue" 
--- Path D. HP +80 10 DEX Atk. +20.
+-- 29 STR. 30. DEX. Atk. +15. Haste +4%. STP. +5. - Path D. HP +80 10 DEX Atk. +20.
 		Naga.Hands = "Naga Tekko" 
--- Path D. (Pet Stuff)
+-- 16 STR. 36 DEX. Haste. +5%. Dmg -2%. - Path D. (Pet Stuff)
 		Naga.Legs = "Naga Hakama" 
--- Path D. Atk +20. R. Atk +25. Crit +4%.
+-- 37 STR. Haste +6%. Path D. Atk +20. R. Atk +25. Crit +4%.
 		Naga.Feet = "Naga Kyahan" 
--- Path D. (Pet Stuff)
+-- 14 STR. 15 DEX. Acc. +18. Atk +18. Haste +4%. DA +3%. - Path D. (Pet Stuff)
 	Rao = {}
 -- Path A. Acc. +10 Atk. +10 Eva. +15. Path B. 10 STR. 10 DEX. Atk. +15. Path C. (Pet Stuff).
 		Rao.Head = "Rao Kabuto" 
