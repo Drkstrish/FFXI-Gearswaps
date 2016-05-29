@@ -133,11 +133,11 @@ function init_gear_sets()
 		Acro.Legs = "Acro Breeches" -- 33 STR. 10 Acc. Haste +5%. STP +4.
 		Acro.Feet = "Acro Leggings" -- 15 STR. 15 DEX. 7 Acc. Haste +3%. DA +2%
 	Founders = {}
-		Founders.Head = {}
-		Founders.Body = {}
-		Founders.Hands = {}
-		Founders.Legs = {}
-		Founders.Feet = {}	
+		Founders.Head = "Founder's Corona" -- 24 STR. 30 DEX. 35 Acc. Haste +7%. DA +2%. 
+		Founders.Body = "Founder's Breastplate" -- 30 STR. 26 DEX. 35 Acc. 35 Atk. Haste +3%. DA +3%.
+		Founders.Hands = "Founder's Gauntlets" -- 21 STR. 34 DEX. 35 Atk. Haste +4%. DA +2%.
+		Founders.Legs = "Founder's Hose" -- 40 STR. 35 Atk. Haste +5%. DA +2%.
+		Founders.Feet = "Founder's Greaves" -- 19 STR. 21 DEX. 35 Acc. Haste +3%. DA +2%.
 	Despair = {}
 		Despair.Head = {}
 		Despair.Body = {}
