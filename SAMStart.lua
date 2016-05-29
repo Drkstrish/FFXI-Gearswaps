@@ -147,11 +147,11 @@ function init_gear_sets()
 		Despair.Feet = "Despair	Greaves" -- Path D. 10 DEX.  7 STR. PDT -3%.
 	Naga = {}
 -- Path A. 10 STR +15 Acc. SB +7. Path B. HP +50. 10 VIT. Eva. +20. Path C. (Pet Stuff).
-		Naga.Head = "Naga Somen" -- Path D. 
-		Naga.Body = "Naga Samue" -- Path D. 
-		Naga.Hands = "Naga Tekko" -- Path D. 
-		Naga.Legs = "Naga Hakama" -- Path D. 
-		Naga.Feet = "Naga Kyahan" -- Path D. 
+		Naga.Head = "Naga Somen" -- Path D. Acc. +15. R. Acc +25. Enmity -6.
+		Naga.Body = "Naga Samue" -- Path D. HP +80 10 DEX Atk. +20.
+		Naga.Hands = "Naga Tekko" -- Path D. (Pet Stuff)
+		Naga.Legs = "Naga Hakama" -- Path D. Atk +20. R. Atk +25. Crit +4%.
+		Naga.Feet = "Naga Kyahan" -- Path D. (Pet Stuff)
 	Rao = {}
 		Rao.Head = {}
 		Rao.Body = {}
