@@ -120,11 +120,11 @@ function init_gear_sets()
 -- Start defining the sets
 --------------------------------------
 	Hizamaru = {}
-		Hizamaru.Head = {}
-		Hizamaru.Body = {}
-		Hizamaru.Hands = {}
-		Hizamaru.Legs = {}
-		Hizamaru.Feet = {}
+		Hizamaru.Head = "Hizamaru Somen +1" -- 30 STR. 26 DEX. 38 Acc. 26 Atk. Haste +6%.
+		Hizamaru.Body = "Hizamaru Haramaki +1" -- 37 STR. 33 DEX. 40 Acc. 28 Atk. Haste +4%. 
+		Hizamaru.Hands = "Hizamaru Kote +1" -- 17 STR. 40 DEX. 37 Acc. 25 Atk. Haste +4%.
+		Hizamaru.Legs = "Hizamaru Hizayoroi +1" -- 47 STR. 39 Acc. 27 Atk. Haste +9%. WS Dmg +5%.
+		Hizamaru.Feet = "Hizamaru Sune-Ate +1" --25 STR. 28 DEX. 36 Acc. 24 Atk. Haste +3%. 
 	Acro = {}
 		Acro.Head = {}
 		Acro.Body = {}
