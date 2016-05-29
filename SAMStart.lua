@@ -21,32 +21,47 @@ Enter file con------------------------------------------------------------------
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
 -- Initialization function for this job file.
 function get_sets()
+
 -- Load and initialize the include file.
+
 	mote_include_version = 2
-	include('Mote-Include.lua')
-	include('organizer-lib')
+	
+		include('Mote-Include.lua')
+		
+		include('organizer-lib')
+
 end
 
 -- Setup vars that are user-independent.
 
 function job_setup()
+
 	get_combat_form()
+
 	--get_combat_weapon()
+
 	update_melee_groups()
     		
     		state.CapacityMode = M(false, 'Capacity Point Mantle')
+
 		state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
 
 -- list of weaponskills that make better use of otomi helm in low acc situations
 
 	wsList = S{'Tachi: Fudo', 'Tachi: Shoha'}
+
     	gear.RAarrow = {name="Eminent Arrow"}
+
     	LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow'}
     
     		state.Buff.Sekkanoki = buffactive.sekkanoki or false
+
     		state.Buff.Sengikori = buffactive.sengikori or false
+
     		state.Buff['Third Eye'] = buffactive['Third Eye'] or false
+
     		state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
+
 end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
@@ -56,17 +71,25 @@ function user_setup()
 -- Options: Override default values
 
 	state.OffenseMode:options('Normal', 'Mid', 'Acc')
+
     	state.HybridMode:options('Normal', 'PDT', 'Reraise')
+
     	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+
     	state.IdleMode:options('Normal')
+
     	state.RestingMode:options('Normal')
+
     	state.PhysicalDefenseMode:options('PDT', 'Reraise')
+
     	state.MagicalDefenseMode:options('MDT')
     
 -- Additional local binds
     	
     	send_command('bind ^[ input /lockstyle on')
+
     	send_command('bind ![ input /lockstyle off')
+
     	send_command('bind != gs c toggle CapacityMode')
     
 end
@@ -76,13 +99,14 @@ end
 function file_unload()
     
 	send_command('unbind ^[')
+
     	send_command('unbind !=')
+
     	send_command('unbind ![')
 
 end
 
---[[
--- SC's
+--[[SC's
 Rana > Shoha > Fudo > Kasha > Shoha > Fudo - light
 Rana > Shoha > Fudo > Kasha > Rana > Fudo - dark
 Kasha > Shoha > Fudo
@@ -96,16 +120,7 @@ function init_gear_sets()
 -- Start defining the sets
 --------------------------------------
 
-	Acro = {}
 
-	Acro.Hands = {}
-	Acro.Feet = {}
-    
-		Acro.Hands.Haste = {}
-		Acro.Hands.STP = {}
-
-		Acro.Feet.STP = {}
-		Acro.Feet.WSD = {} 
 
 -- Precast Sets
 -- Precast sets to enhance jas
