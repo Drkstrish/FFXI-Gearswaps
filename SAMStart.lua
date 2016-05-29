@@ -119,19 +119,72 @@ function init_gear_sets()
 --------------------------------------
 -- Start defining the sets
 --------------------------------------
-
-	Acro = {}
-	Despair = {}
-	Founders = {}
 	Hizamaru = {}
-	Kasuga = {}
+		Hizamaru.Head = {}
+		Hizamaru.Body = {}
+		Hizamaru.Hands = {}
+		Hizamaru.Legs = {}
+		Hizamaru.Feet = {}
+	Acro = {}
+		Acro.Head = {}
+		Acro.Body = {}
+		Acro.Hands = {}
+		Acro.Legs = {}
+		Acro.Feet = {}
+	Founders = {}
+		Founders.Head = {}
+		Founders.Body = {}
+		Founders.Hands = {}
+		Founders.Legs = {}
+		Founders.Feet = {}	
+	Despair = {}
+		Despair.Head = {}
+		Despair.Body = {}
+		Despair.Hands = {}
+		Despair.Legs = {}
+		Despair.Feet = {}	
 	Naga = {}
+		Naga.Head = {}
+		Naga.Body = {}
+		Naga.Hands = {}
+		Naga.Legs = {}
+		Naga.Feet = {}	
 	Rao = {}
+		Rao.Head = {}
+		Rao.Body = {}
+		Rao.Hands = {}
+		Rao.Legs = {}
+		Rao.Feet = {}	
 	Ryuo = {}
-	Sakonji = {}
+		Ryuo.Head = {}
+		Ryuo.Body = {}
+		Ryuo.Hands = {}
+		Ryuo.Legs = {}
+		Ryuo.Feet = {}	
 	Valorous = {}
+		Valorous.Head = {}
+		Valorous.Body = {}
+		Valorous.Hands = {}
+		Valorous.Legs = {}
+		Valorous.Feet = {}	
 	Wakido = {}
-
+		Wakido.Head = {}
+		Wakido.Body = {}
+		Wakido.Hands = {}
+		Wakido.Legs = {}
+		Wakido.Feet = {}	
+	Sakonji = {}
+		Sakonji.Head = {}
+		Sakonji.Body = {}
+		Sakonji.Hands = {}
+		Sakonji.Legs = {}
+		Sakonji.Feet = {}	
+	Kasuga = {}
+		Kasuga.Head = {}
+		Kasuga.Body = {}
+		Kasuga.Hands = {}
+		Kasuga.Legs = {}
+		Kasuga.Feet = {}
 -- Precast Sets
 -- Precast sets to enhance jas
 
