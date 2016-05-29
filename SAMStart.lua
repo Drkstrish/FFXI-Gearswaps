@@ -160,11 +160,12 @@ function init_gear_sets()
 		Rao.Legs = "Rao Haidate" -- Path D. Acc. +20. DA +3. (Pet stat).
 		Rao.Feet = "Rao Sune-Ate" -- Path D. HP +50.Crit. +3. DA +2%.
 	Ryuo = {}
-		Ryuo.Head = {}
-		Ryuo.Body = {}
-		Ryuo.Hands = {}
-		Ryuo.Legs = {}
-		Ryuo.Feet = {}	
+-- Path A. 10 STR. 10 DEX Acc. +15. Path B. HP +50. Acc +15. Atk. +15. Path C. HP. +50. STP. +4. SB. +7.
+		Ryuo.Head = "Ryuo " -- Path D. Ninjutsu Skill +15. M. Acc. +20. M. Atk. +20.
+		Ryuo.Body = "Ryuo " -- Path D. HP +50. STP. +5. DA +2%.
+		Ryuo.Hands = "Ryuo " -- Path D. 10 DEX. Acc. +20. DA. +3%.
+		Ryuo.Legs = "Ryuo " -- Path D. Acc. +20. STP. +4. PDT -3%.
+		Ryuo.Feet = "Ryuo " -- Path D. 10 STR. Atk. +20. Crit +3%.
 	Valorous = {}
 		Valorous.Head = {}
 		Valorous.Body = {}
