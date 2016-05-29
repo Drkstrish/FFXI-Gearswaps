@@ -219,11 +219,16 @@ function init_gear_sets()
 		Wakido.Feet = "Wakido Sune-Ate +1" 
 -- 15 STR. 17 DEX. Acc. +20. Atk +18. R. Acc. +20. R. Atk +18. Haste +3%. Zanshin +3.
 	Sakonji = {}
-		Sakonji.Head = {}
-		Sakonji.Body = {}
-		Sakonji.Hands = {}
-		Sakonji.Legs = {}
-		Sakonji.Feet = {}	
+		Sakonji.Head = "Sakonji Kabuto" 
+-- 24 STR. 20 DEX. Acc. +17. Atk. +17. R. Acc. +17. R. Atk. +17. Haste +7%. STP +6. Enhances Ikishoten.
+		Sakonji.Body = "Sakonji Domaru" 
+-- 32 STR. 27 DEX. Acc. +15. Atk. +15. Haste +3%. STP +8. Enhances Overwhelm.
+		Sakonji.Hands = "Sakonji Kote +1" 
+-- 6 STR. 30 DEX. Acc. +18. Atk. +18. Haste +4%. Meditate Duration +2. PDT -4%. Enhances Blade Bash.
+		Sakonji.Legs = "Sakonji Haidate +1" 
+-- 33 STR. Atk. +18. Haste +5%. Third Eye Counter +35. Counter Dmg +19. Enhances Shikikoyo.
+		Sakonji.Feet = "Sakonji Sune-Ate +1" 
+-- 21 STR. 17 DEX. Atk. +23. Haste +3%. STP +8. Enhances Meikyo Shisui.
 	Kasuga = {}
 		Kasuga.Head = {}
 		Kasuga.Body = {}
