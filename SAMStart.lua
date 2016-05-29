@@ -204,15 +204,15 @@ function init_gear_sets()
 	Valorous = {}
 		Valorous.Head = {} 
 -- 
-			Valorous.Head.TP = 
-			Valorous.Head.WS = 
+			Valorous.Head.TP = { name="Valorous Mask", augments={'Accuracy+24 Attack+24','Crit.hit rate+3','STR+1','Accuracy+9','Attack+6'}}
+			Valorous.Head.WS = { name="Valorous Mask", augments={'Accuracy+28','Weapon skill damage +3%','STR+15','Attack+12'}}
 		Valorous.Body = {} 
 -- 
 		Valorous.Hands = {} 
 -- 
 		Valorous.Legs = {} 
 -- 
-			Valorous.Legs.WS = 
+			Valorous.Legs.WS = { name="Valor. Hose", augments={'Accuracy+23 Attack+23','Weapon skill damage +1%','Accuracy+5','Attack+5'}}
 		Valorous.Feet = {} 
 -- 
 	Wakido = {}
