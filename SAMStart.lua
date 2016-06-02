@@ -168,6 +168,27 @@ Idle_Waist = {}
 Idle_Legs = {}
 Idle_Feet = {}
 
+--Tanking Set
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
+
+--TP Set
+
+
+--TP Mid Set
+
+
+--TP Acc Set
 
 -- Precast Sets
 -- Precast sets to enhance jas
@@ -208,9 +229,9 @@ Idle_Feet = {}
 	sets.precast.WS['Tachi: Shoha'].Mid = sets.precast.WS.Mid
 	sets.precast.WS['Tachi: Shoha'].Acc = sets.precast.WS.Acc
 --50% STR Mod. Gravitation/Induration.
-	sets.precast.WS['Tachi: Rana'] = {}
-	sets.precast.WS['Tachi: Rana'].Mid = {}
-	sets.precast.WS['Tachi: Rana'].Acc = {}
+	sets.precast.WS['Tachi: Rana'] = sets.precast.WS
+	sets.precast.WS['Tachi: Rana'].Mid = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Rana'].Acc = sets.precast.WS.Acc
 --40% STR 60% CHR. Compression/Scission.
 	sets.precast.WS['Tachi: Ageha'] = sets.precast.WS
 	sets.precast.WS['Tachi: Ageha'].Mid = sets.precast.WS.Mid
@@ -238,25 +259,25 @@ Idle_Feet = {}
 
 -- Midcast Sets
     
-	sets.midcast.FastRecast = {}
+	sets.midcast.FastRecast = sets.precast.FC
     
 -- Sets to return to when not performing an action.
     
 -- Resting sets
     
 	sets.resting = {}
-	sets.idle.Town = {}
-	sets.idle.Town.Adoulin = {}
-	sets.idle.Field = {}
-	sets.idle.Weak = {}
+	sets.idle.Town = sets.resting
+	sets.idle.Town.Adoulin = sets.resting
+	sets.idle.Field = sets.resting
+	sets.idle.Weak = sets.resting
 	--sets.idle.Yoichi = {}
-	sets.idle.Regen = {}
+	sets.idle.Regen = sets.resting
     
 --Defense sets
     
 	sets.defense.PDT = {}
-	sets.defense.Reraise = {}
-	sets.defense.MDT = {}
+	sets.defense.Reraise = sets.defense.PDT
+	sets.defense.MDT = sets.defense.PDT
 	sets.Kiting = {}
 	sets.Reraise = {}
     
@@ -308,7 +329,7 @@ Idle_Feet = {}
 	--sets.engaged.Adoulin.Kogarasumaru.AM = {}
 	--sets.engaged.Adoulin.Kogarasumaru.AM3 = {}
 	sets.buff.Sekkanoki = {hands="Unkai Kote +1"}
-	sets.buff.Sengikori = {}
+	--sets.buff.Sengikori = {Unkai Sune-Ate}
 	sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
 	sets.thirdeye = {head="Unkai Kabuto +1", legs="Sakonji Haidate +1"}
 	sets.seigan = {hands="Unkai Kabuto +1"}
