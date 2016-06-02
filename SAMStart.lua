@@ -103,138 +103,24 @@ function init_gear_sets()
 --------------------------------------
 -- Start defining the sets
 --------------------------------------
-	Hizamaru = {}
-		Hizamaru.Head = "Hizamaru Somen +1" 
--- 30 STR. 26 DEX. 38 Acc. 26 Atk. Haste +6%.
-		Hizamaru.Body = "Hizamaru Haramaki +1"
--- 37 STR. 33 DEX. 40 Acc. 28 Atk. Haste +4%. 
-		Hizamaru.Hands = "Hizamaru Kote +1" 
--- 17 STR. 40 DEX. 37 Acc. 25 Atk. Haste +4%.
-		Hizamaru.Legs = "Hizamaru Hizayoroi +1" 
--- 47 STR. 39 Acc. 27 Atk. Haste +9%. WS Dmg +5%.
-		Hizamaru.Feet = "Hizamaru Sune-Ate +1" 
--- 25 STR. 28 DEX. 36 Acc. 24 Atk. Haste +3%. 
-	Acro = {} 
--- Potential Augments -- Dusk - STR +7~10. DEX +7 WS Dmg +3%. Leaf - STP +6. DA +3%. Haste +3%. WS Acc. +20. Snow - +20 Acc/Atk. +25 Acc. or Atk.
-		Acro.Head = "Acro Helm" 
--- 22 STR. 18 DEX. 15 Atk. Haste +3%. STP +3.  
-		Acro.Body = "Acro Surcoat" 
--- 25 STR. 20 DEX. 10 Acc. 10 Atk. Haste +3%. DA +2%
-		Acro.Hands = "Acro Gauntlets" 
--- 4 STR. 31 DEX.  7 Atk. Haste +4%. STP +4
-		Acro.Legs = "Acro Breeches" 
--- 33 STR. 10 Acc. Haste +5%. STP +4.
-		Acro.Feet = "Acro Leggings" 
--- 15 STR. 15 DEX. 7 Acc. Haste +3%. DA +2%
-	Founders = {}
-		Founders.Head = "Founder's Corona" 
--- 24 STR. 30 DEX. 35 Acc. Haste +7%. DA +2%. 
-		Founders.Body = "Founder's Breastplate" 
--- 30 STR. 26 DEX. 35 Acc. 35 Atk. Haste +3%. DA +3%.
-		Founders.Hands = "Founder's Gauntlets" 
--- 21 STR. 34 DEX. 35 Atk. Haste +4%. DA +2%.
-		Founders.Legs = "Founder's Hose" 
--- 40 STR. 35 Atk. Haste +5%. DA +2%.
-		Founders.Feet = "Founder's Greaves" 
--- 19 STR. 21 DEX. 35 Acc. Haste +3%. DA +2%.
-	Despair = {}
--- Path A. HP +50. VIT +10%. Cure Recieved. +5%. Path B. STR +12. VIT +7. Haste +2%. Path C. 10 Acc. (Pet Stuff).
-		Despair.Head = "Despair Helm" 
--- 21 STR. 21 DEX. Acc. +20. Atk. +20. Haste +8%. - Path D. 15 STR. Enmity +7. STP +3.
-		Despair.Body = "Despair Mail" 
--- 30 STR. 29 DEX. Acc. +23. Haste +4% - Path D. 25 Atk. M. Eva +20. DA +3%.
-		Despair.Hands = "Despair Finger Gauntlets" 
--- 15 STR. 34 DEX. Acc. +18. Atk. +18. Haste +5%. - Path D. R. Acc +25. R. Atk +20. Recycle +10.
-		Despair.Legs = "Despair Cuisses" 
--- 34 STR. Atk. +23. Haste +6%. - Path D. 10 AGI. Eva. +20. SB +7.
-		Despair.Feet = "Despair	Greaves" 
--- 19 STR. 16 DEX. Acc. +17. Haste +4%. DA +2%. - Path D. 10 DEX.  7 STR. PDT -3%.
-	Naga = {}
--- Path A. 10 STR +15 Acc. SB +7. Path B. HP +50. 10 VIT. Eva. +20. Path C. (Pet Stuff).
-		Naga.Head = "Naga Somen" 
--- 17 STR. 24 DEX. Acc. +18. Haste +8%. MDT -3%. - Path D. Acc. +15. R. Acc +25. Enmity -6.
-		Naga.Body = "Naga Samue" 
--- 29 STR. 30. DEX. Atk. +15. Haste +4%. STP. +5. - Path D. HP +80 10 DEX Atk. +20.
-		Naga.Hands = "Naga Tekko" 
--- 16 STR. 36 DEX. Haste. +5%. Dmg -2%. - Path D. (Pet Stuff)
-		Naga.Legs = "Naga Hakama" 
--- 37 STR. Haste +6%. Path D. Atk +20. R. Atk +25. Crit +4%.
-		Naga.Feet = "Naga Kyahan" 
--- 14 STR. 15 DEX. Acc. +18. Atk +18. Haste +4%. DA +3%. - Path D. (Pet Stuff)
-	Rao = {}
--- Path A. Acc. +10 Atk. +10 Eva. +15. Path B. 10 STR. 10 DEX. Atk. +15. Path C. (Pet Stuff).
-		Rao.Head = "Rao Kabuto" 
--- 35 STR. 19 DEX. Acc. +32. Haste +8%. Crit +4%. - Path D. 10 VIT. Atk. +20. Counter +3
-		Rao.Body = "Rao Togi" 
--- 28 STR. 25 DEX. Acc. +22. Atk. +22. Haste +4%. DA +4%. - Path D. Atk +15. SB +7. PDT -3%.
-		Rao.Hands = "Rao Kote" 
--- 14 STR. 34 DEX. Atk. +32. Haste +5%. Counter +4. - Path D. 10 MND. M. Eva. +15. MDT - 3%.
-		Rao.Legs = "Rao Haidate" 
--- 45 STR. Atk. +33. Haste +6%. STP +7. - Path D. Acc. +20. DA +3. (Pet stat).
-		Rao.Feet = "Rao Sune-Ate" 
--- 17 STR. 25 DEX. Acc. +31. Haste +4%. SB +7. - Path D. HP +50.Crit. +3. DA +2%.
-	Ryuo = {}
--- Path A. 10 STR. 10 DEX Acc. +15. Path B. HP +50. Acc +15. Atk. +15. Path C. HP. +50. STP. +4. SB. +7.
-		Ryuo.Head = "Ryuo Somen" 
--- 21 STR. 17 DEX. Acc. +25. R. Acc +25. Haste +7%. Enmity -5. STP. +6. - Path D. Ninjutsu Skill +15. M. Acc. +20. M. Atk. +20.
-		Ryuo.Body = "Ryuo Domaru" 
--- 28 STR. 24 DEX. Acc. +27. Atk. +27. Haste +3%. Crit +4%. PDT -4%. - Path D. HP +50. STP. +5. DA +2%.
-		Ryuo.Hands = "Ryuo Tekko" 
--- 12 STR. 38 DEX. Acc. +23. R. Acc. +23. Haste +4%. Crit +4%. Crit. Dmg. +4%. - Path D. 10 DEX. Acc. +20. DA. +3%.
-		Ryuo.Legs = "Ryuo Hakama" 
--- 29 STR. Atk. +23. R. Atk +23. Haste +5%. DA +3%. STP. +7. SC Dmg. +10%. - Path D. Acc. +20. STP. +4. PDT -3%.
-		Ryuo.Feet = "Ryuo Sune-Ate" 
--- 26 STR. 19 Dex. Atk. +22. R. Atk. +22. Haste +3%. Zanshin +4. Zanshin: OAT +10%. - Path D. 10 STR. Atk. +20. Crit +3%.
-	Valorous = {}
-		Valorous.Head = {} 
--- 28 STR. 24 DEX. Acc. +13. Haste +7%. Regain +3. Crit +2.
-			Valorous.Head.TP = { name="Valorous Mask", augments={'Accuracy+24 Attack+24','Crit.hit rate+3','STR+1','Accuracy+9','Attack+6'}}
-			Valorous.Head.WS = { name="Valorous Mask", augments={'Accuracy+28','Weapon skill damage +3%','STR+15','Attack+12'}}
-		Valorous.Body = {} 
--- 29 STR. 25 DEX. Acc. +20. Haste +3%. STP +3.DA +2%. PDT -2%.
-		Valorous.Hands = {} 
-			Valorous.Hands.TP
--- 13 STR. 33 DEX. Acc. +10. Atk. +10. Haste +4%. Zanshin +10. SC Dmg. +5.
-		Valorous.Legs = {} 
--- 39 STR. Haste +5%. DA. +3%. PDT -2%.
-			Valorous.Legs.WS = { name="Valor. Hose", augments={'Accuracy+23 Attack+23','Weapon skill damage +1%','Accuracy+5','Attack+5'}}
-		Valorous.Feet = {} 
-			Valorous.Feet.TP
--- 17 STR. 20 DEX. Acc. +12. Atk. +12. Haste +3%. STP +5. Crit. Dmg. +4%. MDT -2%.
-	Wakido = {}
-		Wakido.Head = "Wakido Kabuto +1" 
--- 27 STR. 23 DEX. Atk. +21. Haste +7%. Warding Circle +1. Meditate Duration +4
-		Wakido.Body = "Wakido Domaru" 
--- 32 STR. 21 DEX. Acc. +15. STP +7. Haste +3%. Occ. Boosts TP when Damaged.
-		Wakido.Hands = "Wakido Kote +1" 
--- 14 STR. 30 DEX. STP +5. Haste +4%. Hasso +2. Enhances effects of Rice Balls.
-		Wakido.Legs = "Wakido Haidate +1" 
--- 33 STR. Atk. +20. R. Atk +20. Parry +15. STP +7. Haste +5%.
-		Wakido.Feet = "Wakido Sune-Ate +1" 
--- 15 STR. 17 DEX. Acc. +20. Atk +18. R. Acc. +20. R. Atk +18. Haste +3%. Zanshin +3.
-	Sakonji = {}
-		Sakonji.Head = "Sakonji Kabuto" 
--- 24 STR. 20 DEX. Acc. +17. Atk. +17. R. Acc. +17. R. Atk. +17. Haste +7%. STP +6. Enhances Ikishoten.
-		Sakonji.Body = "Sakonji Domaru" 
--- 32 STR. 27 DEX. Acc. +15. Atk. +15. Haste +3%. STP +8. Enhances Overwhelm.
-		Sakonji.Hands = "Sakonji Kote +1" 
--- 6 STR. 30 DEX. Acc. +18. Atk. +18. Haste +4%. Meditate Duration +2. PDT -4%. Enhances Blade Bash.
-		Sakonji.Legs = "Sakonji Haidate +1" 
--- 33 STR. Atk. +18. Haste +5%. Third Eye Counter +35. Counter Dmg +19. Enhances Shikikoyo.
-		Sakonji.Feet = "Sakonji Sune-Ate +1" 
--- 21 STR. 17 DEX. Atk. +23. Haste +3%. STP +8. Enhances Meikyo Shisui.
-	Kasuga = {}
---Set: Augments Zanshin.
-		Kasuga.Head = "Unkai Kabuto +1" 
--- 24 STR. 24 DEX. Haste +7%. STP +10. Seigan Counter Rate +14.
-		Kasuga.Body = "Kasuga Domaru +1" 
--- 28 STR. 24 DEX. G. Katana Skill +11. Haste +3%. STP +12. Zanshin +12.
-		Kasuga.Hands = "Unkai Kote +1" 
--- 14 STR. 32 DEX. Acc. +23. R. Acc. +21. R. Atk. +21 Haste +4%. Enhances Sekkanoki.
-		Kasuga.Legs = "Kasuga Haidate +1" 
--- 41 STR. 9 DEX. Haste +5%. STP +9. Hasso Haste +3%. 
-		Kasuga.Feet = "Kasuga Sune-Ate +1" 
--- 19 STR. 19 DEX. Acc. +21. Atk. +21. Haste +3%. Conserve TP +10. Sengikori +11.
+SAMJSE_1 = {}
+SAMJSE_2 = {}
+SAMJSE_3 = {}
+		
+--Idle Sets
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
+		
 
 -- Precast Sets
 -- Precast sets to enhance jas
