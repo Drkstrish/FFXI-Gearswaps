@@ -11,9 +11,6 @@ function get_sets()
 	mote_include_version = 2
 	
 		include('Mote-Include.lua')
-		
-		include('organizer-lib')
-
 end
 
 -- Setup vars that are user-independent.
@@ -21,8 +18,6 @@ end
 function job_setup()
 
 	get_combat_form()
-
-	--get_combat_weapon()
 
 	update_melee_groups()
     		
@@ -53,50 +48,32 @@ end
 function user_setup()
 
 -- Options: Override default values
-
+	
 	state.OffenseMode:options('Normal', 'Mid', 'Acc')
-
-    	state.HybridMode:options('Normal', 'PDT', 'Reraise')
-
-    	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-
-    	state.IdleMode:options('Normal')
-
-    	state.RestingMode:options('Normal')
-
-    	state.PhysicalDefenseMode:options('PDT', 'Reraise')
-
-    	state.MagicalDefenseMode:options('MDT')
+	state.HybridMode:options('Normal', 'PDT', 'Reraise')
+	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+	state.IdleMode:options('Normal')
+	state.RestingMode:options('Normal')
+	state.PhysicalDefenseMode:options('PDT', 'Reraise')
+	state.MagicalDefenseMode:options('MDT')
     
 -- Additional local binds
-    	
-    	send_command('bind ^[ input /lockstyle on')
 
-    	send_command('bind ![ input /lockstyle off')
-
-    	send_command('bind != gs c toggle CapacityMode')
+	send_command('bind ^[ input /lockstyle on')
+	send_command('bind ![ input /lockstyle off')
+	send_command('bind != gs c toggle CapacityMode')
     
 end
 
 -- Called when this job file is unloaded (eg: job change)
 
 function file_unload()
-    
+
 	send_command('unbind ^[')
-
-    	send_command('unbind !=')
-
-    	send_command('unbind ![')
+	send_command('unbind !=')
+	send_command('unbind ![')
 
 end
-
---[[SC's
-Rana > Shoha > Fudo > Kasha > Shoha > Fudo - light
-Rana > Shoha > Fudo > Kasha > Rana > Fudo - dark
-Kasha > Shoha > Fudo
-Fudo > Kasha > Shoha > fudo
-Shoha > Fudo > Kasha > Shoha > Fudo
---]]
 
 function init_gear_sets()
     
@@ -107,7 +84,7 @@ SAMJSE_1 = {}
 SAMJSE_2 = {}
 SAMJSE_3 = {}
 		
---Idle Sets
+--Idle Set
 Idle_Head = {}
 Idle_Neck = {}
 Idle_Ear1 = {}
@@ -120,31 +97,94 @@ Idle_Back = {}
 Idle_Waist = {}
 Idle_Legs = {}
 Idle_Feet = {}
-		
+
+--Fast Cast/Fast Recast set
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
+
+--WS set
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
+
+--WS Mid Acc Set
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
+
+--WS High Acc Set
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
+
+-- Waltz Set
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
+
 
 -- Precast Sets
 -- Precast sets to enhance jas
-
 	sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote",back="Smertrios's Mantle"}
-    
 	sets.precast.JA.Seigan = {head="Unkai Kabuto +1"}
-    
 	sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"}
-    
 	sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate +1"}
-    
 	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
 
 -- Waltz set (chr and vit)
     
 	sets.precast.Waltz = {}
 
-	--sets.Organizer = {}
-	
 -- Don't need any special gear for Healing Waltz.
 
 	sets.precast.Waltz['Healing Waltz'] = {}
-	
+	sets.precast.FC = {}
 	sets.CapacityMantle  = {back="Mecistopins Mantle"}
 	sets.WSDayBonus      = {head="Gavialis Helm"}
 
@@ -156,328 +196,123 @@ Idle_Feet = {}
 -- Weaponskill sets
 -- Default set for any weaponskill that isn't any more specifically defined
 
-	sets.precast.WS = {
-		head=Valorous.Head.TP,
-		neck="Fotia Gorget",
-		ear1="Brutal Earring",
-		ear2="Moonshade Earring",
-		body=" Found. Breastplate",
-		hands="Hizamaru Kote +1",
-		ring1="Ifrit Ring",
-		ring2="Ifrit Ring",
-		back="Smertrios's Mantle",
-		waist="Fotia Belt",
-		legs={name="Rao Haidate", augments={'STR+10','DEX+10','Attack+15',}},
-		feet={name="Ryuo Sune-Ate", augments={'STR+10','DEX+10','Accuracy+15'}}
-		}
-
-sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-})
-
-sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-head="Ryuo Somen",
-ear1= "Zennaroi Earring",
-ear2= "Digni. Earring",
-ring1="Cacoethic Ring",
-ring2=" Cacoethic Ring +1",
-feet= "Rao Sune-Ate"
-})
-    
-sets.precast.WS['Tachi: Fudo'] = sets.precast.WS
-    
-sets.precast.WS['Tachi: Fudo'].Mid = sets.precast.WS.Mid
-    
-sets.precast.WS['Tachi: Fudo'].Acc = sets.precast.WS.Acc
-    
-sets.precast.WS['Tachi: Shoha'] = sets.precast.WS
-    
-sets.precast.WS['Tachi: Shoha'].Mid = sets.precast.WS.Mid
-    
-sets.precast.WS['Tachi: Shoha'].Acc = sets.precast.WS.Acc
-    
-    
-sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
-ear1="Bladeborn Earring",
-ear2="Steelflash Earring"
-})
-
-sets.precast.WS['Tachi: Rana'].Mid = set_combine(sets.precast.WS.Mid, {
-ear1="Bladeborn Earring",
-ear2="Steelflash Earring"
-})
-
-sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {
-ear1="Bladeborn Earring",
-ear2="Steelflash Earring"
-})
-
--- CHR Mod
-    
-sets.precast.WS['Tachi: Ageha'] = sets.precast.WS
-    
-sets.precast.WS['Tachi: Ageha'].Mid = sets.precast.WS.Mid
-    
-sets.precast.WS['Tachi: Ageha'].Acc = sets.precast.WS.Acc
-    
-sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS
-    
-sets.precast.WS['Tachi: Jinpu'].Mid = sets.precast.WS.Mid
-    
-sets.precast.WS['Tachi: Jinpu'].Acc = sets.precast.WS.Acc
-        
-sets.precast.WS['Tachi: Kasha'] = sets.precast.WS
-    
-sets.precast.WS['Tachi: Kasha'].Mid = sets.precast.WS.Mid
-    
-sets.precast.WS['Tachi: Kasha'].Acc = sets.precast.WS.Acc
-
-sets.precast.WS['Tachi: Gekko'] = sets.precast.WS
-    
-sets.precast.WS['Tachi: Gekko'].Mid = sets.precast.WS.Mid
-    
-sets.precast.WS['Tachi: Gekko'].Acc = sets.precast.WS.Acc
-
-sets.precast.WS['Tachi: Yukikaze'] = sets.precast.WS
-    
-sets.precast.WS['Tachi: Yukikaze'].Mid = sets.precast.WS.Mid
-    
-sets.precast.WS['Tachi: Yukikaze'].Acc = sets.precast.WS.Acc
-        
---sets.precast.WS['Namas Arrow'] = {}
-    
---sets.precast.WS['Namas Arrow'].Mid = {}
-    
---sets.precast.WS['Namas Arrow'].Acc = {}
-    
-sets.precast.WS['Apex Arrow'] = {
-head="Ryuo Somen",
-neck="Fotia Gorget",
-ear1="Hollow Earring",
-ear2="Moonshade Earring",
-body="Kyujutsugi", - On Mule
-hands="Ryuo Tekko",
-ring1="Cacoethic Ring",
-ring2="Cacoethic Ring +1",
-back="Sokolski Mantle",
-waist="Fotia Belt",
-legs= "Ryuo Hakama",
-feet= " Waki. Sune-Ate +1"
-}
-
-sets.precast.WS['Apex Arrow'].Mid = sets.precast.WS['Apex Arrow']
-	
-sets.precast.WS['Apex Arrow'].Acc = sets.precast.WS['Apex Arrow']
+	sets.precast.WS = {}
+	sets.precast.WS.Mid = {}
+	sets.precast.WS.Acc = {}
+--80% STR Mod. Light/Distortion.
+	sets.precast.WS['Tachi: Fudo'] = sets.precast.WS
+	sets.precast.WS['Tachi: Fudo'].Mid = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Fudo'].Acc = sets.precast.WS.Acc
+--85% STR Mod. Light/Fragmentation/Distortion (Light only valid when AM up from Aeonic Weapon).
+	sets.precast.WS['Tachi: Shoha'] = sets.precast.WS
+	sets.precast.WS['Tachi: Shoha'].Mid = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Shoha'].Acc = sets.precast.WS.Acc
+--50% STR Mod. Gravitation/Induration.
+	sets.precast.WS['Tachi: Rana'] = {}
+	sets.precast.WS['Tachi: Rana'].Mid = {}
+	sets.precast.WS['Tachi: Rana'].Acc = {}
+--40% STR 60% CHR. Compression/Scission.
+	sets.precast.WS['Tachi: Ageha'] = sets.precast.WS
+	sets.precast.WS['Tachi: Ageha'].Mid = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Ageha'].Acc = sets.precast.WS.Acc
+--30% STR Mod. Scission/Detonation.
+	sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS
+	sets.precast.WS['Tachi: Jinpu'].Mid = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Jinpu'].Acc = sets.precast.WS.Acc
+--75% STR Mod. Fusion/Compression.
+	sets.precast.WS['Tachi: Kasha'] = sets.precast.WS
+	sets.precast.WS['Tachi: Kasha'].Mid = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Kasha'].Acc = sets.precast.WS.Acc
+--75% STR Mod. Distortion/Reverberation.
+	sets.precast.WS['Tachi: Gekko'] = sets.precast.WS
+	sets.precast.WS['Tachi: Gekko'].Mid = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Gekko'].Acc = sets.precast.WS.Acc
+--75% Str Mod. Induration/Detonation.
+	sets.precast.WS['Tachi: Yukikaze'] = sets.precast.WS
+	sets.precast.WS['Tachi: Yukikaze'].Mid = sets.precast.WS.Mid
+	sets.precast.WS['Tachi: Yukikaze'].Acc = sets.precast.WS.Acc
+-- 73~85% AGI Mod. Light/Fragmentation/Transfixion (Light only valid with AM from aeonic bow).
+	sets.precast.WS['Apex Arrow'] = {}
+	sets.precast.WS['Apex Arrow'].Mid = sets.precast.WS['Apex Arrow']
+	sets.precast.WS['Apex Arrow'].Acc = sets.precast.WS['Apex Arrow']
 
 -- Midcast Sets
     
-sets.midcast.FastRecast = {
-}
+	sets.midcast.FastRecast = {}
     
 -- Sets to return to when not performing an action.
     
 -- Resting sets
     
-sets.resting = {
-head="",
-neck="",
-ear1="",
-ear2="",
-body="",
-hands="",
-ring1="",
-ring2="",
-back="",
-waist="",
-legs="",
-feet="”
-}
-    
-sets.idle.Town = {}
-   
-sets.idle.Town.Adoulin = {}
-    
-sets.idle.Field = {}
-    
-sets.idle.Weak = {}
-    
-sets.idle.Yoichi = {}
-
-sets.idle.Regen = {
-head="Rao Kabuto",	
-neck="Sanctity Necklace", 
-ear1="Infused Earring",
-hands="Rao Kote",
-feet="Rao Sune-Ate"
-}
+	sets.resting = {}
+	sets.idle.Town = {}
+	sets.idle.Town.Adoulin = {}
+	sets.idle.Field = {}
+	sets.idle.Weak = {}
+	--sets.idle.Yoichi = {}
+	sets.idle.Regen = {}
     
 --Defense sets
     
-sets.defense.PDT = {
-}
-    
-sets.defense.Killer = {
-head="Founder’s Corona",
-neck="Twilight Torque",
-ear1="Bladeborn Earring",
-ear2="Steelflash Earring",
-body="Found. Breastplate",
-hands="Founder’s Gauntlets",
-ring1="Petrov Ring",
-ring2="Rajas Rign",
-back="Takaha Mantle",
-waist="Windbuffet Belt +1",
-legs="Founder’s Hose",
-feet="Founder’s Greaves",
-}
-    
-sets.defense.MDT = {
-}
-    
-sets.Kiting = {
-}
-    
-sets.Killer = {
-}
+	sets.defense.PDT = {}
+	sets.defense.Reraise = {}
+	sets.defense.MDT = {}
+	sets.Kiting = {}
+	sets.Reraise = {}
     
 -- Engaged sets
-    
 -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-
 -- sets if more refined versions aren't defined.
-
 -- If you create a set with both offense and defense modes, the offense mode should be first.
-
 -- EG: sets.engaged.Dagger.Accuracy.Evasion
-    
 -- Note, this set assumes use of:
-sets.engaged = {
-head="",
-neck="",
-ear1="",
-ear2="",
-body="",
-hands="",
-ring1="",
-ring2="",
-back="",
-waist="",
-legs="",
-feet=""
-}
-    
-sets.engaged.Mid = {
-head="",
-neck="",
-ear1="",
-ear2="",
-body="",
-hands="",
-ring1="",
-ring2="",
-back="",
-waist="",
-legs="",
-feet="",
-}
-    
-sets.engaged.Acc = {
-head="",
-neck="",
-ear1="",
-ear2="",
-body="",
-hands="",
-ring1="",
-ring2="",
-back="",
-waist="",
-legs="",
-feet="",
-}
-    
---sets.engaged.Yoichi = {}
 
---sets.engaged.Yoichi.Mid = {}
-
---sets.engaged.Yoichi.Acc = {}
-
---sets.engaged.PDT = {}
-
---sets.engaged.Yoichi.PDT = {}
-
---sets.engaged.Acc.PDT = {}
-
---sets.engaged.Killer = {}
-
---sets.engaged.Killer.Yoichi = {}
-
---sets.engaged.Acc.Killer = {}
-
---sets.engaged.Acc.Killer.Yoichi = {}
+	sets.engaged = {}
+	sets.engaged.Mid = {}
+	sets.engaged.Acc = {}
+	--sets.engaged.Yoichi = {}
+	--sets.engaged.Yoichi.Mid = {}
+	--sets.engaged.Yoichi.Acc = {}
+	--sets.engaged.PDT = {}
+	--sets.engaged.Yoichi.PDT = {}
+	--sets.engaged.Acc.PDT = {}
+	--sets.engaged.Reraise = {}
+	--sets.engaged.Reraise.Yoichi = {}
+	--sets.engaged.Acc.Reraise = {}
+	--sets.engaged.Acc.Reraise.Yoichi = {}
 
 -- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills and 1% gear haste. 
-
 -- Game flipped upside down. 31 STP needed to 4-hit?
-    
 -- This set aims for Tsurumaru 4-hit. 21% DA, 4% TA, 1% QA 27% haste
-
 -- Assumes use of Cibitshavore
-   
-sets.engaged.Adoulin = {}
-    
-sets.engaged.Adoulin.Mid = {}
-    
-sets.engaged.Adoulin.Acc = {}
-    
---sets.engaged.Adoulin.PDT = {}
-    
---sets.engaged.Adoulin.Acc.PDT = {}
-    
---sets.engaged.Adoulin.Yoichi = {}
-    
---sets.engaged.Adoulin.Yoichi.Mid = {}
-    
---sets.engaged.Adoulin.Yoichi.Acc = {}
-    
---sets.engaged.Adoulin.Yoichi.PDT = {}
-    
---sets.engaged.Adoulin.Yoichi.Acc.PDT = {}
-    
---sets.engaged.Adoulin.Killer = {}
-   
---sets.engaged.Adoulin.Yoichi.Killer = {}
-    
---sets.engaged.Adoulin.Yoichi.Acc.Killer = {}
-    
---sets.engaged.Amanomurakumo = {}
-    
---sets.engaged.Amanomurakumo.AM = {}
-    
---sets.engaged.Adoulin.Amanomurakumo = {}
-    
---sets.engaged.Kogarasumaru = {}
-    
---sets.engaged.Kogarasumaru.AM = {}
-    
---sets.engaged.Kogarasumaru.AM3 = {}
-    
---sets.engaged.Adoulin.Kogarasumaru = {}
-    
---sets.engaged.Adoulin.Kogarasumaru.AM = {}
-
---sets.engaged.Adoulin.Kogarasumaru.AM3 = {}
-
-sets.buff.Sekkanoki = {hands="Unkai Kote +1"}
-    
-sets.buff.Sengikori = {}
-    
-sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
-    
-sets.thirdeye = {head="Unkai Kabuto +1", legs="Sakonji Haidate +1"}
-    
-sets.seigan = {hands="Unkai Kabuto +1"}
-    
---sets.bow = {}
+	sets.engaged.Adoulin = {}
+	sets.engaged.Adoulin.Mid = {}
+	sets.engaged.Adoulin.Acc = {}
+	sets.engaged.Adoulin.PDT = {}
+	sets.engaged.Adoulin.Acc.PDT = {}
+	--sets.engaged.Adoulin.Yoichi = {}
+	--sets.engaged.Adoulin.Yoichi.Mid = {}
+	--sets.engaged.Adoulin.Yoichi.Acc = {}
+	--sets.engaged.Adoulin.Yoichi.PDT = {}
+	--sets.engaged.Adoulin.Yoichi.Acc.PDT = {}
+	--sets.engaged.Adoulin.Reraise = {}
+	--sets.engaged.Adoulin.Yoichi.Reraise = {}
+	--sets.engaged.Adoulin.Yoichi.Acc.Reraise = {}
+	--sets.engaged.Amanomurakumo = {}
+	--sets.engaged.Amanomurakumo.AM = {}
+	--sets.engaged.Adoulin.Amanomurakumo = {}
+	--sets.engaged.Kogarasumaru = {}
+	--sets.engaged.Kogarasumaru.AM = {}
+	--sets.engaged.Kogarasumaru.AM3 = {}
+	--sets.engaged.Adoulin.Kogarasumaru = {}
+	--sets.engaged.Adoulin.Kogarasumaru.AM = {}
+	--sets.engaged.Adoulin.Kogarasumaru.AM3 = {}
+	sets.buff.Sekkanoki = {hands="Unkai Kote +1"}
+	sets.buff.Sengikori = {}
+	sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
+	sets.thirdeye = {head="Unkai Kabuto +1", legs="Sakonji Haidate +1"}
+	sets.seigan = {hands="Unkai Kabuto +1"}
+	--sets.bow = {}
 
 end
 
@@ -572,9 +407,9 @@ end
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	-- Effectively lock these items in place.
-	if state.HybridMode.value == 'Killer' or
-    (state.HybridMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Killer') then
-		equip(sets.Killer)
+	if state.HybridMode.value == 'Reraise' or
+    (state.HybridMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
+		equip(sets.Reraise)
 	end
     if state.Buff['Seigan'] then
         if state.DefenseMode.value == 'PDT' then
@@ -676,7 +511,6 @@ end
 function job_update(cmdParams, eventArgs)
 	get_combat_form()
     update_melee_groups()
-    --get_combat_weapon()
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -687,17 +521,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
---function get_combat_weapon()
---    if player.equipment.range == 'Yoichinoyumi' then
---        if player.equipment.main == 'Amanomurakumo' then
---            state.CombatWeapon:set('AmanoYoichi')
---        else
---            state.CombatWeapon:set('Yoichi')
---        end
---    else
---        state.CombatWeapon:set(player.equipment.main)
---    end
---end
+
 -- Handle zone specific rules
 windower.register_event('Zone change', function(new,old)
     determine_idle_group()
