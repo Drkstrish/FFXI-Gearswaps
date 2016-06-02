@@ -1,23 +1,7 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
---Ionis Zones
---Anahera Blade (4 hit): 52
---Tsurumaru (4 hit): 49
---Kogarasumaru (or generic 450 G.katana) (5 hit): 40
---Amanomurakumo/Masamune 437 (5 hit): 46
---
---Non Ionis Zones:
---Anahera Blade (4 hit): 52
---Tsurumaru (5 hit): 24
---Kogarasumaru (5 hit): 40
---Amanomurakumo/Masamune 437 (5 hit): 46
---
---Aftermath sets
--- Koga AM1/AM2 = sets.engaged.Kogarasumaru.AM
--- Koga AM3 = sets.engaged.Kogarasumaru.AM3
--- Amano AM = sets.engaged.Amanomurakumo.AM
--- Using Namas Arrow while using Amano will cancel STPAM set
+
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
 -- Initialization function for this job file.
 function get_sets()
