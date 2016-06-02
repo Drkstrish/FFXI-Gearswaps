@@ -80,9 +80,10 @@ function init_gear_sets()
 --------------------------------------
 -- Start defining the sets
 --------------------------------------
-SAMJSE_1 = {}
-SAMJSE_2 = {}
-SAMJSE_3 = {}
+SAMJSETP_1 = {}
+--SAMJSETP_2 = {}
+SAMJSEWS_1 = {}
+--SAMJSEWS_2 = {}
 		
 --Idle Set
 Idle_Head = {}
@@ -99,130 +100,130 @@ Idle_Legs = {}
 Idle_Feet = {}
 
 --Fast Cast/Fast Recast set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+FC_Head = {}
+FC_Neck = {}
+FC_Ear1 = {}
+FC_Ear2 = {}
+FC_Body = {}
+FC_Hands = {}
+FC_Ring1 = {}
+FC_Ring2 = {}
+FC_Back = {}
+FC_Waist = {}
+FC_Legs = {}
+FC_Feet = {}
 
 --WS set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+WS_Head = {}
+WS_Neck = {}
+WS_Ear1 = {}
+WS_Ear2 = {}
+WS_Body = {}
+WS_Hands = {}
+WS_Ring1 = {}
+WS_Ring2 = {}
+WS_Back = {}
+WS_Waist = {}
+WS_Legs = {}
+WS_Feet = {}
 
 --WS Mid Acc Set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+WSMid_Head = {}
+WSMid_Neck = {}
+WSMid_Ear1 = {}
+WSMid_Ear2 = {}
+WSMid_Body = {}
+WSMid_Hands = {}
+WSMid_Ring1 = {}
+WSMid_Ring2 = {}
+WSMid_Back = {}
+WSMid_Waist = {}
+WSMid_Legs = {}
+WSMid_Feet = {}
 
 --WS High Acc Set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+WSHigh_Head = {}
+WSHigh_Neck = {}
+WSHigh_Ear1 = {}
+WSHigh_Ear2 = {}
+WSHigh_Body = {}
+WSHigh_Hands = {}
+WSHigh_Ring1 = {}
+WSHigh_Ring2 = {}
+WSHigh_Back = {}
+WSHigh_Waist = {}
+WSHigh_Legs = {}
+WSHigh_Feet = {}
 
 -- Waltz Set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+Waltz_Head = {}
+Waltz_Neck = {}
+Waltz_Ear1 = {}
+Waltz_Ear2 = {}
+Waltz_Body = {}
+Waltz_Hands = {}
+Waltz_Ring1 = {}
+Waltz_Ring2 = {}
+Waltz_Back = {}
+Waltz_Waist = {}
+Waltz_Legs = {}
+Waltz_Feet = {}
 
 --Tanking Set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+Tanking_Head = {}
+Tanking_Neck = {}
+Tanking_Ear1 = {}
+Tanking_Ear2 = {}
+Tanking_Body = {}
+Tanking_Hands = {}
+Tanking_Ring1 = {}
+Tanking_Ring2 = {}
+Tanking_Back = {}
+Tanking_Waist = {}
+Tanking_Legs = {}
+Tanking_Feet = {}
 
 --TP Set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+TP_Head = {}
+TP_Neck = {}
+TP_Ear1 = {}
+TP_Ear2 = {}
+TP_Body = {}
+TP_Hands = {}
+TP_Ring1 = {}
+TP_Ring2 = {}
+TP_Back = {}
+TP_Waist = {}
+TP_Legs = {}
+TP_Feet = {}
 
 --TP Mid Set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+TPMid_Head = {}
+TPMid_Neck = {}
+TPMid_Ear1 = {}
+TPMid_Ear2 = {}
+TPMid_Body = {}
+TPMid_Hands = {}
+TPMid_Ring1 = {}
+TPMid_Ring2 = {}
+TPMid_Back = {}
+TPMid_Waist = {}
+TPMid_Legs = {}
+TPMid_Feet = {}
 
 --TP Acc Set
-Idle_Head = {}
-Idle_Neck = {}
-Idle_Ear1 = {}
-Idle_Ear2 = {}
-Idle_Body = {}
-Idle_Hands = {}
-Idle_Ring1 = {}
-Idle_Ring2 = {}
-Idle_Back = {}
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+TPAcc_Head = {}
+TPAcc_Neck = {}
+TPAcc_Ear1 = {}
+TPAcc_Ear2 = {}
+TPAcc_Body = {}
+TPAcc_Hands = {}
+TPAcc_Ring1 = {}
+TPAcc_Ring2 = {}
+TPAcc_Back = {}
+TPAcc_Waist = {}
+TPAcc_Legs = {}
+TPAcc_Feet = {}
 
 -- Precast Sets
 -- Precast sets to enhance jas
@@ -294,7 +295,8 @@ Idle_Feet = {}
 -- Midcast Sets
     
 	sets.midcast.FastRecast = sets.precast.FC
-    
+    	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
+    	
 -- Sets to return to when not performing an action.
     
 -- Resting sets
