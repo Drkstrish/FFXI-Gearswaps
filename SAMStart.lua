@@ -183,12 +183,46 @@ Idle_Legs = {}
 Idle_Feet = {}
 
 --TP Set
-
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
 
 --TP Mid Set
-
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
 
 --TP Acc Set
+Idle_Head = {}
+Idle_Neck = {}
+Idle_Ear1 = {}
+Idle_Ear2 = {}
+Idle_Body = {}
+Idle_Hands = {}
+Idle_Ring1 = {}
+Idle_Ring2 = {}
+Idle_Back = {}
+Idle_Waist = {}
+Idle_Legs = {}
+Idle_Feet = {}
 
 -- Precast Sets
 -- Precast sets to enhance jas
