@@ -209,11 +209,13 @@ function init_gear_sets()
 		Valorous.Body = {} 
 -- 29 STR. 25 DEX. Acc. +20. Haste +3%. STP +3.DA +2%. PDT -2%.
 		Valorous.Hands = {} 
+			Valorous.Hands.TP
 -- 13 STR. 33 DEX. Acc. +10. Atk. +10. Haste +4%. Zanshin +10. SC Dmg. +5.
 		Valorous.Legs = {} 
 -- 39 STR. Haste +5%. DA. +3%. PDT -2%.
 			Valorous.Legs.WS = { name="Valor. Hose", augments={'Accuracy+23 Attack+23','Weapon skill damage +1%','Accuracy+5','Attack+5'}}
 		Valorous.Feet = {} 
+			Valorous.Feet.TP
 -- 17 STR. 20 DEX. Acc. +12. Atk. +12. Haste +3%. STP +5. Crit. Dmg. +4%. MDT -2%.
 	Wakido = {}
 		Wakido.Head = "Wakido Kabuto +1" 
@@ -253,11 +255,7 @@ function init_gear_sets()
 -- Precast Sets
 -- Precast sets to enhance jas
 
-	sets.precast.JA.Meditate = {
-head="Wakido Kabuto +1",
-hands="Sakonji Kote",
-back="Smertrios's Mantle"
-}
+	sets.precast.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote",back="Smertrios's Mantle"}
     
 	sets.precast.JA.Seigan = {head="Unkai Kabuto +1"}
     
@@ -265,7 +263,7 @@ back="Smertrios's Mantle"
     
 	sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate +1"}
     
-	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote"}
+	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
 
 -- Waltz set (chr and vit)
     
@@ -276,9 +274,9 @@ back="Smertrios's Mantle"
 -- Don't need any special gear for Healing Waltz.
 
 	sets.precast.Waltz['Healing Waltz'] = {}
+	
 	sets.CapacityMantle  = {back="Mecistopins Mantle"}
-	--sets.Berserker       = {neck="Berserker's Torque"}
-	--sets.WSDayBonus      = {head="Gavialis Helm"}
+	sets.WSDayBonus      = {head="Gavialis Helm"}
 
 	sets.LugraMoonshade  = {ear1="Brutal Earring", ear2="Moonshade Earring"}
 	sets.BrutalMoonshade = {ear1="Brutal Earring", ear2="Moonshade Earring"}
@@ -289,7 +287,7 @@ back="Smertrios's Mantle"
 -- Default set for any weaponskill that isn't any more specifically defined
 
 	sets.precast.WS = {
-		head={name="Rao Kabuto", augments={'STR+10','DEX+10','Attack+15',}},
+		head=Valorous.Head.TP,
 		neck="Fotia Gorget",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
