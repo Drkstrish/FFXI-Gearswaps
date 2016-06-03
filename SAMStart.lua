@@ -88,16 +88,16 @@ SAMJSEWS_1 = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack
 --Idle Set
 Idle_Head = { name="Rao Kabuto", augments={'STR+10','DEX+10','Attack+15',}}
 Idle_Neck = "Sanctity Necklace"
-Idle_Ear1 = {}
-Idle_Ear2 = {}
+Idle_Ear1 = "Infused Earring"
+Idle_Ear2 = "Odnowa Earring"
 Idle_Body = "Hiza. Haramaki +1"
 Idle_Hands = { name="Rao Kote", augments={'Accuracy+7','Attack+7','Evasion+9',}}
 Idle_Ring1 = "Defending Ring"
 Idle_Ring2 = "Paguroidea Ring"
 Idle_Back = "Solemnity Cape"
-Idle_Waist = {}
-Idle_Legs = {}
-Idle_Feet = {}
+Idle_Waist = "Windbuffet Belt +1"
+Idle_Legs = { name="Ryuo Hakama", augments={'STR+10','DEX+10','Accuracy+15',}}
+Idle_Feet = "Rao Sune-Ate"
 
 --Fast Cast/Fast Recast set
 FC_Head = {}
