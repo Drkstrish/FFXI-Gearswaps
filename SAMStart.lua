@@ -80,9 +80,9 @@ function init_gear_sets()
 --------------------------------------
 -- Start defining the sets
 --------------------------------------
-SAMJSETP_1 = {}
+SAMJSETP_1 = { name="Takaha Mantle", augments={'STR+4','"Zanshin"+3','"Store TP"+2','Meditate eff. dur. +5',}}
 --SAMJSETP_2 = {}
-SAMJSEWS_1 = {}
+SAMJSEWS_1 = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 --SAMJSEWS_2 = {}
 		
 --Idle Set
