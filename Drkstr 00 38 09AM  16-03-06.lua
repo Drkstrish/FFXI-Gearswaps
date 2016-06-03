@@ -1,4 +1,4 @@
-sets.exported={
+https://onedrive.live.com/?authkey=%21AKFeq76Tdl7LbNM&id=18521B913EC1C4A9%21131398&cid=18521B913EC1C4A9
     main="Dojikiri Yasutsuna",
     sub="Bloodrain Strap",
     sub="Gracile Grip",
