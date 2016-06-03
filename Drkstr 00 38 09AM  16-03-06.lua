@@ -1,4 +1,3 @@
-https://onedrive.live.com/?authkey=%21AKFeq76Tdl7LbNM&id=18521B913EC1C4A9%21131398&cid=18521B913EC1C4A9
     main="Dojikiri Yasutsuna",
     sub="Bloodrain Strap",
     sub="Gracile Grip",
@@ -36,7 +35,6 @@ https://onedrive.live.com/?authkey=%21AKFeq76Tdl7LbNM&id=18521B913EC1C4A9%211313
     head={ name="Founder's Corona", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Magic dmg. taken -5%',}},
     body={ name="Found. Breastplate", augments={'Accuracy+14','Mag. Acc.+13','Attack+14','"Mag.Atk.Bns."+14',}},
     hands={ name="Rao Kote", augments={'Accuracy+7','Attack+7','Evasion+9',}},
-    body="Genie Weskit",
     hands={ name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3',}},
     hands={ name="Valorous Mitts", augments={'Accuracy+26','"Store TP"+6','Attack+5',}},
     hands={ name="Founder's Gauntlets", augments={'STR+10','Attack+15','"Mag.Atk.Bns."+15','Phys. dmg. taken -5%',}},
@@ -59,5 +57,3 @@ https://onedrive.live.com/?authkey=%21AKFeq76Tdl7LbNM&id=18521B913EC1C4A9%211313
     body="Uac Jerkin",
     left_ear="Odnowa Earring",
     body="Vatic Byrnie",
-    item="Gil",
-}
