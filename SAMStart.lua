@@ -86,45 +86,45 @@ SAMJSEWS_1 = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack
 --SAMJSEWS_2 = {}
 		
 --Idle Set
-Idle_Head = { name="Rao Kabuto", augments={'STR+10','DEX+10','Attack+15',}}
+Idle_Head = { name="Rao Kabuto", augments={'STR+10','DEX+10','Attack+15',}} -- Path B
 Idle_Neck = "Sanctity Necklace"
 Idle_Ear1 = "Infused Earring"
 Idle_Ear2 = "Odnowa Earring"
 Idle_Body = "Hiza. Haramaki +1"
-Idle_Hands = { name="Rao Kote", augments={'Accuracy+7','Attack+7','Evasion+9',}}
+Idle_Hands = { name="Rao Kote", augments={'Accuracy+7','Attack+7','Evasion+9',}} -- Path A
 Idle_Ring1 = "Defending Ring"
 Idle_Ring2 = "Paguroidea Ring"
 Idle_Back = "Solemnity Cape"
 Idle_Waist = "Windbuffet Belt +1"
-Idle_Legs = { name="Ryuo Hakama", augments={'STR+10','DEX+10','Accuracy+15',}}
-Idle_Feet = "Rao Sune-Ate"
+Idle_Legs = { name="Rao Haidate", augments={'STR+10','DEX+10','Attack+15',}} -- Path B
+Idle_Feet = "Rao Sune-Ate" -- Path A should be best?
 
 --Fast Cast/Fast Recast set
-FC_Head = {}
+--FC_Head = {}
 FC_Neck = "Orunmila's Torque"
-FC_Ear1 = {}
-FC_Ear2 = {}
-FC_Body = {}
-FC_Hands = {}
-FC_Ring1 = {}
-FC_Ring2 = {}
-FC_Back = {}
-FC_Waist = {}
-FC_Legs = {}
-FC_Feet = {}
+FC_Ear1 = "Loquacious Earring"
+--FC_Ear2 = {}
+--FC_Body = {}
+FC_Hands = "Leyline Gloves"
+FC_Ring1 = "Rahab Ring"
+--FC_Ring2 = {}
+--FC_Back = {}
+--FC_Waist = {}
+FC_Legs = "Arjuna Breeches"
+--FC_Feet = {}
 
 --WS set
-WS_Head = {}
-WS_Neck = {}
+WS_Head = { name="Valorous Mask", augments={'Accuracy+28','Weapon skill damage +3%','STR+15','Attack+12',}}
+WS_Neck = "Fotia Gorget"
 WS_Ear1 = {}
 WS_Ear2 = {}
-WS_Body = {}
+WS_Body = "Uac Jerkin"
 WS_Hands = {}
 WS_Ring1 = {}
 WS_Ring2 = {}
-WS_Back = {}
-WS_Waist = {}
-WS_Legs = {}
+WS_Back = SAMJSEWS_1
+WS_Waist = "Fotia Belt"
+WS_Legs = "Hiza.Hizayoroi +1"
 WS_Feet = {}
 
 --WS Mid Acc Set
