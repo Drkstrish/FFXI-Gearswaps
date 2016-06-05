@@ -116,12 +116,12 @@ FC_Legs = "Arjuna Breeches"
 --WS set
 WS_Head = { name="Valorous Mask", augments={'Accuracy+28','Weapon skill damage +3%','STR+15','Attack+12',}}
 WS_Neck = "Fotia Gorget"
-WS_Ear1 = {}
-WS_Ear2 = {}
+WS_Ear1 = "Brutal Earring"
+WS_Ear2 = "Moonshade Earring"
 WS_Body = "Uac Jerkin"
 WS_Hands = {}
-WS_Ring1 = {}
-WS_Ring2 = {}
+WS_Ring1 = "Ifrit Ring"
+WS_Ring2 = "Ifrit Ring"
 WS_Back = SAMJSEWS_1
 WS_Waist = "Fotia Belt"
 WS_Legs = "Hiza.Hizayoroi +1"
