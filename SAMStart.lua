@@ -118,94 +118,94 @@ WS_Head = { name="Valorous Mask", augments={'Accuracy+28','Weapon skill damage +
 WS_Neck = "Fotia Gorget"
 WS_Ear1 = "Brutal Earring"
 WS_Ear2 = "Moonshade Earring"
-WS_Body = "Uac Jerkin"
-WS_Hands = {}
+WS_Body = "Hiza. Haramaki +1"
+WS_Hands = { name="Valorous Mitts", augments={'Accuracy+29','Weapon skill damage +2%','STR+11',}}
 WS_Ring1 = "Ifrit Ring"
 WS_Ring2 = "Ifrit Ring"
 WS_Back = SAMJSEWS_1
 WS_Waist = "Fotia Belt"
 WS_Legs = "Hiza.Hizayoroi +1"
-WS_Feet = {}
+WS_Feet = { name="Valorous Greaves", augments={'Accuracy+29','Enmity+2','STR+10',}}
 
 --WS Mid Acc Set
-WSMid_Head = {}
-WSMid_Neck = {}
-WSMid_Ear1 = {}
-WSMid_Ear2 = {}
-WSMid_Body = {}
-WSMid_Hands = {}
-WSMid_Ring1 = {}
-WSMid_Ring2 = {}
-WSMid_Back = {}
-WSMid_Waist = {}
-WSMid_Legs = {}
-WSMid_Feet = {}
+--WSMid_Head = {}
+--WSMid_Neck = {}
+--WSMid_Ear1 = {}
+--WSMid_Ear2 = {}
+--WSMid_Body = {}
+--WSMid_Hands = {}
+--WSMid_Ring1 = {}
+--WSMid_Ring2 = {}
+--WSMid_Back = {}
+--WSMid_Waist = {}
+--WSMid_Legs = {}
+--WSMid_Feet = {}
 
 --WS High Acc Set
-WSHigh_Head = {}
-WSHigh_Neck = {}
-WSHigh_Ear1 = {}
-WSHigh_Ear2 = {}
-WSHigh_Body = {}
-WSHigh_Hands = {}
-WSHigh_Ring1 = {}
-WSHigh_Ring2 = {}
-WSHigh_Back = {}
-WSHigh_Waist = {}
-WSHigh_Legs = {}
-WSHigh_Feet = {}
+--WSHigh_Head = {}
+--WSHigh_Neck = {}
+--WSHigh_Ear1 = {}
+--WSHigh_Ear2 = {}
+--WSHigh_Body = {}
+--WSHigh_Hands = {}
+--WSHigh_Ring1 = {}
+--WSHigh_Ring2 = {}
+--WSHigh_Back = {}
+--WSHigh_Waist = {}
+--WSHigh_Legs = {}
+--WSHigh_Feet = {}
 
 -- Waltz Set
-Waltz_Head = {}
-Waltz_Neck = {}
-Waltz_Ear1 = {}
-Waltz_Ear2 = {}
-Waltz_Body = {}
-Waltz_Hands = {}
-Waltz_Ring1 = {}
-Waltz_Ring2 = {}
-Waltz_Back = {}
-Waltz_Waist = {}
-Waltz_Legs = {}
-Waltz_Feet = {}
+--Waltz_Head = {}
+--Waltz_Neck = {}
+--Waltz_Ear1 = {}
+--Waltz_Ear2 = {}
+--Waltz_Body = {}
+--Waltz_Hands = {}
+--Waltz_Ring1 = {}
+--Waltz_Ring2 = {}
+--Waltz_Back = {}
+--Waltz_Waist = {}
+--Waltz_Legs = {}
+--Waltz_Feet = {}
 
 --Tanking Set
-Tanking_Head = {}
-Tanking_Neck = {}
-Tanking_Ear1 = {}
-Tanking_Ear2 = {}
-Tanking_Body = {}
-Tanking_Hands = {}
-Tanking_Ring1 = {}
-Tanking_Ring2 = {}
-Tanking_Back = {}
-Tanking_Waist = {}
-Tanking_Legs = {}
-Tanking_Feet = {}
+--Tanking_Head = {}
+--Tanking_Neck = {}
+--Tanking_Ear1 = {}
+--Tanking_Ear2 = {}
+--Tanking_Body = {}
+--Tanking_Hands = {}
+--Tanking_Ring1 = {}
+--Tanking_Ring2 = {}
+--Tanking_Back = {}
+--Tanking_Waist = {}
+--Tanking_Legs = {}
+--Tanking_Feet = {}
 
---TP Set
-TP_Head = {}
-TP_Neck = {}
-TP_Ear1 = {}
-TP_Ear2 = {}
-TP_Body = {}
-TP_Hands = {}
-TP_Ring1 = {}
-TP_Ring2 = {}
+--TP Set 
+TP_Head = 
+TP_Neck = "Ainia Collar" -- -10 acc +8 STP
+TP_Ear1 = "Dedition Earring" -- -10 acc -10 atk +8 STP
+TP_Ear2 = "Tripudio Earring" -- 6Atk +5 STP
+TP_Body = "Kasuga Domaru +1" -- 24 DEX +22 Acc +22 Atk +11 G. Katana +12 STP 3% Haste
+TP_Hands = { name="Valorous Mitts", augments={'Accuracy+16 Attack+16','"Store TP"+2','AGI+6','Accuracy+9',}} -- 33 DEX +35 Acc +2 STP 4% Haste
+TP_Ring1 = "Rajas Ring" -- 5 DEX +5 STP
+TP_Ring2 = "Petrov Ring" -- 3 DEX +5 STP +1% Double
 TP_Back = {}
 TP_Waist = {}
-TP_Legs = {}
-TP_Feet = {}
+TP_Legs = "Kasuga Haidate +1" -- 9 DEX +9 STP 5% Haste
+TP_Feet = { name="Valorous Greaves", augments={'Accuracy+26','"Store TP"+7','STR+2','Attack+7',}} --20 DEX +38 Acc +12 STP 3% Haste
 
 --TP Mid Set
 TPMid_Head = {}
-TPMid_Neck = {}
-TPMid_Ear1 = {}
-TPMid_Ear2 = {}
+TPMid_Neck = "Clotharius Torque" -- +8 Acc +1% Triple
+TPMid_Ear1 = "Digni. Earring" -- +10 Acc +3 STP
+TPMid_Ear2 = "Tripudio Earring" -- 6Atk +5 STP
 TPMid_Body = {}
 TPMid_Hands = {}
-TPMid_Ring1 = {}
-TPMid_Ring2 = {}
+TPMid_Ring1 = "Rajas Ring" -- 5 DEX +5 STP
+TPMid_Ring2 = "Cacoethic Ring +1" -- Acc +10
 TPMid_Back = {}
 TPMid_Waist = {}
 TPMid_Legs = {}
@@ -213,13 +213,13 @@ TPMid_Feet = {}
 
 --TP Acc Set
 TPAcc_Head = {}
-TPAcc_Neck = {}
-TPAcc_Ear1 = {}
-TPAcc_Ear2 = {}
+TPAcc_Neck = "Sanctity Necklace" -- +10 Acc +10 Atk
+TPAcc_Ear1 = "Digni. Earring" -- +10 Acc +3 STP
+TPAcc_Ear2 = "Zennaroi Earring" -- +11 Acc
 TPAcc_Body = {}
 TPAcc_Hands = {}
-TPAcc_Ring1 = {}
-TPAcc_Ring2 = {}
+TPAcc_Ring1 = "Cacoethic Ring" -- Acc +10
+TPAcc_Ring2 = "Cacoethic Ring +1" -- Acc +11
 TPAcc_Back = {}
 TPAcc_Waist = {}
 TPAcc_Legs = {}
