@@ -183,33 +183,33 @@ WS_Feet = { name="Valorous Greaves", augments={'Accuracy+29','Enmity+2','STR+10'
 --Tanking_Legs = {}
 --Tanking_Feet = {}
 
---TP Set 
-TP_Head = 
-TP_Neck = "Ainia Collar" -- -10 acc +8 STP
-TP_Ear1 = "Dedition Earring" -- -10 acc -10 atk +8 STP
-TP_Ear2 = "Tripudio Earring" -- 6Atk +5 STP
-TP_Body = "Kasuga Domaru +1" -- 24 DEX +22 Acc +22 Atk +11 G. Katana +12 STP 3% Haste
-TP_Hands = { name="Valorous Mitts", augments={'Accuracy+16 Attack+16','"Store TP"+2','AGI+6','Accuracy+9',}} -- 33 DEX +35 Acc +2 STP 4% Haste
-TP_Ring1 = "Rajas Ring" -- 5 DEX +5 STP
-TP_Ring2 = "Petrov Ring" -- 3 DEX +5 STP +1% Double
-TP_Back = {}
-TP_Waist = {}
-TP_Legs = "Kasuga Haidate +1" -- 9 DEX +9 STP 5% Haste
-TP_Feet = { name="Valorous Greaves", augments={'Accuracy+26','"Store TP"+7','STR+2','Attack+7',}} --20 DEX +38 Acc +12 STP 3% Haste
+--TP Set Cibitshavore Bloodrain Grip - 96 Acc 92 STP 26% Haste
+TP_Head = { name="Acro Helm", augments={'Accuracy+10','Haste+3','STR+1 VIT+1',}}
+TP_Neck = "Ainia Collar"
+TP_Ear1 = "Dedition Earring"
+TP_Ear2 = "Tripudio Earring"
+TP_Body = "Kasuga Domaru +1"
+TP_Hands = { name="Valorous Mitts", augments={'Accuracy+16 Attack+16','"Store TP"+2','AGI+6','Accuracy+9',}}
+TP_Ring1 = "Rajas Ring"
+TP_Ring2 = "Petrov Ring"
+TP_Back = SAMJSETP_1
+TP_Waist = "Windbuffet Belt +1"
+TP_Legs = "Kasuga Haidate +1"
+TP_Feet = { name="Ryuo Sune-Ate", augments={'STR+10','DEX+10','Accuracy+15',}}
 
---TP Mid Set
-TPMid_Head = {}
-TPMid_Neck = "Clotharius Torque" -- +8 Acc +1% Triple
-TPMid_Ear1 = "Digni. Earring" -- +10 Acc +3 STP
-TPMid_Ear2 = "Tripudio Earring" -- 6Atk +5 STP
-TPMid_Body = {}
-TPMid_Hands = {}
-TPMid_Ring1 = "Rajas Ring" -- 5 DEX +5 STP
-TPMid_Ring2 = "Cacoethic Ring +1" -- Acc +10
-TPMid_Back = {}
-TPMid_Waist = {}
-TPMid_Legs = {}
-TPMid_Feet = {}
+--TP Mid Set Cibitshavore Bloodrain Grip - 128 Acc 79 STP 26% Haste
+TPMid_Head = TP_Head
+TPMid_Neck = "Clotharius Torque"
+TPMid_Ear1 = "Digni. Earring"
+TPMid_Ear2 = "Tripudio Earring"
+TPMid_Body = TP_Body
+TPMid_Hands = TP_Hands
+TPMid_Ring1 = "Rajas Ring"
+TPMid_Ring2 = "Petrov Ring"
+TPMid_Back = SAMJSETP_1
+TPMid_Waist = TP_Waist
+TPMid_Legs = TP_Legs
+TPMid_Feet = TP_Feet
 
 --TP Acc Set
 TPAcc_Head = {}
