@@ -1,36 +1,17 @@
 function Drkstr_shared_augmented_gear()
-	
--- Dark Rings
-	
-	gear.DarkRing = {}
-	
+
+-- Check to see if it is needed to have the format be gear.______ = {} or if I can follow the current format I started.
+
 --==================================--
--- Skirmish gear
+-- Reisenjima gear
 --==================================--
-	
+
 -- Weapons
--- Helios
--- Taeon
--- Telchine
--- Acro
-
---==================================--
--- Sinister Reign gear
---==================================--
-
-	
---==================================--
--- Escha gear
---==================================--
-	
--- Escha Zi'Tah weapons
--- Despair
--- Eschite
--- Naga
--- Psycloth
--- Pursuer's
--- Rawhide
--- Vanya
+-- Chironic
+-- Herculean
+-- Merlinic
+-- Odyssean
+-- Valorous
 
 --==================================--
 -- Escha abjuration gear
@@ -47,17 +28,36 @@ function Drkstr_shared_augmented_gear()
 -- Rao
 -- Ryuo
 -- Souveran
-    
-    
+
 --==================================--
--- Reisenjima gear
+-- Escha gear
 --==================================--
-    
+	
+-- Escha Zi'Tah weapons
+-- Despair
+-- Eschite
+-- Naga
+-- Psycloth
+-- Pursuer's
+-- Rawhide
+-- Vanya
+
+--==================================--
+-- Skirmish gear
+--==================================--
+	
 -- Weapons
--- Chironic
--- Herculean
--- Merlinic
--- Odyssean
--- Valorous
-    
+-- Helios
+-- Taeon
+-- Telchine
+-- Acro
+
+--==================================--
+-- Sinister Reign gear
+--==================================--
+
+--==================================--
+-- Misc. Gear
+--==================================--
+
 end
