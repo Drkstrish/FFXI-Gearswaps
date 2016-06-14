@@ -1,159 +1,49 @@
 function Drkstr_shared_augmented_gear()
 	
-	-- Dark Rings
+-- Dark Rings
 	
 	gear.DarkRing = {}
-	gear.DarkRing.PDT = {name="Dark Ring", augments={'Phys. dmg. taken -6%'}}
 	
-	--==================================--
-	-- Skirmish gear
-    --==================================--
+--==================================--
+-- Skirmish gear
+--==================================--
 	
-	-- Weapons
+-- Weapons
+
+-- Helios
+
+-- Taeon
+
+-- Telchine
+
+--==================================--
+-- Sinister Reign gear
+--==================================--
+
 	
-	gear.Kumbhakarna = {}
-	gear.Kumbhakarna.Acc1 = {name="Kumbhakarna", augments={'Pet: Accuracy+20 Pet: Rng. Acc.+20','Pet: Phys. dmg. taken -4%','Pet: TP Bonus+200'}}
-	gear.Kumbhakarna.Acc2 = {name="Kumbhakarna", augments={'Pet: Accuracy+18 Pet: Rng. Acc.+18','Pet: Phys. dmg. taken -2%','Pet: TP Bonus+200'}}
+--==================================--
+-- Escha gear
+--==================================--
 	
-	-- Helios
-	
-	gear.HeliosBand = {}
-	gear.HeliosBand.MAB = {name="Helios Band", augments={'Mag. Acc.+15 "Mag. Atk. Bns."+15'}}
-    
-    gear.HeliosJacket = {}
-    gear.HeliosJacket.MAB = {name="Helios Jacket", augments={'"Mag. Atk. Bns."+25'}}
-	
-	gear.HeliosGloves = {}
-	gear.HeliosGloves.MAB = {name="Helios Gloves", augments={'Mag. Acc.+15 "Mag. Atk. Bns."+15'}}
-	
-	gear.HeliosBoots = {}
-	gear.HeliosBoots.MAB = {name="Helios Boots", augments={'Mag. Acc.+19 "Mag. Atk. Bns."+19'}}
-	
-	-- Taeon
-	
-	gear.TaeonChapeau = {}
-	gear.TaeonChapeau.TA = {name="Taeon Chapeau", augments={'"Triple Atk."+2'}}
-	gear.TaeonChapeau.DW = {name="Taeon Chapeau", augments={'"Dual Wield"+5'}}
-	
-	gear.TaeonTabard = {}
-	gear.TaeonTabard.TA = {name="Taeon Tabard", augments={'"Triple Atk."+2'}}
-	gear.TaeonTabard.PetDTandFC = {name="Taeon Tabard", augments={'"Fast Cast"+4','Pet: Damage taken -4%'}}
-	
-	gear.TaeonGloves = {}
-	gear.TaeonGloves.TA = {name="Taeon Gloves", augments={'"Triple Atk."+2'}}
-    gear.TaeonGloves.PetDTandWaltz = {name="Taeon Gloves", augments={'"Waltz" Potency +5','Pet: Damage taken -4%'}}
-	
-	gear.TaeonTights = {}
-	gear.TaeonTights.TA = {name="Taeon Tights", augments={'"Triple Atk."+2'}}
-	gear.TaeonTights.PetDT = {name="Taeon Tights", augments={'Pet: "Regen"+3','Pet: Damage taken -4%'}}
-	
-	gear.TaeonBoots = {}
-	gear.TaeonBoots.TA = {name="Taeon Boots", augments={'"Triple Atk."+2'}}
-	gear.TaeonBoots.PetDT = {name="Taeon Boots", augments={'Pet: "Regen"+2','Pet: Damage taken -4%'}}
-	
-	-- Telchine
-	
-	gear.TelchineCap = {}
-	gear.TelchineCap.Enh = {name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10'}}
-	
-	gear.TelchineChasuble = {}
-	gear.TelchineChasuble.Enh = {name="Telchine Chasuble", augments={'Enh. Mag. eff. dur. +5'}}
-	
-	gear.TelchineGloves = {}
-	gear.TelchineGloves.FCandEnh = {name="Telchine Gloves", augments={'"Fast Cast"+4','Enh. Mag. eff. dur. +10'}}
-	
-    gear.TelchineBraconi = {}
-    gear.TelchineBraconi.Enh = {name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +5'}}
-    
-	gear.TelchinePigaches = {}
-	gear.TelchinePigaches.Enh = {name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +5'}}
-	
-	--==================================--
-	-- Sinister Reign gear
-    --==================================--
-    
-    gear.Malevolence = {}
-    gear.Malevolence.Max = {name="Malevolence", augments={'INT+10','Mag. Acc.+10','"Mag.Atk.Bns."+10','"Fast Cast"+5'}}
-    gear.Malevolence.Mid = {name="Malevolence", augments={'INT+3','Mag. Acc.+5','"Mag.Atk.Bns."+7'}}
-    
-    gear.TamingSari = {}
-    gear.TamingSari.High = {name="Taming Sari", augments={'STR+8','DEX+9','DMG:+13'}}
-    gear.TamingSari.Mid = {name="Taming Sari", augments={'STR+6','DEX+9','DMG:+9'}}
-    gear.TamingSari.TH = {name="Taming Sari", augments={'STR+1','"Treasure Hunter"+1'}}
-	
-	--==================================--
-	-- Escha gear
-    --==================================--
-	
-	-- Escha Zi'Tah weapons
-	
-	gear.NibiruCudgel = {}
-	gear.NibiruCudgel.B1 = {name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15'}}
-	gear.NibiruCudgel.B2 = {name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15'}}
-	
-	-- Despair
-	
-	gear.DespairHelm = {}
-	gear.DespairHelm.D = {name="Despair Helm", augments={'STR+15','Enmity+7','"Store TP"+3'}}
-	
-	gear.DespairFingerGauntlets = {}
-	gear.DespairFingerGauntlets.B = {name="Despair Finger Gauntlets", augments={'STR+12', 'VIT+7', 'Haste+2%'}}
-	gear.DespairFingerGauntlets.C = {name="Despair Finger Gauntlets", augments={'Accuracy+10','Pet: VIT+7','Pet: Damage taken -3%'}}
-	
-	gear.DespairCuisses = {}
-	gear.DespairCuisses.B = {name="Despair Cuisses", augments={'STR+12','VIT+7','Haste+2%'}}
-	
-	gear.DespairGreaves = {}
-	gear.DespairGreaves.C = {name="Despair Greaves", augments={'Accuracy+10','Pet: VIT+7','Pet: Damage taken -3%'}}
-	
-    -- Eschite
-    
-    gear.EschiteCuisses = {}
-    gear.EschiteCuisses.D = {name="Eschite Cuisses", augments={'"Mag.Atk.Bns."+25','"Conserve MP"+6','"Fast Cast"+5'}}
-    
-    gear.EschiteGreaves = {}
-    gear.EschiteGreaves.A = {name="Eschite Greaves", augments={'HP+80','Enmity+7','Phys. dmg. taken -4'}}
-    
-	-- Psycloth
-	
-	gear.PsyclothLappas = {}
-	gear.PsyclothLappas.D = {name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7'}}
-	
-	-- Rawhide
-	
-	gear.RawhideMask = {}
-	gear.RawhideMask.A = {name="Rawhide Mask", augments={'DEX+10','STR+7','INT+7'}}
-	
-	gear.RawhideVest = {}
-	gear.RawhideVest.A = {name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7'}}
-	
-	gear.RawhideGloves = {}
-	gear.RawhideGloves.A = {name="Rawhide Gloves", augments={'DEX+10','STR+7','INT+7'}}
-	
-	gear.RawhideTrousers = {}
-	gear.RawhideTrousers.A = {name="Rawhide Trousers", augments={'DEX+10','STR+7','INT+7'}}
-	
-	gear.RawhideBoots = {}
-	gear.RawhideBoots.D = {name="Rawhide Boots", augments={'STR+10','Attack+15','"Store TP"+5'}}
-	
-	-- Vanya
-	
-	gear.VanyaHood = {}
-	gear.VanyaHood.A = {name="Vanya Hood", augments={'MP+50','"Cure" potency +7%','Enmity-6'}}
-    gear.VanyaHood.D = {name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%'}}
-	
-	gear.VanyaRobe = {}
-	gear.VanyaRobe.C = {name="Vanya Robe", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}}
-	
-	gear.VanyaSlops = {}
-	gear.VanyaSlops.C = {name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}}
-	
-	gear.VanyaClogs = {}
-	gear.VanyaClogs.D = {name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6'}}
-	
-	--==================================--
-	-- Escha abjuration gear
-    --==================================--
+-- Escha Zi'Tah weapons
+
+-- Despair
+
+-- Eschite
+
+-- Naga
+
+-- Psycloth
+
+-- Pursuer's
+
+-- Rawhide
+
+-- Vanya
+
+--==================================--
+-- Escha abjuration gear
+--==================================--
     
     -- Adhemar
     
