@@ -18,6 +18,37 @@ function Drkstr_shared_augmented_gear()
 --==================================--
     
 -- Adhemar
+	gear.Adhemarhead = {}
+	gear.Adhemarhead.A = { name="Adhemar Bonnet", augments={'DEX+10','AGI+10','Accuracy+15'}}
+	gear.Adhemarhead.B = {}
+	gear.Adhemarhead.C = { name="Adhemar Bonnet", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15'}}
+	gear.Adhemarhead.D = {}
+	
+	gear.Adhemarbody = {}
+	gear.Adhemarbody.A = { name="Adhemar Jacket", augments={'DEX+10','AGI+10','Accuracy+15'}}
+	gear.Adhemarbody.B = {}
+	gear.Adhemarbody.C = { name="Adhemar Jacket", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15'}}
+	gear.Adhemarbody.D = {}
+	
+	gear.Adhemarhands = {}
+	gear.Adhemarhands.A = {}
+	gear.Adhemarhands.B = {}
+	gear.Adhemarhands.C = {}
+	gear.Adhemarhands.D = {}
+	
+	gear.Adhemarlegs = {}
+	gear.Adhemarlegs.A = {}
+	gear.Adhemarlegs.B = {}
+	gear.Adhemarlegs.C = {}
+	gear.Adhemarlegs.D = {}
+	
+	gear.Adhemarfeet = {}
+	gear.Adhemarfeet.A = { name="Adhemar Gamashes", augments={'DEX+10','AGI+10','Accuracy+15'}}
+	gear.Adhemarfeet.B = {}
+	gear.Adhemarfeet.C = { name="Adhemar Gamashes", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15'}}
+	gear.Adhemarfeet.D = {}
+	
+	
 -- Amalric
 -- Apogee
 -- Argosy
@@ -59,6 +90,8 @@ function Drkstr_shared_augmented_gear()
 
 	gear.Acrohands = {}
 	gear.Acrohands.Pet = { name="Acro Gauntlets", augments={'Pet: Accuracy+17 Pet: Rng. Acc.+17','Pet: "Regen"+3','Pet: Damage taken -4%',}}
+
+	gear.Acrolegs = {}
 
 	gear.Acrofeet = {}
 	gear.Acrofeet.Pet = { name="Acro Leggings", augments={'Pet: Attack+19 Pet: Rng.Atk.+19','Pet: "Regen"+3','Pet: Damage taken -4%',}}
