@@ -92,7 +92,31 @@ function Drkstr_shared_augmented_gear()
 	gear.Lustratiofeet.B = { name="Lustratio Leggings", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%'}}
 	
 -- Rao
+	gear.Raohead = {}
+	gear.Raohead.B = { name="Rao Kabuto", augments={'STR+10','DEX+10','Attack+15'}}
+
+	gear.Raohands = {}
+	gear.Raohands.A = { name="Rao Kote", augments={'Accuracy+10','Attack+10','Evasion+15'}}
+	
+	gear.Raolegs = {}
+	gear.Raolegs.B = { name="Rao Haidate", augments={'STR+10','DEX+10','Attack+15'}}
+	
+	gear.Raofeet = {}
+	gear.Raofeet.A = { name="Rao Sune-Ate", augments={'Accuracy+10','Attack+10','Evasion+15'}}
+	
 -- Ryuo
+	gear.Ryuohead = {}
+	gear.Ryuohead
+	
+	gear.Ryuohands = {}
+	gear.Ryuohands
+	
+	gear.Ryuolegs = {}
+	gear.Ryuolegs
+	
+	gear.Ryuofeet = {}
+	gear.Ryuofeet
+	
 -- Souveran
 
 --==================================--
