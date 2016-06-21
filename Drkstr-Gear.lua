@@ -39,6 +39,18 @@ function Drkstr_shared_augmented_gear()
 	
 -- Apogee
 -- Argosy
+	gear.Argosyhead = {}
+	gear.Argosyhead.D =  { name="Argosy Celata", augments={'DEX+10','Accuracy+15','"Dbl.Atk."+2'}}
+	
+	gear.Argosyhands = {}
+	gear.Argosyhands.D =  { name="Argosy Mufflers", augments={'STR+15','"Dbl.Atk."+2','Haste+2%'}}
+	
+	gear.Argosylegs = {}
+	gear.Argosylegs.D = { name="Argosy Breeches", augments={'STR+10','Attack+20','"Store TP"+5'}}
+	
+	gear.Argosyfeet = {}
+	gear.Argosyfeet.D = { name="Argosy Sollerets", augments={'HP+50','"Dbl.Atk."+2','"Store TP"+3'}}
+	
 -- Carmine
 -- Emicho
 -- Kaykaus
