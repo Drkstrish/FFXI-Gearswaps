@@ -72,6 +72,17 @@ function Drkstr_shared_augmented_gear()
 	gear.ReiveJSE.BST = { name="Pastoralist's Mantle", augments={'STR+1 DEX+1','Pet: Accuracy+14 Pet: Rng. Acc.+14','Pet: Damage taken -5%',}}
 	gear.ReiveJSE.SAM = { name="Takaha Mantle", augments={'STR+4','"Zanshin"+3','"Store TP"+2','Meditate eff. dur. +5',}}
 	gear.ReiveJSE.NIN = { name="Yokaze Mantle", augments={'STR+2','DEX+3','Sklchn.dmg.+4%',}}
+	
+	gear.JSEcape = {}
+	gear.JSEcape.NINWS = { name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	gear.JSEcape.NINTP = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+	gear.JSEcape.BST = { name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: "Regen"+10',}}
+	gear.JSEcape.BLUcrit = { name="Rosmerta's Cape", augments={'Accuracy+5 Attack+5','Weapon skill damage +5%',}}
+	gear.JSEcape.BLUWS = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}}
+	gear.JSEcape.SAMTP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+	gear.JSEcape.SAMWS = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	gear.JSEcape.BLM = { name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
+	
 
 --==================================--
 -- Misc. Gear
