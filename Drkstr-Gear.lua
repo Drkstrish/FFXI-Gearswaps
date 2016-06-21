@@ -76,6 +76,21 @@ function Drkstr_shared_augmented_gear()
 	
 -- Kaykaus
 -- Lustratio
+	gear.Lustratiohead = {}
+	gear.Lustratiohead.B = { name="Lustratio Cap", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%'}}
+	
+	gear.Lustratiobody = {}
+	gear.Lustratiobody.D = { name="Lustratio Harness", augments={'Accuracy+8','Attack+10','"Dbl.Atk."+3'}}
+	
+	gear.Lustratiohands = {}
+	gear.Lustratiohands.B = { name="Lustratio Mittens", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%'}}
+	
+	gear.Lustratiolegs = {}
+	gear.Lustratiolegs.B = { name="Lustratio Subligar", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%'}}
+	
+	gear.Lustratiofeet = {}
+	gear.Lustratiofeet.B = { name="Lustratio Leggings", augments={'Accuracy+15','DEX+5','Crit. hit rate+2%'}}
+	
 -- Rao
 -- Ryuo
 -- Souveran
