@@ -52,6 +52,15 @@ function Drkstr_shared_augmented_gear()
 	gear.Argosyfeet.D = { name="Argosy Sollerets", augments={'HP+50','"Dbl.Atk."+2','"Store TP"+3'}}
 	
 -- Carmine
+	gear.Carminehands = {}
+	gear.Carminehands.D = { name="Carmine Fin. Ga.", augments={'Rng.Atk.+15','"Mag.Atk.Bns."+10','"Store TP"+5'}}
+	
+	gear.Carminelegs = {}
+	gear.Carminelegs.D = { name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}}
+	
+	gear.Carminefeet = {}
+	gear.Carminefeet.D = { name="Carmine Greaves", augments={'HP+60','MP+60','Phys. dmg. taken -3'}}
+	
 -- Emicho
 -- Kaykaus
 -- Lustratio
