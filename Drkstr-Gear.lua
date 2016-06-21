@@ -51,7 +51,18 @@ function Drkstr_shared_augmented_gear()
 -- Taeon
 -- Telchine
 -- Acro
+	gear.Acrohead = {}
+	gear.Acrohead.Haste = { name="Acro Helm", augments={'Accuracy+10','Haste+3','STR+1 VIT+1',}}
 
+	gear.Acrobody = {}
+	gear.Acrobody.Pet = { name="Acro Surcoat", augments={'Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: "Regen"+3','Pet: Damage taken -4%',}}
+
+	gear.Acrohands = {}
+	gear.Acrohands.Pet = { name="Acro Gauntlets", augments={'Pet: Accuracy+17 Pet: Rng. Acc.+17','Pet: "Regen"+3','Pet: Damage taken -4%',}}
+
+	gear.Acrofeet = {}
+	gear.Acrofeet.Pet = { name="Acro Leggings", augments={'Pet: Attack+19 Pet: Rng.Atk.+19','Pet: "Regen"+3','Pet: Damage taken -4%',}}
+	
 --==================================--
 -- Sinister Reign gear
 --==================================--
