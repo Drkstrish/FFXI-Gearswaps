@@ -60,6 +60,17 @@ function Drkstr_shared_augmented_gear()
 -- JSE Capes
 --==================================--
 
+	gear.ReiveJSE = {}
+	gear.ReiveJSE.MNK = { name="Anchoret's Mantle", augments={'STR+4','DEX+3','"Subtle Blow"+3','"Counter"+2',}}
+	gear.ReiveJSE.BLM = { name="Bane Cape", augments={'Elem. magic skill +8','Dark magic skill +7','"Mag.Atk.Bns."+4',}}
+	gear.ReiveJSE.SCH = { name="Bookworm's Cape", augments={'INT+1','MND+4','Helix eff. dur. +11','"Regen" potency+7',}}
+	gear.ReiveJSE
+	gear.ReiveJSE		
+	gear.ReiveJSE
+	gear.ReiveJSE	
+	gear.ReiveJSE
+	gear.ReiveJSE		
+
 --==================================--
 -- Misc. Gear
 --==================================--
