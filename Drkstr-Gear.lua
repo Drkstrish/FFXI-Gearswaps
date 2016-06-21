@@ -104,18 +104,18 @@ function Drkstr_shared_augmented_gear()
 	gear.Raofeet = {}
 	gear.Raofeet.A = { name="Rao Sune-Ate", augments={'Accuracy+10','Attack+10','Evasion+15'}}
 	
--- Ryuo
+-- Ryuo    
 	gear.Ryuohead = {}
-	gear.Ryuohead
+	gear.Ryuohead.A = { name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15'}}
 	
 	gear.Ryuohands = {}
-	gear.Ryuohands
+	gear.Ryuohands.D = { name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3'}}
 	
 	gear.Ryuolegs = {}
-	gear.Ryuolegs
+	gear.Ryuolegs.A = { name="Ryuo Hakama", augments={'STR+10','DEX+10','Accuracy+15'}}
 	
 	gear.Ryuofeet = {}
-	gear.Ryuofeet
+	gear.Ryuofeet.A = { name="Ryuo Sune-Ate", augments={'STR+10','DEX+10','Accuracy+15'}}
 	
 -- Souveran
 
