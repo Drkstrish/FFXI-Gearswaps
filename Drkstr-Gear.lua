@@ -62,6 +62,18 @@ function Drkstr_shared_augmented_gear()
 	gear.Carminefeet.D = { name="Carmine Greaves", augments={'HP+60','MP+60','Phys. dmg. taken -3'}}
 	
 -- Emicho
+	gear.Emichohead = {}
+	gear.Emichohead.C = { name="Emicho Coronet", augments={'Pet: Accuracy+15','Pet: Attack+15','Pet: "Dbl. Atk."+3'}}
+	
+	gear.Emichohands = {}
+	gear.Emichohands.C =  { name="Emicho Gambieras", augments={'Pet: Accuracy+15','Pet: Attack+15','Pet: "Dbl. Atk."+3'}}
+	
+	gear.Emicholegs = {}
+	gear.Emicholegs.C = { name="Emicho Gauntlets", augments={'Pet: Accuracy+15','Pet: Attack+15','Pet: "Dbl. Atk."+3'}}
+	
+	gear.Emichofeet = {}
+	gear.Emichofeet.C = { name="Emicho Hose", augments={'Pet: Accuracy+15','Pet: Attack+15','Pet: "Dbl. Atk."+3'}}
+	
 -- Kaykaus
 -- Lustratio
 -- Rao
