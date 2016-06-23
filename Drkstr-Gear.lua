@@ -142,6 +142,9 @@ function Drkstr_shared_augmented_gear()
 	
 -- Eschite
 -- Naga
+	gear.Nagahead = {}
+	gear.Nagahead.A  = { name="Naga Somen", augments={'STR+7','Accuracy+9','"Subtle Blow"+5'}}
+	
 	gear.Nagabody = {}
     	gear.Nagabody.A = { name="Naga Samue", augments={'STR+9','Accuracy+13','"Subtle Blow"+6'}}
     	
