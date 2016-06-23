@@ -225,6 +225,22 @@ function Drkstr_shared_augmented_gear()
 -- Weapons
 -- Helios
 -- Taeon
+	gear.Taeonhead = {}
+	gear.Taeonhead.Triple{ name="Taeon Chapeau", augments={'Accuracy+14 Attack+14','"Triple Atk."+2'}}
+	
+	gear.Taeonbody = {}
+	gear.Taeonbody.PetAcc{ name="Taeon Tabard", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+3','Pet: Haste+5'}}
+	
+	gear.Taeonhands = {}
+	gear.Taeonhands.PetAcc{ name="Taeon Gloves", augments={'Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: "Dbl. Atk."+2'}}
+	
+	gear.Taeonlegs = {}
+	gear.Taeonlegs.Triple{ name="Taeon Tights", augments={'Accuracy+19 Attack+19','"Triple Atk."+1'}}
+	gear.Taeonlegs.Pettank{ name="Taeon Tights", augments={'Pet: Accuracy+5 Pet: Rng. Acc.+5','Pet: "Regen"+3','Pet: Damage taken -4%'}}
+	
+	gear.Taeonfeet = {}
+	gear.Taeonfeet.PetAcc{ name="Taeon Boots", augments={'Pet: Accuracy+18 Pet: Rng. Acc.+18','Pet: "Dbl. Atk."+3','CHR+9'}}
+	
 -- Telchine
 -- Acro
 	gear.Acrohead = {}
