@@ -12,6 +12,27 @@ function Drkstr_shared_augmented_gear()
 -- Merlinic
 -- Odyssean
 -- Valorous
+	gear.Valoroushead = {}
+	gear.Valoroushead.WS  = { name="Valorous Mask", augments={'Accuracy+28','Weapon skill damage +3%','STR+15','Attack+12',}},
+	gear.Valoroushead.TP  = { name="Valorous Mask", augments={'Accuracy+30','"Dbl.Atk."+2','STR+2','Attack+12',}},
+	gear.Valoroushead.PetAcc  = { name="Valorous Mask", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','"Store TP"+1','Pet: DEX+10','Pet: Attack+14 Pet: Rng.Atk.+14',}},
+	
+	gear.Valorousbody = {}
+	gear.Valorousbody.PetAcc = { name="Valorous Mail", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Pet: "Store TP"+3','Pet: DEX+14',}},
+
+	gear.Valoroushands = {}
+	gear.Valoroushands.TP  = { name="Valorous Mitts", augments={'Accuracy+29','"Store TP"+4','STR+3',}},
+	gear.Valoroushands.WS  = { name="Valorous Mitts", augments={'Accuracy+29','Weapon skill damage +2%','STR+11',}},
+	gear.Valoroushands.PetAcc  = { name="Valorous Mitts", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Regen"+1','Pet: DEX+4','Pet: Attack+11 Pet: Rng.Atk.+11',}},
+
+	gear.Valorouslegs = {}
+	gear.Valorouslegs.TP  = { name="Valor. Hose", augments={'Accuracy+24 Attack+24','"Store TP"+5','VIT+8','Accuracy+3',}},
+	gear.Valorouslegs.PetAcc  = { name="Valor. Hose", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Pet: Haste+2','Pet: INT+10','Pet: Attack+14 Pet: Rng.Atk.+14',}}
+
+	gear.Valorousfeet = {}
+	gear.Valorousfeet.MaxAcc  = { name="Valorous Greaves", augments={'Accuracy+24 Attack+24','Damage taken-1%','Accuracy+14',}},
+	gear.Valorousfeet.STP  = { name="Valorous Greaves", augments={'Accuracy+27','"Store TP"+5','DEX+9','Attack+10',}},
+	gear.Valorousfeet.PetAcc  = { name="Valorous Greaves", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Dbl. Atk."+1','Pet: DEX+9','Pet: Attack+5 Pet: Rng.Atk.+5',}},
 
 --==================================--
 -- Escha abjuration gear
