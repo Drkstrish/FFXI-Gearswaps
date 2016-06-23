@@ -26,6 +26,23 @@ function Drkstr_shared_augmented_gear()
 
 -- Herculean
 -- Merlinic
+	gear.Merlinichead = {}
+	gear.Merlinichead.FC = { name="Merlinic Hood", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Fast Cast"+6','INT+6','Mag. Acc.+10','"Mag.Atk.Bns."+14'}}
+	gear.Merlinichead.MB = { name="Merlinic Hood", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst mdg.+4%','Mag. Acc.+13','"Mag.Atk.Bns."+9'}}
+
+	gear.Merlinicbody = {}
+	gear.Merlinicbody.MB = { name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst mdg.+10%','CHR+7'}}
+
+	gear.Merlinichands = {}
+	gear.Merlinichands.Nukes = { name="Merlinic Dastanas", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','INT+8','Mag. Acc.+3','"Mag.Atk.Bns."+15'}}
+
+	gear.Merliniclegs = {}
+	gear.Merliniclegs.MB = { name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+21','Magic burst mdg.+9%','INT+1','Mag. Acc.+13'}}
+	gear.Merliniclegs.OA = { name="Merlinic Shalwar", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Occult Acumen"+9','CHR+5','"Mag.Atk.Bns."+13'}}
+	
+	gear.Merlinicfeet = {}
+	gear.Merlinicfeet.MB = { name="Merlinic Crackows", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst mdg.+7%','CHR+2','Mag. Acc.+6','"Mag.Atk.Bns."+14'}}
+
 -- Odyssean
 -- Valorous
 	gear.Valoroushead = {}
