@@ -19,13 +19,13 @@ function Drkstr_shared_augmented_gear()
     
 -- Adhemar
 	gear.Adhemarhead = {}
-	gear.Adhemarhead.C = { name="Adhemar Bonnet", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15'}}
+	gear.Adhemarhead.A = { name="Adhemar Bonnet", augments={'DEX+10','AGI+10','Accuracy+15'}}
 
 	gear.Adhemarbody = {}
 	gear.Adhemarbody.A = { name="Adhemar Jacket", augments={'DEX+10','AGI+10','Accuracy+15'}}
 
 	gear.Adhemarfeet = {}
-	gear.Adhemarfeet.A = { name="Adhemar Gamashes", augments={'DEX+10','AGI+10','Accuracy+15'}}
+	gear.Adhemarfeet.D = { name="Adhemar Gamashes", augments={'HP+50','"Store TP"+6','"Snapshot"+8'}}
 
 -- Amalric
 	gear.Amalricbody = {}
@@ -125,12 +125,67 @@ function Drkstr_shared_augmented_gear()
 	
 -- Escha Zi'Tah weapons
 -- Despair
+	gear.Despairhead = {}
+	gear.Despairhead.C = { name="Despair Helm", augments={'Accuracy+10','Pet: VIT+7','Pet: Damage taken -3%'}}
+	
+	gear.Despairbody = {}
+	gear.Despairbody.C = { name="Despair Mail", augments={'Accuracy+10','Pet: VIT+7','Pet: Damage taken -3%',}}
+	
+	gear.Despairhands = {}
+	gear.Despairhands.C = { name="Despair Fin. Gaunt.", augments={'Accuracy+10','Pet: VIT+7','Pet: Damage taken -3%'}}
+	
+	gear.Despairlegs = {}
+	gear.Despairlegs.C = { name="Despair Cuisses", augments={'Accuracy+10','Pet: VIT+7','Pet: Damage taken -3%'}}
+	
+	gear.Despairfeet = {}
+	gear.Despairfeet.C = { name="Despair Greaves", augments={'Accuracy+10','Pet: VIT+7','Pet: Damage taken -3%'}}
+	
 -- Eschite
 -- Naga
+	gear.Nagabody = {}
+    	gear.Nagabody.A = { name="Naga Samue", augments={'STR+9','Accuracy+13','"Subtle Blow"+6'}}
+    	
+    	gear.Nagahands = {}
+    	gear.Nagahands.A = { name="Naga Tekko", augments={'STR+10','Accuracy+15','"Subtle Blow"+7'}}
+    	
+    	gear.Nagalegs = {}
+    	gear.Nagalegs.A = { name="Naga Hakama", augments={'STR+10','Accuracy+15','"Subtle Blow"+7'}}
+    	
+	gear.Nagafeet = {}
+	gear.Nagafeet.A = { name="Naga Kyahan", augments={'STR+10','Accuracy+15','"Subtle Blow"+7'}}
+
 -- Psycloth
+	gear.Psyclothbody = {}
+	gear.Psyclothbody.D  = { name="Psycloth Vest", augments={'Elem. magic skill +20','INT+7','Enmity-6'}}
+	
+	gear.Psyclothhands = {}
+	gear.Psyclothhands.A  = { name="Psycloth Manillas", augments={'MP+50','INT+7','"Conserve MP"+6'}}
+	
+	gear.Psyclothlegs = {}
+	gear.Psyclothlegs.D  = { name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7'}}
+	
+	gear.Psyclothfeet = {}
+	gear.Psyclothfeet.A  = { name="Psycloth Boots", augments={'MP+50','INT+7','"Conserve MP"+6'}}
+	
 -- Pursuer's
+    { name="Pursuer's Beret", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}},
+    { name="Pursuer's Cuffs", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}},
+    { name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}},
+    { name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15',}},
+    { name="Pursuer's Pants", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}},
+
 -- Rawhide
+    { name="Rawhide Boots", augments={'HP+50','Accuracy+15','Evasion+20',}},
+    { name="Rawhide Gloves", augments={'HP+50','Accuracy+15','Evasion+20',}},
+    { name="Rawhide Mask", augments={'HP+50','Accuracy+15','Evasion+20',}},
+    { name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
+    { name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},
+
 -- Vanya
+    { name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+    { name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
+    { name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+    { name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
 
 --==================================--
 -- Skirmish gear
