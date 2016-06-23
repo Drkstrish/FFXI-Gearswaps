@@ -168,24 +168,52 @@ function Drkstr_shared_augmented_gear()
 	gear.Psyclothfeet.A  = { name="Psycloth Boots", augments={'MP+50','INT+7','"Conserve MP"+6'}}
 	
 -- Pursuer's
-    { name="Pursuer's Beret", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}},
-    { name="Pursuer's Cuffs", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}},
-    { name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}},
-    { name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15',}},
-    { name="Pursuer's Pants", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}},
+	gear.Pursuershead = {}
+	gear.Pursuershead.A = { name="Pursuer's Beret", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7'}}
+	
+	gear.Pursuersbody = {}
+	gear.Pursuersbody.D = { name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6'}}
+	
+	gear.Pursuershands = {}
+	gear.Pursuershands.A = { name="Pursuer's Cuffs", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7'}}
+	
+	gear.Pursuerslegs = {}
+	gear.Pursuerslegs.A = { name="Pursuer's Pants", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7'}}
+	
+	gear.Pursuersfeet = {}
+	gear.Pursuersfeet.D = { name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15'}}	
 
 -- Rawhide
-    { name="Rawhide Boots", augments={'HP+50','Accuracy+15','Evasion+20',}},
-    { name="Rawhide Gloves", augments={'HP+50','Accuracy+15','Evasion+20',}},
-    { name="Rawhide Mask", augments={'HP+50','Accuracy+15','Evasion+20',}},
-    { name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
-    { name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}},
+	gear.Rawhidehead = {}
+	gear.Rawhidehead.B  = { name="Rawhide Mask", augments={'HP+50','Accuracy+15','Evasion+20'}}	
+	
+	gear.Rawhidebody = {}
+	gear.Rawhidebody.D  = { name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2'}}	
+	
+	gear.Rawhidehands = {}
+	gear.Rawhidehand.B  = s{ name="Rawhide Gloves", augments={'HP+50','Accuracy+15','Evasion+20'}}	
+	
+	gear.Rawhidelegs = {}
+	gear.Rawhidelegs.D  = { name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1'}}	
+	
+	gear.Rawhidefeet = {}
+	gear.Rawhidefeet.B  = { name="Rawhide Boots", augments={'HP+50','Accuracy+15','Evasion+20'}}
 
 -- Vanya
-    { name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-    { name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
-    { name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-    { name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+	gear.Vanyahead = {}
+	gear.Vanyahead.D = { name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%'}}
+	
+	gear.Vanyabody = {}
+	gear.Vanyabody.B = { name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}}	
+	
+	gear.Vanyahands = {}
+	gear.Vanyahands.B = { name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}}
+	
+	gear.Vanyalegs = {}
+	gear.Vanyalegs.B = { name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}}
+	
+
+
 
 --==================================--
 -- Skirmish gear
