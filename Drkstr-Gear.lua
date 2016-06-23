@@ -23,8 +23,29 @@ function Drkstr_shared_augmented_gear()
 	gear.Chironicfeet = {}
 	gear.Chironicfeet.MAcc = { name="Chironic Slippers", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Haste+4','Mag. Acc.+13'}}
 	
-
 -- Herculean
+	gear.Herculeanhead = {}
+	gear.Herculeanhead.Magic = { name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12'}}
+	gear.Herculeanhead.Ranged = { name="Herculean Helm", augments={'Rng.Acc.+28','"Subtle Blow"+1','DEX+1','Rng.Atk.+15'}}
+
+	gear.Herculeanbody = {}
+	gear.Herculeanbody.Crit = { name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12'}}
+
+	gear.Herculeanhands = {}
+	gear.Herculeanhands.Crit = { name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1'}}
+	gear.Herculeanhands.Triple = { name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9'}}
+	gear.Herculeanhands.Ranged = { name="Herculean Gloves", augments={'Rng.Acc.+18 Rng.Atk.+18','Enmity-3','AGI+6','Rng.Acc.+9','Rng.Atk.+1'}}
+
+	gear.Herculeanlegs = {}
+	gear.Herculeanlegs.MaxAcc = { name="Herculean Trousers", augments={'Accuracy+14 Attack+14','DEX+9','Accuracy+15','Attack+14'}}
+	gear.Herculeanlegs.Triple = { name="Herculean Trousers", augments={'Attack+27','"Triple Atk."+4','AGI+4','Accuracy+15'}}
+	gear.Herculeanlegs.Ranged = { name="Herculean Trousers", augments={'Rng.Acc.+23 Rng.Atk.+23','Enmity-1','AGI+7','Rng.Atk.+15'}}
+
+	gear.Herculeanfeet = {}
+	gear.Herculeanfeet.Triple = { name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5'}}
+	gear.Herculeanfeet.Magic = { name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20'}}
+	gear.Herculeanfeet.Ranged = { name="Herculean Boots", augments={'Rng.Acc.+20 Rng.Atk.+20','Crit.hit rate+2','Rng.Acc.+12','Rng.Atk.+9'}}
+
 -- Merlinic
 	gear.Merlinichead = {}
 	gear.Merlinichead.FC = { name="Merlinic Hood", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Fast Cast"+6','INT+6','Mag. Acc.+10','"Mag.Atk.Bns."+14'}}
