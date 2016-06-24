@@ -75,7 +75,7 @@ function Drkstr_shared_augmented_gear()
 	gear.Valorousbody.PetAcc = { name="Valorous Mail", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Pet: "Store TP"+3','Pet: DEX+14'}}
 
 	gear.Valoroushands = {}
-	gear.Valoroushands.TP  = { name="Valorous Mitts", augments={'Accuracy+29','"Store TP"+4','STR+3'}}
+	gear.Valoroushands.TP  = { name="Valorous Mitts", augments={'Accuracy+30','"Store TP"+2','VIT+14','Attack+11'}}
 	gear.Valoroushands.WS  = { name="Valorous Mitts", augments={'Accuracy+29','Weapon skill damage +2%','STR+11'}}
 	gear.Valoroushands.PetAcc  = { name="Valorous Mitts", augments={'Pet: Accuracy+28 Pet: Rng. Acc.+28','Pet: "Regen"+1','Pet: DEX+4','Pet: Attack+11 Pet: Rng.Atk.+11'}}
 
