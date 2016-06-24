@@ -1,23 +1,6 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
---Ionis Zones
---Anahera Blade (4 hit): 52
---Tsurumaru (4 hit): 49
---Kogarasumaru (or generic 450 G.katana) (5 hit): 40
---Amanomurakumo/Masamune 437 (5 hit): 46
---
---Non Ionis Zones:
---Anahera Blade (4 hit): 52
---Tsurumaru (5 hit): 24
---Kogarasumaru (5 hit): 40
---Amanomurakumo/Masamune 437 (5 hit): 46
---
---Aftermath sets
--- Koga AM1/AM2 = sets.engaged.Kogarasumaru.AM
--- Koga AM3 = sets.engaged.Kogarasumaru.AM3
--- Amano AM = sets.engaged.Amanomurakumo.AM
--- Using Namas Arrow while using Amano will cancel STPAM set
 
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
 
@@ -26,7 +9,7 @@ function get_sets()
 	-- Load and initialize the include file.
     mote_include_version = 2
 	include('Mote-Include.lua')
-	include('organizer-lib')
+
 end
 
 -- Setup vars that are user-independent.
@@ -94,18 +77,12 @@ Shoha > Fudo > Kasha > Shoha > Fudo
 --]]
 
 function init_gear_sets()
+	include('Drkstr-Gear.lua') 
+	Drkstr_shared_augmented_gear() 
+
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-    Acro = {}
-    Acro.Hands = {}
-    Acro.Feet = {}
-    
-    Acro.Hands.Haste = {}
-    Acro.Hands.STP = {}
-
-    Acro.Feet.STP = {}
-    Acro.Feet.WSD = {} 
 
     -- Precast Sets
     -- Precast sets to enhance jas
@@ -123,8 +100,6 @@ function init_gear_sets()
     -- Waltz set (chr and vit)
     --sets.precast.Waltz = {}
 
-    --sets.Organizer = {}
-    	
     --Don't need any special gear for Healing Waltz.
 
     --sets.precast.Waltz['Healing Waltz'] = {}
@@ -147,7 +122,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 
     sets.precast.WS = {
-        head="Rao Kabuto",
+        head=gear.Raohead.B, -- 32 acc 45 str
         neck="Fotia Gorget",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
