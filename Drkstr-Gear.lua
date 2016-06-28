@@ -355,7 +355,7 @@ function Drkstr_shared_augmented_gear()
 	gear.JSEcape.NINWS = { name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.JSEcape.NINTP = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
 	gear.JSEcape.BST = { name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: "Regen"+10'}}
-	gear.JSEcape.BLUcrit = { name="Rosmerta's Cape", augments={'Accuracy+5 Attack+5','Weapon skill damage +5%'}}
+	gear.JSEcape.BLUcrit =  { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
 	gear.JSEcape.BLUWS = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.JSEcape.SAMTP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
 	gear.JSEcape.SAMWS = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
