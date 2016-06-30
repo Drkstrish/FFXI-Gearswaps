@@ -128,35 +128,35 @@
 	'Tourbillion'}
 	end
     
-   -------------------------------------------------------------------------------------------------------------------
-  -- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
-   -------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
+-------------------------------------------------------------------------------------------------------------------
    
-   -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-   function user_setup()
-       state.OffenseMode:options('Normal', 'iLvl', 'Acc', 'Acc2', 'Refresh')
-       state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
-       state.CastingMode:options('Normal', 'Resistant')
-       state.IdleMode:options('Normal', 'PDT', 'Learning')
+-- Setup vars that are user-dependent.  Can override this function in a sidecar file.
+	function user_setup()
+		state.OffenseMode:options('Normal', 'iLvl', 'Acc', 'Acc2', 'Refresh')
+		state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
+		state.CastingMode:options('Normal', 'Resistant')
+		state.IdleMode:options('Normal', 'PDT', 'Learning')
     
-       -- Additional local binds
-       send_command('bind ^` input /ja "Chain Affinity" <me>')
-       send_command('bind !` input /ja "Burst Affinity" <me>')
+-- Additional local binds
+		send_command('bind ^` input /ja "Chain Affinity" <me>')
+		send_command('bind !` input /ja "Burst Affinity" <me>')
           
-       update_combat_form()
-           select_acc_ammo()
-       select_default_macro_book()
-   end
+		update_combat_form()
+		select_acc_ammo()
+		select_default_macro_book()
+	end
     
     
-   -- Called when this job file is unloaded (eg: job change)
-   function user_unload()
-       send_command('unbind ^`')
-       send_command('unbind !`')
-   end
+-- Called when this job file is unloaded (eg: job change)
+	function user_unload()
+		send_command('unbind ^`')
+		send_command('unbind !`')
+	end
     
     
-   -- Set up gear sets.
+-- Set up gear sets.
    function init_gear_sets()
        --------------------------------------
        -- Start defining the sets
