@@ -213,85 +213,66 @@ sets.precast.WS['Requiescat'] = {ammo="Ginsen",
 	body="Mekosuchinae harness",hands="Rawhide Gloves",ring1="Rufescent Ring",ring2="Tjukurrpa Annulet",
 	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
 	waist="Fotia Belt",legs="Carmine Cuisses +1",feet="Carmine Greaves"}
+sets.precast.WS['Chant du Cygne'] = {ammo="Falcon Eye",
+	head="Adhemar Bonnet",neck="Fotia Gorget",ear1="Moonshade earring",ear2="Brutal Earring",
+	body={ name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12',}},
+	hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
+	ring1="Epona's ring",ring2="Petrov ring",
+	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},
+	waist="Fotia Belt",legs="Samnuha Tights",feet="Thereoid Greaves"}
+sets.precast.WS['Vorpal Blade'] = {ammo="Ginsen",
+	head="Adhemar Bonnet",neck="Fotia Gorget",ear1="Moonshade earring",ear2="Brutal Earring",
+	body={ name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12',}},
+	hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
+	ring1="Epona's ring",ring2="Petrov ring",
+	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},
+	waist="Fotia Belt",legs="Samnuha Tights",feet="Thereoid Greaves"}
 sets.precast.WS['Realmrazer'] = sets.precast.WS['Requiescat']
-sets.precast.WS['Sanguine Blade'] = {}
-    
-    
-    -- Midcast Sets
-    sets.midcast.FastRecast = {
-        head="Haruspex Hat",ear2="Loquacious Earring",
-        body="Luhlaza Jubbah",hands="Mavi Bazubands +2",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Hurch'lan Sash",legs="Enif Cosciales",feet="Iuitl Gaiters +1"}
-        
-    sets.midcast['Blue Magic'] = {}
-    
-    -- Physical Spells --
-    
-    sets.midcast['Blue Magic'].Physical = {ammo="Mavi Tathlum",
-        head="Whirlpool Mask",neck="Ej Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Vanir Cotehardie",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Spiral Ring",
-        back="Cornflower Cape",waist="Caudata Belt",legs="Nahtirah Trousers",feet="Qaaxo Leggings"}
-
-    sets.midcast['Blue Magic'].PhysicalAcc = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Ej Necklace",ear1="Heartseeker Earring",ear2="Steelflash Earring",
-        body="Luhlaza Jubbah",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Patricius Ring",
-        back="Letalis Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Qaaxo Leggings"}
-
-    sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical,
-        {body="Iuitl Vest",hands="Assimilator's Bazubands +1"})
-
-    sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical,
-        {ammo="Jukukik Feather",body="Iuitl Vest",hands="Assimilator's Bazubands +1",
-         waist="Chaac Belt",legs="Manibozho Brais"})
-
-    sets.midcast['Blue Magic'].PhysicalVit = set_combine(sets.midcast['Blue Magic'].Physical,
-        {body="Vanir Cotehardie",hands="Assimilator's Bazubands +1",back="Iximulew Cape"})
-
-    sets.midcast['Blue Magic'].PhysicalAgi = set_combine(sets.midcast['Blue Magic'].Physical,
-        {body="Vanir Cotehardie",hands="Iuitl Wristbands",ring2="Stormsoul Ring",
-         waist="Chaac Belt",feet="Iuitl Gaiters +1"})
-
-    sets.midcast['Blue Magic'].PhysicalInt = set_combine(sets.midcast['Blue Magic'].Physical,
-        {ear1="Psystorm Earring",body="Vanir Cotehardie",hands="Assimilator's Bazubands +1",
-         ring2="Icesoul Ring",back="Toro Cape",feet="Hagondes Sabots"})
-
-    sets.midcast['Blue Magic'].PhysicalMnd = set_combine(sets.midcast['Blue Magic'].Physical,
-        {ear1="Lifestorm Earring",body="Vanir Cotehardie",hands="Assimilator's Bazubands +1",
-         ring2="Aquasoul Ring",back="Refraction Cape"})
-
-    sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical,
-        {body="Vanir Cotehardie",hands="Assimilator's Bazubands +1",back="Refraction Cape",
-         waist="Chaac Belt"})
-
-    sets.midcast['Blue Magic'].PhysicalHP = set_combine(sets.midcast['Blue Magic'].Physical)
-
-
-    -- Magical Spells --
-    
-    sets.midcast['Blue Magic'].Magical = {ammo="Dosis Tathlum",
-        head="Hagondes Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Hagondes Coat",hands="Mavi Bazubands +2",ring1="Icesoul Ring",ring2="Acumen Ring",
-        back="Cornflower Cape",waist="Caudata Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
-
-    sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical,
-        {body="Vanir Cotehardie",ring1="Sangoma Ring",legs="Iuitl Tights",feet="Mavi Basmak +2"})
-    
-    sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical,
-        {ring1="Aquasoul Ring"})
-
-    sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical)
-
-    sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical,
-        {ring1="Spiral Ring"})
-
-    sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical)
-
-    sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Mavi Tathlum",
-        head="Luhlaza Keffiyeh",neck="Ej Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Vanir Cotehardie",hands=gear.macc_hagondes,ring2="Sangoma Ring",
-        back="Cornflower Cape",legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
-
-    -- Breath Spells --
+sets.precast.WS['Sanguine Blade'] = {ammo="Pemphredo Tathlum",
+	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	neck="Sanctity Necklace",ear1="Moonshade earring",ear2="Friomisi Earring",
+	body="Amalric Doublet",hands="Carmine",ring1="Vertigo Ring",ring2="Apate Ring",
+	back="Argochampsa Mantle",waist="Eschan Stone",legs="Amalric Slops",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Sanguine Blade'], {})
+-- Midcast Sets
+sets.midcast.FastRecast = sets.precast.FC
+sets.midcast['Blue Magic'] = {}
+-- Physical Spells --
+sets.midcast['Blue Magic'].Physical = { ammo="Ginsen",
+	head="Dampening Tam",neck="Sanctity Necklace",ear1="Lempo earring",ear2="Digni. Earring",
+	body={ name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12',}},
+	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+	ring1="Epona's Ring",ring2="Petrov Ring",back="Cornflower Cape",
+	waist="Eschan Stone",legs="Samnuha Tights",
+	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}}
+sets.midcast['Blue Magic'].PhysicalAcc = sets.midcast['Blue Magic'].Physical
+sets.midcast['Blue Magic'].PhysicalStr = sets.midcast['Blue Magic'].Physical
+sets.midcast['Blue Magic'].PhysicalDex = sets.midcast['Blue Magic'].Physical
+sets.midcast['Blue Magic'].PhysicalVit = sets.midcast['Blue Magic'].Physical
+sets.midcast['Blue Magic'].PhysicalAgi = sets.midcast['Blue Magic'].Physical
+sets.midcast['Blue Magic'].PhysicalInt = sets.midcast['Blue Magic'].Physical
+sets.midcast['Blue Magic'].PhysicalMnd = sets.midcast['Blue Magic'].Physical
+sets.midcast['Blue Magic'].PhysicalChr = sets.midcast['Blue Magic'].Physical
+sets.midcast['Blue Magic'].PhysicalHP = sets.midcast['Blue Magic'].Physical
+-- Magical Spells --
+sets.midcast['Blue Magic'].Magical = {Ammo="Pemphredo Tathlum",
+	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	neck="Sanctity Necklace",ear1="Friomisi Earring",ear2="Dignitary's Earring",
+	body="Amalric Doublet",hands="Amalric Gages",ring1="Rahab Ring",ring2="Vertigo Ring",
+	back="Cornflower Cape",waist="Eschan Stone",legs="Amalric Slops",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+sets.midcast['Blue Magic'].Magical.Resistant = sets.midcast['Blue Magic'].Magical
+sets.midcast['Blue Magic'].MagicalMnd = sets.midcast['Blue Magic'].Magical
+sets.midcast['Blue Magic'].MagicalChr = sets.midcast['Blue Magic'].Magical
+sets.midcast['Blue Magic'].MagicalVit = sets.midcast['Blue Magic'].Magical
+sets.midcast['Blue Magic'].MagicalDex = sets.midcast['Blue Magic'].Magical
+sets.midcast['Blue Magic'].MagicAccuracy = {Ammo="Pemphredo Tathlum",
+	head="Dampening Tam",neck="Sanctity Necklace",ear1="Gwati Earring",ear2="Dignitary's Earring",
+	body="Amalric Doublet",hands="Leyline Gloves",ring1="Etana Ring",ring2="Vertigo Ring",
+	back="Cornflower Cape",waist="Luminary Sash",legs="Psycloth Lappas",
+	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
+-- Breath Spells --
     
     sets.midcast['Blue Magic'].Breath = {ammo="Mavi Tathlum",
         head="Luhlaza Keffiyeh",neck="Ej Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
