@@ -28,8 +28,7 @@
 -- All Augmented gear used in sets below
 		blue_magic_maps = {}
 
--- Physical Spells --
-      
+-- Physical Spells --    
 -- Physical spells with no particular (or known) stat mods
 		blue_magic_maps.Physical = S{'Bilgestorm'}
 -- Spells with heavy accuracy penalties, that need to prioritize accuracy first.
@@ -61,7 +60,6 @@
 		blue_magic_maps.PhysicalHP = S{'Final Sting'}
 
 -- Magical Spells --
-
 -- Magical spells with the typical Int mod
 		blue_magic_maps.Magical = S{'Blastbomb',
 	'Blazing Bound','Bomb Toss','Cursed Sphere','Dark Orb','Death Ray',
@@ -103,16 +101,13 @@
 		blue_magic_maps.Stun = S{'Blitzstrahl',
 	'Frypan','Head Butt','Sudden Lunge','Tail slap','Temporal Shift',
 	'Thunderbolt','Whirl of Rage'}
-
 -- Healing spells
 		blue_magic_maps.Healing = S{'Healing Breeze',
 	'Magic Fruit','Plenilune Embrace','Pollen','White Wind','Wild Carrot'}
-
 -- Buffs that depend on blue magic skill
 		blue_magic_maps.SkillBasedBuff = S{'Barrier Tusk',
 	'Diamondhide','Magic Barrier','Metallic Body','Plasma Charge',
 	'Pyric Bulwark','Reactor Cool',}
-    
 -- Other general buffs
 		blue_magic_maps.Buff = S{'Amplification',
 	'Animating Wail','Battery Charge','Carcharian Verve','Cocoon',
@@ -120,7 +115,6 @@
 	'Memento Mori','Nat. Meditation','Occultation','Orcish Counterstance','Refueling',
 	'Regeneration','Saline Coat','Triumphant Roar','Warm-Up','Winds of Promyvion',
 	'Zephyr Mantle'}
-      
 -- Spells that require Unbridled Learning to cast.
 		unbridled_spells = S{'Absolute Terror',
 	'Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve',
@@ -195,15 +189,15 @@ sets.precast.FC = { -- 50 FC 6 QM
 	back="Perimede Cape", -- 4 QM
 	legs="Psycloth Lappas", -- 7 FC
 	feet="Carmine Greaves"} -- 7 FC
-                  
-		sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {})
-    
-          
-    -- Weaponskill sets
-    -- Default set for any weaponskill that isn't any more specifically defined
-    
-		sets.precast.WS = {ammo="Ginsen",
-	head="Adhemar Bonnet",
+sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {}) -- Reforged Empy Body +1 for -14% Blue magic casting time.
+-- Weaponskill sets
+-- Default set for any weaponskill that isn't any more specifically defined
+sets.precast.WS = {
+	ammo="Ginsen", 
+	-- Jukukik Feather for 4DEX Acc or Falcon Eye for 3DEX 13 Acc. 
+	--Mantoptera Eye for 3 STR 13 Acc
+	-- Quartz Tathlum for 4MND
+	head="Lilutu Headpiece",
 	neck="Fotia Gorget",
 	ear1="Moonshade Earring",
 	ear2="Digni. Earring",
@@ -214,7 +208,8 @@ sets.precast.FC = { -- 50 FC 6 QM
 	back="Rosmerta's Cape",
 	waist="Fotia Belt",
 	legs="Samnuha Tights",
-	feet="Thereoid Greaves",}
+	feet="Thereoid Greaves",
+	}
       
 		sets.precast.WS.acc = {}
     
@@ -264,7 +259,7 @@ sets.precast.FC = { -- 50 FC 6 QM
 	legs="Samnuha Tights",
 	feet="Thereoid Greaves"}
          
-		sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
+sets.precast.WS['Chant du Cygne'] = {ammo="Ginsen",
 	head="Adhemar Bonnet",
 	neck="Fotia Gorget",
 	ear1="Moonshade earring",
