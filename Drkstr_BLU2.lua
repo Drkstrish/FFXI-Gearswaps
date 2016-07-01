@@ -171,48 +171,50 @@ sets.buff.Convergence = {} -- Reforged Relic Head +1
 sets.buff.Diffusion = {Feet="Luhlaza Charuqs +1"}
 sets.buff.Enchainment = {body="Luhlaza Jubbah +1"}
 sets.buff.Efflux = {back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}} -- Reforged Empy Legs +1
-
-    -- Precast Sets
-    
-    -- Precast sets to enhance JAs
-    sets.precast.JA['Azure Lore'] = {hands="Mirage Bazubands +2"}
-
-
-    -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Sonia's Plectrum",
-        head="Uk'uxkaj Cap",
-        body="Vanir Cotehardie",hands="Buremte Gloves",ring1="Spiral Ring",
-        back="Iximulew Cape",waist="Caudata Belt",legs="Hagondes Pants",feet="Iuitl Gaiters +1"}
-        
-    -- Don't need any special gear for Healing Waltz.
-    sets.precast.Waltz['Healing Waltz'] = {}
-
-    -- Fast cast sets for spells
-    
-    sets.precast.FC = {ammo="Impatiens",
-        head="Haruspex Hat",ear2="Loquacious Earring",
-        body="Luhlaza Jubbah",hands="Thaumas Gloves",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Enif Cosciales",feet="Chelona Boots +1"}
-        
-    sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Mavi Mintan +2"})
-
-       
+-- Precast Sets
+-- Precast sets to enhance JAs
+sets.precast.JA['Azure Lore'] = {} -- Reforged AF Hands +1
+sets.precast.JA['Box Step'] = sets.engaged.Acc 
+sets.precast.JA['Stutter Step'] = sets.engaged.Acc
+sets.precast.JA['Violent Flourish'] = sets.engaged.Acc
+sets.precast.Waltz = {}
+-- Don't need any special gear for Healing Waltz.
+sets.precast.Waltz['Healing Waltz'] = {}
+-- Fast cast sets for spells 
+sets.precast.FC = { -- 50 FC 6 QM
+	head="Carmine Mask" -- 12 FC
+	neck="Orunmila's Torque", -- 5 FC
+	left_ear="Etiolation Earring", -- 1 FC
+	right_ear="Loquacious Earring" -- 2 FC
+	body="Luhlaza Jubbah +1", -- 7 FC
+	hands={ name="Leyline Gloves", augments={'Accuracy+14','Mag. Acc.+13','"Mag.Atk.Bns."+13','"Fast Cast"+2',}}, -- 7 FC
+	left_ring="Rahab Ring", -- 2 FC
+	right_ring="Lebeche Ring", -- 2 QM
+	back="Perimede Cape", -- 4 QM
+	legs="Psycloth Lappas", -- 7 FC
+	feet="Carmine Greaves"} -- 7 FC
+sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {}) -- Reforged Empy Body +1 for -14% Blue magic casting time.
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {
-        head="Whirlpool Mask",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Qaaxo Harness",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
-    
-    sets.precast.WS.acc = set_combine(sets.precast.WS, {hands="Buremte Gloves"})
-
-    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ring1="Aquasoul Ring",feet="Luhlaza Charuqs"})
-
-    sets.precast.WS['Sanguine Blade'] = {
-        head="Hagondes Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-        body="Hagondes Coat",hands="Mavi Bazubands +2",ring1="Acumen Ring",ring2="Strendu Ring",
-        back="Toro Cape",legs="Hagondes Pants",feet="Iuitl Gaiters +1"}
+sets.precast.WS = {ammo="Ginsen", 
+	head="Lilutu Headpiece",neck="Fotia Gorget",ear1="Zennaroi Earring",ear2="Dignitary's earring ",
+	body={ name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12',}},
+	{ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+	ring1="Epona's Ring",ring2="Petrov Ring",
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+	waist="Fotia Belt",legs="Samnuha Tights",
+	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+sets.precast.WS.acc = set_combine(sets.precast.WS, {Ammo="Falcon Eye",
+	head="Dampening Tam",neck="Decimus Torque",ring1="Cacoethic Ring +1",ring2="Cacoethic Ring",
+	waist="Olseni Belt",legs="Carmine Cuisses +1"})
+-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+sets.precast.WS['Requiescat'] = {ammo="Ginsen",
+	head="Dampening Tam",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Brutal Earring",
+	body="Mekosuchinae harness",hands="Rawhide Gloves",ring1="Rufescent Ring",ring2="Tjukurrpa Annulet",
+	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
+	waist="Fotia Belt",legs="Carmine Cuisses +1",feet="Carmine Greaves"}
+sets.precast.WS['Realmrazer'] = sets.precast.WS['Requiescat']
+sets.precast.WS['Sanguine Blade'] = {}
     
     
     -- Midcast Sets
