@@ -157,62 +157,44 @@
     
     
 -- Set up gear sets.
-   function init_gear_sets()
-       --------------------------------------
-       -- Start defining the sets
-       --------------------------------------
+	function init_gear_sets()
+--------------------------------------
+-- Start defining the sets
+--------------------------------------
     
-		sets.buff['Burst Affinity'] = {ammo="Pemphredo Tathlum",
-	body="Amalric Doublet",
-	hands="Amalric Gages",
-	legs="Amalric Slops",
-	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc. +20 "Mag.Atk.Bns."+20'}},
-	left_ring="Mujin Band",
-	right_ring="Locus Ring"}
-		   
-		sets.buff['Chain Affinity'] = {}
-		sets.buff.Convergence = {}
-		sets.buff.Diffusion = {Feet="Luhlaza Charuqs +1"}
-		sets.buff.Enchainment = {}
-		sets.buff.Efflux = {}
-    
-    -- Capacity Set
-		sets.CapacityMantle = {back="Mecistopins Mantle"}
-    
-    -- Learning Set
-	
-		sets.LearnMode = {hands="Rawhide Gloves",back="Cornflower Cape"}
-    
-	-- Precast Sets
-      
-    -- Precast sets to enhance JAs
-	
-		sets.precast.JA['Azure Lore'] = {}
-		sets.precast.JA['Box Step']     = set_combine(sets.engaged.Acc, {})
-		sets.precast.JA['Stutter Step'] = set_combine(sets.engaged.Acc, {})
-		sets.precast.JA['Violent Flourish'] = set_combine(sets.engaged.Acc, {})
-    
-    
-    -- Waltz set (chr and vit)
-
-		sets.precast.Waltz = {}
-          
-    -- Don't need any special gear for Healing Waltz.
-	
-		sets.precast.Waltz['Healing Waltz'] = {}
-     
-    -- Fast cast sets for spells 
-      
-		sets.precast.FC = {head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-	neck="Orunmila's Torque",
-	body="Luhlaza Jubbah +1",
-	hands={ name="Leyline Gloves", augments={'Accuracy+14','Mag. Acc.+13','"Mag.Atk.Bns."+13','"Fast Cast"+2',}},
-	legs="Psycloth Lappas",
-	left_ear="Loquac. Earring",
-	left_ring="Rahab Ring",
-	right_ring="Lebeche Ring",
-	back="Perimede Cape",
-	feet="Carmine Greaves"}
+sets.buff['Burst Affinity'] = {} -- Reforged Empy Feet +1, Reforged AF Legs +1
+sets.buff['Chain Affinity'] = {} -- Reforged Empy Head +1, Reforged AF Feet +1, Swords - Iris, Acclimator
+sets.buff.Convergence = {} -- Reforged Relic Head +1
+sets.buff.Diffusion = {Feet="Luhlaza Charuqs +1"}
+sets.buff.Enchainment = {body="Luhlaza Jubbah +1"}
+sets.buff.Efflux = {back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}} -- Reforged Empy Legs +1
+-- Capacity Set
+sets.CapacityMantle = {back="Mecistopins Mantle"}
+-- Learning Set
+sets.LearnMode = {hands="Rawhide Gloves",back="Cornflower Cape"} -- Update with all my misc. Blue Magic Skill gear.
+-- Precast Sets
+-- Precast sets to enhance JAs
+sets.precast.JA['Azure Lore'] = {} -- Reforged AF Hands +1
+sets.precast.JA['Box Step'] = sets.engaged.Acc 
+sets.precast.JA['Stutter Step'] = sets.engaged.Acc
+sets.precast.JA['Violent Flourish'] = sets.engaged.Acc
+-- Waltz set (chr and vit)
+sets.precast.Waltz = {}
+-- Don't need any special gear for Healing Waltz.
+sets.precast.Waltz['Healing Waltz'] = {}
+ -- Fast cast sets for spells 
+sets.precast.FC = { -- 50 FC 6 QM
+	head="Carmine Mask" -- 12 FC
+	neck="Orunmila's Torque", -- 5 FC
+	left_ear="Etiolation Earring", -- 1 FC
+	right_ear="Loquacious Earring" -- 2 FC
+	body="Luhlaza Jubbah +1", -- 7 FC
+	hands={ name="Leyline Gloves", augments={'Accuracy+14','Mag. Acc.+13','"Mag.Atk.Bns."+13','"Fast Cast"+2',}}, -- 7 FC
+	left_ring="Rahab Ring", -- 2 FC
+	right_ring="Lebeche Ring", -- 2 QM
+	back="Perimede Cape", -- 4 QM
+	legs="Psycloth Lappas", -- 7 FC
+	feet="Carmine Greaves"} -- 7 FC
                   
 		sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {})
     
