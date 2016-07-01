@@ -3,28 +3,24 @@
 -------------------------------------------------------------------------------------------------------------------
    
 -- Initialization function for this job file.
-	function get_sets()
-		mote_include_version = 2
+--	function get_sets()
+--		mote_include_version = 2
 -- Load and initialize the include file.
-		include('Mote-Include.lua')
-	end
+--		include('Mote-Include.lua')
+--	end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 	function job_setup()
-		state.Buff['Burst Affinity'] = buffactive['Burst Affinity'] or false
-		state.Buff['Chain Affinity'] = buffactive['Chain Affinity'] or false
-		state.Buff.Convergence = buffactive.Convergence or false
-		state.Buff.Diffusion = buffactive.Diffusion or false
-		state.Buff.Efflux = buffactive.Efflux or false
+--		state.Buff['Burst Affinity'] = buffactive['Burst Affinity'] or false
+--		state.Buff['Chain Affinity'] = buffactive['Chain Affinity'] or false
+--		state.Buff.Convergence = buffactive.Convergence or false
+--		state.Buff.Diffusion = buffactive.Diffusion or false
+--		state.Buff.Efflux = buffactive.Efflux or false
       
-		state.CapacityMode = M(false, 'Capacity Point Mantle')
-		state.LearnMode = M(false, 'Learning Mode')
-		state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
+--removed		state.CapacityMode = M(false, 'Capacity Point Mantle')
+--removed 		state.LearnMode = M(false, 'Learning Mode')
+--		state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
           
-		gear.AccAmmo = {name="Ginsen"}
-		--gear.AccAmmoDay = "Tengu-no-Hane"
-		--gear.AccAmmoNight = "Honed Tathlum"
-    
 -- All Augmented gear used in sets below
 		blue_magic_maps = {}
 
