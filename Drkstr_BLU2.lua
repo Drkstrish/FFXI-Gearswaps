@@ -282,190 +282,110 @@ sets.midcast['Blue Magic'].MagicAccuracy = {Ammo="Pemphredo Tathlum",
 	back="Cornflower Cape",waist="Luminary Sash",legs="Psycloth Lappas",
 	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}}
 -- Breath Spells --
-    
-    sets.midcast['Blue Magic'].Breath = {ammo="Mavi Tathlum",
-        head="Luhlaza Keffiyeh",neck="Ej Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Vanir Cotehardie",hands="Assimilator's Bazubands +1",ring1="K'ayres Ring",ring2="Beeline Ring",
-        back="Refraction Cape",legs="Enif Cosciales",feet="Iuitl Gaiters +1"}
-
-    -- Other Types --
-    
-    sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy,
-        {waist="Chaac Belt"})
-        
-    sets.midcast['Blue Magic']['White Wind'] = {
-        head="Whirlpool Mask",neck="Lavalier +1",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Buremte Gloves",ring1="K'ayres Ring",ring2="Meridian Ring",
-        back="Fravashi Mantle",waist="Hurch'lan Sash",legs="Enif Cosciales",feet="Hagondes Sabots"}
-
-    sets.midcast['Blue Magic'].Healing = {
-        head="Uk'uxkaj Cap",ear1="Lifestorm Earring",ear2="Loquacious Earring",
-        body="Vanir Cotehardie",hands="Buremte Gloves",ring1="Aquasoul Ring",ring2="Sirona's Ring",
-        back="Pahtli Cape",legs="Hagondes Pants",feet="Hagondes Sabots"}
-
-    sets.midcast['Blue Magic'].SkillBasedBuff = {ammo="Mavi Tathlum",
-        head="Luhlaza Keffiyeh",
-        body="Assimilator's Jubbah",
-        back="Cornflower Cape",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"}
-
-    sets.midcast['Blue Magic'].Buff = {}
-    
-    sets.midcast.Protect = {ring1="Sheltered Ring"}
-    sets.midcast.Protectra = {ring1="Sheltered Ring"}
-    sets.midcast.Shell = {ring1="Sheltered Ring"}
-    sets.midcast.Shellra = {ring1="Sheltered Ring"}
-    
-
-    
-    
-    -- Sets to return to when not performing an action.
-
-    -- Gear for learning spells: +skill and AF hands.
-    sets.Learning = {ammo="Mavi Tathlum",hands="Assimilator's Bazubands +1"}
-        --head="Luhlaza Keffiyeh",  
-        --body="Assimilator's Jubbah",hands="Assimilator's Bazubands +1",
-        --back="Cornflower Cape",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"}
-
-
-    sets.latent_refresh = {waist="Fucho-no-obi"}
-
-    -- Resting sets
-    sets.resting = {
-        head="Ocelomeh Headpiece +1",neck="Wiglen Gorget",
-        body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        waist="Austerity Belt",feet="Chelona Boots +1"}
-    
-    -- Idle sets
-    sets.idle = {ammo="Impatiens",
-        head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Defending Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Crimson Cuisses",feet="Serpentes Sabots"}
-
-    sets.idle.PDT = {ammo="Impatiens",
-        head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Hagondes Coat",hands="Iuitl Wristbands",ring1="Defending Ring",ring2="Paguroidea Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs="Crimson Cuisses",feet="Iuitl Gaiters +1"}
-
-    sets.idle.Town = {main="Buramenk'ah",ammo="Impatiens",
-        head="Mavi Kavuk +2",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-        back="Atheling Mantle",waist="Flume Belt",legs="Crimson Cuisses",feet="Luhlaza Charuqs"}
-
-    sets.idle.Learning = set_combine(sets.idle, sets.Learning)
-
-    
-    -- Defense sets
-    sets.defense.PDT = {ammo="Iron Gobbet",
-        head="Whirlpool Mask",neck="Wiglen Gorget",ear1="Bloodgem Earring",
-        body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-        back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
-
-    sets.defense.MDT = {ammo="Demonry Stone",
-        head="Whirlpool Mask",neck="Twilight Torque",ear1="Bloodgem Earring",
-        body="Hagondes Coat",hands="Iuitl Wristbands",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Engulfer Cape",waist="Flume Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters +1"}
-
-    sets.Kiting = {legs="Crimson Cuisses"}
-
-    -- Engaged sets
-
-    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-    -- sets if more refined versions aren't defined.
-    -- If you create a set with both offense and defense modes, the offense mode should be first.
-    -- EG: sets.engaged.Dagger.Accuracy.Evasion
-    
-    -- Normal melee group
-    sets.engaged = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
-
-    sets.engaged.Acc = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Ej Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Luhlaza Jubbah",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Qaaxo Leggings"}
-
-    sets.engaged.Refresh = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Qaaxo Leggings"}
-
-    sets.engaged.DW = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Heartseeker Earring",ear2="Dudgeon Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
-
-    sets.engaged.DW.Acc = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Ej Necklace",ear1="Heartseeker Earring",ear2="Dudgeon Earring",
-        body="Luhlaza Jubbah",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Qaaxo Leggings"}
-
-    sets.engaged.DW.Refresh = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Heartseeker Earring",ear2="Dudgeon Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Qaaxo Leggings"}
-
-    sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
-    sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
-
-    
-    sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        --put gear here
-    })
-    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        --put gear here
-    })
-    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        --put gear here
-    })
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {})
-    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {})
-    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {})
-
-    sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
-    })
-    sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
-    })
-    sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
-    })
-
-    sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {})
-    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {})
-    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {})
-
-    -- 30% Haste 1626 / 798
-    sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
-    })
-    sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-    })
-    sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-    })
-
-    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {})
-    sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {})
-    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {})
-
-
-    -- haste spell - 139 dex | 275 acc | 1150 total acc (with shigi R15)
-    sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
-    })
-    sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, { -- 676
-    })
-    sets.engaged.Acc.Haste_15 = sets.engaged.Acc.Haste_30
-    
-    sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, {})
-    sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {})
-    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, {})
-
-    sets.self_healing = {ring1="Kunaji Ring",ring2="Asklepian Ring"}
+sets.midcast['Blue Magic'].Breath = sets.midcast['Blue Magic'].MagicAccuracy
+-- Other Types --
+sets.midcast['Blue Magic'].Stun = sets.midcast['Blue Magic'].MagicAccuracy
+sets.midcast['Blue Magic']['White Wind'] = {} -- HP and Cure Potency
+sets.midcast['Blue Magic'].Healing = {} -- Cure Potency
+sets.midcast['Blue Magic'].SkillBasedBuff = {} -- Put in all Blue Magic Skill stuff
+sets.midcast['Blue Magic'].Buff = {}
+sets.midcast.Protect = {}
+sets.midcast.Protectra = {}
+sets.midcast.Shell = {}
+sets.midcast.Shellra = {}
+-- Sets to return to when not performing an action.
+-- Gear for learning spells: +skill and AF hands.
+sets.Learning = {hands="Rawhide Gloves",back="Cornflower Cape"}
+sets.latent_refresh = {}
+-- Resting sets
+sets.resting = {}
+-- Idle sets
+sets.idle = {Ammo="Ginsen",
+	head="Rawhide Mask",neck="Sanctity Necklace",ear1="Infused Earring",ear2="Dignitary's Earring",
+	body="Mekosuchinae Harness",
+	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+	ring1="Defending Ring",ring2="Warden's Ring",
+	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},
+	waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",
+	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+sets.idle.PDT = sets.idle
+sets.idle.Town = {ammo="Ginsen",
+        head="Dampening Tam",neck="Sanctity Necklace",ear1="Bloodgem Earring",ear2="Loquacious Earring",
+        body="Adhemar Jacket",
+	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+        ring1="Defending Ring",ring2="Warden's Ring",
+	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10',}},
+	waist="Windbuffet Belt +1",legs="Carmine Cuisses +1",
+        feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}}
+sets.idle.Learning = set_combine(sets.idle, sets.Learning)
+-- Defense sets
+sets.defense.PDT = {}
+sets.defense.MDT = {}
+sets.Kiting = {legs="Carmine Cuisses +1"}
+-- Engaged sets
+-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+-- sets if more refined versions aren't defined.
+-- If you create a set with both offense and defense modes, the offense mode should be first.
+-- EG: sets.engaged.Dagger.Accuracy.Evasion
+-- Normal melee group
+sets.engaged = {ammo="",
+	head="",neck="",ear1="",ear2="",
+	body="",hands="",ring1="",ring2"",
+	back="",waist="",legs="",feet""}
+sets.engaged.Acc = {ammo="",
+	head="",neck="",ear1="",ear2="",
+	body="",hands="",ring1="",ring2"",
+	back="",waist="",legs="",feet""}
+sets.engaged.Refresh = {ammo="",
+	head="",neck="",ear1="",ear2="",
+	body="",hands="",ring1="",ring2"",
+	back="",waist="",legs="",feet""}
+sets.engaged.DW = {ammo="",
+	head="",neck="",ear1="",ear2="",
+	body="",hands="",ring1="",ring2"",
+	back="",waist="",legs="",feet""}
+sets.engaged.DW.Acc = {ammo="",
+	head="",neck="",ear1="",ear2="",
+	body="",hands="",ring1="",ring2"",
+	back="",waist="",legs="",feet""}
+sets.engaged.DW.Refresh = {ammo="",
+	head="",neck="",ear1="",ear2="",
+	body="",hands="",ring1="",ring2"",
+	back="",waist="",legs="",feet""}
+sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
+sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
+sets.engaged.MaxHaste = set_combine(sets.engaged, {})--put gear here
+sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {})--put gear here
+sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {})--put gear here
+sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {})
+sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {})
+sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {})
+sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {})
+sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {})
+sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {})
+sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {})
+sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {})
+sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {})
+sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {})
+sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {})
+sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {})
+sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {})
+sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {})
+sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {})
+sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {})
+sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {})
+sets.engaged.Acc.Haste_15 = sets.engaged.Acc.Haste_30
+sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, {})
+sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {})
+sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, {})
+sets.self_healing = {}
 end
-
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
-
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+
 function job_precast(spell, action, spellMap, eventArgs)
     if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then
         eventArgs.cancel = true
@@ -487,6 +407,7 @@ end
 
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
+
 function job_post_midcast(spell, action, spellMap, eventArgs)
     -- Add enhancement gear for Chain Affinity, etc.
     if spell.skill == 'Blue Magic' then
@@ -589,7 +510,7 @@ end
 -- Category and Param are as specified in the action event packet.
 function th_action_check(category, param)
     if category == 2 or -- any ranged attack
-        --category == 4 or -- any magic action
+        category == 4 or -- any magic action
         (category == 3 and param == 30) or -- Aeolian Edge
         (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
         (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
