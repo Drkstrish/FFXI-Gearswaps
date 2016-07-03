@@ -12,7 +12,7 @@ function Drkstr_shared_augmented_gear()
 	gear.Chironichead.MAcc = { name="Chironic Hat", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','"Conserve MP"+1','VIT+1','Mag. Acc.+8'}}
 	
 	gear.Chironicbody = {}
-	gear.Chironicbody.MAtk = { name="Chironic Doublet", augments={'"Mag.Atk.Bns."+27','"Resist Silence"+10','Mag. Acc.+13'}}
+	gear.Chironicbody.MAcc = { name="Chironic Doublet", augments={'Mag. Acc.+29','Enmity-4','MND+2','"Mag.Atk.Bns."+6',}},
 	
 	gear.Chironichands = {}
 	gear.Chironichands.MAatk = { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','MND+6','Mag. Acc.+10','"Mag.Atk.Bns."+14'}}
@@ -187,8 +187,7 @@ function Drkstr_shared_augmented_gear()
 	
 	gear.Ryuohands = {}
 	gear.Ryuohands.D = { name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3'}}
-	
-	gear.Ryuolegs = {}
+		gear.Ryuolegs = {}
 	gear.Ryuolegs.A = { name="Ryuo Hakama", augments={'STR+10','DEX+10','Accuracy+15'}}
 	
 	gear.Ryuofeet = {}
@@ -359,7 +358,7 @@ function Drkstr_shared_augmented_gear()
 	gear.JSEcape.BST = { name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: "Regen"+10'}}
 	gear.JSEcape.BLUcrit =  { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
 	gear.JSEcape.BLUWS = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
-	gear.JSEcape.SAMTP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+	gear.JSEcape.SAMTP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10'}}
 	gear.JSEcape.SAMWS = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.JSEcape.BLM = { name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 	
