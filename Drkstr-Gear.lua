@@ -7,21 +7,47 @@ function Drkstr_shared_augmented_gear()
 --==================================--
 
 -- Weapons
+	gear.Skinflayer = {}
+	gear.Skinflayer.MH = { name="Skinflayer", augments={'"Triple Atk."+2','CHR+1','Accuracy+19','Attack+19','DMG:+18'}}
+	gear.Skinflayer.OH = { name="Skinflayer", augments={'"Triple Atk."+3','Accuracy+10','Attack+13','DMG:+17'}}
+	
+	gear.Colada = {}
+	gear.Colada.STP = { name="Colada", augments={'"Store TP"+5','VIT+2','Accuracy+25'}}
+	gear.Colada.Refresh = { name="Colada", augments={'"Refresh"+2','INT+1','Mag. Acc.+15','"Mag.Atk.Bns."+10'}}
+	
+	gear.Zulfiqar = {}
+	gear.Zulfiqar.Only = { name="Zulfiqar", augments={'Weapon Skill Acc.+5','STR+6','Attack+14','DMG:+24'}}
+	
+	gear.Kanaria = {}
+	gear.Kanaria.Only = { name="Kanaria", augments={'"Triple Atk."+3','DEX+6','Accuracy+20','Attack+8','DMG:+3'}}
+	
+	gear.Grioavolr = {}
+	gear.Grioavolr.Only = { name="Grioavolr", augments={'"Fast Cast"+7','MP+54','Mag. Acc.+29','"Mag.Atk.Bns."+28','Magic Damage +3'}}
+	
+	gear.Teller = {}
+	gear.Teller.Only = { name="Teller", augments={'Weapon skill damage +2%','Rng.Acc.+23','Rng.Atk.+19','DMG:+15'}}
+	
 -- Chironic
 	gear.Chironichead = {}
 	gear.Chironichead.MAcc = { name="Chironic Hat", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','"Conserve MP"+1','VIT+1','Mag. Acc.+8'}}
+	gear.Chironichead.blank = "Chironic Hat"
 	
 	gear.Chironicbody = {}
-	gear.Chironicbody.MAcc = { name="Chironic Doublet", augments={'Mag. Acc.+29','Enmity-4','MND+2','"Mag.Atk.Bns."+6',}},
+	gear.Chironicbody.MAcc = { name="Chironic Doublet", augments={'Mag. Acc.+29','Enmity-4','MND+2','"Mag.Atk.Bns."+6'}}
+	gear.Chironicbody.Cures = { name="Chironic Doublet", augments={'Mag. Acc.+12','"Cure" potency +11%'}}
+	gear.Chironicbody.blank - "Chironic Doublet"
 	
 	gear.Chironichands = {}
 	gear.Chironichands.MAatk = { name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','MND+6','Mag. Acc.+10','"Mag.Atk.Bns."+14'}}
+	gear.Chironichands.blank = "Chironic Gloves"
 	
 	gear.Chironiclegs = {}
 	gear.Chironiclegs.MAcc = { name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Cure" spellcasting time -8%','Mag. Acc.+14'}}
+	gear.Chironiclegs.blank = "Chironic Hose"
 	
 	gear.Chironicfeet = {}
 	gear.Chironicfeet.MAcc = { name="Chironic Slippers", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Haste+4','Mag. Acc.+13'}}
+	gear.Chironicfeet.blank = "Chironic Slippers"
 	
 -- Herculean
 	gear.Herculeanhead = {}
@@ -40,6 +66,7 @@ function Drkstr_shared_augmented_gear()
 	gear.Herculeanlegs.MaxAcc = { name="Herculean Trousers", augments={'Accuracy+14 Attack+14','DEX+9','Accuracy+15','Attack+14'}}
 	gear.Herculeanlegs.Triple = { name="Herculean Trousers", augments={'Attack+27','"Triple Atk."+4','AGI+4','Accuracy+15'}}
 	gear.Herculeanlegs.Ranged = { name="Herculean Trousers", augments={'Rng.Acc.+23 Rng.Atk.+23','Enmity-1','AGI+7','Rng.Atk.+15'}}
+	gear.Herculeanfeet.TH = { name="Herculean Trousers", augments={'Pet: Phys. dmg. taken -1%','"Fast Cast"+3','"Treasure Hunter"+1','Accuracy+11 Attack+11','Mag. Acc.+1 "Mag.Atk.Bns."+1'}}
 
 	gear.Herculeanfeet = {}
 	gear.Herculeanfeet.Triple = { name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5'}}
@@ -56,6 +83,7 @@ function Drkstr_shared_augmented_gear()
 
 	gear.Merlinichands = {}
 	gear.Merlinichands.Nukes = { name="Merlinic Dastanas", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','INT+8','Mag. Acc.+3','"Mag.Atk.Bns."+15'}}
+	gear.Merlinichands.blank = "Merlinic Dastanas"
 
 	gear.Merliniclegs = {}
 	gear.Merliniclegs.MB = { name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+21','Magic burst mdg.+9%','INT+1','Mag. Acc.+13'}}
@@ -63,8 +91,28 @@ function Drkstr_shared_augmented_gear()
 	
 	gear.Merlinicfeet = {}
 	gear.Merlinicfeet.MB = { name="Merlinic Crackows", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic burst mdg.+7%','CHR+2','Mag. Acc.+6','"Mag.Atk.Bns."+14'}}
+	gear.Merlinicfeet.Refresh = { name="Merlinic Crackows", augments={'INT+1','Phys. dmg. taken -4%','"Refresh"+1','Accuracy+8 Attack+8'}}
 
 -- Odyssean
+
+	gear.Odysseanhead = {}
+	gear.Odysseanhead.TP = { name="Odyssean Helm", augments={'Accuracy+28','"Dbl.Atk."+3','CHR+4','"Mag.Atk.Bns."+3'}}
+	gear.Odysseanhead.WS = { name="Odyssean Helm", augments={'Attack+9','Weapon skill damage +4%','STR+3','Accuracy+13'}}
+	
+	gear.Odysseanbody = {}
+	
+	gear.Odysseanhands = {}
+	gear.Odysseanhands.TP = { name="Odyssean Gauntlets", augments={'Accuracy+22','DEX+9','Attack+3'}}
+	gear.Odysseanhands.WS = { name="Odyssean Gauntlets", augments={'Mag. Acc.+24','Weapon skill damage +3%','MND+9'}}
+	
+	gear.Odysseanlegs = {}
+	gear.Odysseanlegs.WS = { name="Odyssean Cuisses", augments={'Accuracy+21','STR+14'}}
+	
+	gear.Odysseanfeet = {}
+	gear.Odysseanfeet.TP = { name="Odyssean Greaves", augments={'Accuracy+23','"Dbl.Atk."+2','STR+3'}}
+	gear.Odysseanfeet.FC = { name="Odyssean Greaves", augments={'"Fast Cast"+3','VIT+5','Accuracy+9','Attack+15'}}
+	gear.Odysseanfeet.Matk = { name="Odyssean Greaves", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','"Store TP"+5','MND+1','"Mag.Atk.Bns."+15'}}
+	
 -- Valorous
 	gear.Valoroushead = {}
 	gear.Valoroushead.WS  = { name="Valorous Mask", augments={'Accuracy+28','Weapon skill damage +3%','STR+15','Attack+12'}}
@@ -101,6 +149,9 @@ function Drkstr_shared_augmented_gear()
 	gear.Adhemarbody = {}
 	gear.Adhemarbody.A = { name="Adhemar Jacket", augments={'DEX+10','AGI+10','Accuracy+15'}}
 
+	gear.Adhemarhands = {}
+	gear.Adhemarhands.A = { name="Adhemar Wristbands", augments={'DEX+10','AGI+10','Accuracy+15'}}
+
 	gear.Adhemarfeet = {}
 	gear.Adhemarfeet.D = { name="Adhemar Gamashes", augments={'HP+50','"Store TP"+6','"Snapshot"+8'}}
 
@@ -129,6 +180,9 @@ function Drkstr_shared_augmented_gear()
 	gear.Argosyfeet.D = { name="Argosy Sollerets", augments={'HP+50','"Dbl.Atk."+2','"Store TP"+3'}}
 	
 -- Carmine
+	gear.Carminehead = {}
+	gear.Carminehead.D = {}
+
 	gear.Carminehands = {}
 	gear.Carminehands.D = { name="Carmine Fin. Ga.", augments={'Rng.Atk.+15','"Mag.Atk.Bns."+10','"Store TP"+5'}}
 	
@@ -194,12 +248,45 @@ function Drkstr_shared_augmented_gear()
 	gear.Ryuofeet.A = { name="Ryuo Sune-Ate", augments={'STR+10','DEX+10','Accuracy+15'}}
 	
 -- Souveran
+	gear.Souveranbody = {}
+	gear.Souveranbody.A = {}
+	
+	gear.Souveranhands = {}
+	gear.souveranhands.A = {}
+	
+	gear.Souveranlegs = {}
+	gear.Souveranlegs.A {}
+	
+	gear.Souveranfeet = {}
+	gear.souveranfeet.A = {}
 
 --==================================--
 -- Escha gear
 --==================================--
 	
 -- Escha Zi'Tah weapons
+	gear.NibiruAxe = {}
+	gear.NibiruAxe.C = { name="Nibiru Tabar", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7'}}
+	gear.NibiruAxe.C = { name="Nibiru Tabar", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7'}}
+
+	gear.NibiruClub = {}
+	gear.NibiruClub.B = { name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15'}}
+
+-- Escha Ru'Aun weapons
+
+	gear.Emissary = {}
+	gear.Emissary.D = { name="Emissary", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+20','"Refresh"+1'}}
+
+	gear.Bidenhander = {}
+	gear.Bidenhander.B = { name="Bidenhander", augments={'DMG:+30','Accuracy+20','Attack+20'}}
+	
+	gear.Skullrender = {}
+	gear.Skullrender.C = { name="Skullrender", augments={'DMG:+15','Pet: Accuracy+20','Pet: Attack+20'}}
+	gear.Skullrender.C = { name="Skullrender", augments={'DMG:+15','Pet: Accuracy+20','Pet: Attack+20'}}
+
+	gear.Akademos = {}
+	gear.Akademos.C = { name="Akademos", augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15'}}
+
 -- Despair
 	gear.Despairhead = {}
 	gear.Despairhead.C = { name="Despair Helm", augments={'Accuracy+10','Pet: VIT+7','Pet: Damage taken -3%'}}
@@ -290,15 +377,16 @@ function Drkstr_shared_augmented_gear()
 	
 	gear.Vanyalegs = {}
 	gear.Vanyalegs.B = { name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}}
-	
-
-
 
 --==================================--
 -- Skirmish gear
 --==================================--
 	
 -- Weapons
+	gear.Kumbhakarna = {}
+	gear.Kumbhakarna.TP180 = { name="Kumbhakarna", augments={'Pet: Accuracy+19 Pet: Rng. Acc.+19','Pet: Phys. dmg. taken -2%','Pet: TP Bonus+180'}}
+	gear.Kumbhakarna.Stats = { name="Kumbhakarna", augments={'Pet: Attack+14 Pet: Rng.Atk.+14','Pet: Phys. dmg. taken -4%','Pet: STR+13 Pet: DEX+13 Pet: VIT+13'}}
+
 -- Helios
 -- Taeon
 	gear.Taeonhead = {}
@@ -335,13 +423,29 @@ function Drkstr_shared_augmented_gear()
 -- Sinister Reign gear
 --==================================--
 
+	gear.Malevolence = {}
+	gear.Malevolence.High = { name="Malevolence", augments={'INT+9','Mag. Acc.+10','"Mag.Atk.Bns."+9','"Fast Cast"+4'}}
+	gear.Malevolence.Low = { name="Malevolence", augments={'INT+3','Mag. Acc.+5','"Mag.Atk.Bns."+7'}}
+	
+	gear.TamingSari = {}
+	gear.TamingSari.NotMax = { name="Taming Sari", augments={'STR+9','DEX+8','DMG:+14'}}
+	
+	gear.Vampirism = {}
+	gear.Vampirism.High = { name="Vampirism", augments={'STR+6','INT+5','"Occult Acumen"+5','DMG:+7'}}
+	gear.Vampirism.Low = { name="Vampirism", augments={'STR+3','INT+5','"Occult Acumen"+3','DMG:+3'}}    
+	
+	gear.Rubicundity = { name="Rubicundity", augments={'Mag. Acc.+10','"Mag.Atk.Bns."+10','Dark magic skill +10','"Conserve MP"+7'}}
+	
+	gear.Nobility = {}
+	gear.Nobility.Cap = { name="Nobility", augments={'AGI+10','Crit.hit rate+4','"Store TP"+8','DMG:+15'}}
+
 --==================================--
 -- JSE Capes
 --==================================--
 
 	gear.ReiveJSE = {}
 	gear.ReiveJSE.MNK = { name="Anchoret's Mantle", augments={'STR+4','DEX+3','"Subtle Blow"+3','"Counter"+2'}}
-	gear.ReiveJSE.BLM = { name="Bane Cape", augments={'Elem. magic skill +8','Dark magic skill +7','"Mag.Atk.Bns."+4'}}
+	gear.ReiveJSE.BLM = { name="Bane Cape", augments={'Elem. magic skill +9','Dark magic skill +5','"Mag.Atk.Bns."+2','"Fast Cast"+4'}}
 	gear.ReiveJSE.SCH = { name="Bookworm's Cape", augments={'INT+1','MND+4','Helix eff. dur. +11','"Regen" potency+7'}}
 	gear.ReiveJSE.THF = { name="Canny Cape", augments={'DEX+4','AGI+1','"Dual Wield"+4','Crit. hit damage +1%'}}
 	gear.ReiveJSE.BLU = { name="Cornflower Cape", augments={'MP+30','DEX+2','Accuracy+2','Blue Magic skill +9'}}
@@ -359,9 +463,10 @@ function Drkstr_shared_augmented_gear()
 	gear.JSEcape.BLUcrit =  { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Crit.hit rate+10'}}
 	gear.JSEcape.BLUWS = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.JSEcape.SAMTP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10'}}
-	gear.JSEcape.SAMWS = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+	gear.JSEcape.SAMWS = { name="Smertrios's Mantle", augments={'STR+23','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	gear.JSEcape.BLM = { name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
-	
+	gear.JSEcape.RNG = {}
+	gear.JSEcape.SCH = {}
 
 --==================================--
 -- Misc. Gear
