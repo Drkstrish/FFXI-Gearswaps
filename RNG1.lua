@@ -1,77 +1,73 @@
 function get_sets()
-    mote_include_version = 2
-    include('Mote-Include.lua')
-	include('sammeh_custom_functions.lua')
+	mote_include_version = 2
+		include('Mote-Include.lua')
+		include('sammeh_custom_functions.lua')
 end
 
 function user_setup()
-    state.IdleMode:options('Normal','PDT')
+	state.IdleMode:options('Normal','PDT')
 	state.TPMode = M{['description']='TP Mode', 'Normal','RACC'}
 	state.RngMode = M{['description']='Ranger Mode', 'Archery','Gun','XBow'}
 	state.Bolt = M{['description']='Bolt Mode','Normal','DefDown','Holy Bolt','Bloody Bolt'}
-	send_command('alias tp gs c cycle tpmode')
-	send_command('alias rngmode gs c cycle rngmode')
-	send_command('alias boltmode gs c cycle Bolt')
-	send_command('bind f9 gs c cycle RngMode')
-	send_command('bind ^f9 gs c cycle Bolt')
-    send_command('bind f10 gs c cycle idlemode')
+		send_command('alias tp gs c cycle tpmode')
+		send_command('alias rngmode gs c cycle rngmode')
+		send_command('alias boltmode gs c cycle Bolt')
+		send_command('bind f9 gs c cycle RngMode')
+		send_command('bind ^f9 gs c cycle Bolt')
+		send_command('bind f10 gs c cycle idlemode')
 	select_default_macro_book()
-	
-	-- Set Common Aliases --
-	send_command("alias fc gs equip sets.precast.FastCast")
-	send_command("alias preshot gs equip sets.precast.PreShot")
-	send_command("alias rngtp gs equip sets.midcast.TP.normal")
-	send_command("alias rngtpacc gs equip sets.midcast.TP.RACC")
-	send_command("alias sw gs equip sets.precast.WS")
-	send_command("alias jr gs equip sets.precast.WS['Jishnu\'s Radiance']")
-	
-	
-	
+
+-- Set Common Aliases --
+		send_command("alias fc gs equip sets.precast.FastCast")
+		send_command("alias preshot gs equip sets.precast.PreShot")
+		send_command("alias rngtp gs equip sets.midcast.TP.normal")
+		send_command("alias rngtpacc gs equip sets.midcast.TP.RACC")
+		send_command("alias sw gs equip sets.precast.WS")
+		send_command("alias jr gs equip sets.precast.WS['Jishnu\'s Radiance']")
 end
 
-	
 function init_gear_sets()
-	
-	
-	TP_Hands = { name="Herculean Gloves", augments={'Rng.Acc.+15 Rng.Atk.+15','Weapon skill damage +2%','DEX+9','Rng.Atk.+15',}}
-	
+	TP_Hands = "Meghanada Gloves +1"
+
 	if state.RngMode.value == 'Archery' then
-	  -- RNGWeapon = { name="Teller", augments={'STR+4','Rng.Acc.+30','Rng.Atk.+29','DMG:+13',}}
-	  RNGWeapon = "Yoichinoyumi"
-	  TP_Ammo = "Yoichi's Arrow"
-	  WS_Ammo = "Yoichi's Arrow"
-	  send_command("alias rngws1 input /ws 'Jishnu\'s Radiance' <t>")
-	  send_command("alias rngws2 input /ws 'Namas Arrow' <t>")
-	  send_command("alias rngws3 input /ws 'Apex Arrow' <t>")
-	  TP_Hands = "Amini Glovelettes +1"
+		RNGWeapon = "Steinthor"
+		TP_Ammo = "Achiyalabopa Arrow"
+		WS_Ammo = "Achiyalabopa Arrow"
+			send_command("alias rngws1 input /ws 'Jishnu\'s Radiance' <t>")
+			send_command("alias rngws2 input /ws 'Namas Arrow' <t>")
+			send_command("alias rngws3 input /ws 'Apex Arrow' <t>")
+		TP_Hands = "Meghanada Gloves +1"
+		
 	elseif state.RngMode.value == 'Gun' then 
-	  RNGWeapon = "Fomalhaut"
-	  TP_Ammo="Chrono Bullet"
-	  WS_Ammo="Chrono Bullet"
-	  send_command("alias rngws1 input /ws 'Slugshot' <t>")
-	  send_command("alias rngws2 input /ws 'Trueflight' <t>")
-	  send_command("alias rngws3 input /ws 'Wildfire' <t>")
+		RNGWeapon = "Wochowsen"
+		TP_Ammo = "Achiyal. Bolt"
+		WS_Ammo = "Achiyal. Bolt"
+			send_command("alias rngws1 input /ws 'Slugshot' <t>")
+			send_command("alias rngws2 input /ws 'Trueflight' <t>")
+			send_command("alias rngws3 input /ws 'Wildfire' <t>")
+	
 	elseif state.RngMode.value == 'XBow' then
-	  RNGWeapon = "Wochowsen"
-	  TP_Ammo = "Achiyal. Bolt"
-	  WS_Ammo = "Achiyal. Bolt"
-	  if state.Bolt.value == 'DefDown' then 
+		RNGWeapon = "Imati +1"
+		TP_Ammo = "Achiyal. Bolt"
+		WS_Ammo = "Achiyal. Bolt"
+			if state.Bolt.value == 'DefDown' then 
 		TP_Ammo = "Abrasion Bolt"
-	  elseif state.Bolt.value == 'Holy Bolt' then
-	    TP_Ammo = "Righteous Bolt"
-	  elseif state.Bolt.value == 'Bloody Bolt' then
-	    TP_Ammo = "Bloody Bolt"
-	  end
-	  send_command("alias rngws2 input /ws 'Wildfire' <t>")
-	  send_command("alias rngws3 input /ws 'Slug Shot' <t>")
-	  send_command("alias rngws1 input /ws 'Trueflight' <t>")
-	end
+			elseif state.Bolt.value == 'Holy Bolt' then
+		TP_Ammo = "Righteous Bolt"
+			elseif state.Bolt.value == 'Bloody Bolt' then
+		TP_Ammo = "Bloody Bolt"
+			end
+			send_command("alias rngws2 input /ws 'Wildfire' <t>")
+			send_command("alias rngws3 input /ws 'Slug Shot' <t>")
+			send_command("alias rngws1 input /ws 'Trueflight' <t>")
+end
 	
 			
     ---  PRECAST SETS  ---
-    sets.precast = {}
+	sets.precast = {}
+
 	sets.precast.PreShot = {
-	    range=RNGWeapon,
+		range=RNGWeapon,
 		ammo=TP_Ammo,
 		head="Amini Gapette",  -- 6 --
 		body={ name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}}, -- 6 --
@@ -85,7 +81,7 @@ function init_gear_sets()
 		left_ring="K'ayres Ring",
 		right_ring="Rajas Ring",
 		back="Lutian Cape", -- 2 -- 
-    }
+		}
 	sets.precast.PreShot.Overkill = set_combine(sets.precast.PreShot, {})
 	
 	sets.midcast.TP = {} 
