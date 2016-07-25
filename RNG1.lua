@@ -135,6 +135,30 @@ end
 	-- sets.precast.FastCast = {main=FC_Main,sub=FC_sub,ammo=FC_ammo,head=FC_head,neck=FC_neck,ear1=FC_ear1,ear2=FC_ear2,body=FC_body,hands=FC_hands,ring1=FC_ring1,ring2=FC_ring2,back=FC_back,waist=FC_waist,legs=FC_legs,feet=FC_feet}
     
 -- WS Sets
+
+--Marksmanship 
+
+--Wildfire – 60% AGI. Enmity generation varies with TP. Magic WS needing M. Atk. Bonus and Fire Affinity Magic Damage.
+--(COR) Leaden Salute – 100% AGI. Damage varies with TP. Magic WS needing M. Atk. Bonus and Dark Affinity Magic Damage.
+--Trueflight – 100% AGI. Damage Varies with TP. Magic WS needing M. Atk. Bonus and Light Affinity Magic Damage.
+--(Relic) Coronach – 40% AGI/40% DEX. Temporarily lowers Enmity.
+--Last Stand – 73%~85% AGI. Damage varies with TP. 
+--Detonator – 70% AGI. Damage Varies with TP.
+--Heavy Shot – 70% AGI. Chance of Crit varies with TP.
+--Slug Shot – 70% AGI. Accuracy varies with TP.
+
+--Archery
+
+--Jishnu’s Radiance – 80% DEX. Chance to crit varies with TP.
+--(Relic) Namas Arrow – 40% STR/40% AGI. Temporarily increases ranged accuracy.
+--Apex Arrow – 73~85% AGI. Defense ignored varies with TP.
+--Refulgent Arrow – 60% STR. Damage Varies with TP.
+--Empyreal Arrow – 50% AGI/20% STR. Damage Varies with TP.
+--Arching Arrow – 50% AGI/20% STR. Chance to crit varies with TP.
+--Sidewinder – 50% AGI/20% STR. Accuracy varies with TP.
+
+--General WS build, Stack R. Acc and AGI with some STR mixed in to cover most WS
+
 	sets.precast.WS = {
 		ammo=TP_Ammo,
 		head="Adhemar Bonnet",
@@ -150,43 +174,48 @@ end
 		right_ring="Apate Ring",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}},
 		}
-	
+
+--Jishnu’s Radiance – 80% DEX. Chance to crit varies with TP.	
 	sets.precast.WS['Jishnu\'s Radiance'] = {
-		ammo=TP_Ammo,
-		head={ name="Herculean Helm", augments={'Rng.Acc.+28','Weapon skill damage +3%','DEX+11','Rng.Atk.+12',}},
-		body={ name="Herculean Vest", augments={'Rng.Acc.+23 Rng.Atk.+23','Weapon skill damage +3%','Rng.Atk.+9',}},
-		hands={ name="Herculean Gloves", augments={'Rng.Acc.+15 Rng.Atk.+15','Weapon skill damage +2%','DEX+9','Rng.Atk.+15',}},
-		--legs="Adhemar Kecks",
-		legs="Amini Brague +1",
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Moonshade Earring",
-		right_ear="Enervating Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Rajas Ring",
-		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}},
-		feet="Thereoid Greaves",
-		}
-	-- sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
-	-- sets.precast.WS['Slug Shot'] = sets.precast.WS['Sidewinder']
-	sets.precast.WS['Trueflight'] = {
-	    head={ name="Herculean Helm", augments={'Rng.Acc.+28','Weapon skill damage +3%','DEX+11','Rng.Atk.+12',}},
-		body="Orion Jerkin +1",
-		hands="Leyline Gloves",
-		legs="Gyve Trousers",
-		feet={ name="Adhemar Gamashes", augments={'HP+50','"Store TP"+6','"Snapshot"+8',}},
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Crematio Earring",
-		right_ear={ name="Moonshade Earring", augments={'MP+25','TP Bonus +25',}},
-		left_ring={ name="Dark Ring", augments={'Magic dmg. taken -3%','Phys. dmg. taken -6%',}},
-		right_ring="Weather. Ring",
+	    	head="",
+		body="",
+		hands="",
+		legs="",
+		feet="",
+		neck="",
+		waist="",
+		left_ear="",
+		right_ear="",
+		left_ring="",
+		right_ring="",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}},
 	}
-    sets.precast.WS['Wildfire'] = sets.precast.WS['Trueflight']
+--Sidewinder – 50% AGI/20% STR. Accuracy varies with TP.
+	-- sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
+--Slug Shot – 70% AGI. Accuracy varies with TP.
+	-- sets.precast.WS['Slug Shot'] = sets.precast.WS['Sidewinder']
 	
-    ---  AFTERCAST SETS  ---
-    sets.idle = set_combine(sets.precast.PreShot, {})
+--Trueflight – 100% AGI. Damage Varies with TP. Magic WS needing M. Atk. Bonus and Light Affinity Magic Damage.
+	sets.precast.WS['Trueflight'] = {
+	    	head="",
+		body="",
+		hands="",
+		legs="",
+		feet="",
+		neck="",
+		waist="",
+		left_ear="",
+		right_ear="",
+		left_ring="",
+		right_ring="",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}},
+		}	
+	
+--Wildfire – 60% AGI. Enmity generation varies with TP. Magic WS needing M. Atk. Bonus and Fire Affinity Magic Damage.
+    	sets.precast.WS['Wildfire'] = sets.precast.WS['Trueflight']
+	
+---  AFTERCAST SETS  ---
+	sets.idle = set_combine(sets.precast.PreShot, {})
 
 	
 end
