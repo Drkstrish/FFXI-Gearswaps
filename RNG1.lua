@@ -65,87 +65,92 @@ end
 			
     ---  PRECAST SETS  ---
 	sets.precast = {}
-
+-- Snapshot 10% merits = 6 + 7 + 8 + 3 = 34%
+-- Rapid Shot 30% traits 5% merits = 10 + 10 + 19 + 3 = 77% 
 	sets.precast.PreShot = {
 		range=RNGWeapon,
 		ammo=TP_Ammo,
-		head="Amini Gapette",  -- 6 --
-		body={ name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}}, -- 6 --
-		hands="Alruna's Gloves +1",  -- 5 --
-		legs="Adhemar Kecks",  -- 9 -- 
-		feet="Adhemar Gamashes", -- 8 -- 
-		neck="Combatant's Torque",
-		waist="Yemaya Belt",    -- 3 from impulse belt --
-		left_ear="Neritic Earring",
-		right_ear="Enervating Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Rajas Ring",
-		back="Lutian Cape", -- 2 -- 
+		head={ name="Pursuer's Beret", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}, -- 10R
+		body={ name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}}, -- 6S
+		hands={ name="Carmine Fin. Ga.", augments={'Rng.Atk.+15','"Mag.Atk.Bns."+10','"Store TP"+5',}}, -- 10R 7S
+		legs={ name="Pursuer's Pants", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}, -- 19R
+		feet="Meg. Jam. +1", -- 8S
+		neck="Marked Gorget",
+		waist="Ponente Sash", -- 3R
+		left_ear="Enervating Earring",
+		right_ear="Neritic Earring",
+		left_ring="Cacoethic Ring",
+		right_ring="Cacoethic Ring +1",
+		back="Lutian Cape" -- 3S
 		}
+
 	sets.precast.PreShot.Overkill = set_combine(sets.precast.PreShot, {})
 	
 	sets.midcast.TP = {} 
+	
 	sets.midcast.TP.normal = {
-	    range=RNGWeapon,
+	    	range=RNGWeapon,
 		ammo=TP_Ammo,
-		head="Arcadian Beret +1",
+		head="Meghanada Visor +1",
 		body={ name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}},
 		hands=TP_Hands,
-		legs="Adhemar Kecks",
-		feet="Adhemar Gamashes",
-		neck="Combatant's Torque",
-		waist="Yemaya Belt",
-		left_ear="Neritic Earring",
-		right_ear="Enervating Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Rajas Ring",
+		legs={ name="Herculean Trousers", augments={'Rng.Acc.+23 Rng.Atk.+23','Enmity-1','AGI+7','Rng.Atk.+15',}},
+		feet={ name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15',}},
+		neck="Marked Gorget",
+		waist="Ponente Sash",
+		left_ear="Enervating Earring",
+		right_ear="Neritic Earring",
+		left_ring="Rajas Ring",
+		right_ring="Apate Ring",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}},
-	}
+		}
+
 	sets.midcast.TP.RACC = {
 		head="Meghanada Visor +1",
 		body="Meg. Cuirie +1",
 		hands="Meg. Gloves +1",
 		legs="Meg. Chausses +1",
 		feet="Meg. Jam. +1",
-		neck="Combatant's Torque",
-		waist="Yemaya Belt",
-		left_ear="Neritic Earring",
-		right_ear="Enervating Earring",
-		left_ring="Paqichikaji Ring",
-		right_ring="Hajduk Ring",
+		neck="Marked Gorget",
+		waist="Eschan Stone",
+		left_ear="Enervating Earring",
+		right_ear="Neritic Earring",
+		left_ring="Cacoethic Ring",
+		right_ring="Cacoethic Ring +1",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}},
-	}
-	sets.Barrage = {hands="Orion Bracers +1"}
+		}
+	
+	--sets.Barrage = {hands="Orion Bracers +1"}
     
 	--Job Abilities
 	sets.precast.JA = {}
-    sets.precast.JA.Scavenge = {feet="Orion Socks +1"}
-	sets.precast.JA.Sharpshot = {hands="Orion Braccae +1"}
-	sets.precast.JA['Bounty Shot'] = { hands="Amini Glove. +1"}
-    sets.precast.JA.Camouflage = {body="Orion Jerkin +1"}
-    sets.precast.JA['Eagle Eye Shot'] = {}
-    sets.precast.JA.Shadowbind = {}
-    sets.precast.JA.Sharpshot = {}
+		--sets.precast.JA.Scavenge = {feet="Orion Socks +1"}
+		--sets.precast.JA.Sharpshot = {hands="Orion Braccae +1"}
+		--sets.precast.JA['Bounty Shot'] = { hands="Amini Glove. +1"}
+		--sets.precast.JA.Camouflage = {body="Orion Jerkin +1"}
+		--sets.precast.JA['Eagle Eye Shot'] = {}
+		--sets.precast.JA.Shadowbind = {}
+		--sets.precast.JA.Sharpshot = {}
      
 	-- sets.precast.FastCast = {main=FC_Main,sub=FC_sub,ammo=FC_ammo,head=FC_head,neck=FC_neck,ear1=FC_ear1,ear2=FC_ear2,body=FC_body,hands=FC_hands,ring1=FC_ring1,ring2=FC_ring2,back=FC_back,waist=FC_waist,legs=FC_legs,feet=FC_feet}
     
-	-- WS Sets
+-- WS Sets
 	sets.precast.WS = {
-	    ammo=TP_Ammo,
-		head={ name="Herculean Helm", augments={'Rng.Acc.+28','Weapon skill damage +3%','DEX+11','Rng.Atk.+12',}},
-		body={ name="Herculean Vest", augments={'Rng.Acc.+23 Rng.Atk.+23','Weapon skill damage +3%','Rng.Atk.+9',}},
-		hands={ name="Herculean Gloves", augments={'Rng.Acc.+15 Rng.Atk.+15','Weapon skill damage +2%','DEX+9','Rng.Atk.+15',}},
-		--legs="Adhemar Kecks",
-		legs="Amini Brague +1",
-		feet={ name="Herculean Boots", augments={'Rng.Acc.+25 Rng.Atk.+25','Weapon skill damage +2%','Rng.Acc.+1','Rng.Atk.+9',}},
+		ammo=TP_Ammo,
+		head="Adhemar Bonnet",
+		body="Sayadio's Kaftan",
+		hands="Meg. Gloves +1",
+		legs={ name="Herculean Trousers", augments={'Rng.Acc.+23 Rng.Atk.+23','Enmity-1','AGI+7','Rng.Atk.+15',}},
+		feet={ name="Herculean Boots", augments={'Rng.Acc.+20 Rng.Atk.+20','Crit.hit rate+2','Rng.Acc.+12','Rng.Atk.+9',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear="Moonshade Earring",
-		right_ear="Enervating Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Rajas Ring",
+		left_ear="Enervating Earring",		
+		right_ear="Moonshade Earring",
+		left_ring="Rajas Ring",
+		right_ring="Apate Ring",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}},
-	}
+		}
+	
 	sets.precast.WS['Jishnu\'s Radiance'] = {
 		ammo=TP_Ammo,
 		head={ name="Herculean Helm", augments={'Rng.Acc.+28','Weapon skill damage +3%','DEX+11','Rng.Atk.+12',}},
@@ -161,7 +166,7 @@ end
 		right_ring="Rajas Ring",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}},
 		feet="Thereoid Greaves",
-	}
+		}
 	-- sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
 	-- sets.precast.WS['Slug Shot'] = sets.precast.WS['Sidewinder']
 	sets.precast.WS['Trueflight'] = {
