@@ -27,7 +27,7 @@ function user_setup()
 end
 
 function init_gear_sets()
-	TP_Hands = "Meghanada Gloves +1"
+	TP_Hands = "Adhemar Wristbands"
 
 	if state.RngMode.value == 'Archery' then
 		RNGWeapon = "Steinthor"
@@ -36,7 +36,7 @@ function init_gear_sets()
 			send_command("alias rngws1 input /ws 'Jishnu\'s Radiance' <t>")
 			send_command("alias rngws2 input /ws 'Namas Arrow' <t>")
 			send_command("alias rngws3 input /ws 'Apex Arrow' <t>")
-		TP_Hands = "Meghanada Gloves +1"
+		TP_Hands = "Adhemar Wristbands"
 		
 	elseif state.RngMode.value == 'Gun' then 
 		RNGWeapon = "Wochowsen"
@@ -120,7 +120,7 @@ end
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}},
 		}
 	
-	--sets.Barrage = {hands="Orion Bracers +1"}
+	sets.Barrage = sets.midcast.TP.RACC
     
 	--Job Abilities
 	sets.precast.JA = {}
@@ -161,7 +161,7 @@ end
 
 	sets.precast.WS = {
 		ammo=TP_Ammo,
-		head="Adhemar Bonnet",
+		head="Meghanada Visor +1",
 		body="Sayadio's Kaftan",
 		hands="Meg. Gloves +1",
 		legs={ name="Herculean Trousers", augments={'Rng.Acc.+23 Rng.Atk.+23','Enmity-1','AGI+7','Rng.Atk.+15',}},
@@ -177,19 +177,19 @@ end
 
 --Jishnu’s Radiance – 80% DEX. Chance to crit varies with TP.	
 	sets.precast.WS['Jishnu\'s Radiance'] = {
-	    	head="",
-		body="",
-		hands="",
-		legs="",
-		feet="",
-		neck="",
-		waist="",
-		left_ear="",
-		right_ear="",
-		left_ring="",
-		right_ring="",
+	    	head="Meghanada Visor +1",
+		body="Meghanada Cuirie +1",
+		hands="Meg. Gloves +1",
+		legs={ name="Herculean Trousers", augments={'Rng.Acc.+23 Rng.Atk.+23','Enmity-1','AGI+7','Rng.Atk.+15',}},
+		feet="Thereoid Greaves",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Enervating Earring",
+		right_ear="Moonshade Earring",
+		left_ring="Cacoethic Ring",
+		right_ring="Cacoethic Ring +1",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}},
-	}
+		}
 --Sidewinder – 50% AGI/20% STR. Accuracy varies with TP.
 	-- sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, {neck="Fotia Gorget"})
 --Slug Shot – 70% AGI. Accuracy varies with TP.
@@ -197,17 +197,17 @@ end
 	
 --Trueflight – 100% AGI. Damage Varies with TP. Magic WS needing M. Atk. Bonus and Light Affinity Magic Damage.
 	sets.precast.WS['Trueflight'] = {
-	    	head="",
-		body="",
-		hands="",
-		legs="",
-		feet="",
-		neck="",
-		waist="",
-		left_ear="",
-		right_ear="",
-		left_ring="",
-		right_ring="",
+	    	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+		body="Samnuha Coat",
+		hands="Leyline Gloves",
+		legs={ name="Herculean Trousers", augments={'Rng.Acc.+23 Rng.Atk.+23','Enmity-1','AGI+7','Rng.Atk.+15',}},
+		feet="Adhemar Gamashes",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Friomisi Earring",
+		right_ear="Moonshade Earring",
+		left_ring="Apate Ring",
+		right_ring="Etana Ring",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}},
 		}	
 	
