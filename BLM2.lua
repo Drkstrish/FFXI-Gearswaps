@@ -39,26 +39,11 @@ end
 
 	
 function init_gear_sets()
-
-	-- Weapon Locks used for TP Mode.  When WeaponLock is set - it locks in the following Main and SUB. 
-	weaponlock_main="Grioavolr"
-	weaponlock_sub="Niobid Strap"
-
-	-- Enhances JA 
-	--sublimation_head="Acad. Mortar. +1"
-	--sublimation_body="Pedagogy Gown +1"
-    --enlightenment_body="Pedagogy gown +1"	
-
-	-- Idle Sets
-	
-	idle_main="Grioavolr"
-	idle_sub="Niobid Strap"
-	idle_ranged=""
 	idle_ammo="Elis Tome"
-	idle_head="Merlinic Hood"
+	idle_head="" 
 	idle_neck="Sanctity Necklace"
 	idle_ear1="Infused Earring"
-	idle_ear2="Loquacious Earring"
+	idle_ear2="Loquacious Earring" 
 	idle_body="Amalric Doublet"
 	idle_hands="Amalric Gages"
 	idle_ring1="Warden's Ring"
