@@ -1,6 +1,6 @@
 function get_sets()
     mote_include_version = 2
-    include('Mote-Include.lua')
+    	include('Mote-Include.lua')
 	include('sammeh_custom_functions.lua')
 end
 
@@ -9,57 +9,55 @@ function user_setup()
 -- F10 Changes Idle Mode
 -- Ctrl+F11 = Magical Mode Change
 
-    state.CastingMode:options('Normal', 'MACC','MagicBurst','StoreTP')
-    state.IdleMode:options('Normal','PDT','Death')
+    	state.CastingMode:options('Normal', 'MACC','MagicBurst','StoreTP')
+    	state.IdleMode:options('Normal','PDT','Death')
 	state.TPMode = M{['description']='TP Mode', 'Normal', 'WeaponLock'}
 	state.SuperTank = M{['description']='Super Tank Mode','Off','On'}
-	send_command('alias tank gs c cycle SuperTank')
-	send_command('alias tp gs c cycle tpmode')
-	send_command('bind f10 gs c cycle idlemode')
-	send_command('bind f12 gs c update CastingMode')
-	select_default_macro_book()
-	send_command('@wait 1;input /lockstyleset 5')
-		-- Set Common Aliases --
-	send_command("alias idle gs equip sets.Idle.Current")
-	send_command("alias fc gs equip sets.precast.FastCast")
-	send_command("alias enh gs equip sets.midcast['Enhancing Magic']")
-	send_command("alias ele gs equip sets.midcast['Elemental Magic'].Main")
-	send_command("alias macc gs equip sets.midcast['Elemental Magic'].MACC")
-	send_command("alias storetp gs equip sets.midcast['Elemental Magic'].StoreTP")
-	send_command("alias magicburst gs equip sets.midcast['Elemental Magic'].MagicBurst")
-	send_command("alias enf gs equip sets.midcast['Enfeebling Magic']")
-	send_command("alias dark gs equip sets.midcast['Dark Magic']")
-	send_command("alias deathset gs equip sets.midcast['Dark Magic'].DeathMagicBurst")
-	send_command("alias regen gs equip sets.midcast.Regen")
+		send_command('alias tank gs c cycle SuperTank')
+		send_command('alias tp gs c cycle tpmode')
+		send_command('bind f10 gs c cycle idlemode')
+		send_command('bind f12 gs c update CastingMode')
+		select_default_macro_book()
+		--send_command('@wait 1;input /lockstyleset 5')
+-- Set Common Aliases --
+		send_command("alias idle gs equip sets.Idle.Current")
+		send_command("alias fc gs equip sets.precast.FastCast")
+		send_command("alias enh gs equip sets.midcast['Enhancing Magic']")
+		send_command("alias ele gs equip sets.midcast['Elemental Magic'].Main")
+		send_command("alias macc gs equip sets.midcast['Elemental Magic'].MACC")
+		send_command("alias storetp gs equip sets.midcast['Elemental Magic'].StoreTP")
+		send_command("alias magicburst gs equip sets.midcast['Elemental Magic'].MagicBurst")
+		send_command("alias enf gs equip sets.midcast['Enfeebling Magic']")
+		send_command("alias dark gs equip sets.midcast['Dark Magic']")
+		send_command("alias deathset gs equip sets.midcast['Dark Magic'].DeathMagicBurst")
+		send_command("alias regen gs equip sets.midcast.Regen")
 end
 
 	
 function init_gear_sets()
 
-	-- Weapon Locks used for TP Mode.  When WeaponLock is set - it locks in the following Main and SUB. 
-	weaponlock_main={ name="Grioavolr", augments={'Magic burst mdg.+6%','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+21','Magic Damage +5',}}
-	--weaponlock_main="Khatvanga"
+-- Weapon Locks used for TP Mode.  When WeaponLock is set - it locks in the following Main and SUB. 
+	weaponlock_main="Grioavolr"
 	weaponlock_sub="Niobid Strap"
 
-	
-	-- Idle Sets
-	
-	idle_main="Lathi"
+-- Idle Sets
+	idle_main="Grioavolr"
 	idle_sub="Niobid Strap"
 	idle_ranged=""
-	idle_ammo="Sihirik"
-	idle_head="Befouled Crown"
-	idle_neck="Loricate Torque +1"
-	idle_ear1="Genmei Earring"
-	idle_ear2="Handler's Earring +1"
-	idle_body="Amalric Doublet"
-	idle_hands="Amalric Gages"
-	idle_ring1="Dark Ring"
-	idle_ring2="Defending Ring"
-	idle_back="Solemnity Cape"
-	idle_waist="Fucho-no-obi"
+	idle_ammo="Elis Tome" -- Should be able to update i think
+	idle_head="Merlinic Hood" -- Vagary Head
+	idle_neck="Sanctity Necklace" 
+	idle_ear1="Infused Earring" 
+	idle_ear2="Loquacious Earring" -- Vagary Earring
+	idle_body="Amalric Doublet" 
+	idle_hands="Amalric Gages" 
+	idle_ring1="Warden's Ring" 
+	idle_ring2="Defending Ring" 
+	idle_back="Solemnity Cape" 
+	idle_waist="Channeler's Stone" -- Should be able to update i think
 	idle_legs="Assiduity Pants +1"
-	idle_feet="Skaoi Boots"
+	idle_feet="Inspirited Boots" -- Update with DM augmented boots for +1 refresh
+
 
 	idle_pdt_main="Earth Staff"  -- 20 pdt -- 
 	idle_pdt_sub="Alber Strap" -- 2 pdt --
