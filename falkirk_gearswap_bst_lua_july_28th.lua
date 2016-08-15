@@ -61,8 +61,8 @@ function job_setup()
     pet_info_update()
 
     -- Input Pet:TP Bonus values for Skirmish Axes used during Pet Buffs
-    TP_Bonus_Main = 200
-    TP_Bonus_Sub = 180
+    TP_Bonus_Main = 180
+    TP_Bonus_Sub = 0
 
     -- 1200 Job Point Gift Bonus (Set equal to 0 if below 1200 Job Points)
     TP_Gift_Bonus = 40
@@ -86,7 +86,7 @@ function job_setup()
 
     -- List of Equipment Sets created for Random Lockstyle Generator
     -- (If you want to have the same Lockstyle every time, reduce the list to a single Equipset #)
-    random_lockstyle_list = {1,2,3,4,7,8,10,13,14,15,16,17}
+    random_lockstyle_list = {1,2,3}
 
     state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
     state.Buff['Killer Instinct'] = buffactive['Killer Instinct'] or false
@@ -206,15 +206,15 @@ end
 function init_gear_sets()
     -- AUGMENTED GEAR
     Pet_Idle_AxeMain = "Izizoeksi"
-    Pet_Idle_AxeSub = {name="Digirbalag", augments={'Pet: Damage taken -5%','Pet: Accuracy+1 Pet: Rng. Acc.+1','Pet: Attack+8 Pet: Rng.Atk.+8',}}
+    Pet_Idle_AxeSub = "Arktoi"
     Pet_PDT_AxeMain = "Izizoeksi"
-    Pet_PDT_AxeSub = "Astolfo"
+    Pet_PDT_AxeSub = "Arktoi"
     Pet_MDT_AxeMain = "Izizoeksi"
-    Pet_MDT_AxeSub = {name="Digirbalag", augments={'Pet: Damage taken -5%','Pet: Accuracy+1 Pet: Rng. Acc.+1','Pet: Attack+8 Pet: Rng.Atk.+8',}}
+    Pet_MDT_AxeSub = "Arkti"
     Pet_TP_AxeMain = "Skullrender"
     Pet_TP_AxeSub = "Skullrender"
-    Pet_Regen_AxeMain = "Buramgh +1"
-    Pet_Regen_AxeSub = {name="Kumbhakarna", augments={'Pet: Mag. Evasion+20','Pet: "Regen"+3','MND+17',}}
+    Pet_Regen_AxeMain = "Izizoeksi"
+    Pet_Regen_AxeSub = "Arktoi"
 
     Ready_Atk_Axe = {name="Kumbhakarna", augments={'Pet: Attack+20 Pet: Rng.Atk.+20','Pet: "Dbl.Atk."+3 Pet: Crit.hit rate +3','Pet: TP Bonus+200',}}
     Ready_Acc_Axe = {name="Kumbhakarna", augments={'Pet: Accuracy+20 Pet: Rng. Acc.+20','Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Pet: TP Bonus+180',}}
