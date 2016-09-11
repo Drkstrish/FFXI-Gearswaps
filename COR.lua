@@ -66,7 +66,18 @@ function init_gear_sets()
 	legs={ name="Herculean Trousers", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Enmity-5','AGI+3','Mag. Acc.+12','"Mag.Atk.Bns."+11',}},
 	feet={ name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15',}}} 
     	sets.precast.JA['Double-Up'] = sets.precast.JA['Phantom Roll']
-    	sets.precast.JA['Quick Draw'] = {}
+    	sets.precast.JA['Quick Draw'] = {
+    		head="Lak. Hat +1",   		neck="Anina Collar",
+    		ear1="Digni. Earring",
+    		ear2="Enervating Earring",
+    		body="Samnuha Coat", 
+    		hands="Carmine Finger Gauntlets",
+    		ring1="Sangoma Ring",
+    		ring2="Rajas Ring",
+    		back="Camulus's Mantle",
+    		waist="Eschan Stone",
+    		legs={ name="Herculean Trousers", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Enmity-5','AGI+3','Mag. Acc.+12','"Mag.Atk.Bns."+11',}},
+    		feet="Carmine Greaves"}
 	sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
 	sets.precast.JA['Snake Eye'] = {legs="Lanun Culottes +1"}
 	sets.precast.JA['Fold'] = {hands="Lunan Gants +1"}
