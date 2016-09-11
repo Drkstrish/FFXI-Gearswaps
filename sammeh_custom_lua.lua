@@ -15,6 +15,7 @@ state.SpellDebug = M{['description']='Debug Spells', 'Off', 'On'}
 	send_command('alias wings2 input /item "Lucid Wings II" <me>')
 	send_command('alias manamist input /item "Mana Mist" <me>')
 	send_command('alias hpmist input /item "Healing Mist" <me>')
+	send_command('alias megalixir input /item "Megalixir" <me>')
 	send_command('alias cat input /item "Catholicon" <me>')
 	send_command('alias cat1 input /item "Catholicon +1" <me>')
 	send_command('alias echodrop input /item "Echo Drops" <me>')
@@ -89,12 +90,14 @@ if spell.type == "Monster" then
 	add_to_chat(2,'Name:'..spell.name..'')
 		send_command('@wait 1;input //gs c showcharges')
 end
-
   -- add_to_chat(2,'-----------Target Info-----------')
   -- add_to_chat(2,'Target Name:'..spell.target.name..'')
   -- add_to_chat(2,'Target Type:'..spell.target.type..'')
   -- add_to_chat(2,'Model Size:'..spell.target.model_size..'')
   -- add_to_chat(2,'-----------Target End-----------')
+  if spell.type == "CorsairRoll" then
+	add_to_chat(2,'Corsair Roll:'..spell.name..' Value:'..spell.value)
+end
 end
 
 -- For BST to see how many Charges Remain
@@ -164,65 +167,70 @@ end
 
 function checkblocking(spell)
 	if buffactive.sleep or buffactive.petrification or buffactive.terror then 
-		add_to_chat(3,'Canceling Action - Asleep/Petrified/Terror!')
-			cancel_spell()
-	return
-end 
-
-if spell.name ~= 'Ranged' and spell.type ~= 'WeaponSkill' and spell.type ~= 'Scholar' then
-	if spell.action_type == 'Ability' then
-		if buffactive.Amnesia then
-			cancel_spell()
-				add_to_chat(3,'Canceling Ability - Currently have Amnesia')
-		return
-	else
-		recasttime = windower.ffxi.get_ability_recasts()[spell.recast_id] 
-	if spell and (recasttime >= 1) then
-		add_to_chat(3,'Ability Canceled:'..spell.name..' - Waiting on Recast:(seconds) '..recasttime..'')
-			cancel_spell()
-		return
-		end
+	   add_to_chat(3,'Canceling Action - Asleep/Petrified/Terror!')
+	   cancel_spell()
+	   return
+	end 
+	if spell.english == "Double-Up" then
+	  if not buffactive["Double-Up Chance"] then 
+	   add_to_chat(3,'Canceling Action - No ability to Double Up')
+	   cancel_spell()
+	   return
+	  end
 	end
-end
-if spell.action_type == 'Magic' then
-	if buffactive.Silence then
-		cancel_spell()
-			echodrops = "Echo Drops"
-				numberofecho = player.inventory[echodrops].count
-			if numberofecho < 2 then 
-				add_to_chat(2,'Silenced - Consider using Echo Drops. QTY:'..player.inventory[echodrops].count..'')
-			else 
-				add_to_chat(3,'Silenced - Using Echo Drops.  QTY:'..numberofecho..'')
-					send_command('input /item "Echo Drops" <me>')
-			end
-	return
-else 
-	if (spell.name == 'Refresh' and (buffactive["Sublimation: Complete"] or buffactive["Sublimation: Activated"]) and spell.target.type == 'SELF') then
-		add_to_chat(3,'Cancel Refresh - Have Sublimation Already')
-			cancel_spell()
-	return
-end
-	recasttime = windower.ffxi.get_spell_recasts()[spell.recast_id] / 100
-	if spell and (recasttime >= 1) then
-		add_to_chat(2,'Spell Canceled:'..spell.name..' - Waiting on Recast:(seconds) '..recasttime..'')
-		cancel_spell()
-	return
-			end
+	if spell.name ~= 'Ranged' and spell.type ~= 'WeaponSkill' and spell.type ~= 'Scholar' then
+      if spell.action_type == 'Ability' then
+	    if buffactive.Amnesia then
+		  cancel_spell()
+		  add_to_chat(3,'Canceling Ability - Currently have Amnesia')
+		  return
+		else
+	      recasttime = windower.ffxi.get_ability_recasts()[spell.recast_id] 
+          if spell and (recasttime >= 1) then
+		    add_to_chat(3,'Ability Canceled:'..spell.name..' - Waiting on Recast:(seconds) '..recasttime..'')
+            cancel_spell()
+            return
+          end
 		end
-	end
-end
+	  end
+      if spell.action_type == 'Magic' then
+	    if buffactive.Silence then
+	      cancel_spell()
+		  echodrops = "Echo Drops"
+		  numberofecho = player.inventory[echodrops].count
+		  if numberofecho < 2 then 
+		    add_to_chat(2,'Silenced - Consider using Echo Drops. QTY:'..player.inventory[echodrops].count..'')
+		  else 
+		    add_to_chat(3,'Silenced - Using Echo Drops.  QTY:'..numberofecho..'')
+		    send_command('input /item "Echo Drops" <me>')
+		  end
+		  return
+	    else 
+		  if (spell.name == 'Refresh' and (buffactive["Sublimation: Complete"] or buffactive["Sublimation: Activated"]) and spell.target.type == 'SELF') then
+		   add_to_chat(3,'Cancel Refresh - Have Sublimation Already')
+		   cancel_spell()
+		   return
+		  end
+	      recasttime = windower.ffxi.get_spell_recasts()[spell.recast_id] / 100
+          if spell and (recasttime >= 1) then
+		   add_to_chat(2,'Spell Canceled:'..spell.name..' - Waiting on Recast:(seconds) '..recasttime..'')
+           cancel_spell()
+           return
+          end
+		end
+      end
+    end
 	if spell.type == 'WeaponSkill' and buffactive.Amnesia then
-		cancel_spell()
-			add_to_chat(3,'Canceling Ability - Currently have Amnesia')
-	return	  
-end
+		  cancel_spell()
+		  add_to_chat(3,'Canceling Ability - Currently have Amnesia')
+		  return	  
+	end
 	if spell.name == 'Utsusemi: Ichi' and (buffactive['Copy Image (3)'] or buffactive ['Copy Image (4+)']) then
-		cancel_spell()
-			add_to_chat(3,'Canceling Utsusemi - Already have Max and can not override')
-		return
+	  cancel_spell()
+	  add_to_chat(3,'Canceling Utsusemi - Already have Max and can not override')
+	  return
 	end
 end
-
 
 
 --- The following detects movement and automatically equips gear whether you're moving or not.
@@ -272,48 +280,42 @@ end
 		--sets.notmoving.DNC = { name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5'}}
 		--sets.notmoving.NIN = {}
 
-	mov = {counter=0}
-
+mov = {counter=0}
 if player and player.index and windower.ffxi.get_mob_by_index(player.index) then
-	mov.x = windower.ffxi.get_mob_by_index(player.index).x
-	mov.y = windower.ffxi.get_mob_by_index(player.index).y
-	mov.z = windower.ffxi.get_mob_by_index(player.index).z
+    mov.x = windower.ffxi.get_mob_by_index(player.index).x
+    mov.y = windower.ffxi.get_mob_by_index(player.index).y
+    mov.z = windower.ffxi.get_mob_by_index(player.index).z
 end
-
-	moving = false
-		windower.raw_register_event('prerender',function()
-			mov.counter = mov.counter + 1;
-				if mov.counter>5 then
-					local pl = windower.ffxi.get_mob_by_index(player.index)
-				if pl and pl.x and mov.x then
-					local movement = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 ) > 0.1
-				if movement and not moving then
-					if sets.moving[player.main_job] and player.status ~= "Engaged" then  
-						send_command('gs equip sets.moving.'..player.main_job..'')
-					end
-
-	if state.SpellDebug.value == "On" then 
-		send_command('input /echo Moving! Status: '..player.status..'') 
-	end
-
-	moving = true
-		elseif not movement and moving then
-
-	if sets.notmoving[player.main_job] and player.status ~= "Engaged" then 
-		send_command('gs equip sets.notmoving.'..player.main_job..'')
-	end
-
-	if state.SpellDebug.value == "On" then 
-		send_command('input /echo Stopped Moving! Status: '..player.status..'')
-	end
-	moving = false
-	end
-end
-	if pl and pl.x then
-		mov.x = pl.x
-		mov.y = pl.y
-		mov.z = pl.z
-	end
-		mov.counter = 0
-	end
+moving = false
+windower.raw_register_event('prerender',function()
+    mov.counter = mov.counter + 1;
+    if mov.counter>5 then
+        local pl = windower.ffxi.get_mob_by_index(player.index)
+        if pl and pl.x and mov.x then
+            local movement = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 ) > 0.1
+            if movement and not moving then
+			    if sets.moving[player.main_job] and player.status ~= "Engaged" then  
+                  send_command('gs equip sets.moving.'..player.main_job..'')
+				end
+				if state.SpellDebug.value == "On" then 
+				  send_command('input /echo Moving! Status: '..player.status..'') 
+				end
+                moving = true
+            elseif not movement and moving then
+			    if sets.notmoving[player.main_job] and player.status ~= "Engaged" then 
+                  send_command('gs equip sets.notmoving.'..player.main_job..'')
+				end
+				if state.SpellDebug.value == "On" then 
+				  send_command('input /echo Stopped Moving! Status: '..player.status..'')
+				end
+                moving = false
+            end
+        end
+        if pl and pl.x then
+            mov.x = pl.x
+            mov.y = pl.y
+            mov.z = pl.z
+        end
+        mov.counter = 0
+    end
 end)
