@@ -34,7 +34,7 @@ end
 	
 function init_gear_sets()
 	
-	TP_Hands = { name="Herculean Gloves", augments={'Rng.Acc.+18 Rng.Atk.+18','Enmity-3','AGI+6','Rng.Acc.+9','Rng.Atk.+1',}},
+	TP_Hands = { name="Adhemar Wristbands", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
     		RNGWeapon = "Fomalhaut"
 			TP_Ammo="Chrono Bullet"
 			WS_Ammo="Chrono Bullet"
@@ -43,97 +43,38 @@ function init_gear_sets()
 	send_command("alias rngws3 input /ws 'Wildfire' <t>")
 			
     ---  PRECAST SETS  ---
-    sets.precast = {}
-	sets.precast.PreShot = {
-	    	range=RNGWeapon,
-		ammo=TP_Ammo,
-		head=head="Nvrch. Tricorne +1", -- 7 Rapid Shot
-		body={ name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}}, -- 6 Snapshot
-		hands="Lanun Gants +1",  -- 9 --
-		legs="Adhemar Kecks",  -- 9 -- 
-		feet="Adhemar Gamashes", -- 8 -- 
-		neck="Combatant's Torque",
-		waist="Yemaya Belt",    -- 3 from impulse belt --
-		left_ear="Neritic Earring",
-		right_ear="Enervating Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Rajas Ring",
-		back="Camulus's Mantle"
-    }
+    	sets.precast = {}
+	sets.precast.PreShot = {}
 	
 	sets.midcast.TP = {} 
 	sets.midcast.TP.normal = {
-	    range=RNGWeapon,
-		ammo=TP_Ammo,
-		head={ name="Herculean Helm", augments={'Rng.Acc.+28','Weapon skill damage +3%','DEX+11','Rng.Atk.+12',}},
-		body={ name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}},
-		hands=TP_Hands,
-		legs="Adhemar Kecks",
-		feet="Adhemar Gamashes",
-		neck="Combatant's Torque",
-		waist="Yemaya Belt",
-		left_ear="Neritic Earring",
-		right_ear="Enervating Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Rajas Ring",
-		back="Camulus's Mantle",
-	}
+	    	range=RNGWeapon,
+		ammo=TP_Ammo,}
+	
 	sets.midcast.TP.RACC = {
-		head="Meghanada Visor +1",
-		body="Meg. Cuirie +1",
-		hands="Meg. Gloves +1",
-		legs="Meg. Chausses +1",
-		feet="Meg. Jam. +1",
-		neck="Combatant's Torque",
-		waist="Yemaya Belt",
-		left_ear="Neritic Earring",
-		right_ear="Enervating Earring",
-		left_ring="Cacoethic Ring",
-		right_ring="Cacoethic Ring +1",
-		back="Camulus's Mantle"
-	}
+	    	range=RNGWeapon,
+		ammo=TP_Ammo,}
     
 	--Job Abilities
-	sets.precast.JA = {}
-    sets.precast.JA['Phantom Roll'] = {head="Lanun Tricorne",ring1="BaraTaria Ring"}
-	sets.precast.JA['Random Deal'] = {body="Lanun Frac"}
-	sets.precast.JA['Snake Eye'] = {legs="Lanun Culottes"}
-    sets.precast.JA.Wildcard = {feet="Lanun Bottes"}
+	sets.precast.JA = {}	
+	sets.precast.JA['Wild Card']= {feet="Lanun Bottes +1"}
+    	sets.precast.JA['Phantom Roll'] = {}
+    	sets.precast.JA['Double-Up'] = sets.precast.JA['Phantom Roll']
+    	sets.precast.JA['Quick Draw'] = {}
+	sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
+	sets.precast.JA['Snake Eye'] = {legs="Lanun Culottes +1"}
+	sets.precast.JA['Fold'] = {hands="Lunan Gants +1"}
+
     
 	-- WS Sets
-	sets.precast.WS = {
-	    ammo=TP_Ammo,
-		head={ name="Herculean Helm", augments={'Rng.Acc.+28','Weapon skill damage +3%','DEX+11','Rng.Atk.+12',}},
-		body={ name="Herculean Vest", augments={'Rng.Acc.+23 Rng.Atk.+23','Weapon skill damage +3%','Rng.Atk.+9',}},
-		hands="Meg. Gloves +1",
-		legs="Adhemar Kecks",
-		feet={ name="Herculean Boots", augments={'Rng.Acc.+25 Rng.Atk.+25','Weapon skill damage +2%','Rng.Acc.+1','Rng.Atk.+9',}},
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Moonshade Earring",
-		right_ear="Enervating Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Rajas Ring",
-		back="Camulus's Mantle"
-	}
-	sets.precast.WS['Leaden Salute'] = {
-	    head={ name="Herculean Helm", augments={'Rng.Acc.+28','Weapon skill damage +3%','DEX+11','Rng.Atk.+12',}},
-		body={ name="Herculean Vest", augments={'"Mag.Atk.Bns."+26','"Dbl.Atk."+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
-		hands="Leyline Gloves",
-		legs="Gyve Trousers",
-		feet={ name="Adhemar Gamashes", augments={'HP+50','"Store TP"+6','"Snapshot"+8',}},
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Crematio Earring",
-		right_ear={ name="Moonshade Earring", augments={'MP+25','TP Bonus +25',}},
-		left_ring="Resonance Ring",
-		right_ring="Weather. Ring",
-		back="Camulus's Mantle",
-	}
-    sets.precast.WS['Wildfire'] = sets.precast.WS['Leaden Salute']
+	sets.precast.WS = {}
+	
+	sets.precast.WS['Leaden Salute'] = {}
+    	sets.precast.WS['Wildfire'] = sets.precast.WS['Leaden Salute']
 	
     ---  AFTERCAST SETS  ---
-    sets.idle = set_combine(sets.precast.PreShot, {legs="Carmine Cuisses"})
+    	
+    	sets.idle = set_combine(sets.precast.PreShot, {legs="Carmine Cuisses +1"})
 
 	
 end
