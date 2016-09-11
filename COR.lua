@@ -34,10 +34,10 @@ end
 	
 function init_gear_sets()
 	
-	TP_Hands = { name="Herculean Gloves", augments={'Rng.Acc.+15 Rng.Atk.+15','Weapon skill damage +2%','DEX+9','Rng.Atk.+15',}}
-    RNGWeapon = "Fomalhaut"
-	TP_Ammo="Chrono Bullet"
-	WS_Ammo="Chrono Bullet"
+	TP_Hands = { name="Herculean Gloves", augments={'Rng.Acc.+18 Rng.Atk.+18','Enmity-3','AGI+6','Rng.Acc.+9','Rng.Atk.+1',}},
+    		RNGWeapon = "Fomalhaut"
+			TP_Ammo="Chrono Bullet"
+			WS_Ammo="Chrono Bullet"
 	send_command("alias rngws1 input /ws 'Leaden Salute' <t>")
 	send_command("alias rngws2 input /ws 'Last Stand' <t>")
 	send_command("alias rngws3 input /ws 'Wildfire' <t>")
@@ -45,11 +45,11 @@ function init_gear_sets()
     ---  PRECAST SETS  ---
     sets.precast = {}
 	sets.precast.PreShot = {
-	    range=RNGWeapon,
+	    	range=RNGWeapon,
 		ammo=TP_Ammo,
-		head={ name="Herculean Helm", augments={'Rng.Acc.+28','Weapon skill damage +3%','DEX+11','Rng.Atk.+12',}},
-		body={ name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}}, -- 6 --
-		hands="Alruna's Gloves +1",  -- 5 --
+		head=head="Nvrch. Tricorne +1", -- 7 Rapid Shot
+		body={ name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6',}}, -- 6 Snapshot
+		hands="Lanun Gants +1",  -- 9 --
 		legs="Adhemar Kecks",  -- 9 -- 
 		feet="Adhemar Gamashes", -- 8 -- 
 		neck="Combatant's Torque",
