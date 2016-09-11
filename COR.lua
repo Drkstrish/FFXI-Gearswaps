@@ -59,9 +59,9 @@ function init_gear_sets()
 	sets.precast.JA = {}	
 	sets.precast.JA['Wild Card']= {feet="Lanun Bottes +1"}
     	sets.precast.JA['Phantom Roll'] = {head="Lanun Tricorne +1", -- Duration +50
-    						hands="Chasseur's Gants +1", -- Duration +50
-    						ring1="Barataria Ring", -- Effect +5
-    						back="Camulus's Mantle", -- Duration +30
+    					   hands="Chasseur's Gants +1", -- Duration +50
+    					   ring1="Barataria Ring", -- Effect +5
+    					   back="Camulus's Mantle", -- Duration +30
 		neck="",ear1="",ear2="",body="",ring2="",waist="",legs="",feet=""}
     	sets.precast.JA['Double-Up'] = sets.precast.JA['Phantom Roll']
     	sets.precast.JA['Quick Draw'] = {}
