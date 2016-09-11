@@ -62,7 +62,9 @@ function init_gear_sets()
     					   hands="Chasseur's Gants +1", -- Duration +50
     					   ring1="Barataria Ring", -- Effect +5
     					   back="Camulus's Mantle", -- Duration +30
-		neck="",ear1="",ear2="",body="",ring2="",waist="",legs="",feet=""}
+	neck="Twilight Torque",ear1="Etiolation Earring",ear2="Enervating Earring",body="Meg. Cuirie +1",ring2="Defending Ring",waist="Reiki Yotai",
+	legs={ name="Herculean Trousers", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Enmity-5','AGI+3','Mag. Acc.+12','"Mag.Atk.Bns."+11',}},
+	feet={ name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15',}}} 
     	sets.precast.JA['Double-Up'] = sets.precast.JA['Phantom Roll']
     	sets.precast.JA['Quick Draw'] = {}
 	sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
