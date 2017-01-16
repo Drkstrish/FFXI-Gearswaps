@@ -1,5 +1,3 @@
-function Drkstr_shared_augmented_gear()
-
 -- Check to see if it is needed to have the format be gear.______ = {} or if I can follow the current format I started.
 
 --==================================--
@@ -471,5 +469,3 @@ function Drkstr_shared_augmented_gear()
 --==================================--
 -- Misc. Gear
 --==================================--
-
-end
