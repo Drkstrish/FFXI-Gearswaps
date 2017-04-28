@@ -1,86 +1,36 @@
-
-
 -- Initialization function for this job file.
-
 function get_sets()
-
-   
-mote_include_version = 2
-
-   
-include('Mote-Include.lua')
-
+  mote_include_version = 2
+    include('Mote-Include.lua')
 end
-
- 
-
 -- //gs debugmode
-
 -- //gs showswaps
 
- 
-
 function binds_on_load()
-
 -- F9-F12
-
-    send_command('bind
-f9 gs c cycle OffenseMode')
-
-    send_command('bind
-f10 gs c cycle HybridMode')
-
-    send_command('bind
-f11 gs c cycle CastingMode')
-
-    send_command('bind
-f12 gs c update user')
-
+    send_command('bind f9 gs c cycle OffenseMode')
+    send_command('bind f10 gs c cycle HybridMode')
+    send_command('bind f11 gs c cycle CastingMode')
+    send_command('bind f12 gs c update user')
 -- CTRL F9-F12
-
-    send_command('bind
-^q gs c mainweapon')
-
-    send_command('bind
-^f9 gs c cycle WeaponskillMode')
-
+    send_command('bind ^q gs c mainweapon')
+    send_command('bind ^f9 gs c cycle WeaponskillMode')
 -- ALT F9-12
-
-    send_command('bind
-!f9 gs c cycle IdleMode')
-
-    send_command('bind
-!f10 gs c cycle RangedMode')
-
-    send_command('bind
-!f12 gs c cycle Kiting')
-
+    send_command('bind !f9 gs c cycle IdleMode')
+    send_command('bind !f10 gs c cycle RangedMode')
+    send_command('bind !f12 gs c cycle Kiting')
 end
-
- 
 
 function job_setup()
-
-    state.mainweapon =
-M{['description'] = 'Main Weapon'}
-
-   
---state.mainweapon:options('Ragnarok','Reikiko')
-
-   
-state.mainweapon:options('Ragnarok','Reikiko')
-
+    state.mainweapon = M{['description'] = 'Main Weapon'}
+    --state.mainweapon:options('Ragnarok','Reikiko')
+    state.mainweapon:options('Ragnarok','Reikiko')
 end
 
- 
-
 function user_setup()
-
-    -- Options:
-Override default values
-
-   
-state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+-- Options:
+    Override default values
+    state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
 
    
 state.WeaponskillMode:options('Normal', 'Acc')
