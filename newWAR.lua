@@ -189,158 +189,72 @@ equip(equipSet)
         end
     end
 end
-
- 
-
 function customize_idle_set(idleSet)
-
-    if mainswap then
-
-        mainswap=0
-
-       
+if mainswap then
+mainswap=0
 enable('main','sub')
-
-       
 equip(sets.mainweapon[state.mainweapon.value])
-
-       
 disable('main','sub')
-
-    end
-
-    if player.mpp <
-51 then
-
-        return
+end
+if player.mpp <51 then
+return
 set_combine(idleSet, sets.latent_refresh)
-
-    end
-
-    if state.Buff.Doom
+end
+if state.Buff.Doom
 or state.Buff.Curse then
-
-        return
+return
 set_combine(idleSet, sets.Doom)
-
-    else
-
-        return idleSet
-
-    end
-
+else
+return idleSet
 end
-
- 
-
+end
 function customize_melee_set(meleeSet)
-
-    if mainswap then
-
-        mainswap=0
-
-       
+if mainswap then
+mainswap=0
 enable('main','sub')
-
-       
 equip(sets.mainweapon[state.mainweapon.value])
-
-       
 disable('main','sub')
-
-    end
-
-    if state.Buff.Aftermath
+end
+if state.Buff.Aftermath
 then
-
-        return
+return
 set_combine(meleeSet, sets.Aftermath)
-
-    end
-
-    if state.Buff.Doom
+end
+if state.Buff.Doom
 then
-
-        return
+return
 set_combine(meleeSet, sets.Doom)
-
-    end
-
-    if
+end
+if
 state.Buff.Curse then
-
-        return
+return
 set_combine(meleeSet, sets.Curse)
-
-    else
-
-        return
+else
+return
 meleeSet
-
-    end
-
 end
-
-     
-
--- eventArgs is the same one used in job_midcast, in case
-information needs to be persisted.
-
-function job_post_midcast(spell, action, spellMap,
-eventArgs)
-
-    if spellMap ==
-'Cure' and spell.target.type == 'SELF' then
-
-       
+end
+-- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
+function job_post_midcast(spell, action, spellMap,eventArgs)
+if spellMap == 'Cure' and spell.target.type == 'SELF' then
 equip(sets.midcast.CureSelf)
-
-    end
-
 end
-
- 
-
--- Select default macro book on initial load or subjob
-change.
-
+end
+-- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-
-    -- Default macro
-set/book
-
-    if player.sub_job
-== 'SAM' then
-
-       
+-- Default macro set/book
+if player.sub_job == 'SAM' then
 set_macro_page(1, 7)
-
-    elseif
+elseif
 player.sub_job == 'NIN' then
-
-       
 set_macro_page(3, 7)
-
-    elseif
-player.sub_job == 'RDM' then
-
-       
+elseif
+player.sub_job == 'RDM' then       
 set_macro_page(4, 7)
-
-    elseif
+elseif
 player.sub_job == 'THF' then
-
-       
-set_macro_page(2, 7)
-
-    else
-
-       
-set_macro_page(1, 7)
-
-    end
-
+set_macro_page(1, 1)
+else
+set_macro_page(1, 1)
 end
-
- 
-
+end
