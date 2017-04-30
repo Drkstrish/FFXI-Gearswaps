@@ -47,8 +47,8 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
-    send_command('unbind ^q')
-    send_command('unbind !q')
+	send_command('unbind ^q')
+	send_command('unbind !q')
 	send_command('unbind !a')
 	send_command('unbind ^z')
 end
