@@ -4,18 +4,17 @@
 
 -- Initialization function for this job file.
 function get_sets()
-    mote_include_version = 2
-    include('Mote-Include.lua')
+	mote_include_version = 2
+	include('Mote-Include.lua')
 end
-
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-    state.Buff.Hasso = buffactive.Hasso or false
-    state.Buff.Seigan = buffactive.Seigan or false
-    state.Buff.Sekkanoki = buffactive.Sekkanoki or false
-    state.Buff.Sengikori = buffactive.Sengikori or false
-    state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
+	state.Buff.Hasso = buffactive.Hasso or false
+	state.Buff.Seigan = buffactive.Seigan or false
+	state.Buff.Sekkanoki = buffactive.Sekkanoki or false
+	state.Buff.Sengikori = buffactive.Sengikori or false
+	state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
 	state.mainweapon = M{['description'] = 'Main Weapon'}
 	state.mainweapon:options('Kogarasumaru','Masamune','Amanomurakumo','Dojikiri Yasutsuna', 'Tachi')
 end
@@ -26,27 +25,25 @@ end
 
 -- Setup vars that are user-dependent.
 function user_setup()
-    state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HiAcc')
-    state.HybridMode:options('Normal','PDT', 'Reraise')
-    state.WeaponskillMode:options('Normal', 'Acc', 'HiAcc')
-    state.PhysicalDefenseMode:options('PDT', 'Reraise')
+	sate.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HiAcc')
+	state.HybridMode:options('Normal','PDT', 'Reraise')
+	state.WeaponskillMode:options('Normal', 'Acc', 'HiAcc')
+	state.PhysicalDefenseMode:options('PDT', 'Reraise')
 	state.IdleMode:options('Normal', 'PDT')
 	
 	Aeol_weapons = S{'Dojikiri Yasutsuna'}
 	Koga_weapons = S{'Kogarasumaru'}
 	Empy_weapons = S{'Masamune'}
 	Proc_weapons = S{'Tachi'}
-    
-    -- Additional local binds
-    send_command('bind ^q input /ja "Hasso" <me>')
-    send_command('bind !q input /ja "Seigan" <me>')
-	send_command('bind !a input /ja "Third Eye" <me>')
+-- Additional local binds
+	send_command('bind ^q input /ja "Hasso" <me>')
+	send_command('bind !q input /ja "Seigan" <me>')
+	snd_command('bind !a input /ja "Third Eye" <me>')
 	send_command('bind ^z gs c mainweapon')
-	
-	update_combat_form()
-    select_default_macro_book()
-end
 
+	update_combat_form()
+	select_default_macro_book()
+end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
@@ -63,18 +60,9 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
     sets.mainweapon = {}
-	sets.mainweapon.Kogarasumaru = {
-		main="Kogarasumaru",
-		sub="Utu Grip"
-	}
-	sets.mainweapon.Masamune = {
-		main="Masamune",
-		sub="Utu Grip"
-	}
-	sets.mainweapon.Amanomurakumo = {
-		main="Amanomurakumo",
-		sub="Utu Grip"
-	}
+	sets.mainweapon.Kogarasumaru = {main="Kogarasumaru",sub="Utu Grip"}
+	sets.mainweapon.Masamune = {main="Masamune",sub="Utu Grip"}
+	sets.mainweapon.Amanomurakumo = {main="Amanomurakumo",	sub="Utu Grip"	}
 	sets.mainweapon['Dojikiri Yasutsuna'] = {
 		main="Dojikiri Yasutsuna",
 		sub="Utu Grip"
