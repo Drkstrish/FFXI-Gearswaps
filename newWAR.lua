@@ -31,83 +31,43 @@ function user_setup()
 -- Options:
     Override default values
     state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-
-   
-state.WeaponskillMode:options('Normal', 'Acc')
-
-   
-state.HybridMode:options('Normal', 'PDT')
-
-   
-state.CastingMode:options('Normal', 'Resistant')
-
-   
-state.IdleMode:options('Normal','PDT')
-
-   
-state.PhysicalDefenseMode:options('PDT', 'MDT')
-
- 
-
-    Rag_weapons =
-S{'Ragnarok'}
-
-    Shield_weapons =
-S{'Blurred Shield +1'}
-
-                 
-
-   
-update_combat_form()
-
-   
-select_default_macro_book()
+    state.WeaponskillMode:options('Normal', 'Acc')
+    state.HybridMode:options('Normal', 'PDT')
+    state.CastingMode:options('Normal', 'Resistant')
+    state.IdleMode:options('Normal','PDT')
+    state.PhysicalDefenseMode:options('PDT', 'MDT')
+    
+    Rag_weapons = S{'Ragnarok'}
+    Shield_weapons = S{'Blurred Shield +1'}
+  
+    update_combat_form()
+    select_default_macro_book()
 
 end
-
- 
 
 -- Called when this job file is unloaded (eg: job change)
-
 function file_unload()
-
-    if binds_on_unload
-then
-
-       
-binds_on_unload()
-
-    end
-
+  
+      if binds_on_unload
+    
+    then
+    
+      binds_on_unload()
+  end
 end
 
- 
-
-sets.mainweapon = {}
-
-   
-sets.mainweapon.Ragnarok = {
-
-       
-main="Ragnarok",
-
-        sub="Utu
-Grip"
-
-    }
-
-   
-sets.mainweapon.Reikiko = {
-
-       
-main="Reikiko",
-
-        sub="Blurred Shield +1"
-
-    }
-
-    -- Define sets and
-vars used by this job file.
+  sets.mainweapon = {}
+  sets.mainweapon.Ragnarok = 
+  {
+  main="Ragnarok",
+  sub="Utu Grip"
+  }
+  sets.mainweapon.Reikiko = 
+  {
+  main="Reikiko",
+  sub="Blurred Shield"
+  }
+-- Define sets and vars used by this job file.
 
 function init_gear_sets()
 
