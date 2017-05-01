@@ -177,10 +177,62 @@ function init_gear_sets()
     
 -- Normal melee group
 -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
-	sets.engaged.Dojikiri = {}
-	sets.engaged.Dojikiri.LowAcc = {}
-	sets.engaged.Dojikiri.MidAcc = {}
-	sets.engaged.Dojikiri.HiAcc = {}
+	sets.engaged.Dojikiri =  
+-- 1109 Acc - Weapon 10 STP Grip 6 STP =    16 STP
+{
+  ammo="Ginsen",                --          3STP
+  head=gear.Valoroushead.TP,    --     2DA  
+  body=gear.SAMEmpy.Body,       --          12STP
+  hands=gear.SAMAF.Hands,       --          7STP
+  legs=gear.Ryuo.legs,          --     3DA  11STP
+  feet=gear.Valorousfeet.TP,    --     5DA  5STP
+  neck="Ganesha's Mala",        --                2QA
+  waist="Ioskeha Belt",         --     8DA
+  left_ear="Cessance Earring",  --     3DA  3STP
+  right_ear="Brutal Earring",   --     5DA  1STP
+  right_ring="Ilabrat Ring",    --          5STP
+  left_ring="Niqmaddu Ring",    --                3QA
+  back=gear.AmbJSE.SAMDA        --     10DA
+}                               --     37DA 63STP 3QA 
+	
+	sets.engaged.Dojikiri.LowAcc = sets.engaged.Dojikiri
+	
+	sets.engaged.Dojikiri.MidAcc =
+-- 1142 Acc- Weapon 10 STP Grip 6 STP =         16 STP
+{    
+  ammo="Amar Cluster",
+  head=gear.Flamma.Head,          -- 4TA        5STP
+  body=gear.Valorousbody.TP,      --     6DA    3STP
+  hands=gear.SAMAF.Hands,         --            7STP
+  legs=gear.Ryuo.legs,            --     3DA    11STP
+  feet=gear.Valorousfeet.TP,      --     5DA    5STP
+  neck="Moonbeam Nodowa",
+  waist="Ioskeha Belt",           --     8DA
+  left_ear="Dignitary's earring", --            3TP
+  right_ear="Zennaroi Earring",
+  right_ring="Hetairoi Ring",     -- 2TA
+  left_ring="Niqmaddu Ring",      --                  3QA
+  back=gear.AmbJSE.SAMTP          --            10STP
+}                                 -- 6TA  22DA  63STP 3DA
+	
+	sets.engaged.Dojikiri.HiAcc =
+-- 1223 Acc
+{    
+  ammo="Amar Cluster",
+  head=gear.SAMAF.Head,            --        6STP
+  body=gear.SAMAF.Body,            --        8STP
+  hands=gear.SAMAF.Hands,          --        7STP
+  legs=gear.SAMAF.Legs,            --        7STP
+  feet=gear.SAMAF.Feet,
+  neck="Moonbeam Nodowa",
+  waist="Ioskeha Belt",            --    8DA
+  left_ear="Dignitary's earring",  --        3STP
+  right_ear="Zennaroi Earring",
+  left_ring="Cacoethic Ring",
+  right_ring="Cacoethic Ring +1",
+  back=gear.AmbJSE.SAMTP           --        10STP
+}                                  --        57STP
+	
 	sets.engaged.Dojikiri.PDT = {}
 	
 --	sets.engaged.Kogarasumaru = {}
@@ -202,16 +254,23 @@ function init_gear_sets()
 		
 -- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
 -- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
-	sets.engaged.Adoulin = {}
- 	sets.engaged.Adoulin.Acc = {}
-	sets.engaged.Adoulin.PDT = {}
-	sets.engaged.Adoulin.Acc.PDT = {}
-	sets.engaged.Adoulin.Reraise = {}
-	sets.engaged.Adoulin.Acc.Reraise = {}
 
-	sets.buff.Sekkanoki = {}
-	sets.buff.Sengikori = {}
-	sets.buff['Meikyo Shisui'] = {}
+--	sets.engaged.Adoulin = {}
+-- 	sets.engaged.Adoulin.Acc = {}
+--	sets.engaged.Adoulin.PDT = {}
+--	sets.engaged.Adoulin.Acc.PDT = {}
+--	sets.engaged.Adoulin.Reraise = {}
+--	sets.engaged.Adoulin.Acc.Reraise = {}
+
+	--sets.buff.Sekkanoki = {}
+	--sets.buff.Sengikori = {}
+	
+	sets.buff['Meikyo Shisui'] = feet=gear.SAMRel.Feet
+	
+	sets.thirdeye = {}
+	sets.seigan = {}
+	sets.bow = {}
+	
 end
 
 
@@ -278,7 +337,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.Buff['Meikyo Shisui'] then
             equip(sets.buff['Meikyo Shisui'])
         end
-		if moonshade_WS:contains(spell.english) and player.tp<2950 then	
+		if moonshade_WS:contains(spell.english) and player.tp<2500 then	
 			equip({ear2="Moonshade Earring"})	
 		end
 	end
