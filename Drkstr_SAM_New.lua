@@ -138,21 +138,36 @@ function init_gear_sets()
 		
 -- Sets to return to when not performing an action.
 -- Resting sets
-	sets.resting = {}
+	sets.resting = {ammo="Knobkierrie",
+	head=gear.Rao.head,body=gear.Hizamaru.Body,hands=gear.Rao.hands,legs=gear.Rao.legs,
+	feet=gear.Rao.feet,neck="Sanctity Necklace",waist="Flume Belt +1",left_ear="Infused Earring",
+	right_ear="Odnowa Earring +1",left_ring="Defending Ring",right_ring="Paguroidea Ring",back="Moonbeam Cape"}
 
 -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle = {}
-	sets.idle.Regen = {}
-	sets.idle.PDT = {}
-	sets.idle.Weak = {}
-    
+	sets.idle = sets.resting
+	sets.idle.Regen = sets.resting
+	sets.idle.Weak = sets.resting
+	sets.idle.PDT = sets.resting
+	sets.idle.Town = {ammo="Knobkierrie",
+	head=gear.SAMAF.Head,body=gear.SAMAF.Body,hands=gear.SAMAF.Hands,legs=gear.SAMAF.Legs,
+	feet=gear.SAMAF.Feet,neck="Moonbeam Nodowa",waist="Ioskeha Belt",left_ear="Cessance Earring",
+	right_ear="Brutal Earring",right_ring="Ilabrat Ring",left_ring="Niqmaddu Ring",back="Moonbeam Cape"}
+	
 -- Defense sets
-	sets.defense.PDT = {}
-	sets.defense.Reraise = {}
-	sets.defense.MDT = {}
-	sets.Kiting = {}
+	sets.defense.PDT = {ammo="Amar Cluster",
+	head="Ynglinga Sallet",neck="Loricate torque +1",ear1="Cessance Earring",ear2="Dignitary's Earring",
+	body=gear.SAMAF.Body,hands=gear.SAMAF.Hands,ring1="Defending Ring",ring2="Patricius Ring",
+	back=gear.AmbJSE.SAMTP,waist="Ioskeha Belt",legs="Arjuna Breeches",feet=gear.Amm.Cap}
+	
+	sets.defense.MDT = {ammo="Amar Cluster",
+	head=gear.Founders.head ,body=gear.SAMAF.Body,hands=gear.SAMAF.Hands,legs=gear.Valorouslegs.TP,
+	feet=gear.Amm.Cap,neck="Loricate Torque +1",waist="Ioskeha Belt",left_ear="Etiolation Earring",
+	right_ear="Odnowa Earring +1",left_ring="Defending Ring",right_ring="Archon Ring",back=gear.AmbJSE.SAMTP}
+	
+	--sets.Kiting = {feet="Danzo Sune-ate"}
 	sets.Reraise = {}
-
+	sets.defense.Reraise = {}
+	
 -- Engaged sets
 
 -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
@@ -166,6 +181,7 @@ function init_gear_sets()
 	sets.engaged.Dojikiri.LowAcc = {}
 	sets.engaged.Dojikiri.MidAcc = {}
 	sets.engaged.Dojikiri.HiAcc = {}
+	sets.engaged.Dojikiri.PDT = {}
 	
 --	sets.engaged.Kogarasumaru = {}
 --	sets.engaged.Kogarasumaru.LowAcc = {}
