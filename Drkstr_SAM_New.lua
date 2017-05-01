@@ -14,7 +14,9 @@ function job_setup()
 	state.Buff.Seigan = buffactive.Seigan or false
 	state.Buff.Sekkanoki = buffactive.Sekkanoki or false
 	state.Buff.Sengikori = buffactive.Sengikori or false
+	
 	state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
+	
 	state.mainweapon = M{['description'] = 'Main Weapon'}
 	state.mainweapon:options('Dojikiri Yasutsuna', 'Norifusa')
 end
@@ -24,6 +26,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 -- Setup vars that are user-dependent.
+
 function user_setup()
 	sate.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HiAcc')
 	state.HybridMode:options('Normal','PDT', 'Reraise')
@@ -35,10 +38,12 @@ function user_setup()
 --	Koga_weapons = S{'Kogarasumaru'}
 --	Empy_weapons = S{'Masamune'}
 	Proc_weapons = S{'Norifusa'}
+	
 -- Additional local binds
+	
 	send_command('bind ^q input /ja "Hasso" <me>')
 	send_command('bind !q input /ja "Seigan" <me>')
-	snd_command('bind !a input /ja "Third Eye" <me>')
+	send_command('bind !a input /ja "Third Eye" <me>')
 	send_command('bind ^z gs c mainweapon')
 
 	update_combat_form()
@@ -56,9 +61,13 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-    --------------------------------------
-    -- Start defining the sets
-    --------------------------------------
+	
+	include('Augmented-items.lua')
+    
+	--------------------------------------
+	-- Start defining the sets
+	--------------------------------------
+	
     	sets.mainweapon = {}
 --	sets.mainweapon.Kogarasumaru = {main="Kogarasumaru",sub=""}
 --	sets.mainweapon.Masamune = {main="Masamune",sub=""}
@@ -68,49 +77,62 @@ function init_gear_sets()
 	
 -- Precast Sets
 -- Precast sets to enhance JAs
-	sets.precast.JA.Meditate = {head="Wakido Kabuto +2",hands="Sakonji Kote +1",back="Smertrios's Mantle"}
-	sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +2"}
-	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
-	sets.precast.JA['Sengikori'] = {feet="Kasuga Sune-ate +1"}
-	sets.precast.JA['Sekkanoki'] = {hands="Kasuga Kote +1"}
+	sets.precast.JA.Meditate = {head=gear.SAMAF.Head,hands=gear.SAMRel.Hands,back=gear.AmbJSE.SAMTP}
+	sets.precast.JA.Seigan = {}
+	sets.precast.JA['Warding Circle'] = gear.SAMAF.Head
+	--sets.precast.JA['Blade Bash'] = gear.SAMRel.Hands
+	sets.precast.JA['Third Eye'] = gear.SAMRel.Legs
+	--sets.precast.JA['Sengikori'] = {feet="Kasuga Sune-ate +1"}
+	--sets.precast.JA['Sekkanoki'] = {hands="Kasuga Kote +1"}
 
 -- Waltz set (chr and vit)
-	sets.precast.Waltz = {ammo="Sonia's Plectrum",head="Yaoyotl Helm",body="Otronif Harness +1",
-	hands="Buremte Gloves",ring1="Spiral Ring",back="Iximulew Cape",waist="Caudata Belt",
-	legs="Karieyh Brayettes +1",feet="Otronif Boots +1"}
-        
+	--sets.precast.Waltz = {}
 -- Don't need any special gear for Healing Waltz.
-	sets.precast.Waltz['Healing Waltz'] = {}
+	--sets.precast.Waltz['Healing Waltz'] = {}
 
        
 -- Weaponskill sets
 -- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {}
-    	sets.precast.WS.Acc = {}
+	sets.precast.WS = {ammo="Knobkierrie",
+  	head=gear.Valoroushead.WS,body=gear.Valorousbody.WS,hands=gear.Valoroushands.WS,legs=gear.Hizamaru.Legs,
+	feet=gear.Valorousfeet.WS,neck="Fotia Gorget",waist="Fotia Belt",left_ear="Brutal Earring",
+	right_ear=gear.Moonshade.WS,right_ring="Shukuyu Ring",left_ring="Niqmaddu Ring",back=gear.AmbJSE.SAMWS}
+	
+	--Try to figure out how to get this set to be usable. Does not have "Mid" as an option, has Mod?
+    	--sets.precast.WS.Mid = {ammo="Amar Cluster",
+	--head=gear.Valoroushead.WS,body=gear.Valorousbody.WS,hands=gear.Valoroushands.WS,legs=gear.Hizamaru.Legs,
+	--feet=gear.Valorousfeet.WS,neck="Fotia Gorget",waist="Fotia Belt",left_ear="Zwazo earring +1",
+	--right_ear=gear.Moonshade.WS,left_ring="Niqmaddu Ring",right_ring="Cacoethic Ring +1",back=gear.AmbJSE.SAMWS}
+	
+	sets.precast.WS.Acc ={ammo="Amar Cluster",
+	head="Ynglinga Sallet",body=gear.Valorousbody.WS,hands=gear.SAMAF.Hands,legs=gear.SAMAF.Legs,
+	feet=gear.Valorousfeet.WS,neck="Fotia Gorget",waist="Olseni Belt",left_ear="Zwazo earring +1",
+	right_ear="Zennaroi Earring",left_ring="Cacoethic Ring",right_ring="Cacoethic Ring +1",back=gear.AmbJSE.SAMWS}
+	
 
 -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Tachi: Fudo'] ={
-	sets.precast.WS['Tachi: Fudo'].Acc = {}
-	sets.precast.WS['Tachi: Fudo'].Mod = {}
+	sets.precast.WS['Tachi: Fudo'] =sets.precast.WS
+	sets.precast.WS['Tachi: Fudo'].Acc = sets.precast.WS.Acc
+	--sets.precast.WS['Tachi: Fudo'].Mod = sets.precast.WS.Mid
 
-	sets.precast.WS['Tachi: Shoha'] = {}
-	sets.precast.WS['Tachi: Shoha'].Acc = {}
-	sets.precast.WS['Tachi: Shoha'].Mod = {}
+	sets.precast.WS['Tachi: Shoha'] = sets.precast.WS
+	sets.precast.WS['Tachi: Shoha'].Acc = sets.precast.WS.Acc
+	--sets.precast.WS['Tachi: Shoha'].Mod = sets.precast.WS.Mid
 
-	sets.precast.WS['Tachi: Rana'] = {}
-	sets.precast.WS['Tachi: Rana'].Acc = {}
-	sets.precast.WS['Tachi: Rana'].Mod = {}
-
-	sets.precast.WS['Tachi: Kasha'] = {}
+	sets.precast.WS['Tachi: Rana'] = sets.precast.WS
+	sets.precast.WS['Tachi: Rana'].Acc = sets.precast.WS.Acc
+	--sets.precast.WS['Tachi: Rana'].Mod = sets.precast.WS.Mid
+	
+	sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS
+	sets.precast.WS['Tachi: Kasha'] = sets.precast.WS
+	sets.precast.WS['Tachi: Gekko'] = sets.precast.WS
+	sets.precast.WS['Tachi: Yukikaze'] = sets.precast.WS
 		
-	sets.precast.WS['Tachi: Gekko'] = {}
-		
-	sets.precast.WS['Tachi: Yukikaze'] = {}
-		
-	sets.precast.WS['Tachi: Ageha'] = {}
-		
-	sets.precast.WS['Tachi: Jinpu'] = {}
-
+	sets.precast.WS['Tachi: Ageha'] = {ammo="Knobkierrie",
+	head=gear.Flamma.Head,body=gear.Flamma.Body,hands=gear.Flamma.Hands,legs=gear.Flamma.Legs,
+	feet=gear.Flamma.Feet,neck="Sanctity Necklace",waist="Fotia Belt",left_ear="Digni. Earring",
+	right_ear="Gwati Earring",left_ring="Etana Ring",right_ring="Vertigo Ring",back="Vespid Mantle"}
+	
 -- Midcast Sets
 	sets.midcast.FastRecast = {}
 		
