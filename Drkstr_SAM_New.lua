@@ -16,7 +16,7 @@ function job_setup()
 	state.Buff.Sengikori = buffactive.Sengikori or false
 	state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
 	state.mainweapon = M{['description'] = 'Main Weapon'}
-	state.mainweapon:options('Kogarasumaru','Masamune','Amanomurakumo','Dojikiri Yasutsuna', 'Tachi')
+	state.mainweapon:options('Dojikiri Yasutsuna', 'Norifusa')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -32,9 +32,9 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT')
 	
 	Aeol_weapons = S{'Dojikiri Yasutsuna'}
-	Koga_weapons = S{'Kogarasumaru'}
-	Empy_weapons = S{'Masamune'}
-	Proc_weapons = S{'Tachi'}
+--	Koga_weapons = S{'Kogarasumaru'}
+--	Empy_weapons = S{'Masamune'}
+	Proc_weapons = S{'Norifusa'}
 -- Additional local binds
 	send_command('bind ^q input /ja "Hasso" <me>')
 	send_command('bind !q input /ja "Seigan" <me>')
@@ -59,12 +59,12 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-    sets.mainweapon = {}
-	sets.mainweapon.Kogarasumaru = {main="Kogarasumaru",sub="Utu Grip"}
-	sets.mainweapon.Masamune = {main="Masamune",sub="Utu Grip"}
-	sets.mainweapon.Amanomurakumo = {main="Amanomurakumo",	sub="Utu Grip"	}
-	sets.mainweapon['Dojikiri Yasutsuna'] = {main="Dojikiri Yasutsuna",sub="Utu Grip"}
-	sets.mainweapon['Tachi'] = {main="Tachi",sub="Utu Grip"}
+    	sets.mainweapon = {}
+--	sets.mainweapon.Kogarasumaru = {main="Kogarasumaru",sub=""}
+--	sets.mainweapon.Masamune = {main="Masamune",sub=""}
+--	sets.mainweapon.Amanomurakumo = {main="Amanomurakumo",	sub=""}
+	sets.mainweapon['Dojikiri Yasutsuna'] = {main="Dojikiri Yasutsuna",sub="Bloodrain Strap"}
+	sets.mainweapon['Norifusa'] = {main="Norifusa +1",sub="Bloodrain Strap"}
 	
 -- Precast Sets
 -- Precast sets to enhance JAs
@@ -145,18 +145,18 @@ function init_gear_sets()
 	sets.engaged.Dojikiri.MidAcc = {}
 	sets.engaged.Dojikiri.HiAcc = {}
 	
-	sets.engaged.Kogarasumaru = {}
-	sets.engaged.Kogarasumaru.LowAcc = {}
-	sets.engaged.Kogarasumaru.MidAcc = {}
-	sets.engaged.Kogarasumaru.HiAcc = {}
+--	sets.engaged.Kogarasumaru = {}
+--	sets.engaged.Kogarasumaru.LowAcc = {}
+--	sets.engaged.Kogarasumaru.MidAcc = {}
+--	sets.engaged.Kogarasumaru.HiAcc = {}
 		
-	sets.engaged.Masamune = {}
-	sets.engaged.Masamune.LowAcc = {}
-	sets.engaged.Masamune.HighAcc	= {}
-	sets.engaged.Masamune.HiAcc = {}
-	sets.engaged.Masamune.PDT = {}
+--	sets.engaged.Masamune = {}
+--	sets.engaged.Masamune.LowAcc = {}
+--	sets.engaged.Masamune.HighAcc	= {}
+--	sets.engaged.Masamune.HiAcc = {}
+--	sets.engaged.Masamune.PDT = {}
 	
-	sets.engaged.Tachi = {}
+	sets.engaged.Norifusa = {}
 		
 	sets.engaged.Archery = {}
  	
@@ -185,14 +185,14 @@ function update_combat_form()
 	if  Aeol_weapons:contains(player.equipment.main) then
 		state.CombatForm:set('Dojikiri')
 	elseif
-		Koga_weapons:contains(player.equipment.main) then
-		state.CombatForm:set('Kogarasumaru')
-	elseif
-		Empy_weapons:contains(player.equipment.main) then
-		state.CombatForm:set('Masamune')
-	elseif
+--		Koga_weapons:contains(player.equipment.main) then
+--		state.CombatForm:set('Kogarasumaru')
+--	elseif
+--		Empy_weapons:contains(player.equipment.main) then
+--		state.CombatForm:set('Masamune')
+--	elseif
 		Proc_weapons:contains(player.equipment.main) then
-		state.CombatForm:set('Tachi')
+		state.CombatForm:set('Norifusa')
 	else
 		state.CombatForm:reset()
     end
