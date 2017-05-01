@@ -15,6 +15,8 @@ end
 function job_setup()
 	state.Buff.Barrage = buffactive.Barrage or false
 	state.Buff.Camouflage = buffactive.Camouflage or false
+	state.Buff.Overkill = buffactive.Overkill or false
+	
 	state.Buff['Unlimited Shot'] = buffactive['Unlimited Shot'] or false
 	state.Buff['Velocity Shot'] = buffactive['Velocity Shot'] or false
 	state.Buff['Double Shot'] = buffactive['Double Shot'] or false
@@ -44,7 +46,7 @@ function user_setup()
 	gear.RAbullet = "Chrono Bullet"
 	gear.WSbullet = "Chrono Bullet"
 	gear.MAbullet = "Chrono Bullet"
-	options.ammo_warning_limit = 10
+	options.ammo_warning_limit = 20
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Velocity Shot" <me>')
@@ -119,13 +121,15 @@ end
 -- Set up all gear sets.
 function init_gear_sets()
 
+	include('augmented-items.lua')
+	
 	------------------------------------------------------------------------------------------------
 	---------------------------------------- Precast Sets ------------------------------------------
 	------------------------------------------------------------------------------------------------
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Eagle Eye Shot'] = {legs="Arc. Braccae +1"}
-	sets.precast.JA['Bounty Shot'] = {hands="Amini Glove. +1"}
+	sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {legs=gear.RNGRel.Legs})
+	--sets.precast.JA['Bounty Shot'] = {hands="Amini Glove. +1"}
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
 	sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +1"}
@@ -134,35 +138,25 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 
-	sets.precast.Waltz = {
-		body="Passion Jacket",
-		hands="Slither Gloves +1",
-		neck="Phalaina Locket",
-		ring1="Asklepian Ring",
-		ring2="Valseur's Ring",
-		waist="Gishdubar Sash",
-		}
+--	sets.precast.Waltz = {}
 
-	sets.precast.Waltz['Healing Waltz'] = {}
+--	sets.precast.Waltz['Healing Waltz'] = {}
 
-	sets.precast.FC = {
-		head="Carmine Mask +1", --14
-		body=gear.Taeon_FC_body, --8
-		hands="Leyline Gloves", --7
-		legs="Rawhide Trousers", --5
-		feet="Carmine Greaves +1", --8
-		neck="Orunmila's Torque", --5
-		ear1="Loquacious Earring", --2
-		ear2="Enchntr. Earring +1", --2
-		ring2="Weather. Ring", --5(3)
-		waist="Ninurta's Sash",
-		}
+	sets.precast.FC =     -- 45 FC 
+{
+  head=gear.Carmine.head,     --12
+  neck="Orunmila's Torque",   --5
+  ear1="Etiolation Earring",  --1
+  ear2="Loquacious Earring",  --2
+  body=gear.Samnuhabody.FC,   --3
+  hands=gear.Leyline.NotCap,  --7
+  ring1="Rahab Ring",         --2
+  ring2="Lebeche Ring",       --
+  legs=gear.Rawhide.legs,     --5
+  feet=gear.Carmine.feet      --8
+}
 
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-		body="Passion Jacket",
-		neck="Magoraga Beads",
-		ring1="Lebeche Ring",
-		})
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
 
 
 	-- (10% Snapshot, 5% Rapid from Merits)
