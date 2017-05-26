@@ -30,6 +30,7 @@ function job_setup()
 	determine_haste_group()
 end
 
+
 -------------------------------------------------------------------------------------------------------------------
 -- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
 -------------------------------------------------------------------------------------------------------------------
@@ -46,48 +47,103 @@ function user_setup()
 	gear.RAbullet = "Chrono Bullet"
 	gear.WSbullet = "Chrono Bullet"
 	gear.MAbullet = "Chrono Bullet"
+
+	gear.RAarrow = ""
+	gear.WSarrow = ""
 	options.ammo_warning_limit = 20
 
 	-- Additional local binds
-	send_command('bind ^` input /ja "Velocity Shot" <me>')
-	send_command ('bind @` input /ja "Scavenge" <me>')
+	send_command('bind @f gs c cycle FlurryMode')
+	send_command('bind @h gs c cycle HasteMode')
+	send_command('bind @c gs c toggle CP')	
 
+	-- RNG Abilities local binds
+	send_command('bind ^numlock input /ja "Velocity Shot" <me>')
+	send_command('bind !numlock input /ja "Double Shot" <me>')
+	send_command('bind @numlock input /ja "Camoflage" <me>')
+
+	send_command('bind ^/ input /ja "Sharpshot" <me>')
+	send_command('bind !/ input /ja "Barrage" <me>')
+	send_command('bind @/ input /ja "Bounty Shot" <me>')
+
+	send_command('bind ^` input /ja "Decoy Shot" <me>')
+	send_command('bind !` input /ja "Scavenge" <me>')
+	send_command('bind @` input /ja "Unlimited Shot" <me>')
+
+	-- Weapon Skill local binds
+	send_command('bind ^numpad1 input /ws "Trueflight" <t>')
+	send_command('bind !numpad1 input /ws "Last Stand" <t>') 
+	send_command('bind @numpad1 input /ws "Wildfire" <t>')
+
+	send_command('bind ^numpad4 input /ws "Jishnu\'s Radiance" <t>')
+	send_command('bind !numpad4 input /ws "Apex Arrow" <t>')
+	send_command('bind @numpad4 input /ws "Namas Arrow" <t>')
+	
 	if player.sub_job == 'DNC' then
 		send_command('bind ^, input /ja "Spectral Jig" <me>')
 		send_command('unbind ^.')
+	if player.sub_job =="NIN' then
+		send_command('bind ^, input /ma Monomi: Ichi" <me>')
+		send_command('bind ^. input /ma "Tonko: Ni" <me>')
 	else
 		send_command('bind ^, input /item "Silent Oil" <me>')
 		send_command('bind ^. input /item "Prism Powder" <me>')
 	end
 
-	send_command('bind @f gs c cycle FlurryMode')
-	send_command('bind @h gs c cycle HasteMode')
-	send_command('bind @c gs c toggle CP')
-
-	send_command('bind ^numlock input /ja "Double Shot" <me>')
-
 	if player.sub_job == 'WAR' then
-		send_command('bind ^numpad/ input /ja "Berserk" <me>')
-		send_command('bind ^numpad* input /ja "Warcry" <me>')
-		send_command('bind ^numpad- input /ja "Defender" <me>')
+		send_command('bind ^numpad2 input /ja "Berserk" <me>')
+		send_command('bind !numpad2 input /ja "Warcry" <me>')
+		send_command('bind @numpad2 input /ja "Defender" <me>')
 	elseif player.sub_job == 'SAM' then
-		send_command('bind ^numpad/ input /ja "Meditate" <me>')
-		send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-		send_command('bind ^numpad- input /ja "Third Eye" <me>')
+		send_command('bind ^numpad2 input /ja "Meditate" <me>')
+		send_command('bind !numpad2 input /ja "Sekkanoki" <me>')
+		send_command('bind @numpad2 input /ja "Third Eye" <me>')
+	elseif player.sub_job =='DNC' then
+		send_command('bind ^numpad2 input /ja "Healing Waltz" <me>')
+		send_command('bind !numpad2 input /ja "Curing Waltz III" <me>')
+		send_command('bind @numpad2 input /ja "Divine Waltz" <me>')
+	elseif player.sub_job =='NIN' then
+		send_command('bind ^numpad2 input /ma "Utsusemi: Ni" <me>')
+		send_command('bind !numpad2 input /ma "Utsusemi: Ichi" <me>')
+		send_command('unbind @numpad2')
 	end
 
-	send_command('bind ^numpad7 input /ws "Trueflight" <t>')
-	send_command('bind !numpad7 input /ws "Apex Arrow" <t>')
-	send_command('bind @numpad7 input /ws "Exenterator" <t>')
-	send_command('bind ^numpad8 input /ws "Last Stand" <t>')
-	send_command('bind !numpad8 input /ws "Jishnu\'s Radiance" <t>')
-	send_command('bind @numpad8 input /ws "Decimation" <t>')
-	send_command('bind ^numpad4 input /ws "Wildfire" <t>')
-	send_command('bind @numpad4 input /ws "Evisceration" <t>')
-	send_command('bind @numpad5 input /ws "Ruinator" <t>')
-
 	select_default_macro_book()
+
 	set_lockstyle()
+
+end
+
+
+-- Called when this job file is unloaded (eg: job change)
+function user_unload()
+
+	send_command('unbind f9')
+	send_command('unbind ^f9')
+	send_command('unbind ^,')
+	send_command('unbind ^.')
+	send_command('unbind @f')
+	send_command('unbind @h')
+	send_command('unbind @c')
+	send_command('unbind ^/')
+	send_command('unbind !/')
+	send_command('unbind @/')
+	send_command('unbind ^`')
+	send_command('unbind !`')
+	send_command('unbind @`')
+	send_command('unbind ^numlock')
+	send_command('unbind !numlock')
+	send_command('unbind @numlock')
+	send_command('unbind ^numpad1')
+	send_command('unbind !numpad1')
+	send_command('unbind @numpad1')
+	send_command('unbind ^numpad2')
+	send_command('unbind !numpad2')
+	send_command('unbind @numpad2')
+	send_command('unbind ^numpad4')
+	send_command('unbind !numpad4')
+	send_command('unbind @numpad4')
+
 end
 
 
@@ -129,7 +185,7 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {legs=gear.RNGRel.Legs})
-	--sets.precast.JA['Bounty Shot'] = {hands="Amini Glove. +1"}
+	sets.precast.JA['Bounty Shot'] = {hands="Amini Glove. +1"}
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
 	sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +1"}
@@ -138,9 +194,9 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 
---	sets.precast.Waltz = {}
+	sets.precast.Waltz = {}
 
---	sets.precast.Waltz['Healing Waltz'] = {}
+	sets.precast.Waltz['Healing Waltz'] = {}
 
 	sets.precast.FC =     -- 45 FC 
 {
@@ -685,7 +741,7 @@ function init_gear_sets()
 	sets.buff.Barrage = set_combine(sets.midcast.RA.Acc, {hands="Orion Bracers +1"})
 	sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {body="Amini Caban +1", back=gear.RNG_TP_Cape})
 	sets.buff['Double Shot'] = set_combine(sets.midcast.RA, {back=gear.RNG_TP_Cape})
---	sets.buff.Camouflage = {body="Orion Jerkin +1"}
+	sets.buff.Camouflage = {body="Orion Jerkin +1"}
 
 	sets.buff.Doom = {ring1="Saida Ring", ring2="Saida Ring", waist="Gishdubar Sash"}
 
@@ -710,9 +766,9 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
 	if spell.action_type == 'Ranged Attack' then
---		if state.Buff['Velocity Shot'] then
---			equip( sets.buff['Velocity Shot'])
---		end
+		if state.Buff['Velocity Shot'] then
+			equip( sets.buff['Velocity Shot'])
+		end
 		if state.FlurryMode.value == 'Flurry II' and (buffactive[265] or buffactive[581]) then
 			equip(sets.precast.RA.Flurry2)
 		elseif state.FlurryMode.value == 'Flurry I' and (buffactive[265] or buffactive[581]) then
@@ -740,9 +796,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 	if spell.action_type == 'Ranged Attack' and state.Buff.Barrage then
 		equip(sets.buff.Barrage)
 	end
---	if spell.action_type == 'Ranged Attack' and state.Buff['Velocity Shot'] and state.RangedMode.value == 'STP' then
---		equip(sets.buff['Velocity Shot'])
---	end
+	if spell.action_type == 'Ranged Attack' and state.Buff['Velocity Shot'] and state.RangedMode.value == 'STP' then
+		equip(sets.buff['Velocity Shot'])
+	end
 end
 
 
@@ -1023,12 +1079,12 @@ end
 function select_default_macro_book()
 	-- Default macro set/book: (set, book)
 	if player.sub_job == 'DNC' then
-		set_macro_page(1, 6)	
+		set_macro_page(1, 1)	
 	else
-		set_macro_page(2, 6)	
+		set_macro_page(1, 1)	
 	end
 end
 
 function set_lockstyle()
-	send_command('wait 2; input /lockstyleset 5')
+	send_command('wait 2; input /lockstyleset 1')
 end
