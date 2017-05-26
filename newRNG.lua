@@ -41,6 +41,13 @@ function user_setup()
 	state.RangedMode:options('STP', 'Normal', 'Acc', 'Critical')
 	state.WeaponskillMode:options('Normal', 'Acc')
 	state.IdleMode:options('Normal', 'DT')
+	state.RngMode = M{['description']='Ranger Mode', 'Archery','Gun','XBow'}
+	state.Bolt = M{['description']='Bolt Mode','Normal','DefDown','Holy Bolt','Bloody Bolt'}
+
+	send_command('alias rngmode gs c cycle rngmode')
+	send_command('alias boltmode gs c cycle Bolt')
+	send_command('bind f9 gs c cycle RngMode')
+	send_command('bind ^f9 gs c cycle Bolt')
 	
 	state.CP = M(false, "Capacity Points Mode")
 	
@@ -179,6 +186,37 @@ function init_gear_sets()
 
 	include('augmented-items.lua')
 	
+	if state.RngMode.value == 'Archery' then
+		RNGWeapon = "Steinthor"
+		TP_Ammo = "Achiyalabopa Arrow"
+		WS_Ammo = "Achiyalabopa Arrow"
+			send_command("alias rngws1 input /ws 'Jishnu\'s Radiance' <t>")
+			send_command("alias rngws2 input /ws 'Namas Arrow' <t>")
+			send_command("alias rngws3 input /ws 'Apex Arrow' <t>")
+		
+	elseif state.RngMode.value == 'Gun' then 
+		RNGWeapon = "Wochowsen"
+		TP_Ammo = "Achiyal. Bolt"
+		WS_Ammo = "Achiyal. Bolt"
+			send_command("alias rngws1 input /ws 'Slugshot' <t>")
+			send_command("alias rngws2 input /ws 'Trueflight' <t>")
+			send_command("alias rngws3 input /ws 'Wildfire' <t>")
+	
+	elseif state.RngMode.value == 'XBow' then
+		RNGWeapon = "Imati +1"
+		TP_Ammo = "Achiyal. Bolt"
+		WS_Ammo = "Achiyal. Bolt"
+			if state.Bolt.value == 'DefDown' then 
+		TP_Ammo = "Abrasion Bolt"
+			elseif state.Bolt.value == 'Holy Bolt' then
+		TP_Ammo = "Righteous Bolt"
+			elseif state.Bolt.value == 'Bloody Bolt' then
+		TP_Ammo = "Bloody Bolt"
+			end
+			send_command("alias rngws2 input /ws 'Wildfire' <t>")
+			send_command("alias rngws3 input /ws 'Slug Shot' <t>")
+			send_command("alias rngws1 input /ws 'Trueflight' <t>")
+end
 	------------------------------------------------------------------------------------------------
 	---------------------------------------- Precast Sets ------------------------------------------
 	------------------------------------------------------------------------------------------------
