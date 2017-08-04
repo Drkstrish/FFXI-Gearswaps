@@ -23,7 +23,8 @@ function job_setup()
   
 	state.Buff.Barrage = buffactive.Barrage or false
 	state.Buff.Camouflage = buffactive.Camouflage or false
-  
+	state.Buff.Overkill = buffactive.Overkill or false
+	
 	state.Buff['Unlimited Shot'] = buffactive['Unlimited Shot'] or false
 	state.Buff['Velocity Shot'] = buffactive['Velocity Shot'] or false
 	state.Buff['Double Shot'] = buffactive['Double Shot'] or false
@@ -32,11 +33,9 @@ function job_setup()
 	state.HasteMode = M{['description']='Haste Mode', 'Haste II', 'Haste I'}
 
 	-- Whether a warning has been given for low ammo
-  
 	state.warned = M(false)
 
 	determine_haste_group()
-  
 end
 -------------------------------------------------------------------------------------------------------------------
 -- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
@@ -56,75 +55,88 @@ function user_setup()
 	gear.MAbullet = "Chrono Bullet"
 	options.ammo_warning_limit = 10
 
+
+	gear.RAarrow = ""
+	gear.WSarrow = ""
+	options.ammo_warning_limit = 10
+  
 	-- Additional local binds
-	send_command('bind ^` input /ja "Velocity Shot" <me>')
-	send_command ('bind @` input /ja "Scavenge" <me>')
-
-	if player.sub_job == 'DNC' then
-		send_command('bind ^, input /ja "Spectral Jig" <me>')
-		send_command('unbind ^.')
-	else
-		send_command('bind ^, input /item "Silent Oil" <me>')
-		send_command('bind ^. input /item "Prism Powder" <me>')
-	end
-
+  
+  send_command('bind numpad0 input /ra <t>')
+  
 	send_command('bind @f gs c cycle FlurryMode')
 	send_command('bind @h gs c cycle HasteMode')
-	send_command('bind @c gs c toggle CP')
+	send_command('bind @c gs c toggle CP')	
 
-	send_command('bind ^numlock input /ja "Double Shot" <me>')
+	-- RNG Abilities local binds
+  
+	send_command('bind ^[ input /ja "Velocity Shot" <me>')
+	send_command('bind ![ input /ja "Double Shot" <me>')
 
+	send_command('bind ^] input /ja "Sharpshot" <me>')
+	send_command('bind !] input /ja "Barrage" <me>')
+  
+	send_command('bind @` input /ja "Scavenge" <me>')
+	send_command('bind @` input /ja "Camouflage" <me>')
+  
+  send_command('bind ^numlock input /ws "Trueflight" <t>')
+	send_command('bind !numlock input /ws "Last Stand" <t>') 
+	send_command('bind @numlock input /ws "Wildfire" <t>')
+
+
+	-- Weapon Skill local binds
+  
 	if player.sub_job == 'WAR' then
-		send_command('bind ^numpad/ input /ja "Berserk" <me>')
-		send_command('bind ^numpad* input /ja "Warcry" <me>')
-		send_command('bind ^numpad- input /ja "Aggressor" <me>')
+		send_command('bind ^numpad2 input /ja "Berserk" <me>')
+		send_command('bind !numpad2 input /ja "Warcry" <me>')
+		send_command('unbind @numpad2')
 	elseif player.sub_job == 'SAM' then
-		send_command('bind ^numpad/ input /ja "Meditate" <me>')
-		send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-		send_command('bind ^numpad- input /ja "Third Eye" <me>')
+		send_command('bind ^numpad2 input /ja "Meditate" <me>')
+		send_command('bind !numpad2 input /ja "Sekkanoki" <me>')
+		send_command('bind @numpad2 input /ja "Third Eye" <me>')
+	elseif player.sub_job =='DNC' then
+		send_command('bind ^numpad2 input /ja "Healing Waltz" <me>')
+		send_command('bind !numpad2 input /ja "Curing Waltz III" <me>')
+		send_command('bind @numpad2 input /ja "Divine Waltz" <me>')
+	elseif player.sub_job =='NIN' then
+		send_command('bind ^numpad2 input /ma "Utsusemi: Ni" <me>')
+		send_command('bind !numpad2 input /ma "Utsusemi: Ichi" <me>')
+		send_command('unbind @numpad2')
 	end
-	send_command('bind ^numpad7 input /ws "Trueflight" <t>')
-	send_command('bind !numpad7 input /ws "Apex Arrow" <t>')
-	send_command('bind @numpad7 input /ws "Exenterator" <t>')
-	send_command('bind ^numpad8 input /ws "Last Stand" <t>')
-	send_command('bind !numpad8 input /ws "Jishnu\'s Radiance" <t>')
-	send_command('bind @numpad8 input /ws "Decimation" <t>')
-	send_command('bind ^numpad4 input /ws "Wildfire" <t>')
-	send_command('bind @numpad4 input /ws "Evisceration" <t>')
-	send_command('bind @numpad5 input /ws "Namas Arrow" <t>')
-
-	send_command('bind numpad0 input /ra <t>')
 
 	select_default_macro_book()
-  
+
 	set_lockstyle()
-  
+
 end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+  send_command('unbind numpad0')
+  
 	send_command('unbind f9')
 	send_command('unbind ^f9')
-	send_command('unbind ^`')
-	send_command('unbind !`')
-	send_command('unbind @`')
-	send_command('unbind ^,')
+  
 	send_command('unbind @f')
 	send_command('unbind @h')
-	send_command('unbind @c')
-	send_command('unbind ^numlock')
-	send_command('unbind ^numpad/')
-	send_command('unbind ^numpad*')
-	send_command('unbind ^numpad-')
-	send_command('unbind ^numpad7')
-	send_command('unbind !numpad7')
-	send_command('unbind @numpad7')
-	send_command('unbind ^numpad8')
-	send_command('unbind !numpad8')
-	send_command('unbind @numpad8')
-	send_command('unbind ^numpad4')
-	send_command('unbind @numpad4')
-	send_command('unbind @numpad5')
-	send_command('unbind numpad0')
+	send_command('unbind @c')  
+  
+  send_command('unbind ^[')
+	send_command('unbind ![')
+
+  send_command('unbind ^]')
+	send_command('unbind !]')
+	
+  send_command('unbind @`')	
+  send_command('unbind @`')
+  
+  send_command('unbind ^numlock')
+	send_command('unbind !numlock')
+	send_command('unbind @numlock')
+  
+	send_command('unbind ^numpad2')
+	send_command('unbind !numpad2')
+	send_command('unbind @numpad2')
+
 end
 -- Set up all gear sets.
 function init_gear_sets()
@@ -136,12 +148,27 @@ function init_gear_sets()
 	------------------------------------------------------------------------------------------------
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Eagle Eye Shot'] = {legs=gear.RNGRel.Legs}
-	sets.precast.JA['Bounty Shot'] = {hands=gear.RNGAF3.Hands}
-  sets.precast.JA['Camouflage'] = {body=gear.RNGAF.Body}
-  sets.precast.JA['Scavenge'] = {feet=gear.RNGAF.Feet}
-  sets.precast.JA['Shadowbind'] = {hands=gear.RNGAF.Hands}
-  sets.precast.JA['Sharpshot'] = {legs=gear.RNGAF.Legs}
+	sets.precast.JA['Eagle Eye Shot'] = 
+  {legs=gear.RNGRel.Legs}
+  
+	sets.precast.JA['Bounty Shot'] = 
+{
+  hands=gear.RNGAF3.Hands,
+  waist="Chaac Belt",
+  legs=gear.Herculeanlegs.TH
+}
+  
+  sets.precast.JA['Camouflage'] = 
+  {body=gear.RNGAF.Body}
+  
+  sets.precast.JA['Scavenge'] = 
+  {feet=gear.RNGAF.Feet}
+  
+  sets.precast.JA['Shadowbind'] = 
+  {hands=gear.RNGAF.Hands}
+  
+  sets.precast.JA['Sharpshot'] = 
+  {legs=gear.RNGAF.Legs}
 
 
 	-- Fast cast sets for spells
@@ -164,13 +191,14 @@ function init_gear_sets()
   feet=gear.Carmine.feet      --8
 }
 
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
+	sets.precast.FC.Utsusemi = 
+  set_combine(sets.precast.FC, { neck="Magoraga Beads" })
 
 	-- (10% Snapshot, 5% Rapid from Merits)
-	sets.precast.RA = -- 63% snap. need to get to 70. 26 Rapid.
+	sets.precast.RA = -- 69% snap. need to get to 70. 26 Rapid.
 {
   head=gear.RNGAF3.Head,          -- 7 Snap 0 Rapid
-  body=gear.Pursuers.body,        -- 6 Snap 0 Rapid
+  body="Oshosi Vest",             -- 12 Snap 0 Rapid
   hands=gear.Carmine.hands,       -- 8 Snap 11 Rapid
   legs=gear.Adhemar.legs,         -- 9 Snap 10 Rapid
   feet=gear.Meghanada.Feet,       -- 10 Snap
@@ -184,9 +212,9 @@ function init_gear_sets()
 }
 
 	-- (10% Snapshot, 5% Rapid from Merits 15% from Flurry I) Shoot for 45 Snap 
-	sets.precast.RA.Flurry1 =       -- 44 Snap 38 Rapid
+	sets.precast.RA.Flurry1 =       -- 47 Snap 54 Rapid
 {
-  head=gear.RNGAF3.Head,          -- 7 Snap  0 Rapid
+  head=gear.RNGAF.Head,           -- 0 Snap  16 Rapid
   body=gear.RNGRel.Body,          --         12 Rapid
   hands=gear.Carmine.hands,       -- 8 Snap  11 Rapid
   legs=gear.Adhemar.legs,         -- 9 Snap  10 Rapid
@@ -201,15 +229,15 @@ function init_gear_sets()
 }
 
 	-- (10% Snapshot, 5% Rapid from Merits 30% from Flurry I) Shoot for 30 Snap 
-	sets.precast.RA.Flurry2 =       -- 34 Snap 48 Rapid
+	sets.precast.RA.Flurry2 =       -- 30 Snap 59 Rapid
 {
-  head=gear.RNGAF3.Head,          -- 7 Snap 0 Rapid
+  head=gear.RNGAF.Head,           --        16 Rapid
   body=gear.RNGRel.Body,          --        12 Rapid
   hands=gear.Carmine.hands,       -- 8 Snap 11 Rapid
   legs=gear.Adhemar.legs,         -- 9 Snap 10 Rapid
   feet=gear.Pursuers.feet,        --        10 Rapid
   neck="Loricate Torque +1",
-  waist="Yemaya Belt",            --         5 Rapid
+  waist="Impulse Belt",           -- 3 Snap
   left_ear="Etiolation Earring",
   right_ear="Odnowa Earring +1",
   left_ring="Defending Ring",
@@ -219,9 +247,9 @@ function init_gear_sets()
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = 
+	sets.precast.WS = -- 1279 R. Acc 1210 R. Atk
 {
-  ammo=gear.RAbullet,
+  --ammo=gear.RAbullet,
   left_ear="Enervating Earring", 
   left_ring="Dingir Ring",  
   head=gear.RNGAF.Head,
@@ -232,13 +260,13 @@ function init_gear_sets()
   neck="Fotia Gorget",
   waist="Fotia Belt",
   right_ear=gear.Moonshade.WS,
-  right_ring="Ilabrat Ring",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGMWS
 }
 
-  sets.precast.WS.Mid = 
+  sets.precast.WS.Mid = -- 1335 R. Acc 1281 R. Atk
 {
-  ammo=gear.RAbullet,
+  --ammo=gear.RAbullet,
   left_ear="Enervating Earring",
   left_ring="Dingir Ring",    
   head=gear.RNGAF.Head,
@@ -249,13 +277,13 @@ function init_gear_sets()
   neck="Fotia Gorget",
   waist="Fotia Belt",
   right_ear=gear.Moonshade.WS,
-  right_ring="Hajduk Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGWS
 }
 
-  sets.precast.WS.Acc = 
+  sets.precast.WS.Acc = -- 1427 R. Acc 1344 R. Atk
 {
-  ammo=gear.RAbullet,
+  --ammo=gear.RAbullet,
   left_ear="Enervating Earring",
   left_ring="Hajduk Ring +1",  
   head=gear.Meghanada.Head,
@@ -266,7 +294,7 @@ function init_gear_sets()
   neck="Iskur Gorget",
   waist="Kwahu Kachina Belt",
   right_ear="Neritic Earring",  
-  right_ring="Hajduk Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGWS
 }
 
@@ -274,17 +302,28 @@ function init_gear_sets()
 	------------------------------------------------------------------------------------------------
 	------------------------------------- Weapon Skill Sets ----------------------------------------
 	------------------------------------------------------------------------------------------------
-
-	sets.precast.WS['Apex Arrow'] = {}
-  sets.precast.WS['Apex Arrow'].Mid = {}
-	sets.precast.WS['Apex Arrow'].Acc = {}
-
-  sets.precast.WS['Jishnu\'s Radiance'] = {}
-  sets.precast.WS['Jishnu\'s Radiance'].Mid = {}
-  sets.precast.WS['Jishnu\'s Radiance'].Acc = {}
   
-  sets.precast.WS['Namas Arrow'] = 
-{
+--Archery
+	sets.precast.WS['Apex Arrow'] = 
+  {
+  ammo="Chrono Arrow",
+  head=gear.Meghanada.Head,
+  body=gear.Meghanada.Body,
+  hands=gear.Meghanada.Hands,
+  legs=gear.Mummu.Legs,
+  feet=gear.Mummu.Feet,
+  neck="Fotia Gorget",
+  waist="Fotia Belt",
+  left_ear="Enervating Earring",
+  right_ear="Sherida Earring",
+  left_ring="Dingir Ring",
+  right_ring="Regal Ring",
+  back=gear.AmbJSE.RNGWS,
+}
+
+  sets.precast.WS['Apex Arrow'].Mid = 
+ {
+  ammo="Chrono Arrow",
   left_ear="Enervating Earring",
   left_ring="Dingir Ring", 
   head=gear.RNGAF.Head,
@@ -295,28 +334,13 @@ function init_gear_sets()
   neck="Fotia Gorget",
   waist="Fotia Belt",
   right_ear="Sherida Earring",
-  right_ring="Ilabrat Ring",  
+  right_ring="Regal Ring",  
   back=gear.AmbJSE.RNGWS
 }
 
-  sets.precast.WS['Namas Arrow'].Mid = 
+	sets.precast.WS['Apex Arrow'].Acc = 
 {
-  left_ear="Enervating Earring",
-  left_ring="Dingir Ring", 
-  head=gear.RNGAF.Head,
-  body=gear.RNGAF.Body,
-  hands=gear.Meghanada.Hands,
-  legs=gear.Meghanada.Legs,
-  feet=gear.Meghanada.Feet,
-  neck="Fotia Gorget",
-  waist="Fotia Belt",
-  right_ear="Sherida Earring",
-  right_ring="Ilabrat Ring",  
-  back=gear.AmbJSE.RNGWS
-}
-
-  sets.precast.WS['Namas Arrow'].Acc = 
-{
+  ammo="Chrono Arrow",
   left_ear="Enervating Earring",
   left_ring="Hajduk Ring +1",
   head=gear.RNGAF.Head,
@@ -327,10 +351,115 @@ function init_gear_sets()
   neck="Fotia Gorget",
   waist="Fotia Belt",
   right_ear="Neritic Earring",
-  right_ring="Hajduk Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGWS
 }
 
+  sets.precast.WS['Jishnu\'s Radiance'] = 
+{
+  ammo="Chrono Arrow",
+  head=gear.Meghanada.Head,
+  body=gear.Meghanada.Body,
+  hands=gear.Meghanada.Hands,
+  legs=gear.Mummu.Legs,
+  feet=gear.Mummu.Feet,
+  neck="Fotia Gorget",
+  waist="Fotia Belt",
+  left_ear="Enervating Earring",
+  right_ear="Sherida Earring",
+  left_ring="Ilabrat Ring",
+  right_ring="Regal Ring",
+  back=gear.AmbJSE.RNGWS,
+}
+
+  sets.precast.WS['Jishnu\'s Radiance'].Mid = 
+{
+  ammo="Chrono Arrow",
+  left_ear="Enervating Earring",
+  left_ring="Ilabrat Ring", 
+  head=gear.RNGAF.Head,
+  body=gear.RNGAF.Body,
+  hands=gear.Meghanada.Hands,
+  legs=gear.Meghanada.Legs,
+  feet=gear.Meghanada.Feet,
+  neck="Fotia Gorget",
+  waist="Fotia Belt",
+  right_ear="Sherida Earring",
+  right_ring="Regal Ring",  
+  back=gear.AmbJSE.RNGWS
+}
+
+  sets.precast.WS['Jishnu\'s Radiance'].Acc = 
+{
+  ammo="Chrono Arrow",
+  left_ear="Enervating Earring",
+  left_ring="Hajduk Ring +1",
+  head=gear.RNGAF.Head,
+  body=gear.RNGAF.Body,
+  hands=gear.Meghanada.Hands,
+  legs=gear.Meghanada.Legs,
+  feet=gear.Meghanada.Feet,
+  neck="Fotia Gorget",
+  waist="Fotia Belt",
+  right_ear="Neritic Earring",
+  right_ring="Regal Ring",
+  back=gear.AmbJSE.RNGWS
+}
+  
+  sets.precast.WS['Namas Arrow'] = 
+{
+  ammo="Chrono Arrow",
+  left_ear="Enervating Earring",
+  left_ring="Dingir Ring", 
+  head=gear.RNGAF.Head,
+  body=gear.RNGAF.Body,
+  hands=gear.Meghanada.Hands,
+  legs=gear.Meghanada.Legs,
+  feet=gear.Meghanada.Feet,
+  neck="Fotia Gorget",
+  waist="Fotia Belt",
+  right_ear="Sherida Earring",
+  right_ring="Regal Ring",  
+  back=gear.AmbJSE.RNGWS
+}
+
+  sets.precast.WS['Namas Arrow'].Mid = 
+{
+  ammo="Chrono Arrow",
+  left_ear="Enervating Earring",
+  left_ring="Dingir Ring", 
+  head=gear.RNGAF.Head,
+  body=gear.RNGAF.Body,
+  hands=gear.Meghanada.Hands,
+  legs=gear.Meghanada.Legs,
+  feet=gear.Meghanada.Feet,
+  neck="Fotia Gorget",
+  waist="Fotia Belt",
+  right_ear="Sherida Earring",
+  right_ring="Regal Ring",  
+  back=gear.AmbJSE.RNGWS
+}
+
+  sets.precast.WS['Namas Arrow'].Acc = 
+{
+  ammo="Chrono Arrow",
+  left_ear="Enervating Earring",
+  left_ring="Hajduk Ring +1",
+  head=gear.RNGAF.Head,
+  body=gear.RNGAF.Body,
+  hands=gear.Meghanada.Hands,
+  legs=gear.Meghanada.Legs,
+  feet=gear.Meghanada.Feet,
+  neck="Fotia Gorget",
+  waist="Fotia Belt",
+  right_ear="Neritic Earring",
+  right_ring="Regal Ring",
+  back=gear.AmbJSE.RNGWS
+}
+
+
+
+-- Marksmanship
 	sets.precast.WS['Last Stand'] = 
 {
   ammo=gear.RAbullet,
@@ -344,7 +473,7 @@ function init_gear_sets()
   neck="Fotia Gorget",
   waist="Fotia Belt",
   right_ear=gear.Moonshade.WS,
-  right_ring="Ilabrat Ring",  
+  right_ring="Regal Ring",  
   back=gear.AmbJSE.RNGWS
 }
 
@@ -361,7 +490,7 @@ function init_gear_sets()
   neck="Fotia Gorget",
   waist="Fotia Belt",
   right_ear=gear.Moonshade.WS,
-  right_ring="Hajduk Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGWS
 }
 
@@ -378,14 +507,14 @@ function init_gear_sets()
   neck="Iskur Gorget",
   waist="Kwahu Kachina Belt",
   right_ear="Neritic Earring",  
-  right_ring="Hajduk Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGWS
 }
 
 	sets.precast.WS['Wildfire'] = 
 {
   ammo=gear.MAbullet,
-  left_ear="Hermetic Earring",  
+  left_ear="Friomisi Earring",  
   left_ring="Dingir Ring",  
   head=gear.Herculeanhead.Magic,
   body=gear.Herculeanbody.Magic,
@@ -393,16 +522,16 @@ function init_gear_sets()
   legs=gear.Herculeanlegs.Magic,
   feet=gear.Herculeanfeet.Magic,
   neck="Sanctity Necklace",
-  waist="Kwahu Kachina Belt",
-  right_ear="Friomisi Earring",
-  right_ring="Ilabrat Ring",
+  waist="Eschan Stone", 
+  right_ear=gear.Moonshade.WS,
+  right_ring="Arvina Ringlet +1", 
   back=gear.AmbJSE.RNGMWS
 }
 
   sets.precast.WS['Wildfire'].Mid = 
 {
   ammo=gear.MAbullet,
-  left_ear="Gwati Earring",  
+  left_ear="Digni. Earring",
   left_ring="Dingir Ring",  
   head=gear.Herculeanhead.Magic,
   body=gear.Herculeanbody.Magic,
@@ -411,16 +540,16 @@ function init_gear_sets()
   feet=gear.Herculeanfeet.Magic,
   neck="Sanctity Necklace",
   waist="Kwahu Kachina Belt",
-  right_ear="Digni. Earring",
-  right_ring="Ilabrat Ring",
+  right_ear=gear.Moonshade.WS,
+  right_ring="Arvina Ringlet +1", 
   back=gear.AmbJSE.RNGMWS
 }
 
   sets.precast.WS['Wildfire'].Acc = 
 {
   ammo=gear.MAbullet,
-  left_ear="Gwati Earring",  
-  left_ring="Etana Ring",  
+  left_ear="Digni. Earring", 
+  left_ring="Arvina Ringlet +1", 
   head=gear.Mummu.Head,
   body=gear.Mummu.Body,
   hands=gear.Mummu.Hands,
@@ -428,8 +557,8 @@ function init_gear_sets()
   feet=gear.Mummu.Feet,
   neck="Sanctity Necklace",
   waist="Kwahu Kachina Belt",
-  right_ear="Digni. Earring",
-  right_ring="Vertigo Ring",
+  right_ear="Gwati Earring", 
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGMWS
 }  
 
@@ -463,9 +592,9 @@ function init_gear_sets()
   
 	-- Ranged sets
 
-	sets.midcast.RA = -- 1233 R. Acc no food. 40 STP without weapons.
+	sets.midcast.RA = -- 1303 R. Acc no food. 50 STP without weapons.
 { 
-  ammo=gear.RAbullet,
+  --ammo=gear.RAbullet,
   left_ear="Enervating Earring",  -- 4STP  
   left_ring="Dingir Ring",  
   head=gear.RNGRel.Head,
@@ -476,13 +605,13 @@ function init_gear_sets()
   neck="Iskur Gorget",            -- 8STP
   waist="Yemaya Belt",            -- 4STP
   right_ear="Neritic Earring",    -- 4STP
-  right_ring="Ilabrat Ring",      -- 5STP
+  right_ring="Regal Ring",      -- 5STP
   back=gear.AmbJSE.RNGSTP         -- 10STP
 }	
 	
 	sets.midcast.RA.Acc = 
-{ --1322 R. Acc
-  ammo=gear.RAbullet,
+{ --1439 R. Acc
+  --ammo=gear.RAbullet,
   left_ear="Enervating Earring",  
   left_ring="Hajduk Ring +1",  
   head=gear.Meghanada.Head,
@@ -493,13 +622,13 @@ function init_gear_sets()
   neck="Iskur Gorget",
   waist="Kwahu Kachina Belt",
   right_ear="Neritic Earring",
-  right_ring="Hajduk Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGSTP
 }
 
 	sets.midcast.RA.Critical =
-{    
-  ammo=gear.RAbullet,
+{--1349 R. Acc
+  --ammo=gear.RAbullet,
   left_ear="Enervating Earring",  
   left_ring="Dingir Ring",  
   head=gear.Mummu.Head,
@@ -510,26 +639,26 @@ function init_gear_sets()
   neck="Iskur Gorget",
   waist="Kwahu Kachina Belt",
   right_ear="Neritic Earring",
-  right_ring="Ilabrat Ring",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGSTP
 }
 		
-	sets.midcast.RA.STP = --1113 r. acc no food. 56 STP without weapons. 
+	sets.midcast.RA.STP = --1229 r. acc no food. 79 STP without weapons. 
 { 
-  ammo=gear.RAbullet,
-  right_ear="Sherida Earring",   -- 5STP  
-  left_ring="Petrov Ring",      -- 5STP  
+  --ammo=gear.RAbullet,
+  left_ear="Dedition Earring",    -- 8STP  
+  left_ring="Rajas Ring",         -- 5STP
   head=gear.RNGRel.Head,
-  body=gear.Pursuers.body,      -- 6STP
-  hands=gear.Carmine.hands,     -- 6STP
-  legs=gear.Adhemar.legs,       -- 7STP
-  feet=gear.Adhemar.feet,
-  neck="Iskur Gorget",          -- 8STP
-  waist="Yemaya Belt",          -- 4STP
-  left_ear="Tripudio Earring", -- 5STP
-  right_ring="Ilabrat Ring",    -- 5STP
-  back=gear.AmbJSE.RNGSTP       -- 10 STP
-}
+  body="Oshosi Vest",             -- 7STP
+  hands=gear.RNGAF3.Hands,        -- 9STP
+  legs=gear.RNGAF3.Legs,          -- 10STP
+  feet=gear.Carmine.feet,         -- 8STP
+  neck="Iskur Gorget",            -- 8STP
+  waist="Yemaya Belt",            -- 4STP
+  right_ear="Sherida Earring",    -- 5STP
+  right_ring="Ilabrat Ring",      -- 5STP
+  back=gear.AmbJSE.RNGSTP         -- 10STP
+}	
   
 	------------------------------------------------------------------------------------------------
 	----------------------------------------- Idle Sets --------------------------------------------
@@ -543,18 +672,32 @@ function init_gear_sets()
   left_ear="Etiolation Earring",  
   left_ring="Dingir Ring", 
   head=gear.Carmine.head.HQ,
-  body=gear.Herculeanbody.Magic,
+  body=gear.RNGAF.Body  ,
   hands=gear.Carmine.hands,
   legs=gear.Carmine.legs,
   feet=gear.Carmine.feet,
   neck="Iskur Gorget",
   waist="Flume Belt +1",
   right_ear="Sherida Earring",
-  right_ring="Ilabrat Ring", 
+  right_ring="Regal Ring", 
   back="Moonbeam Cape"
 }
 
-	sets.idle.DT = sets.idle 
+	sets.idle.DT =                  --43PDT/34MDT
+{
+  head=gear.Meghanada.Head,       --5PDT
+  body=gear.Meghanada.Body,       --8PDT
+  hands=gear.Meghanada.Hands,     --4PDT
+  legs=gear.Meghanada.Legs,       --6PDT
+  feet=gear.Meghanada.Feet,       --3PDT
+  neck="Loricate Torque +1",      --          6Dmg
+  waist="Flume Belt +1",          --4PDT
+  left_ear="Etiolation Earring",  --      3MDT
+  right_ear="Odnowa Earring +1",  --      2MDT
+  left_ring="Defending Ring",     --          10Dmg
+  right_ring="Fortified Ring",    --      5MDT
+  back="Reiki Cloak"              --      8MDT
+}
 	sets.idle.Town = sets.idle
   
 	------------------------------------------------------------------------------------------------
@@ -634,32 +777,37 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.buff.Barrage = 
-{    
-  ammo=gear.RAbullet,
+{    --1390 R. Acc
+  --ammo=gear.RAbullet,
   left_ear="Enervating Earring",  
   left_ring="Hajduk Ring +1",  
   head=gear.Meghanada.Head,
   body=gear.Meghanada.Body,
   hands=gear.RNGAF.Hands,
   legs=gear.Meghanada.Legs,
-  feet=gear.Meghanada.Legs,
+  feet=gear.Meghanada.Feet,
   neck="Iskur Gorget",
   waist="Kwahu Kachina Belt",
   right_ear="Neritic Earring",
-  right_ring="Hajduk Ring +1", 
+  right_ring="Regal Ring", 
   back=gear.AmbJSE.RNGSTP
 }
-	sets.buff['Velocity Shot'] = 
+	sets.buff['Velocity Shot'] = -- 1289 R. Acc
   set_combine(sets.midcast.RA, {body=gear.RNGAF3.Body, back=gear.AmbJSE.RNGSTP})
   
-	sets.buff['Double Shot'] = 
-  set_combine(sets.midcast.RA, {head=gear.RNGAF3.Head,back=gear.AmbJSE.RNGSTP})
+	sets.buff['Double Shot'] = --1327 R. Acc
+  set_combine(sets.midcast.RA, 
+{
+  head=gear.RNGAF3.Head,
+  body="Oshosi Vest",
+  legs="Oshosi Trousers",
+  back=gear.AmbJSE.RNGSTP})
   
-  sets.buff.Camouflage = 
+  sets.buff.Camouflage = --1355 R. Acc
 {    
-  ammo=gear.RAbullet,
+  --ammo=gear.RAbullet,
   left_ear="Enervating Earring",  
-  left_ring="Dingir Ring",  
+  left_ring="Ilabrat Ring",  
   head=gear.Mummu.Head,
   body=gear.RNGAF.Body,
   hands="Kobo Kote",
@@ -668,7 +816,7 @@ function init_gear_sets()
   neck="Iskur Gorget",
   waist="Kwahu Kachina Belt",
   right_ear="Neritic Earring",
-  right_ring="Ilabrat Ring",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.RNGSTP
 }
 
@@ -1001,7 +1149,6 @@ function do_bullet_checks(spell, spellMap, eventArgs)
 		state.warned:reset()
 	end
 end
-
 -- Select default macro book on initial load or subjob change.
 
 function select_default_macro_book()
@@ -1009,10 +1156,9 @@ function select_default_macro_book()
 	if player.sub_job == 'DNC' then
 		set_macro_page(1, 6)	
 	else
-		set_macro_page(2, 6)	
+		set_macro_page(1, 6)	
 	end
 end
-
 function set_lockstyle()
-	send_command('wait 2; input /lockstyleset 5')
+	send_command('wait 2; input /lockstyleset 1')
 end

@@ -1,211 +1,248 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
--- Updated 2/22/17
+ 
 -- Initialization function for this job file.
+
 function get_sets()
   
   mote_include_version = 2
   
--- Load and initialize the include file.
+  --Load and initialize the include file.
   
   include('Mote-Include.lua')
   
 end
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
+	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
   state.Buff['Burst Affinity'] = buffactive['Burst Affinity'] or false
   state.Buff['Chain Affinity'] = buffactive['Chain Affinity'] or false
-  state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false  
   state.Buff.Convergence = buffactive.Convergence or false
   state.Buff.Diffusion = buffactive.Diffusion or false
   state.Buff.Efflux = buffactive.Efflux or false
-
-  include('Mote-TreasureHunter')
   
-  state.TreasureMode:set('Tag')
-  state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Trust'}
-
+  state.CapacityMode = M(false, 'Capacity Point Mantle')
+  state.LearnMode = M(false, 'Learning Mode')
+  
+  state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
+ 
+  -- All Augmented gear used in sets below
+  
+  --gear.RunCuisses = {legs=gear.Carmine.legs}
+ 
   blue_magic_maps = {}
-
--- Physical Spells --    
--- Physical spells with no particular (or known) stat mods
-  blue_magic_maps.Physical = S{'Bilgestorm'}
--- Spells with heavy accuracy penalties, that need to prioritize accuracy first.
-	blue_magic_maps.PhysicalAcc = S{'Heavy Strike'}
--- Physical spells with Str stat mod
-  blue_magic_maps.PhysicalStr = S{'Battle Dance',
-	'Bloodrake','Death Scissors','Dimensional Death','Empty Thrash',
-	'Quadrastrike','Spinal Cleave','Uppercut','Vertical Cleave'}
--- Physical spells with Dex stat mod
-	blue_magic_maps.PhysicalDex = S{'Amorphic Spikes',
-	'Asuran Claws','Barbed Crescent','Claw Cyclone','Disseverment','Foot Kick',
-	'Frenetic Rip','Goblin Rush','Hysteric Barrage','Paralyzing Triad',
-	'Seedspray','Sickle Slash','Smite of Rage','Terror Touch','Thrashing Assault','Vanity Dive'}
--- Physical spells with Vit stat mod
-  blue_magic_maps.PhysicalVit = S{'Body Slam',
-	'Cannonball','Delta Thrust','Glutinous Dart','Grand Slam',
-	'Power Attack','Quad. Continuum','Sprout Smack','Sub-zero Smash'}
--- Physical spells with Agi stat mod
-  blue_magic_maps.PhysicalAgi = S{'Benthic Typhoon',
-	'Feather Storm','Helldive','Hydro Shot','Jet Stream',
-	'Pinecone Bomb','Spiral Spin','Wild Oats'}
--- Physical spells with Int stat mod
-  blue_magic_maps.PhysicalInt = S{'Mandibular Bite','Queasyshroom'}
--- Physical spells with Mnd stat mod
-  blue_magic_maps.PhysicalMnd = S{'Ram Charge','Screwdriver','Tourbillion'}
--- Physical spells with Chr stat mod
-  blue_magic_maps.PhysicalChr = S{'Bludgeon'}
--- Physical spells with HP stat mod
-  blue_magic_maps.PhysicalHP = S{'Final Sting'}
-
--- Magical Spells --
--- Magical spells with the typical Int mod
-  blue_magic_maps.Magical = S{'Blastbomb',
-	'Blazing Bound','Bomb Toss','Cursed Sphere','Dark Orb','Death Ray',
-	'Droning Whirlwind','Embalming Earth','Firespit','Foul Waters','Ice Break',
-	'Leafstorm','Maelstrom','Regurgitation','Rending Deluge','Retinal Glare',
-	'Subduction','Tem. Upheaval','Water Bomb','Tenebral Crush','Entomb','Spectral Floe',
-	'Blinding Fulgor'}
--- Magical spells with a primary Mnd mod
-  blue_magic_maps.MagicalMnd = S{'Acrid Stream',
-	'Evryone. Grudge','Magic Hammer','Mind Blast','Scouring Spate'}
--- Magical spells with a primary Chr mod
-  blue_magic_maps.MagicalChr = S{'Eyes On Me','Mysterious Light'}
--- Magical spells with a primary AGI mod
-  blue_magic_maps.MagicalAgi = S{'Silent Storm','Palling Salvo'}
--- Magical spells with a primary STR mod
-  blue_magic_maps.MagicalStr = S{'Searing Tempest'}
--- Magical spells with a Vit stat mod (on top of Int)
-  blue_magic_maps.MagicalVit = S{'Thermal Pulse','Entomb'}
--- Magical spells with a Dex stat mod (on top of Int)
-  blue_magic_maps.MagicalDex = S{'Charged Whisker','Gates of Hades','Anvil Lightning'}
   
+  -- Mappings for gear sets to use for various blue magic spells.
+  -- While Str isn't listed for each, it's generally assumed as being at least
+  -- moderately signficant, even for spells with other mods.
+
+  -- Physical Spells --
+  -- Physical spells with no particular (or known) stat mods
+blue_magic_maps.Physical = S{'Bilgestorm'}
+ 
+-- Spells with heavy accuracy penalties, that need to prioritize accuracy first.
+blue_magic_maps.PhysicalAcc = S{'Heavy Strike',}
+ 
+-- Physical spells with Str stat mod
+blue_magic_maps.PhysicalStr = S{
+'Battle Dance','Bloodrake','Death Scissors','Dimensional Death','Empty Thrash','Quadrastrike','Spinal Cleave',
+'Uppercut','Vertical Cleave'}
+  
+-- Physical spells with Dex stat mod
+blue_magic_maps.PhysicalDex = S{
+'Amorphic Spikes','Asuran Claws','Barbed Crescent','Claw Cyclone','Disseverment','Foot Kick','Frenetic Rip','Goblin Rush','Hysteric Barrage','Paralyzing Triad','Seedspray','Sickle Slash','Smite of Rage','Terror Touch','Thrashing Assault','Vanity Dive'}
+  
+-- Physical spells with Vit stat mod
+blue_magic_maps.PhysicalVit = S{
+'Body Slam','Cannonball','Delta Thrust','Glutinous Dart','Grand Slam','Power Attack','Quad. Continuum','Sprout Smack','Sub-zero Smash'}
+
+-- Physical spells with Agi stat mod
+blue_magic_maps.PhysicalAgi = S{
+'Benthic Typhoon','Feather Storm','Helldive','Hydro Shot','Jet Stream','Pinecone Bomb','Spiral Spin','Wild Oats'}
+ 
+-- Physical spells with Int stat mod
+blue_magic_maps.PhysicalInt = S{'Mandibular Bite','Queasyshroom'}
+ 
+-- Physical spells with Mnd stat mod
+blue_magic_maps.PhysicalMnd = S{'Ram Charge','Screwdriver','Tourbillion'}
+ 
+-- Physical spells with Chr stat mod
+blue_magic_maps.PhysicalChr = S{'Bludgeon'}
+
+-- Physical spells with HP stat mod
+blue_magic_maps.PhysicalHP = S{'Final Sting'}
+ 
+-- Magical Spells --
+
+-- Magical spells with the typical Int mod
+blue_magic_maps.Magical = S{'Blastbomb','Blazing Bound','Bomb Toss','Cursed Sphere','Dark Orb','Death Ray',
+'Droning Whirlwind','Embalming Earth','Firespit','Foul Waters','Ice Break','Leafstorm','Maelstrom','Regurgitation','Rending Deluge','Retinal Glare','Subduction','Tem. Upheaval','Water Bomb','Tenebral Crush','Entomb','Spectral Floe','Blinding Fulgor'}
+ 
+-- Magical spells with a primary Mnd mod
+blue_magic_maps.MagicalMnd = S{'Acrid Stream','Evryone. Grudge','Magic Hammer','Mind Blast','Scouring Spate'}
+
+-- Magical spells with a primary Chr mod
+blue_magic_maps.MagicalChr = S{'Eyes On Me','Mysterious Light'}
+
+-- Magical spells with a primary AGI mod
+blue_magic_maps.MagicalAgi = S{'Silent Storm','Palling Salvo'}
+ 
+-- Magical spells with a primary STR mod
+blue_magic_maps.MagicalStr = S{'Searing Tempest'}
+ 
+-- Magical spells with a Vit stat mod (on top of Int)
+blue_magic_maps.MagicalVit = S{'Thermal Pulse','Entomb'}
+ 
+-- Magical spells with a Dex stat mod (on top of Int)
+blue_magic_maps.MagicalDex = S{'Charged Whisker','Gates of Hades','Anvil Lightning'}
+
 -- Magical spells (generally debuffs) that we want to focus on magic accuracy over damage.
 -- Add Int for damage where available, though.
-  blue_magic_maps.MagicAccuracy = S{'1000 Needles',
-	'Absolute Terror','Actinic Burst','Auroral Drape','Awful Eye',
-	'Blank Gaze','Blistering Roar','Blood Drain','Blood Saber','Chaotic Eye',
-	'Cimicine Discharge','Cold Wave','Corrosive Ooze','Demoralizing Roar','Digest',
-	'Dream Flower','Enervation','Feather Tickle','Filamented Hold','Frightful Roar',
-	'Geist Wall','Hecatomb Wave','Infrasonics','Jettatura','Light of Penance',
-	'Lowing','Mind Blast','Mortal Ray','MP Drainkiss','Osmosis','Reaving Wind',
-	'Sandspin','Sandspray','Sheep Song','Spectral Floe','Soporific','Sound Blast','Stinking Gas',
-	'Sub-zero Smash','Venom Shell','Voracious Trunk','Yawn'}
+blue_magic_maps.MagicAccuracy = S{'1000 Needles','Absolute Terror','Actinic Burst','Auroral Drape','Awful Eye',
+'Blank Gaze','Blistering Roar','Blood Drain','Blood Saber','Chaotic Eye','Cimicine Discharge','Cold Wave','Corrosive Ooze','Demoralizing Roar','Digest','Dream Flower','Enervation','Feather Tickle','Filamented Hold','Frightful Roar','Geist Wall','Hecatomb Wave','Infrasonics','Jettatura','Light of Penance','Lowing','Mind Blast','Mortal Ray','MP Drainkiss','Osmosis','Reaving Wind','Sandspin','Sandspray','Sheep Song','Spectral Floe','Soporific','Sound Blast','Stinking Gas','Sub-zero Smash','Venom Shell','Voracious Trunk','Yawn'}
+
 -- Breath-based spells
-  blue_magic_maps.Breath = S{'Bad Breath',
-	'Flying Hip Press','Frost Breath','Heat Breath','Hecatomb Wave',
-	'Magnetite Cloud','Poison Breath','Radiant Breath','Self-Destruct',
-	'Thunder Breath','Vapor Spray','Wind Breath'}
+blue_magic_maps.Breath = S{'Bad Breath','Flying Hip Press','Frost Breath','Heat Breath','Hecatomb Wave','Magnetite Cloud','Poison Breath','Radiant Breath','Self-Destruct','Thunder Breath','Vapor Spray','Wind Breath'}
+
 -- Stun spells
-  blue_magic_maps.Stun = S{'Blitzstrahl',
-	'Frypan','Head Butt','Sudden Lunge','Tail slap','Temporal Shift',
-	'Thunderbolt','Whirl of Rage'}
+blue_magic_maps.Stun = S{'Blitzstrahl','Frypan','Head Butt','Sudden Lunge','Tail slap','Temporal Shift','Thunderbolt','Whirl of Rage'}
+
 -- Healing spells
-		blue_magic_maps.Healing = S{'Healing Breeze',
-	'Magic Fruit','Plenilune Embrace','Pollen','White Wind','Wild Carrot'}
+blue_magic_maps.Healing = S{'Healing Breeze','Magic Fruit','Plenilune Embrace','Pollen','White Wind','Wild Carrot'}
+
 -- Buffs that depend on blue magic skill
-  blue_magic_maps.SkillBasedBuff = S{'Barrier Tusk',
-	'Diamondhide','Magic Barrier','Metallic Body','Plasma Charge',
-	'Pyric Bulwark','Reactor Cool',}
+blue_magic_maps.SkillBasedBuff = S{'Occultation','Barrier Tusk','Diamondhide','Magic Barrier','Metallic Body','Plasma Charge','Pyric Bulwark','Reactor Cool',}
+
 -- Other general buffs
-  blue_magic_maps.Buff = S{'Amplification',
-	'Animating Wail','Battery Charge','Carcharian Verve','Cocoon',
-	'Erratic Flutter','Exuviation','Fantod','Feather Barrier','Harden Shell',
-	'Memento Mori','Nat. Meditation','Occultation','Orcish Counterstance','Refueling',
-	'Regeneration','Saline Coat','Triumphant Roar','Warm-Up','Winds of Promyvion',
-	'Zephyr Mantle'}
+blue_magic_maps.Buff = S{'Amplification','Animating Wail','Battery Charge','Carcharian Verve','Cocoon','Erratic Flutter','Exuviation','Fantod','Feather Barrier','Harden Shell','Memento Mori','Nat. Meditation','Orcish Counterstance','Refueling','Regeneration','Saline Coat','Triumphant Roar','Warm-Up','Winds of Promyvion','Zephyr Mantle'}
+
+
 -- Spells that require Unbridled Learning to cast.
-  unbridled_spells = S{'Absolute Terror',
-	'Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve',
-	'Droning Whirlwind','Gates of Hades','Harden Shell','Pyric Bulwark','Thunderbolt',
-	'Tourbillion'}
-	
-  -- For th_action_check():
-  -- JA IDs for actions that always have TH: Provoke, Animated Flourish
-  info.default_ja_ids = S{35, 204}
-  -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
-    info.default_u_ja_ids = S{201, 202, 203, 205, 207}
+unbridled_spells = S{'Absolute Terror','Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve','Droning Whirlwind','Gates of Hades','Harden Shell','Pyric Bulwark','Thunderbolt','Tourbillion'}
 end
 -------------------------------------------------------------------------------------------------------------------
 -- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
 -------------------------------------------------------------------------------------------------------------------
+ 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   
-  state.OffenseMode:options('Normal', 'Acc', 'Refresh', 'Learning')
-  
-  state.WeaponskillMode:options('Normal', 'Acc')
-  
-  state.CastingMode:options('Normal', 'Resistant')
-  
-  state.IdleMode:options('Normal', 'PDT', 'Learning')
+state.OffenseMode:options('Normal', 'iLvl', 'Acc', 'Acc2', 'Refresh')
 
--- Additional local binds
+state.WeaponskillMode:options('Normal', 'Acc', 'Mod')
 
-  send_command('bind ^` input /ja "Chain Affinity" <me>')
-  
-  send_command('bind !` input /ja "Efflux" <me>')
-  
-  send_command('bind @` input /ja "Burst Affinity" <me>')
-  
-  send_command('bind @f9 gs c cycle HasteMode')
-  
-  update_combat_form()
- 
-  select_default_macro_book()
-end
--- Called when this job file is unloaded (eg: job change)
-function user_unload()
-  
-  send_command('unbind ^`')
-  
-  send_command('unbind !`')
-  
-  send_command('unbind @`')
-  
-  send_command('unbind @f9')
+state.CastingMode:options('Normal', 'Resistant')
+
+state.IdleMode:options('Normal', 'PDT', 'Learning')
+
+update_combat_form()
+
+select_default_macro_book()
+
+send_command('@wait 1;input /lockstyleset 4')
+
 end
 -- Set up gear sets.
 function init_gear_sets()
-  
+
   include('augmented-items.lua')
   
-  --------------------------------------
-  -- Start defining the sets
-  --------------------------------------
-  
-sets.buff['Burst Affinity'] = {} -- Reforged Empy Feet +1, Reforged AF Legs +1
+--------------------------------------
+-- Start defining the sets
+--------------------------------------
 
-sets.buff['Chain Affinity'] = {} -- Reforged Empy Head +1, Reforged AF Feet +1, Swords - Iris, Acclimator
+-- React Sets --
+	
+sets.React = {}
 
-sets.buff.Convergence = {} -- Reforged Relic Head +1
+sets.React.MEVA = {}
+sets.React.Light = {}
+sets.React.Dark = {}
+sets.React.Thunder = {}
+sets.React.Ice = {}
+sets.React.Water = {}
+sets.React.Fire = {}
+sets.React.Air = {}
+sets.React.Stone = {}
+sets.React.Status = {}
+sets.React.Paralyze = {}
+sets.React.Sleep = {}
+sets.React.Charm = {}
+sets.React.Stun = {}
+sets.React.Silence = {}
+sets.React.Slow = {}
+sets.React.Death = {}
+sets.React.Gravity = {}
+sets.React.Bind = {}
+sets.React.Petrify = {}
+sets.React.PDT = {}
+sets.React.MDT = {}
+sets.React.BDT = {}
+	
+-- Blu JA --
+ 
+  sets.buff['Burst Affinity'] = {} -- Reforged Empy Feet +1, Reforged AF Legs +1
 
-sets.buff.Diffusion = gear.BLURel.Feet
+  sets.buff['Chain Affinity'] = {} -- Reforged Empy Head +1, Reforged AF Feet +1, Swords - Iris, Acclimator
 
-sets.buff.Enchainment = gear.BLURel.Body
+  sets.buff.Convergence = {} -- Reforged Relic Head +1
 
-sets.buff.Efflux = gear.AmbJSE.BLUcrit
+  sets.buff.Diffusion = {Feet=gear.BLURel.Feet}
 
--- Reforged Empy Legs +1
+  sets.buff.Enchainment = {body=gear.BLURel.Body}
+
+  sets.buff.Efflux = {back=gear.AmbJSE.BLUcrit}
+ 
+-- Capacity Set
+  sets.CapacityMantle = {back="Mecistopins Mantle"}
+ 
+-- Learning Set
+  sets.LearnMode = {}
+ 
 -- Precast Sets
+
 -- Precast sets to enhance JAs
 
-sets.precast.JA['Azure Lore'] = {} -- Reforged AF Hands +1
+  sets.precast.JA['Azure Lore'] = {} -- Reforged AF Hands +1
 
-sets.precast.JA['Box Step'] = sets.engaged.Acc 
+  sets.precast.JA['Box Step'] = 
+  sets.engaged.Acc 
 
-sets.precast.JA['Stutter Step'] = sets.engaged.Acc
+  sets.precast.JA['Stutter Step'] = 
+  sets.engaged.Acc
 
-sets.precast.JA['Violent Flourish'] = sets.engaged.Acc
+  sets.precast.JA['Violent Flourish'] = 
+  sets.engaged.Acc
 
-sets.precast.Waltz = {}
+  sets.precast.JA['Swipe'] = 
+{    
+  ammo="Pemphredo Tathlum",
+  head=gear.Herculeanhead.Magic,
+  body=gear.Herculeanbody.Magic,
+  hands=gear.Carmine.hands,
+  legs=gear.Herculeanlegs.Magic,
+  feet=gear.Herculeanfeet.Magic,
+  neck="Sanctity Necklace",
+  waist="Eschan Stone",
+  left_ear="Friomisi Earring",
+  right_ear="Regal Earring",
+  left_ring="Vertigo Ring",
+  right_ring="Etana Ring",
+  back="Argochampsa Mantle"
+}
+
+  sets.precast.JA['Lunge'] = 
+  sets.precast.JA['Swipe']
+ 
+ 
+-- Waltz set (chr and vit)
+  sets.precast.Waltz = {}
 
 -- Don't need any special gear for Healing Waltz.
-
-sets.precast.Waltz['Healing Waltz'] = {}
-
--- Fast cast sets for spells 
+  sets.precast.Waltz['Healing Waltz'] = {}
+ 
+-- Fast cast sets for spells
 
   sets.precast.FC = -- 56 FC 11 QM
 { 
@@ -224,491 +261,754 @@ sets.precast.Waltz['Healing Waltz'] = {}
 	feet=gear.Carmine.feet            -- 8  FC
 } 
 
-sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {}) -- Reforged Empy Body +1 for -14% Blue magic casting time.
+  sets.precast.FC['Blue Magic'] = 
+  set_combine(sets.precast.FC, {}) -- Reforged Empy Body +1 for -14% Blue magic casting time.
 
-  -- Weaponskill sets
-  -- Default set for any weaponskill that isn't any more specifically defined
-  
-sets.precast.WS = 
+  sets.precast.FC.Utsusemi = 
+  set_combine(sets.precast.FC, {})
+ 
+-- Weaponskill sets
+-- Default set for any weaponskill that isn't any more specifically defined
+  sets.precast.WS = 
 {
   ammo="Ginsen", 
 	head=gear.Lilitu.Cap,
-  neck="Fotia Gorget",
-  ear1="Cessance Earring",
-  ear2="Dignitary's earring ",
 	body=gear.Herculeanbody.Crit,
-	hands=gear.Herculeanhands.Triple,
+	hands=gear.Herculeanhands.Triple,  
+  legs=gear.Samnuhalegs,
+	feet=gear.Herculeanfeet.Triple,
+  neck="Fotia Gorget",
+	waist="Fotia Belt",  
+  ear1=gear.Moonshade.WS ,
+  ear2="Ishvara earring",
 	ring1="Epona's Ring",
-  ring2="Petrov Ring",
+  ring2="Ilabrat Ring",
 	back=gear.AmbJSE.BLUWS,
-	waist="Fotia Belt",
-  legs=gear.Samnuhalegs ,
-	feet=gear.Herculeanfeet.Triple
 }
 
-sets.precast.WS.acc = 
+  sets.precast.WS.acc = 
 set_combine(sets.precast.WS, 
 {
   Ammo="Falcon Eye",
-	head="Dampening Tam",
-  neck="Decimus Torque",
+	head=gear.Carmine.head.HQ,
 	hands=gear.Herculeanhands.Triple,
-	ring1="Cacoethic Ring +1",
-  ring2="Cacoethic Ring",
-	waist="Olseni Belt",
-  legs=gear.Carmine.legs,
-  ear1="Zennaroi Earring"
+  legs=gear.Carmine.legs,  
+  neck="Combatant's Torque",
+	ring1="Ramuh Ring +1",
+  ear2="Zennaroi Earring",
+  ring2="Ramuh Ring +1"
 })
-
+ 
 -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-
-sets.precast.WS['Requiescat'] = 
+  sets.precast.WS['Requiescat'] = 
 {
   ammo="Mantoptera eye",
 	head=gear.Jhakri.Head,
-  neck="Fotia Gorget",
-  ear1=gear.Moonshade.WS,
-  ear2="Brutal Earring",
-	body=gear.Jhakri.Body,
+  body=gear.Jhakri.Body,
   hands=gear.Jhakri.Hands,
-  ring1="Epona's Ring",
-  ring2="Tjukurrpa Annulet", -- Upgrade Later
-	back=gear.AmbJSE.BLUcrit,
-	waist="Fotia Belt",
   legs=gear.Jhakri.Legs,
-  feet=gear.Jhakri.Feet
-}
-
-sets.precast.WS['Chant du Cygne'] = 
-{
-  ammo="Falcon Eye",
-	head="Adhemar Bonnet",
+  feet=gear.Jhakri.Feet,
   neck="Fotia Gorget",
-  ear1="Moonshade earring",
-  ear2="Brutal Earring",
-	body={ name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12',}},
-	hands={ name="Herculean Gloves", augments={'Accuracy+16','Crit.hit rate+5','DEX+1',}},
-	ring1="Epona's ring",
-  ring2="Petrov ring",
-	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-	waist="Fotia Belt",
-  legs="Samnuha Tights",
-  feet="Thereoid Greaves"
+	waist="Fotia Belt",  
+  ear1=gear.Moonshade.WS,
+  ear2="Regal Earring",
+  ring1="Shukuyu Ring",
+  ring2="Rufescent Ring",
+	back=gear.AmbJSE.BLUWS
 }
 
-sets.precast.WS['Savage Blade'] = 
+  sets.precast.WS['Requiescat'].Acc = 
+{
+  ammo="Mantoptera eye",
+	head=gear.Carmine.head.HQ,
+  body=gear.Ayanmo.Body,
+  hands=gear.Jhakri.Hands,
+  legs=gear.Carmine.legs,
+  feet=gear.Carmine.feet,
+  neck="Combatant's Torque",
+	waist="Olseni Belt",  
+	ring1="Ramuh Ring +1", 
+  ear1="Zennaroi Earring",
+  ear2="Regal Earring",
+  ring2="Ramuh Ring +1",
+	back=gear.AmbJSE.BLUcrit
+}
+
+  sets.precast.WS['Savage Blade'] = 
 {
   ammo="Mantoptera Eye",
-	head="Dampening Tam",neck="Fotia Gorget",
-  ear1="Moonshade Earring",
-  ring2="Brutal Earring",
-	body={ name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12',}},
-	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-	ring1="Rufescent Ring",
-  ring2="Petrov Ring",
-	back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}},
-	waist="Fotia Belt",
-  legs="Samnuha Tights",
-	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}
+	head="Dampening Tam",
+	body=gear.Herculeanbody.Crit,
+	hands=gear.Herculeanhands.Triple,  
+  legs=gear.Samnuhalegs,
+	feet=gear.Herculeanfeet.Triple,
+  neck="Caro Necklace",
+	waist="Caudata Belt",  
+  ear1=gear.Moonshade.WS,
+  ear2="Ishvara earring",
+  ring1="Shukuyu Ring",
+  ring2="Rufescent Ring",
+	back=gear.AmbJSE.BLUWS,
 }
 
-sets.precast.WS['Expiacion'] = 
-sets.precast.WS['Savage Blade']
+  sets.precast.WS['Savage Blade'].Acc = 
+{
+  ammo="Mantoptera Eye",
+  head=gear.Carmine.head.HQ,
+  body=gear.Herculeanbody.Crit,
+	hands=gear.Herculeanhands.Triple,
+  legs=gear.Carmine.legs,
+  feet=gear.Carmine.feet,
+  neck="Combatant's Torque",
+  waist="Grunfeld Rope",
+  ring1="Ramuh Ring +1", 
+  ear1=gear.Moonshade.WS,
+  ear2="Ishvara earring",
+  ring2="Ramuh Ring +1",
+  back=gear.AmbJSE.BLUWS,
+}
 
-sets.precast.WS['Vorpal Blade'] = 
-sets.precast.WS['Chant du Cygne']
+  sets.precast.WS['Expiacion'] = 
+  sets.precast.WS['Savage Blade']
+  
+  sets.precast.WS['Expiacion'].Acc = 
+  sets.precast.WS['Savage Blade'].Acc
 
-sets.precast.WS['Realmrazer'] = 
-sets.precast.WS['Requiescat']
+  sets.precast.WS['Chant du Cygne'] = 
+{
+  ammo="Falcon Eye",
+  head="Adhemar Bonnet",
+	body=gear.Herculeanbody.Crit,
+	hands=gear.Herculeanhands.Crit,  
+  legs=gear.Samnuhalegs,
+  feet="Thereoid Greaves", 
+  neck="Fotia Gorget",
+	waist="Fotia Belt",  
+  ear1=gear.Moonshade.WS ,
+  ear2="Brutal Earring",
+	ring1="Epona's ring",
+  ring2="Hetairoi ring",
+	back=gear.AmbJSE.BLUcrit
+}
 
-sets.precast.WS['Sanguine Blade'] = 
+  sets.precast.WS['Chant du Cygne'].Acc = 
+{
+  ammo="Falcon Eye",
+  head="Adhemar Bonnet",
+	body=gear.Herculeanbody.Crit,
+	hands=gear.Herculeanhands.Crit,  
+  legs=gear.Samnuhalegs,
+  feet="Thereoid Greaves", 
+  neck="Fotia Gorget",
+	waist="Fotia Belt",  
+  ring1="Ramuh Ring +1", 
+  ear1=gear.Moonshade.WS,
+  ear2="Brutal Earring",
+  ring2="Ramuh Ring +1",
+	back=gear.AmbJSE.BLUcrit
+}
+
+  sets.precast.WS['Sanguine Blade'] = 
 {
   ammo="Pemphredo Tathlum",
-	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
+	head=gear.Herculeanhead.Magic,
+	body=gear.Amalric.body ,
+  hands=gear.Carmine.hands,  
+  legs=gear.Amalric.legs,
+	feet=gear.Herculeanfeet.Magic, 
 	neck="Sanctity Necklace",
-  ear1="Moonshade earring",
+  waist="Eschan Stone",  
+  ear1=gear.Moonshade.WS ,
   ear2="Friomisi Earring",
-	body="Amalric Doublet",
-  hands="Carmine Finger Gauntlets +1",
   ring1="Vertigo Ring",
   ring2="Apate Ring",
 	back="Argochampsa Mantle",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
 }
 
-sets.precast.WS['Flash Nova'] = 
-set_combine(sets.precast.WS['Sanguine Blade'], {})
+  sets.precast.WS['Realmrazer'] = 
+  sets.precast.WS['Requiescat']
+
+  sets.precast.WS['Circle Blade'] = 
+  sets.precast.WS['Savage Blade']
+
+  sets.precast.WS['Vorpal Blade'] = 
+  sets.precast.WS['Chant du Cygne']
+
+  sets.precast.WS['Flash Nova'] = 
+  set_combine(sets.precast.WS['Sanguine Blade'], {})
 
 -- Midcast Sets
+  sets.midcast.FastRecast = sets.precast.FC
 
-sets.midcast.FastRecast = 
-sets.precast.FC
-
-sets.midcast['Blue Magic'] = 
-{}
+  sets.midcast['Blue Magic'] = {}
 
 -- Physical Spells --
-sets.midcast['Blue Magic'].Physical = 
+
+  sets.midcast['Blue Magic'].Physical = 
 { 
   ammo="Ginsen",
-	head="Jhakri Coronal +1",
+	head=gear.Jhakri.Head,
+  body=gear.Jhakri.Body,
+  hands=gear.Jhakri.Hands,
+  legs=gear.Jhakri.Legs,
+  feet=gear.Jhakri.Feet,
   neck="Sanctity Necklace",
+	waist="Eschan Stone",  
   ear1="Lempo earring",
   ear2="Digni. Earring",
-	body="Jhakri Robe +1",
-  hands="Jhakri Cuffs +1",
 	ring1="Epona's Ring",
   ring2="Petrov Ring",
-  back="Cornflower Cape",
-	waist="Eschan Stone",
-  legs="Jhakri Slops +1",
-  feet="Jhakri Pigaches +1"
+  back=gear.ReiveJSE.BLU
 }
+ 
+  sets.midcast['Blue Magic'].PhysicalAcc = 
+  sets.midcast['Blue Magic'].Physical
 
-sets.midcast['Blue Magic'].PhysicalAcc = 
-sets.midcast['Blue Magic'].Physical
+  sets.midcast['Blue Magic'].PhysicalStr = 
+  sets.midcast['Blue Magic'].Physical
 
-sets.midcast['Blue Magic'].PhysicalStr = 
-sets.midcast['Blue Magic'].Physical
+  sets.midcast['Blue Magic'].PhysicalDex = 
+  sets.midcast['Blue Magic'].Physical
 
-sets.midcast['Blue Magic'].PhysicalDex = 
-sets.midcast['Blue Magic'].Physical
+  sets.midcast['Blue Magic'].PhysicalVit =
+  sets.midcast['Blue Magic'].Physical
+   
+  sets.midcast['Blue Magic'].PhysicalAgi = 
+  sets.midcast['Blue Magic'].Physical
 
-sets.midcast['Blue Magic'].PhysicalVit = 
-sets.midcast['Blue Magic'].Physical
+  sets.midcast['Blue Magic'].PhysicalInt = 
+  sets.midcast['Blue Magic'].Physical
 
-sets.midcast['Blue Magic'].PhysicalAgi = 
-sets.midcast['Blue Magic'].Physical
+  sets.midcast['Blue Magic'].PhysicalMnd = 
+  sets.midcast['Blue Magic'].Physical
+   
+  sets.midcast['Blue Magic'].PhysicalChr = 
+  sets.midcast['Blue Magic'].Physical
 
-sets.midcast['Blue Magic'].PhysicalInt = 
-sets.midcast['Blue Magic'].Physical
-
-sets.midcast['Blue Magic'].PhysicalMnd = 
-sets.midcast['Blue Magic'].Physical
-
-sets.midcast['Blue Magic'].PhysicalChr = 
-sets.midcast['Blue Magic'].Physical
-
-sets.midcast['Blue Magic'].PhysicalHP = 
-sets.midcast['Blue Magic'].Physical
-
+  sets.midcast['Blue Magic'].PhysicalHP = 
+  sets.midcast['Blue Magic'].Physical
+ 
+ 
 -- Magical Spells --
 
-sets.midcast['Blue Magic'].Magical = 
+  sets.midcast['Blue Magic'].Magical = 
 {
   Ammo="Pemphredo Tathlum",
-	head={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Crit. hit damage +2%','STR+9','"Mag.Atk.Bns."+12',}},
-	neck="Sanctity Necklace",
+	head=gear.Herculeanhead.Magic,
+	body=gear.Amalric.body,
+  hands=gear.Amalric.hands,  
+  legs=gear.Amalric.legs,
+	feet=gear.Herculeanfeet.Magic,
+  neck="Sanctity Necklace",
+  waist="Eschan Stone",  
   ear1="Friomisi Earring",
   ear2="Dignitary's Earring",
-	body="Amalric Doublet",
-  hands="Amalric Gages",
   ring1="Rahab Ring",
   ring2="Vertigo Ring",
-	back="Cornflower Cape",
-  waist="Eschan Stone",
-  legs="Amalric Slops",
-	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
+	back=gear.ReiveJSE.BLU
 }
+ 
+  sets.midcast['Blue Magic'].Magical.Resistant = 
+  sets.midcast['Blue Magic'].Magical
 
-sets.midcast['Blue Magic'].Magical.Resistant = 
-sets.midcast['Blue Magic'].Magical
+  sets.midcast['Blue Magic'].MagicalMnd = 
+  sets.midcast['Blue Magic'].Magical
+   
+  sets.midcast['Blue Magic'].MagicalChr = 
+  sets.midcast['Blue Magic'].Magical
+   
+  sets.midcast['Blue Magic'].MagicalVit = 
+  sets.midcast['Blue Magic'].Magical
+ 
+  sets.midcast['Blue Magic'].MagicalDex = 
+  sets.midcast['Blue Magic'].Magical
 
-sets.midcast['Blue Magic'].MagicalMnd = 
-sets.midcast['Blue Magic'].Magical
+  sets.midcast['Blue Magic'].MagicalStr = 
+  sets.midcast['Blue Magic'].Magical
+   
+  sets.midcast['Blue Magic'].MagicalAgi = 
+  sets.midcast['Blue Magic'].Magical
 
-sets.midcast['Blue Magic'].MagicalChr = 
-sets.midcast['Blue Magic'].Magical
-
-sets.midcast['Blue Magic'].MagicalVit = 
-sets.midcast['Blue Magic'].Magical
-
-sets.midcast['Blue Magic'].MagicalDex = 
-sets.midcast['Blue Magic'].Magical
-
-sets.midcast['Blue Magic'].MagicAccuracy = 
+  sets.midcast['Blue Magic'].MagicAccuracy = 
 {
   Ammo="Pemphredo Tathlum",
-	head="Dampening Tam",
+	head=gear.Herculeanhead.Magic,
+	body=gear.Amalric.body ,
+  hands=gear.Leyline.NotCap,  
+  legs=gear.Psycloth.legs,
+	feet=gear.Herculeanfeet.Magic,
   neck="Sanctity Necklace",
+  waist="Luminary Sash",  
   ear1="Gwati Earring",
   ear2="Dignitary's Earring",
-	body="Amalric Doublet",
-  hands="Leyline Gloves",
   ring1="Etana Ring",
   ring2="Vertigo Ring",
-	back="Cornflower Cape",
-  waist="Luminary Sash",
-  legs="Psycloth Lappas",
-	feet={ name="Herculean Boots", augments={'AGI+10','"Store TP"+2','Magic Damage +17','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
+	back=gear.ReiveJSE.BLU
 }
 
 -- Breath Spells --
 
-sets.midcast['Blue Magic'].Breath = 
-sets.midcast['Blue Magic'].MagicAccuracy
-
+  sets.midcast['Blue Magic'].Breath = 
+  sets.midcast['Blue Magic'].MagicAccuracy
+ 
 -- Other Types --
 
-sets.midcast['Blue Magic'].Stun = 
-sets.midcast['Blue Magic'].MagicAccuracy
+  sets.midcast['Blue Magic'].Stun = 
+  sets.midcast['Blue Magic'].MagicAccuracy
 
-sets.midcast['Blue Magic']['White Wind'] = 
-{} -- HP and Cure Potency
+  sets.midcast['Blue Magic']['White Wind'] = 
+{
+  ammo="Mavi Tathlum",
+  head=gear.Ayanmo.Head,
+  body=gear.Samnuhabody.FC,
+  hands=gear.Leyline.NotCap,
+  legs=gear.Carmine.legs,
+  feet=gear.Mediums.NotCap,
+  neck="Phalaina locket",
+  waist="Gishdubar Sash",
+  ear1="Mendicant's Earring",
+  ear2="Etiolation Earring",
+  ring1="Lebeche Ring",
+  ring2="Etana Ring",
+  back="Solemnity Cape"
+}
+ 
+  sets.midcast['Blue Magic']['Subduction'] = 
+  sets.midcast['Blue Magic'].Magical
 
-sets.midcast['Blue Magic'].Healing = 
-{} -- Cure Potency
+  sets.midcast['Blue Magic']['Subduction'].Resistant = 
+  sets.midcast['Blue Magic'].MagicAccuracy
 
-sets.midcast['Blue Magic'].SkillBasedBuff = 
-{} -- Put in all Blue Magic Skill stuff
+  sets.midcast['Blue Magic']['Searing Tempest'] = 
+  sets.midcast['Blue Magic'].Magical
 
-sets.midcast['Blue Magic'].Buff = 
-{}
+  sets.midcast['Blue Magic']['Spectral Floe'] = 
+  sets.midcast['Blue Magic'].Magical
 
-sets.midcast.Protect = 
-{}
+  sets.midcast['Blue Magic']['Spectral Floe'].Resistant = 
+  sets.midcast['Blue Magic'].MagicAccuracy
 
-sets.midcast.Protectra = 
-{}
+  sets.midcast['Blue Magic']['Entomb'] = 
+  sets.midcast['Blue Magic'].Magical
 
-sets.midcast.Shell = 
-{}
+  sets.midcast['Blue Magic']['Tenebral Crush'] = 
+  sets.midcast['Blue Magic'].Magical
 
-sets.midcast.Shellra = 
-{}
+  sets.midcast['Blue Magic']['Magic Hammer'] = 
+  sets.midcast['Blue Magic'].Magical
+
+  sets.midcast['Blue Magic']['Dream Flower'] = 
+  sets.midcast['Blue Magic'].MagicAccuracy
+
+  sets.midcast['Blue Magic'].Healing = 
+  sets.midcast['Blue Magic']['White Wind']
+
+  sets.midcast['Blue Magic'].SkillBasedBuff = {}
+
+  sets.midcast['Blue Magic']['Occultation'] = 
+  sets.precast.FC
+ 
+  sets.midcast['Blue Magic'].Buff = {}
+
+  sets.midcast.Protect = 
+  set_combine(sets.midcast['Blue Magic'].Buff, {})
+  
+  sets.midcast.Protectra = 
+  set_combine(sets.midcast['Blue Magic'].Buff, {})
+  
+  sets.midcast.Shell = 
+  set_combine(sets.midcast['Blue Magic'].Buff, {})
+  
+  sets.midcast.Shellra = 
+  set_combine(sets.midcast['Blue Magic'].Buff, {})
+  
+  sets.midcast.Stoneskin = 
+  set_combine(sets.midcast['Blue Magic'].Buff, {waist="Siegel Sash"})
+  
+  sets.midcast.Refresh = 
+  set_combine(sets.midcast['Blue Magic'].Buff, {waist="Gishdubar sash"})
+  
+  sets.midcast['Blue Magic']['Battery Charge'] = 
+  set_combine(sets.midcast['Blue Magic'].Buff, {waist="Gishdubar sash"})
 
 -- Sets to return to when not performing an action.
 
 -- Gear for learning spells: +skill and AF hands.
-
-sets.Learning = 
+  sets.Learning = 
 {
-  hands="Rawhide Gloves",
-  back="Cornflower Cape"
+  hands=gear.Rawhide.hands,
+  back=gear.ReiveJSE.BLU
 }
-
-sets.latent_refresh = 
-{}
+ 
+  sets.latent_refresh = {waist="Fucho-no-obi"}
 
 -- Resting sets
-
-sets.resting = 
-{}
-
--- Idle sets
-
-sets.idle = 
+  sets.resting = 
 {
   Ammo="Ginsen",
-	head="Rawhide Mask",
-  neck="Sanctity Necklace",
-  ear1="Infused Earring",
-  ear2="Dignitary's Earring",
+	head=gear.Rawhide.head,
 	body="Mekosuchinae Harness",
-	hands="Carmine Finger Gauntlets +1",
+	hands=gear.Carmine.hands,  
+  legs=gear.Carmine.legs,
+	feet=gear.Carmine.feet,
+  neck="Bathy Choker +1",
+	waist="Windbuffet Belt +1",  
+  ear1="Infused Earring",
+  ear2="Etiolation Earring",
 	ring1="Defending Ring",
-  ring2="Warden's Ring",
-	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-	waist="Windbuffet Belt +1",
-  legs="Carmine Cuisses +1",
-	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}
+  ring2="Paguroidea Ring",
+  back="Moonbeam Cape",
 }
 
-sets.idle.PDT = 
-sets.idle
-sets.idle.Town = 
+-- Idle sets
+  sets.idle = 
+{
+  Ammo="Ginsen",
+	head=gear.Rawhide.head,
+	body="Mekosuchinae Harness",
+	hands=gear.Carmine.hands,  
+  legs=gear.Carmine.legs,
+	feet=gear.Carmine.feet,
+  neck="Bathy Choker +1",
+	waist="Windbuffet Belt +1",  
+  ear1="Infused Earring",
+  ear2="Etiolation Earring",
+	ring1="Defending Ring",
+  ring2="Paguroidea Ring",
+  back="Moonbeam Cape",
+}
+ 
+  sets.idle.PDT =               --45/39
+{
+  head=gear.Ayanmo.Head,      --2/2
+  body=gear.Ayanmo.Body,      --5/5
+  hands=gear.Ayanmo.Hands,    --2/2
+  legs=gear.Ayanmo.Legs,      --4/4
+  feet=gear.Ayanmo.Feet,      --2/2
+  neck="Loricate Torque +1",  --6/6
+  waist="Flume Belt +1",       --4/0
+  ear1="Infused Earring",     --0/0 
+  ear2="Etiolation Earring",  --0/3
+  ring1="Defending Ring",     --10/10
+  ring2="Patricius Ring",     --5/0 
+  back="Moonbeam Cape",       --5/5
+}
+
+  sets.idle.MDT =               --38/48
+{
+  head=gear.Dampening.Cap,    --0/4
+  body=gear.Ayanmo.Body,      --5/5
+  hands=gear.Ayanmo.Hands,    --2/2
+  legs=gear.Ayanmo.Legs,      --4/4
+  feet=gear.Ayanmo.Feet,      --2/2
+  neck="Loricate Torque +1",  --6/6
+  waist="Flume Belt +1",       --4/0
+  ear1="Odnowa Earring +1",   --0/2 
+  ear2="Etiolation Earring",  --0/3
+  ring1="Defending Ring",     --10/10
+  ring2="Fortified Ring",     --0/5
+  back="Moonbeam Cape",       --5/5
+}
+
+  sets.idle.Town = 
 {
   ammo="Ginsen",
-  head="Dampening Tam",
-  neck="Sanctity Necklace",
-  ear1="Etiolation Earring",
-  ear2="Loquacious Earring",
-  body="Adhemar Jacket",
-  hands="Carmine Finger Gauntlets +1",
-  ring1="Defending Ring",
-  ring2="Warden's Ring",
-  back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-  waist="Windbuffet Belt +1",
-  legs="Carmine Cuisses +1",
-  feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}
-}
-
-sets.idle.Learning = 
-set_combine(sets.idle, sets.Learning)
-
--- Defense sets
-
-sets.defense.PDT = 
-{
-  head="Dampening Tam",
+  head=gear.Carmine.head.HQ,
+  body=gear.Jhakri.Body,
+  hands=gear.Carmine.hands,  
+  legs=gear.Carmine.legs,
+  feet=gear.Carmine.feet,
   neck="Loricate Torque +1",
-  ear1="Etiolation Earring",
-  ear2="Odnowa Earring +1",
+  waist="Flume Belt +1",    
+  ear1="Odnowa Earring +1", 
+  ear2="Etiolation Earring",
   ring1="Defending Ring",
   ring2="Patricius Ring",
-  back="Solemnity Cape",
-  waist="Flume Belt +1"
+  back="Moonbeam Cape",
+}
+ 
+  sets.idle.Learning = 
+set_combine(sets.idle, sets.Learning)
+ 
+
+-- Defense sets
+  sets.defense.MDT =                --29/39
+{
+  ammo="Falcon Eye",
+  head=gear.Dampening.Cap,          --0/4
+  body=gear.Ayanmo.Body,            --5/5
+  hands=gear.Herculeanhands.Triple, --2/0
+  legs=gear.Ayanmo.Legs,            --4/4
+  feet=gear.Herculeanfeet.Triple,   --2/0
+  neck="Loricate Torque +1",        --6/6
+  waist="Windbuffet Belt +1",       --0/0
+  ear1="Odnowa Earring +1",         --0/2 
+  ear2="Etiolation Earring",        --0/3
+  ring1="Defending Ring",           --10/10
+  ring2="Fortified Ring",           --0/5
+  back=gear.AmbJSE.BLUDW
+}
+ 
+  sets.defense.PDT =                --40/27
+{
+  ammo="Ginsen",
+  head=gear.Ayanmo.Head,            --2/2
+  body=gear.Ayanmo.Body,            --5/5
+  hands=gear.Herculeanhands.Triple, --2/0
+  legs=gear.Ayanmo.Legs,            --4/4
+  feet=gear.Herculeanfeet.Triple,   --2/0
+  neck="Loricate Torque +1",        --6/6
+  waist="Flume Belt +1",            --4/0
+  ear1="Cessance Earring",
+  ear2="Dignitary's earring",
+  ring1="Defending Ring",           --10/10
+  ring2="Patricius Ring",           --5/0
+  back=gear.AmbJSE.BLUDW
+}
+ 
+
+  sets.Kiting = {legs=gear.Carmine.legs}
+ 
+  sets.defense.Turtle =       --45/41
+{
+  head=gear.Ayanmo.Head,      --2/2
+  body=gear.Ayanmo.Body,      --5/5
+  hands=gear.Ayanmo.Hands,    --2/2
+  legs=gear.Ayanmo.Legs,      --4/4
+  feet=gear.Ayanmo.Feet,      --2/2
+  neck="Loricate Torque +1",  --6/6
+  waist="Flume Belt +1",       --4/0
+  ear1="Odnowa Earring +1",   --0/2 
+  ear2="Etiolation Earring",  --0/3
+  ring1="Defending Ring",     --10/10
+  ring2="Patricius Ring",     --5/0 
+  back="Moonbeam Cape",       --5/5
 }
 
-sets.defense.MDT = 
-sets.defense.MDT
-
-sets.Kiting = 
-{legs="Carmine Cuisses +1"}
 
 -- Engaged sets
+
 -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
 -- sets if more refined versions aren't defined.
 -- If you create a set with both offense and defense modes, the offense mode should be first.
 -- EG: sets.engaged.Dagger.Accuracy.Evasion
+
 -- Normal melee group
 
-sets.engaged = 
+--1155 acc--
+  sets.engaged =
 {
   Ammo="Ginsen",
-	head="Dampening Tam",
-  neck="Clotharius Torque",
+	head=gear.Dampening.Cap,
+	body=gear.Adhemar.body,
+	hands=gear.Herculeanhands.Triple,  
+  legs=gear.Samnuhalegs,
+	feet=gear.Herculeanfeet.Triple,
+  neck="Ainia Collar",
+	waist="Windbuffet Belt +1",  
   ear1="Cessance Earring",
-  ear2="Brutal Earring",
-	body="Adhemar Jacket",
-	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+  ear2="Dedition earring",
 	ring1="Epona's Ring",
-  ring2="Petrov Ring",
-	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-	waist="Windbuffet Belt +1",
-  legs="Samnuha Tights",
-	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}
+  ring2="Ilabrat Ring",
+	back=gear.AmbJSE.BLUcrit
 }
 
-sets.engaged.Acc = 
+--Acc 1311--
+  sets.engaged.Acc = 
 {
-    ammo="Falcon Eye",
-    head={ name="Carmine Mask +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-    body={ name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12',}},
-    hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-    neck="Sanctity Necklace",
-    waist="Olseni Belt",
-    left_ear="Zennaroi Earring",
-    right_ear="Digni. Earring",
-    left_ring="Cacoethic Ring",
-    right_ring="Cacoethic Ring +1",
-    back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
+  ammo="Falcon Eye",
+  head=gear.Carmine.head.HQ,
+  body=gear.Herculeanbody.Crit,
+  hands=gear.Herculeanhands.Triple,
+  legs=gear.Carmine.legs ,
+  feet=gear.Carmine.feet,
+  neck="Combatant's Torque",
+  waist="Olseni Belt",
+  ring1="Ramuh Ring +1",
+  left_ear="Zennaroi Earring",
+  right_ear="Digni. Earring",
+  ring2="Ramuh Ring +1",
+  back=gear.AmbJSE.BLUcrit
 }
 
-sets.engaged.Refresh = 
-set_combine(sets.engaged.Acc, 
+--Acc 1319--
+  sets.engaged.Acc2 = 
 {
-  Head="Rawhide Mask",
-  body="Mekosuchinae Harness",
-  legs="Rawhide Trousers"
-})
+  ammo="Falcon Eye",
+  head=gear.Carmine.head.HQ,
+  body=gear.Herculeanbody.Crit,
+  hands=gear.Herculeanhands.Triple,
+  legs=gear.Carmine.legs ,
+  feet=gear.Carmine.feet,
+  neck="Combatant's Torque",
+  waist="Olseni Belt",
+  ring1="Ramuh Ring +1",
+  left_ear="Zennaroi Earring",
+  right_ear="Digni. Earring",
+  ring2="Ramuh Ring +1",
+  back=gear.AmbJSE.BLUcrit
+}
 
-sets.engaged.DW = 
+--Acc 1206--
+  sets.engaged.iLvl = 
 {
   Ammo="Ginsen",
-	head="Dampening Tam",
+	head=gear.Dampening.Cap,
+	body=gear.Adhemar.body,
+	hands=gear.Herculeanhands.Triple,  
+  legs=gear.Samnuhalegs,
+	feet=gear.Herculeanfeet.Triple,  
   neck="Clotharius Torque",
-  ear1="Heartseeker Earring",
-  ear2="Dudgeon Earring",
-	body="Adhemar Jacket",
-	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
+	waist="Kentarch Belt +1",  
+  ear1="Cessance Earring",
+  ear2="Dignitary's earring",
 	ring1="Epona's Ring",
-  ring2="Cacoethic Ring +1",
-	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-	waist="Windbuffet Belt +1",
-  legs="Samnuha Tights",
-	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}
+  ring2="Ilabrat Ring",
+	back=gear.AmbJSE.BLUcrit
 }
 
-sets.engaged.DW.Acc = 
-{
-  Ammo="Ginsen",
-	head={ name="Carmine Mask +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-  neck="Decimus Torque",
-  ear1="Dignitary Earring",
-  ear2="Zennaroi Earring",
-	body={ name="Herculean Vest", augments={'Accuracy+28','Crit.hit rate+5','DEX+5','Attack+12'}},
-	hands={ name="Herculean Gloves", augments={'Accuracy+29','"Triple Atk."+3','STR+9',}},
-	ring1="Epona's Ring",
-  ring2="Petrov Ring",
-	back={ name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
-	waist="Olseni Belt",
-  legs="Samnuha Tights",
-	feet={ name="Herculean Boots", augments={'Accuracy+14 Attack+14','"Triple Atk."+4','VIT+6','Accuracy+5',}}
-}
-
-sets.engaged.DW.Refresh = 
+--Acc X--
+  sets.engaged.Refresh = 
 set_combine(sets.engaged.Acc, 
 {
-  Head="Rawhide Mask",
+  Head=gear.Rawhide.head,
   body="Mekosuchinae Harness",
-  legs="Rawhide Trousers"
+  legs=gear.Rawhide.legs
 })
 
-sets.engaged.Learning = 
-set_combine(sets.engaged, sets.Learning)
 
-sets.engaged.DW.Learning = 
-set_combine(sets.engaged.DW, sets.Learning)
+--Acc 1152--               
+  sets.engaged.DW = 
+{
+  Ammo="Ginsen",
+	head=gear.Dampening.Cap,
+	body=gear.Adhemar.body,
+	hands=gear.Herculeanhands.Triple,  
+  legs=gear.Samnuhalegs,
+	feet=gear.Herculeanfeet.Triple,
+  neck="Ainia Collar",
+	waist="Windbuffet Belt +1",  
+  ear1="Cessance Earring",
+  ear2="Dedition earring",
+	ring1="Epona's Ring",
+  ring2="Ilabrat Ring",
+	back=gear.AmbJSE.BLUcrit
+}
 
---sets.engaged.MaxHaste = {}
---sets.engaged.Mid.MaxHaste = {}
---sets.engaged.Acc.MaxHaste = {}
---sets.engaged.PDT.MaxHaste = {}
---sets.engaged.Mid.PDT.MaxHaste = {}
---sets.engaged.Acc.PDT.MaxHaste = {}
---sets.engaged.Haste_35 = {}
---sets.engaged.Mid.Haste_35 = {}
---sets.engaged.Acc.Haste_35 = {}
---sets.engaged.PDT.Haste_35 = {}
---sets.engaged.Mid.PDT.Haste_35 = {}
---sets.engaged.Acc.PDT.Haste_35 = {}
---sets.engaged.Haste_30 = {}
---sets.engaged.Mid.Haste_30 = {}
---sets.engaged.Acc.Haste_30 = {}
---sets.engaged.PDT.Haste_30 = {}
---sets.engaged.Mid.PDT.Haste_30 = {}
---sets.engaged.Acc.PDT.Haste_30 = {}
---sets.engaged.Haste_15 = {}
---sets.engaged.Mid.Haste_15 = {}
---sets.engaged.Acc.Haste_15 = {}
---sets.engaged.PDT.Haste_15 = {}
---sets.engaged.Mid.PDT.Haste_15 = {}
---sets.engaged.Acc.PDT.Haste_15 = {}
---sets.self_healing = {}
-end
+
+--Acc 1204--
+  sets.engaged.DW.iLvl = 
+{
+  Ammo="Ginsen",
+	head=gear.Dampening.Cap,
+	body=gear.Adhemar.body,
+	hands=gear.Herculeanhands.Triple,  
+  legs=gear.Samnuhalegs,
+	feet=gear.Herculeanfeet.Triple,  
+  neck="Clotharius Torque",
+	waist="Kentarch Belt +1",  
+  ear1="Cessance Earring",
+  ear2="Dignitary's earring",
+	ring1="Epona's Ring",
+  ring2="Ilabrat Ring",
+	back=gear.AmbJSE.BLUcrit
+}
+  
+  sets.engaged.DW.Acc = 
+{
+  ammo="Falcon Eye",
+  head=gear.Carmine.head.HQ,
+  body=gear.Herculeanbody.Crit,
+  hands=gear.Herculeanhands.Triple,
+  legs=gear.Carmine.legs ,
+  feet=gear.Carmine.feet,
+  neck="Combatant's Torque",
+  waist="Olseni Belt",
+  ring1="Ramuh Ring +1",
+  left_ear="Zennaroi Earring",
+  right_ear="Digni. Earring",
+  ring2="Ramuh Ring +1",
+  back=gear.AmbJSE.BLUcrit
+}
+  
+--Acc 1385--
+  sets.engaged.DW.Acc2 = 
+{
+  ammo="Falcon Eye",
+  head=gear.Carmine.head.HQ,
+  body=gear.Herculeanbody.Crit,
+  hands=gear.Herculeanhands.Triple,
+  legs=gear.Carmine.legs ,
+  feet=gear.Carmine.feet,
+  neck="Combatant's Torque",
+  waist="Olseni Belt",
+  ring1="Ramuh Ring +1",
+  left_ear="Zennaroi Earring",
+  right_ear="Digni. Earring",
+  ring2="Ramuh Ring +1",
+  back=gear.AmbJSE.BLUcrit
+}
+  
+--Acc X--
+  sets.engaged.DW.Refresh = 
+  sets.engaged.Refresh
+
+  sets.engaged.Learning = 
+  set_combine(sets.engaged, sets.Learning)
+
+  sets.engaged.DW.Learning = 
+  set_combine(sets.engaged.DW, sets.Learning)
+ 
+-- AM 3 MaxHaste Group
+--Acc 1136--
+  sets.engaged.MaxHaste = sets.engaged
+  
+--Acc 1306--
+  sets.engaged.Acc.MaxHaste = sets.engaged.Acc
+
+--Acc 1385--
+  sets.engaged.Acc2.MaxHaste = sets.engaged.Acc2
+  
+--Acc 1202--
+  sets.engaged.iLvl.MaxHaste = sets.engaged.iLvl
+
+--MaxHaste Group
+--Acc 1152--
+  sets.engaged.DW.MaxHaste =  sets.engaged
+  
+--Acc 1313--
+  sets.engaged.DW.Acc.MaxHaste = sets.engaged.Acc
+
+--Acc 1385--
+  sets.engaged.DW.Acc2.MaxHaste = sets.engaged.Acc2
+  
+--Acc 1204--
+  sets.engaged.DW.iLvl.MaxHaste = sets.engaged.iLvl
+
+  sets.engaged.Learning = 
+  set_combine(sets.engaged, sets.Learning)
+
+  sets.engaged.DW.Learning = 
+  set_combine(sets.engaged.DW, sets.Learning)
+ 
+sets.self_healing = {}
+
+end 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+ 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
-
 function job_precast(spell, action, spellMap, eventArgs)
+
     if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then
         eventArgs.cancel = true
         windower.send_command('@input /ja "Unbridled Learning" <me>; wait 1.5; input /ma "'..spell.name..'" '..spell.target.name)
     end
-    if spell.name == 'Spectral Jig' and buffactive.sneak then
-        -- If sneak is active when using, cancel before completion
-        send_command('cancel 71')
-    end
-    if string.find(spell.english, 'Utsusemi') then
-        if buffactive['Copy Image (3)'] or buffactive['Copy Image (4)'] then
-            cancel_spell()
-            eventArgs.cancel = true
-            return
-        end
-    end
-
 end
-
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
-
 function job_post_midcast(spell, action, spellMap, eventArgs)
     -- Add enhancement gear for Chain Affinity, etc.
     if spell.skill == 'Blue Magic' then
@@ -716,58 +1016,104 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             if active and sets.buff[buff] then
                 equip(sets.buff[buff])
             end
-        end
-        if spellMap == 'Healing' and spell.target.type == 'SELF' and sets.self_healing then
-            equip(sets.self_healing)
-        end
     end
-
+    if spellMap == 'Healing' and spell.target.type == 'SELF' and sets.self_healing then
+    	equip(sets.self_healing)
+    end
+end
+ 
     -- If in learning mode, keep on gear intended to help with that, regardless of action.
     if state.OffenseMode.value == 'Learning' then
         equip(sets.Learning)
     end
 end
-
-
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
 
--- Called when a player gains or loses a buff.
--- buff == buff gained or lost
--- gain == true if the buff was gained, false if it was lost.
-function job_buff_change(buff, gain)
-    if state.Buff[buff] ~= nil then
-        state.Buff[buff] = gain
+function job_buff_change(status,gain_or_loss)
+	handle_equipping_gear(player.status)
+   	if (gain_or_loss) then  
+     	add_to_chat(4,'------- Gained Buff: '..status..'-------')
+     	if status == "Aftermath: Lv.3" then
+       		add_to_chat(4,'------- AM3 Mode -------')
+       		job_update(cmdParams, eventArgs)
+			if not midaction() then handle_equipping_gear(player.status)
+			end
+    	end
+    	if status == "KO" then
+       		add_to_chat('GAME OVER')
+    	end
+		if status == "sleep" then
+       		--send_command('input /party ZZZ please CURE')
+			equip(sets.defense.Turtle)
+			disable('ammo','head','neck','ear1','ear2','body','hands','ring1','ring2','back','waist','legs','feet')
+		end
+		if status == "terror" then
+			equip(sets.defense.Turtle)
+			disable('ammo','head','neck','ear1','ear2','body','hands','ring1','ring2','back','waist','legs','feet')
+		end
+		if status == "doom" then
+       		--send_command('input /party DOOM please CURSNA')
+        	equip({waist="Gishdubar Sash"})
+        	disable('waist')
+		end
+--		if status == "slow" then
+--       		send_command('input /party SLOW please ERASE')
+--		end
+--		if status == "curse" then
+--       		send_command('input /party CURSE please CURSNA')
+--		end
+--		if status == "blind" then
+--       		send_command('input /party BLIND please BLINDNA')
+--		end
+		if status == "charm" then
+			equip(sets.defense.Turtle)
+			disable('ammo','head','neck','ear1','ear2','body','hands','ring1','ring2','back','waist','legs','feet')
+		end
+--		if status == "paralysis" then
+--       		send_command('input /party PARALYZED please PARALYNA')
+--		end
+	else
+     	add_to_chat(3,'------- Lost Buff: '..status..'-------')
+    	if status == "Aftermath: Lv.3" then
+       		add_to_chat(4,'------- Normal Mode -------')
+			job_update(cmdParams, eventArgs)
+			if not midaction() then handle_equipping_gear(player.status)
+			end
+		end
+		if status == "sleep" then
+       		--send_command('input /party Awake')
+			enable('ammo','head','neck','ear1','ear2','body','hands','ring1','ring2','back','waist','legs','feet')
+		end
+		if status == "terror" then
+			enable('ammo','head','neck','ear1','ear2','body','hands','ring1','ring2','back','waist','legs','feet')
+		end
+		if status == "doom" then
+        	enable('waist','ring1')
+            --send_command('input /party Doom off')
+		end
+		if status == "slow" then
+		end
+		if status == "charm" then
+			enable('ammo','head','neck','ear1','ear2','body','hands','ring1','ring2','back','waist','legs','feet')
+		end
     end
-    -- If we gain or lose any haste buffs, adjust which gear set we target.
-    if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+
+--If we gain or lose any haste buffs, adjust which gear set we target.
+    if S{'haste','march','embrava','haste samba','mighty guard'}:contains(status:lower()) then
         determine_haste_group()
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
+        handle_equipping_gear(player.status)
+    elseif state.Buff[status] ~= nil then
+        handle_equipping_gear(player.status)
     end
-    if buff:startswith('Aftermath') then
-        if player.equipment.main == 'Tizona' then
-            classes.CustomMeleeGroups:clear()
-
-            if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
-                classes.CustomMeleeGroups:append('AM3')
-                add_to_chat(8, '-------------AM3 UP-------------')
-            end
-
-            if not midaction() then
-                handle_equipping_gear(player.status)
-            end
-        end
-    end
-
 end
 
+ 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
-
+ 
 -- Custom spell mapping.
 -- Return custom spellMap value that can override the default spell mapping.
 -- Don't return anything to allow default spell mapping to be used.
@@ -780,131 +1126,87 @@ function job_get_spell_map(spell, default_spell_map)
         end
     end
 end
-
+ 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
     if player.mpp < 51 then
-        set_combine(idleSet, sets.latent_refresh)
+        idleSet = set_combine(idleSet, sets.latent_refresh)
+    end
+    if state.CapacityMode.value then
+        idleSet = set_combine(idleSet, sets.CapacityMantle)
+    end
+    if state.LearnMode.value then
+        idleSet = set_combine(idleSet, sets.LearnMode)
     end
     return idleSet
 end
+ 
+-- Modify the default melee set after it was constructed.
+function customize_melee_set(meleeSet)
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
+    if state.LearnMode.value then
+        meleeSet = set_combine(meleeSet, sets.LearnMode)
+    end
+    return meleeSet
+end
 
+-- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).
+function job_handle_equipping_gear(playerStatus, eventArgs)    
+    if player.equipment.back == 'Nexus Cape' then
+        disable('back')
+    else
+        enable('back')
+    end
+        if player.equipment.ring1 == 'Warp Ring' or player.equipment.ring1 == 'Dim. Ring (Holla)' or player.equipment.ring1 == 'Vocation Ring' or player.equipment.ring1 == 'Capacity Ring' then
+        disable('ring1')
+    else
+        enable('ring1')
+    end
+    if player.equipment.ring2 == 'Warp Ring' or player.equipment.ring2 == 'Vocation Ring' or player.equipment.ring2 == 'Capacity Ring' then
+        disable('ring2')
+    else
+        enable('ring2')
+    end
+end
+ 
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
     update_combat_form()
     determine_haste_group()
-    th_update(cmdParams, eventArgs)
 end
-
-function check_buff(buff_name, eventArgs)
-    if state.Buff[buff_name] then
-        equip(sets.buff[buff_name] or {})
-        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
-            equip(sets.TreasureHunter)
-        end
-        eventArgs.handled = true
-    end
-end
--- Check for various actions that we've specified in user code as being used with TH gear.
--- This will only ever be called if TreasureMode is not 'None'.
--- Category and Param are as specified in the action event packet.
-function th_action_check(category, param)
-    if category == 2 or -- any ranged attack
-        category == 4 or -- any magic action
-        (category == 3 and param == 30) or -- Aeolian Edge
-        (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
-        (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
-        then 
-            return true
+ 
+ 
+-------------------------------------------------------------------------------------------------------------------
+-- Utility functions specific to this job.
+-------------------------------------------------------------------------------------------------------------------
+ 
+function update_combat_form()
+    -- Check for AM3
+    if player.equipment.main == 'Tizona' and state.Buff['Aftermath: Lv.3'] then
+        state.CombatForm:reset()
+    else
+        state.CombatForm:set('DW')
     end
 end
 
 function determine_haste_group()
-
     classes.CustomMeleeGroups:clear()
-    -- mythic AM	
-    if player.equipment.main == 'Tizona' then
-        if buffactive['Aftermath: Lv.3'] then
-            classes.CustomMeleeGroups:append('AM3')
-        end
+     
+    if ( ( buffactive.embrava and (buffactive.march == 2 or (buffactive.march and buffactive.haste)) ) or
+         ( buffactive.march == 2 and buffactive.haste ) or
+         ( buffactive['Mighty Guard'] and buffactive.haste ) or
+         ( buffactive.haste == 2 ) ) then
+        add_to_chat(8, '[[ Max-Haste Mode Enabled ]]')
+        classes.CustomMeleeGroups:append('MaxHaste')
+	else add_to_chat(8, '[[]]')
     end
-    -- assuming +4 for marches (ghorn has +5)
-    -- Haste (white magic) 15%
-    -- Haste Samba (Sub) 5%
-    -- Haste (Merited DNC) 10% (never account for this)
-    -- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
-    -- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
-    -- Embrava 30% with 500 enhancing skill
-    -- Mighty Guard - 15%
-    -- buffactive[580] = geo haste
-    -- buffactive[33] = regular haste
-    -- buffactive[604] = mighty guard
-    -- state.HasteMode = toggle for when you know Haste II is being cast on you
-    -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
-    if state.HasteMode.value == 'Hi' then
-        if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march or buffactive[604]) ) or
-             ( buffactive[33] and (buffactive[580] or buffactive.embrava) ) or
-             ( buffactive.march == 2 and buffactive[604] ) ) then
-            add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
-            classes.CustomMeleeGroups:append('MaxHaste')
-        elseif ( (buffactive[33] or buffactive.march == 2 or buffactive[580]) and buffactive['haste samba'] ) then
-            add_to_chat(8, '-------------Haste 35%-------------')
-            classes.CustomMeleeGroups:append('Haste_35')
-        elseif ( ( buffactive[580] or buffactive[33] or buffactive.march == 2 ) or
-                 ( buffactive.march == 1 and buffactive[604] ) ) then
-            add_to_chat(8, '-------------Haste 30%-------------')
-            classes.CustomMeleeGroups:append('Haste_30')
-        elseif ( buffactive.march == 1 or buffactive[604] ) then
-            add_to_chat(8, '-------------Haste 15%-------------')
-            classes.CustomMeleeGroups:append('Haste_15')
-        end
-    else
-        if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava or buffactive[604]) ) or  -- geo haste + anything
-           ( buffactive.embrava and (buffactive.march or buffactive[33] or buffactive[604]) ) or  -- embrava + anything
-           ( buffactive.march == 2 and (buffactive[33] or buffactive[604]) ) or  -- two marches + anything
-           ( buffactive[33] and buffactive[604] and buffactive.march ) then -- haste + mighty guard + any marches
-            add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
-            classes.CustomMeleeGroups:append('MaxHaste')
-        elseif ( (buffactive[604] or buffactive[33]) and buffactive['haste samba'] and buffactive.march == 1) or -- MG or haste + samba with 1 march
-               ( buffactive.march == 2 and buffactive['haste samba'] ) or
-               ( buffactive[580] and buffactive['haste samba'] ) then 
-            add_to_chat(8, '-------------Haste 35%-------------')
-            classes.CustomMeleeGroups:append('Haste_35')
-        elseif ( buffactive.march == 2 ) or -- two marches from ghorn
-               ( (buffactive[33] or buffactive[604]) and buffactive.march == 1 ) or  -- MG or haste + 1 march
-               ( buffactive[580] ) or  -- geo haste
-               ( buffactive[33] and buffactive[604] ) then  -- haste with MG
-            add_to_chat(8, '-------------Haste 30%-------------')
-            classes.CustomMeleeGroups:append('Haste_30')
-        elseif buffactive[33] or buffactive[604] or buffactive.march == 1 then
-            add_to_chat(8, '-------------Haste 15%-------------')
-            classes.CustomMeleeGroups:append('Haste_15')
-        end
-    end
-
 end
-
--------------------------------------------------------------------------------------------------------------------
--- Utility functions specific to this job.
--------------------------------------------------------------------------------------------------------------------
-
-function update_combat_form()
-    -- Check for H2H or single-wielding
-    --if player.equipment.sub == "Genbu's Shield" or player.equipment.sub == 'empty' then
-    --    state.CombatForm:reset()
-    --else
-    --    state.CombatForm:set('DW')
-    --end
-end
-
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
-    if player.sub_job == 'DNC' then
-        set_macro_page(1, 1)
-    else
-        set_macro_page(1, 1)
-    end
+        set_macro_page(1, 7)
 end

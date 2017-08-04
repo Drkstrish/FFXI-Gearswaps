@@ -3,7 +3,6 @@ function get_sets()
     include('Mote-Include.lua')
 	include('sammeh_custom_functions.lua')
 end
-
 function user_setup()
 -- General Gearswap Commands:
 -- F10 Changes Idle Mode
@@ -47,7 +46,7 @@ function init_gear_sets()
 
 	-- Weapon Locks used for TP Mode.  When WeaponLock is set - it locks in the following Main and SUB. 
 	weaponlock_main=gear.Grioavolr
-	weaponlock_sub="Niobid Strap"
+	weaponlock_sub="Enki Strap"
 
   sets.ele = {}
   sets.enh = {}
@@ -85,11 +84,11 @@ function init_gear_sets()
   feet=gear.Merlinicfeet.Refresh, --5FC
   neck="Orunmila's Torque",       --5FC
   waist="Witful Belt",            --3FC3QC
-  left_ear="Loquac. Earring",     --2FC
-  right_ear="Etiolation Earring", --1FC
+  right_ear="Loquac. Earring",     --2FC
+  left_ear="Etiolation Earring", --1FC
   left_ring="Kishar Ring",        --4FC
   right_ring="Rahab Ring",        --2FC
-  back="Perimede Cape",           --4QC
+  back="Perimede Cape"            --4QC
 }
   
   sets.precast.EnhancingMagic = 
@@ -117,8 +116,8 @@ function init_gear_sets()
   feet=gear.Amalric.feet,
   neck="Sanctity Necklace",
   waist="Luminary Sash",
-  left_ear="Loquac. Earring",
-  right_ear="Etiolation Earring",
+  right_ear="Loquac. Earring",
+  left_ear="Etiolation Earring",
   left_ring="Lebeche Ring",
   right_ring="Etana Ring",
   back={ name="Bane Cape", augments={'Elem. magic skill +9','Dark magic skill +5','"Mag.Atk.Bns."+2','"Fast Cast"+4',}},
@@ -139,11 +138,11 @@ function init_gear_sets()
   body="Spae. Coat +1",
   hands=gear.Amalric.hands,
   legs=gear.Merliniclegs.OA,
-  feet=gear.Jhakri.Feet,
+  feet=gear.BLMAF.Feet,
   neck="Sanctity Necklace",
   waist="Channeler's Stone",
   left_ear="Friomisi Earring",
-  right_ear="Hecate's Earring",
+  right_ear="Regal Earring",
   left_ring="Resonance Ring",
   right_ring="Vertigo Ring",
   back=gear.AmbJSE.BLMINT
@@ -159,11 +158,11 @@ function init_gear_sets()
   body=gear.Merlinicbody.MB,
   hands=gear.Amalric.hands,
   legs=gear.Merliniclegs.OA,
-  feet=gear.Amalric.feet,
+  feet=gear.BLMAF.Feet,
   neck="Erra Pendant",
   waist="Channeler's Stone",
   left_ear="Digni. Earring",
-  right_ear="Gwati Earring",
+  right_ear="Regal Earring",
   left_ring="Resonance Ring",
   right_ring="Vertigo Ring",
   back=gear.AmbJSE.BLMINT
@@ -185,11 +184,11 @@ function init_gear_sets()
   body=gear.Merlinicbody.MB,    --10
   hands=gear.Amalric.hands,     --5
   legs=gear.Merliniclegs.MB,    --9
-  feet=gear.Merlinicfeet.MB,    --7
+  feet=gear.BLMAF.Feet,         --5
   neck="Mizu. Kubikazari",      --10
   waist="Refoccilation Stone",  
   left_ear="Digni. Earring",    
-  right_ear="Gwati Earring",    
+  right_ear="Regal Earring",    
   left_ring="Mujin Band",       --5
   right_ring="Vertigo Ring",
   back=gear.AmbJSE.BLMINT       --5
@@ -202,11 +201,11 @@ function init_gear_sets()
   body="Shango Robe",
   hands=gear.Amalric.hands,
   legs="Spae. Tonban +1",
-  feet=gear.Merlinicfeet.MB,
+  feet=gear.BLMAF.Feet,
   neck="Erra Pendant",
   waist="Eschan Stone",
-  left_ear="Gwati Earring",
-  right_ear="Digni. Earring",
+  right_ear="Regal Earring",
+  left_ear="Digni. Earring",
   left_ring="Archon Ring",
   right_ring="Kishar Ring",
   back=gear.ReiveJSE.BLM
@@ -223,11 +222,11 @@ function init_gear_sets()
   body="Spae. Coat +1",
   hands=gear.Amalric.hands,
   legs=gear.Merliniclegs.OA,
-  feet="Jhakri Pigaches +1",
+  feet=gear.BLMAF.Feet,
   neck="Sanctity Necklace",
   waist="Refoccilation Stone",
   left_ear="Friomisi Earring",
-  right_ear="Hecate's Earring",
+  right_ear="Regal Earring",
   left_ring="Archon Ring",
   right_ring="Vertigo Ring",
   back=gear.AmbJSE.BLMMP
@@ -284,8 +283,8 @@ set_combine(sets.midcast['Enhancing Magic'],{waist="Siegel Sash",neck="Nodens Go
   feet="Crier's Gaiters",
   neck="Sanctity Necklace",
   waist="Fucho-no-Obi",
-  left_ear="Infused Earring",
-  right_ear="Etiolation Earring",
+  right_ear="Regal Earring",
+  left_ear="Etiolation Earring",
   left_ring="Defending Ring",
   right_ring="Paguroidea Ring",
   back="Moonbeam Cape"
@@ -301,8 +300,8 @@ set_combine(sets.midcast['Enhancing Magic'],{waist="Siegel Sash",neck="Nodens Go
   feet="Mallquis Clogs +1",
   neck="Loricate Torque +1",
   waist="Fucho-no-Obi",
-  left_ear="Infused Earring",
-  right_ear="Etiolation Earring",
+  right_ear="Infused Earring",
+  left_ear="Etiolation Earring",
   left_ring="Defending Ring",
   right_ring="Paguroidea Ring",
   back="Moonbeam Cape"
@@ -312,13 +311,7 @@ set_combine(sets.midcast['Enhancing Magic'],{waist="Siegel Sash",neck="Nodens Go
   set_combine(sets.Idle.PDT,
   {feet=gear.BLMEmpy.Feet})
 	
-	sets.Idle.Death = set_combine(sets.precast.FastCast
-{
-  ammo="Elis Tome",
-  waist="Channeler's Stone",
-  back=gear.AmbJSE.BLMMP
-}
-  
+	sets.Idle.Death = sets.precast.FastCast
 	sets.Idle.Current = sets.Idle.Main
 
 end

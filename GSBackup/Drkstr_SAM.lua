@@ -87,14 +87,14 @@ sets.precast.JA.Meditate =
 sets.precast.JA.Seigan = 
 {}
   
-sets.precast.JA['Warding Circle'] = 
-gear.SAMAF.Head
+sets.precast.JA['Warding Circle'] = {
+gear.SAMAF.Head}
   
-sets.precast.JA['Third Eye'] = 
-gear.SAMRel.Legs
+sets.precast.JA['Third Eye'] = {
+gear.SAMRel.Legs}
   
-sets.precast.JA['Blade Bash'] = 
-gear.SAMRel.Hands
+sets.precast.JA['Blade Bash'] = {
+gear.SAMRel.Hands}
   
 -- Waltz set (chr and vit)
   
@@ -112,19 +112,19 @@ sets.CapacityMantle =
 {back="Mecistopins Mantle" }
   
 sets.Berserker = 
-{neck="Berserker's Torque" }
+{neck="Vim Torque" }
   
 sets.WSDayBonus = 
 {head="Gavialis Helm"}
   
 sets.LugraMoonshade = 
-{ear1="Brutal Earring", ear2=gear.Moonshade.WS}
+{ear1="Lugra Earring +1", ear2=gear.Moonshade.WS}
   
 sets.BrutalMoonshade = 
 {ear1="Brutal Earring", ear2=gear.Moonshade.WS}
   
 sets.LugraFlame = 
-{ear1="Brutal Earring", ear2="Cessance Earring" }
+{ear1="Lugra Earring +1", ear2="Lugra Earring" }
 
 sets.FlameFlame =
 {ear1="Brutal Earring", ear2="Cessance Earring" }
@@ -133,41 +133,41 @@ sets.FlameFlame =
   
 -- Default set for any weaponskill that isn't any more specifically defined
 
-sets.precast.WS = -- 1050Acc +211 STR +39 WSD
+sets.precast.WS = -- 1106Acc +235 STR +38 WSD
 {
   ammo="Knobkierrie",
   head=gear.Valoroushead.WS,
   body=gear.Valorousbody.WS,
   hands=gear.Valoroushands.WS,
-  legs=gear.Hizamaru.Legs,
+  legs=gear.SAMAF.Legs,
   feet=gear.Valorousfeet.WS,
   neck="Fotia Gorget",
   waist="Fotia Belt",
-  left_ear="Brutal Earring",
+  left_ear="Ishvara Earring",
   right_ear=gear.Moonshade.WS,
-  right_ring="Shukuyu Ring",
+  right_ring="Regal Ring",
   left_ring="Niqmaddu Ring",
   back=gear.AmbJSE.SAMWS
 }
 
-sets.precast.WS.Mid = -- 1100 +227 STR +30 WSD
+sets.precast.WS.Mid = -- 1126 +239 STR +32 WSD
 {
   ammo="Amar Cluster",
   head=gear.Valoroushead.WS,
   body=gear.Valorousbody.WS,
   hands=gear.Valoroushands.WS,
-  legs=gear.Hizamaru.Legs,
+  legs=gear.SAMAF.Legs,
   feet=gear.Valorousfeet.WS,
   neck="Fotia Gorget",
   waist="Fotia Belt",
-  left_ear="Zwazo earring +1",
+  left_ear="Ishvara Earring",
   right_ear=gear.Moonshade.WS,
   left_ring="Niqmaddu Ring", 
-  right_ring="Cacoethic Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.SAMWS
 }
 
-sets.precast.WS.Acc = -- 1051 acc +186 STR +20 WSD
+sets.precast.WS.Acc = -- 1202 acc +199 STR +24 WSD
 {
   ammo="Amar Cluster",
   head="Ynglinga Sallet",
@@ -179,8 +179,8 @@ sets.precast.WS.Acc = -- 1051 acc +186 STR +20 WSD
   waist="Olseni Belt",
   left_ear="Zwazo earring +1",
   right_ear="Zennaroi Earring",
-  left_ring="Cacoethic Ring",
-  right_ring="Cacoethic Ring +1",
+  left_ring="Ramuh Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.SAMWS
 }
 
@@ -188,34 +188,52 @@ sets.precast.WS.Acc = -- 1051 acc +186 STR +20 WSD
   sets.precast.WS['Tachi: Fudo'].Mid = sets.precast.WS.Mid
   sets.precast.WS['Tachi: Fudo'].Acc = sets.precast.WS.Acc
   
-  sets.precast.WS['Tachi: Shoha'] = sets.precast.WS
-  sets.precast.WS['Tachi: Shoha'].Mid = sets.precast.WS.Mid
+  sets.precast.WS['Tachi: Shoha'] = --1108 acc. 
+  set_combine(sets.precast.WS, 
+  {Neck="Ganesha'\s Mala", Waist="Windbuffet Belt +1"})
+  sets.precast.WS['Tachi: Shoha'].Mid = --1142 acc. 
+  set_combine(sets.precast.WS.Mid, 
+  {Neck="Lissome Necklace", Waist="Ioskeha Belt", ear1="Cessance Earring"})
   sets.precast.WS['Tachi: Shoha'].Acc = sets.precast.WS.Acc
   
   sets.precast.WS['Tachi: Rana'] = sets.precast.WS
   sets.precast.WS['Tachi: Rana'].Mid = sets.precast.WS.Mid
   sets.precast.WS['Tachi: Rana'].Acc = sets.precast.WS.Acc
   
-  --sets.precast.WS['Namas Arrow'] = {}
-  --sets.precast.WS['Namas Arrow'].Mid = {}
-  --sets.precast.WS['Namas Arrow'].Acc = {}
+  sets.precast.WS['Namas Arrow'] =     
+  {
+    right_ring="Regal Ring",
+    head=gear.SAMAF.Head,
+    body=gear.SAMAF.Body,
+    hands=gear.SAMAF.Hands,
+    legs=gear.SAMAF.Legs,
+    feet=gear.SAMAF.Feet,
+    neck="Combatant's Torque",
+    waist="Reiki Yotai",
+    left_ear="Enervating Earring",
+    right_ear="Neritic Earring",
+    left_ring="Hajduk Ring +1",
+    back="Vespid Mantle",
+  }
+  sets.precast.WS['Namas Arrow'].Mid = sets.precast.WS['Namas Arrow']
+  sets.precast.WS['Namas Arrow'].Acc = sets.precast.WS['Namas Arrow']
   
-  --sets.precast.WS['Apex Arrow'] = {}
-  --sets.precast.WS['Apex Arrow'].Mid = {}
-  --sets.precast.WS['Apex Arrow'].Acc = {}
+  sets.precast.WS['Apex Arrow'] = sets.precast.WS['Namas Arrow']
+  sets.precast.WS['Apex Arrow'].Mid = sets.precast.WS['Namas Arrow']
+  sets.precast.WS['Apex Arrow'].Acc = sets.precast.WS['Namas Arrow']
  
   -- CHR Mod
   
   sets.precast.WS['Tachi: Ageha'] = 
 {
-  ammo="Knobkierrie",
+  ammo="Pemphredo Tathlum",
   head=gear.Flamma.Head,
   body=gear.Flamma.Body,
   hands=gear.Flamma.Hands,
   legs=gear.Flamma.Legs,
   feet=gear.Flamma.Feet,
   neck="Sanctity Necklace",
-  waist="Fotia Belt",
+  waist="Eschan Stone",
   left_ear="Digni. Earring",
   right_ear="Gwati Earring",
   left_ring="Etana Ring",
@@ -223,8 +241,26 @@ sets.precast.WS.Acc = -- 1051 acc +186 STR +20 WSD
   back="Vespid Mantle"
 }
 
-  sets.precast.WS['Tachi: Jinpu'] = 
-  sets.precast.WS
+  sets.precast.WS['Tachi: Jinpu'] = --1054 acc
+{
+  ammo="Knobkierrie",
+  head=gear.Valoroushead.WS,
+  body=gear.Founders.body,
+  hands=gear.Founders.hands,
+  legs=gear.Hizamaru.Legs,
+  feet=gear.Founders.feet,
+  neck="Fotia Gorget",
+  waist="Fotia Belt",
+  left_ear="Ishvara Earring",
+  right_ear=gear.Moonshade.WS,
+  right_ring="Regal Ring",
+  left_ring="Niqmaddu Ring",
+  back=gear.AmbJSE.SAMWS
+}
+  
+  sets.precast.WS['Tachi: Goten'] = sets.precast.WS['Tachi: Jinpu']
+  sets.precast.WS['Tachi: Kagero'] = sets.precast.WS['Tachi: Jinpu']
+  sets.precast.WS['Tachi: Koki'] = sets.precast.WS['Tachi: Jinpu']
   
   -- Midcast Sets
   sets.midcast.FastRecast = 
@@ -262,7 +298,7 @@ sets.precast.WS.Acc = -- 1051 acc +186 STR +20 WSD
   waist="Ioskeha Belt",
   left_ear="Cessance Earring",
   right_ear="Brutal Earring",
-  right_ring="Ilabrat Ring",
+  right_ring="Regal Ring",
   left_ring="Niqmaddu Ring",
   back="Moonbeam Cape"
 }
@@ -364,8 +400,8 @@ sets.engaged.Acc = -- 1223 Acc
   waist="Ioskeha Belt",            --    8DA
   left_ear="Dignitary's earring",  --        3STP
   right_ear="Zennaroi Earring",
-  left_ring="Cacoethic Ring",
-  right_ring="Cacoethic Ring +1",
+  left_ring="Ramuh Ring +1",
+  right_ring="Regal Ring",
   back=gear.AmbJSE.SAMTP           --        10STP
 }                                  --        57STP
 
