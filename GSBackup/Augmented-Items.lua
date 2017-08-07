@@ -640,7 +640,7 @@
 --RDM
 
 ------------ AF 
------------- WArlock's > Atrophy
+------------ Warlock's > Atrophy
 
 	gear.RDMAF = {}
 	gear.RDMAF.Head = {}
@@ -688,7 +688,7 @@
 	gear.THFRel = {}
 	gear.THFRel.Head = {}
 	gear.THFRel.Body = {}
-	gear.THFRel.Hands = { name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}}
+	gear.THFRel.Hands = "Plun. Armlets +1"
 	gear.THFRel.Legs = {}
 	gear.THFRel.Feet = {}
 
@@ -851,11 +851,11 @@
 ------------ Scout's > Arcadian
 
 	gear.RNGRel = {}
-	gear.RNGRel.Head = { name="Arcadian Beret +1", augments={'Enhances "Recycle" effect'}}
-	gear.RNGRel.Body = { name="Arc. Jerkin +1", augments={'Enhances "Snapshot" effect'}}
-	gear.RNGRel.Hands = { name="Arc. Bracers +1", augments={'Enhances "Flashy Shot" effect'}}
-	gear.RNGRel.Legs = { name="Arc. Braccae +1", augments={'Enhances "Eagle Eye Shot" effect'}}
-	gear.RNGRel.Feet = { name="Arcadian Socks +1", augments={'Enhances "Stealth Shot" effect'}}
+	gear.RNGRel.Head = "Arcadian Beret +1"
+	gear.RNGRel.Body = "Arc. Jerkin +1"
+	gear.RNGRel.Hands = "Arc. Bracers +1"
+	gear.RNGRel.Legs = "Arc. Braccae +1"
+	gear.RNGRel.Feet = "Arcadian Socks +1"
 
 
 ------------ Empyrean
@@ -884,9 +884,9 @@
 ------------ Saotome > Sakonji
 
 	gear.SAMRel = {}
-	gear.SAMRel.Head = {}
-	gear.SAMRel.Body = {}
-	gear.SAMRel.Hands = { name="Sakonji Kote +1", augments={'Enhances "Blade Bash" effect',}}
+	gear.SAMRel.Head = "Sakonji Kabuto"
+	gear.SAMRel.Body = "Sakonji Domaru"
+	gear.SAMRel.Hands = "Sakonji Kote +1"
 	gear.SAMRel.Legs = "Sakonji Haidate +1"
 	gear.SAMRel.Feet = "Sakonji Sune-ate +1"
 
@@ -1006,11 +1006,11 @@
 ------------ Magus > Assimilator's
 
 	gear.BLUAF = {}
-	gear.BLUAF.Head = {}
-	gear.BLUAF.Body = {}
-	gear.BLUAF.Hands = {}
-	gear.BLUAF.Legs = {}
-	gear.BLUAF.Feet = {}
+	gear.BLUAF.Head = "Assimilator's Keffiyeh +1"
+	gear.BLUAF.Body = "Assimilator's Jubbah +2"
+	gear.BLUAF.Hands = "Assimilator's Bazubands +2"
+	gear.BLUAF.Legs = "Assimilator's Shalwar +1"
+	gear.BLUAF.Feet = "Assimilator's Charuqs +1"
 
 ------------ Relic
 ------------ Mirage > Luhlaza
@@ -1214,22 +1214,22 @@
 ------------ Futhark
 
 	gear.RUNRel = {}
-	gear.RUNRel.Head = "Futhark Bandeau"
+	gear.RUNRel.Head = "Futhark Bandeau +1"
 	gear.RUNRel.Body = "Futhark Coat +1"
-	gear.RUNRel.Hands = "Futhark Mitons"
-	gear.RUNRel.Legs = "Futhark Trousers"
-	gear.RUNRel.Feet = "Futhark Boots"
+	gear.RUNRel.Hands = "Futhark Mitons +1"
+	gear.RUNRel.Legs = "Futhark Trousers +1"
+	gear.RUNRel.Feet = "Futhark Boots +1"
 
 
 ------------ Empyrean
 ------------ Erilaz
 
 	gear.RUNEmpy = {}
-	gear.RUNEmpy.Head = "Erilaz Galea"
-	gear.RUNEmpy.Body = "Erilaz Surcoat"
-	gear.RUNEmpy.Hands = "Erilaz Gauntlets"
+	gear.RUNEmpy.Head = "Erilaz Galea +1"
+	gear.RUNEmpy.Body = "Erilaz Surcoat +1"
+	gear.RUNEmpy.Hands = "Erilaz Gauntlets +1"
 	gear.RUNEmpy.Legs = "Erilaz Leg Guards +1"
-	gear.RUNEmpy.Feet = "Erilaz Greaves"
+	gear.RUNEmpy.Feet = "Erilaz Greaves +1"
 
 --==================================--
 -- Ambuscade sets
@@ -1239,21 +1239,21 @@
 ------------ WAR/PLD/DRK/DRG
 
 	gear.Sulevia = {}
-	gear.Sulevia.Head = {}
-	gear.Sulevia.Body = {}
-	gear.Sulevia.Hands = {}
-	gear.Sulevia.Legs = {}
-	gear.Sulevia.Feet = {}
+	gear.Sulevia.Head = "Sulevia's Mask +1"
+	gear.Sulevia.Body = "Sulevia's Platemail +1"
+	gear.Sulevia.Hands = "Sulevia's Gauntlets +1"
+	gear.Sulevia.Legs = "Sulevia's Cuisses +1"
+	gear.Sulevia.Feet = "Sulevia's Leggings +1"
 	
 
 ------------ Hizamaru's
 ------------ MNK/NIN/SAM/PUP
 
 	gear.Hizamaru = {}
-	gear.Hizamaru.Head = {}
+	gear.Hizamaru.Head = "Hizamaru Somen +1"
 	gear.Hizamaru.Body = "Hizamaru Haramaki +1"
-	gear.Hizamaru.Hands = {}
-	gear.Hizamaru.Legs = "Hiza. Hizayoroi +2"
+	gear.Hizamaru.Hands = "Hizamaru Kote +1"
+	gear.Hizamaru.Legs = "Hizamaru Hizayoroi +2"
 	gear.Hizamaru.Feet = "Hizamaru Sune-Ate +1"
 
 
@@ -1261,11 +1261,11 @@
 ------------ WHM/BRD/SMN
 
 	gear.Inyanga = {}
-	gear.Inyanga.Head = {}
-	gear.Inyanga.Body = {}
-	gear.Inyanga.Hands = {}
-	gear.Inyanga.Legs = {}
-	gear.Inyanga.Feet = {}
+	gear.Inyanga.Head = "Inyanga Tiara +1"
+	gear.Inyanga.Body = "Inyanga Jubbah +1"
+	gear.Inyanga.Hands = "Inyanga Dastanas +1"
+	gear.Inyanga.Legs = "Inyanga Shalwar +1"
+	gear.Inyanga.Feet = "Inyanga Crackows +1"
 
 
 ------------ Meghanada
@@ -1273,10 +1273,10 @@
 
 	gear.Meghanada = {}
 	gear.Meghanada.Head = "Meghanada Visor +2"
-	gear.Meghanada.Body = "Meg. Cuirie +2"
-	gear.Meghanada.Hands = "Meg. Gloves +2"
-	gear.Meghanada.Legs = "Meg. Chausses +2"
-	gear.Meghanada.Feet = "Meg. Jam. +2"
+	gear.Meghanada.Body = "Meghanada Cuirie +2"
+	gear.Meghanada.Hands = "Meghanada Gloves +2"
+	gear.Meghanada.Legs = "Meghanada Chausses +2"
+	gear.Meghanada.Feet = "Meghanada Jambeaux +2"
 
 
 ------------ Jhakri
@@ -1293,22 +1293,22 @@
 ------------ Flamma
 ------------ WAR/PLD/DRK/SAM/DRG
 	gear.Flamma = {}
-	gear.Flamma.Head = "Flam. Zucchetto +1"
+	gear.Flamma.Head = "Flamma Zucchetto +1"
 	gear.Flamma.Body = "Flamma Korazin +1"
-	gear.Flamma.Hands = "Flam. Manopolas +1"
+	gear.Flamma.Hands = "Flamma Manopolas +1"
 	gear.Flamma.Legs = "Flamma Dirs +1"
-	gear.Flamma.Feet = "Flam. Gambieras +1"
+	gear.Flamma.Feet = "Flamma Gambieras +1"
 
 
 ------------ Tali'ah
 ------------ BST/PUP/SMN
 
 	gear.Taliah = {}
-	gear.Taliah.Head = {}
-	gear.Taliah.Body = {}
-	gear.Taliah.Hands = {}
-	gear.Taliah.Legs = {}
-	gear.Taliah.Feet = {}
+	gear.Taliah.Head = "Tali'\ah Turban +1"
+	gear.Taliah.Body = "Tali'\ah Manteel +1"
+	gear.Taliah.Hands = "Tali'\ah Gages +1"
+	gear.Taliah.Legs = "Tali'\ah Seraweels +1"
+	gear.Taliah.Feet = "Tali'\ah Crackows +1"
 
 
 ------------ Mummu
@@ -1319,7 +1319,7 @@
 	gear.Mummu.Body = "Mummu Jacket +1"
 	gear.Mummu.Hands = "Mummu Wrists +1"
 	gear.Mummu.Legs = "Mummu Kecks +1"
-	gear.Mummu.Feet = "Mummu Gamash. +1"
+	gear.Mummu.Feet = "Mummu Gamashes +1"
 
 
 ------------ Ayanmo
@@ -1337,8 +1337,8 @@
   ---------- BLM/SCH/GEO
   
   gear.Mallquis = {}
-  gear.Mallquis.Head = {}
-  gear.Mallquis.Body = "Mallquis Saio +2"
-  gear.Mallquis.Hands = {}
-  gear.Mallquis.Legs = {}
-  gear.Mallquis.Feet = {}
+  gear.Mallquis.Head = "Maliquis Chapeau +1"
+  gear.Mallquis.Body = "Mallquis Saio +1"
+  gear.Mallquis.Hands = "Maliquis Cuffs +1"
+  gear.Mallquis.Legs = "Maliquis Trews +1"
+  gear.Mallquis.Feet = "Maliquis Clogs +1"
