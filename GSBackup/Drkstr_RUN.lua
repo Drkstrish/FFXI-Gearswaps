@@ -186,21 +186,29 @@ function init_gear_sets()
   sets.Enmity = -- 57 enmity
   
 {
-  main="",
+  main="", 
+		-- Aettir +10, Epo +18/23, Lexeme Blade +10, Takoba +9, 
   sub="", 
+		-- Alber Strap +5, Balarama Grip +3
   ammo="",
-  head="",
+		-- Sapience Orb +2, Iron Gobbet +2, Aqreqaq Bomblet +2
+  head="", 
+		-- Halitus Helm +8 Enmity, Rabid visor +6 (should have on mule)
   body="Emet Harness +1", --10
   hands="Kurys Gloves", --9
   legs=gear.RUNEmpy.Legs, --7
-  feet=gear.RUNEmpy.Feet, --5 (upgrade to +1)
+  feet=gear.RUNEmpy.Feet, --6 - Ahosi Leggings for +7 enmity.
   neck="Unmoving Collar +1", --10
   ear1="Cryptic Earring", --4
-  ear2="Friomisi Earring", --2
-  ring1="Petrov Ring", --4
+  ear2="Friomisi Earring", --2 - Trux earring +5, Pluto's Pearl +4, 
+  ring1="Petrov Ring", --4 
+		-- Begrudging Ring +5, Eihwaz Ring +5, Pernicious Rign +5, Provocare Ring +5, Supershear Ring +5, Vengeful ring +3, Vexer Ring +1 +4
   ring2="",
-  back="Reiki Cloak", --6
-  waist=""
+  waist="",	
+		-- Kasiri Belt +3 Enmity (Steamed Sprouts II), Sinew Belt +3 enmity (might have on mule), Sulla Belt +3 enmity, Goading BNelt +3 enmity, Trance Belt +4 enmity
+  back="Reiki Cloak", 
+		--6 Make Ambush cape - 60HP/30m.eva/20eva/10Enmity 
+
 }
 
 sets.precast.JA['Vallation'] = 
@@ -219,6 +227,7 @@ set_combine(sets.Enmity, {body=gear.RUNRel.Body})
 
   sets.precast.JA['Lunge'] = 
 {
+	--sub="Alber Strap" 
   ammo="Pemphredo Tathlum",
   head=gear.Herculeanhead.Magic,
   body=gear.Herculeanbody.Magic,
@@ -249,7 +258,7 @@ set_combine(sets.Enmity, {body=gear.RUNRel.Body})
   sets.precast.JA['Swordplay'] = 
   set_combine(sets.enmity, {hands=gear.RUNRel.Hands})
   
-  sets.precast.JA['Embolden'] = {back=gear.ReiveJSE.RUN }
+  sets.precast.JA['Embolden'] = {back="Evasionist's Cape"}
   
   sets.precast.JA['Vivacious Pulse'] = 
 {
@@ -271,6 +280,7 @@ set_combine(sets.Enmity, {body=gear.RUNRel.Body})
   legs=gear.Rawhide.legs,         --5FC
   feet=gear.Carmine.feet,         --8FC
   neck="Orunmila's Torque",       --5FC
+	waist="Rumination Sash",
   right_ear="Etiolation Earring", --1FC
   left_ear="Loquac. Earring",     --2FC
   left_ring="Rahab Ring",         --2FC
@@ -286,7 +296,13 @@ set_combine(sets.Enmity, {body=gear.RUNRel.Body})
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {ammo="Impatiens", ear2="Mendi. Earring"})
 
-  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck='Magoraga beads'})
+  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, 
+{
+	ammo="Impatiens",
+	ring1="Lebeche Ring",
+	waist="Rumination Sash",
+	neck='Magoraga beads'
+})
 
 ------------------------------------------------------------------------------------------------
 ------------------------------------- Weapon Skill Sets ----------------------------------------
@@ -425,8 +441,12 @@ sets.precast.FC
   sets.midcast.SpellInterrupt = 
 {
   ammo="Impatiens", --10
-  hands=gear.Rawhide.hands, --15
+  hands=gear.Rawhide.hands, --15 (Regal Gauntlets)
   legs=gear.Carmine.legs, --20
+	waist="Rumination Sash" --10
+		-- Evanescence Ring +5
+		-- Halasz Earring +5
+		-- Moonbeam Necklace +10
 }
 
   sets.midcast.Cure = 
@@ -434,10 +454,9 @@ sets.precast.FC
 
   sets.midcast['Enhancing Magic'] = 
 {
-  head=gear.RUNEmpy.Head,
+  head=gear.Carmine.head.HQ,
   hands=gear.RUNAF.Hands,
-  back=gear.AmbJSE.RUNTP,
-  legs=gear.RUNRel.Legs
+  legs=gear.Carmine.legs
 }
 
   sets.midcast.EnhancingDuration = 
@@ -478,7 +497,10 @@ set_combine(sets.enmity, sets.interrupt)
   
   sets.midcast.Shell = sets.midcast.Protect
 
-  sets.midcast['Divine Magic'] = {}
+  sets.midcast['Divine Magic'] = 
+{
+	legs=gear.RUNAF.Legs
+}
 
   sets.midcast.Flash = sets.Enmity
   
@@ -505,7 +527,7 @@ set_combine(sets.enmity, sets.interrupt)
 
   sets.idle = 
 {
-  ammo="Impatiens",
+  ammo="Staunch Tathlum",
   head=gear.Rawhide.head,
   body=gear.Meghanada.Body,
   hands=gear.Meghanada.Hands,
@@ -520,22 +542,22 @@ set_combine(sets.enmity, sets.interrupt)
   back="Moonbeam Cape"
 }
 
-  sets.idle.DT =                --41/38
+  sets.idle.DT =                --48/28
 {
   sub="Refined Grip +1",        --3/3
-  --ammo="Staunch Tathlum",     --2/2
-  head=gear.Dampening.Cap,      --0/4
-  body=gear.Meghanada.Body,     --8/0
+  ammo="Staunch Tathlum",     	--2/2
+  head=gear.Meghanada.Head,     --5/0
+  body=gear.RUNAF.Body,    		  --0/0
+	hands=gear.Meghanada.Hands,		--4/0
   legs=gear.Carmine.legs,       --0/0
   feet=gear.RUNEmpy.Feet,       --5/0
   neck="Loricate Torque +1",    --6/6
   waist="Flume Belt +1",        --4/0
-  ear1="Etiolation Earring",    --0/3
-  ear2="Odnowa Earring +1",     --0/2
+  ear1="Infused Earring",  			--0/0
+  ear2="Etiolation Earring",    --0/3
   ring1="Defending Ring",       --10/10
-  ring2="Fortified Ring",       --0/5
-  back="Moonbeam Cape",         --5/5
-
+  ring2="Meghanada Ring",       --2/0
+  back="Evasionist's Cape",     --7/4
 }
 
   sets.idle.Town = 
@@ -555,7 +577,7 @@ set_combine(sets.enmity, sets.interrupt)
   back="Moonbeam Cape"
 }
 
-  sets.idle.Weak = sets.idle
+  sets.idle.Weak = sets.idle.DT
   
   sets.Kiting = {legs=gear.Carmine.legs}
 
@@ -579,40 +601,40 @@ set_combine(sets.enmity, sets.interrupt)
   body="Samnuha Coat", ring1="Warden's Ring"
 }
 
-  sets.defense.PDT =              --50/33
+  sets.defense.PDT =              --50/26
 {
   sub="Refined Grip +1",          --3/3
-  --ammo="Staunch Tathlum",       --2/2
-  head=gear.Meghanada.Head,       --5/0
-  body=gear.RUNRel.Body,          --7/7
-  hands=gear.Ayanmo.Hands,        --2/2
-  legs=gear.Meghanada.Legs,       --6/0
-  feet=gear.Herculeanfeet.Triple, --2/0
+  ammo="Staunch Tathlum",         --2/2
+  head=gear.RUNRel.Head,      	  --4/0
+  body=gear.RUNEmpy.Body,         --0/0
+  hands=gear.RUNEmpy.Hands,       --0/0
+  legs=gear.RUNEmpy.Legs,         --7/0
+  feet=gear.RUNEmpy.Feet, 				--5/0
   neck="Loricate Torque +1",      --6/6
   waist="Flume Belt +1",          --4/0
-  ear1="Sherida Earring",         --0/0
-  ear2="Brutal Earring",          --0/0
+  ear1="Cryptic Earring",         --0/0
+  ear2="Sanare Earring",          --0/0
   ring1="Defending Ring",         --10/10
-  ring2="Niqmaddu Ring",          --0/0
-  back="Moonbeam Cape",           --5/5
+  ring2="Patricius Ring",         --5/0
+	back="Moonbeam Cape"   			    --5/5
 }
 
-sets.defense.MDT =                --34/50
+sets.defense.MDT =                --50/26
 {
   sub="Refined Grip +1",          --3/3
-  --ammo="Staunch Tathlum",       --2/2
-  head=gear.Dampening.Cap,        --0/4
+  ammo="Staunch Tathlum",         --2/2
+  head=gear.RUNEmpy.Head,         --0/0
   body=gear.RUNRel.Body,          --7/7
-  hands=gear.Ayanmo.Hands,        --2/2
-  legs=gear.Ayanmo.Legs,          --4/4
-  feet=gear.Ayanmo.Feet,          --2/2
+  hands=gear.RUNEmpy.Hands,       --0/0
+  legs=gear.RUNEmpy.Legs,         --7/0
+  feet=gear.RUNEmpy.Feet, 				--5/0
   neck="Warder's Charm +1",
   waist="Flume Belt +1",          --4/0
-  ear1="Etiolation Earring",      --0/3
-  ear2="Odnowa Earring +1",       --0/2
+  ear1="Cryptic Earring",         --0/0
+  ear2="Sanare Earring",      	  --0/0
   ring1="Defending Ring",         --10/10
-  ring2="Fortified Ring",         --0/5
-  back="Reiki Cloak",             --0/8
+  ring2="Patricius Ring",         --5/0
+  back="Evasionist's Cape",    		--7/4
 }
 
   sets.defense.Status = 
